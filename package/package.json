@@ -1,0 +1,19 @@
+{
+  "name": "@musical-patterns/pattern-xenharmonic-series",
+  "version": "1.0.0",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MusicalPatterns/pattern-xenharmonicSeries.git"
+  },
+  "dependencies": {
+    "@musical-patterns/compiler": "^1.0.36",
+    "@musical-patterns/pattern": "^1.0.31",
+    "@musical-patterns/utilities": "^1.0.107"
+  },
+  "peerDependencies": {
+    "@musical-patterns/performer": "^1.0.71"
+  }
+}

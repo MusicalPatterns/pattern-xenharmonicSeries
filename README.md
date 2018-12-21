@@ -1,1 +1,3 @@
-# pattern-xenharmonicSeries
+# Xenharmonic Series
+
+description TBA
