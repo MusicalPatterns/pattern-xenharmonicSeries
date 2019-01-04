@@ -1,5 +1,6 @@
 import { Entity, PatternMaterial, Scale } from '@musical-patterns/compiler'
-import { Pattern, PatternId, PatternMetadata, PatternSpec } from '@musical-patterns/pattern'
+import { PatternMetadata, PatternSpec } from '@musical-patterns/pattern'
+import { Pattern, PatternId } from '@musical-patterns/registry'
 
 const material: PatternMaterial = {
     buildEntitiesFunction: (): Entity[] => [],
