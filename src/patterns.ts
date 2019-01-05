@@ -13,8 +13,7 @@ const metadata: PatternMetadata = {
     musicalIdeaIllustrated: 'pitch series inspired by the harmonic series',
 }
 
-const spec: PatternSpec = {
-}
+const spec: PatternSpec = {}
 
 const pattern: Pattern = {
     material,
