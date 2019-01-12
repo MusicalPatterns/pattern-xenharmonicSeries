@@ -11,7 +11,9 @@ const material: PatternMaterial = {
 const metadata: PatternMetadata = {
     description: post,
     formattedName: 'Xenharmonic Series',
+    mostRecentPublish: process.env.PUBLISH_DATE,
     musicalIdeaIllustrated: 'pitch series inspired by the harmonic series',
+    originalPublish: '2016-09-20T07:00:00.000Z',
 }
 
 const spec: PatternSpec = {}
