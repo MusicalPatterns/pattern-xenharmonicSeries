@@ -1,1 +1,560 @@
-[]
+[
+  {
+    "notes": [
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 220,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 330,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 403.3333333333333,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 458.33333333333326,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 502.3333333333333,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 538.9999999999999,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 570.4285714285713,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 597.9285714285713,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 622.3730158730158,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 644.3730158730158,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 664.3730158730158,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 682.7063492063492,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 699.6294261294262,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 715.3437118437118,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 730.0103785103786,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 743.7603785103786,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 756.7015549809668,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 768.9237772031889,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 780.5027245716101,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 791.50272457161,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 801.9789150478005,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 811.9789150478005,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 821.5441324391048,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 830.7107991057715,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 839.5107991057715,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 847.9723375673099,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 856.1204857154581,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 863.9776285726009,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 871.5638354691527,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 878.8971688024859,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 885.9939429960344,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 892.8689429960344,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 899.5356096627011,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 906.0061978979952,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 912.2919121837094,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 918.4030232948205,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 924.3489692407665,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 930.138442924977,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 935.7794685660026,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 941.2794685660027,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 946.6453222245393,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 951.8834174626345,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 956.9996965324019,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 961.9996965324019,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 966.8885854212908,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 971.6711941169428,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 976.3520451807726,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 980.9353785141059,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 985.4251744324731,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      },
+      {
+        "duration": 700,
+        "gain": 1,
+        "frequency": 989.8251744324731,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 630
+      }
+    ],
+    "voiceSpec": {
+      "timbreName": "GUITAR_FUZZ",
+      "voiceType": "OSCILLATOR"
+    }
+  }
+]
