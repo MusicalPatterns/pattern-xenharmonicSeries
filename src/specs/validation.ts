@@ -1,5 +1,5 @@
 import { PatternSpecValidationFunction, PatternSpecValidationResults } from '@musical-patterns/pattern'
-import { XenharmonicSeriesPatternSpec } from '../types'
+import { XenharmonicSeriesPatternSpec } from './types'
 
 const validationFunction: PatternSpecValidationFunction<XenharmonicSeriesPatternSpec> =
     (patternSpec: XenharmonicSeriesPatternSpec): PatternSpecValidationResults<XenharmonicSeriesPatternSpec> => {

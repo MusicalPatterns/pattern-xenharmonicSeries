@@ -5,20 +5,22 @@ import {
     XENHARMONIC_SERIES_LOWER_BOUND,
     XENHARMONIC_SERIES_UPPER_BOUND,
 } from '../constants'
-import { XenharmonicSeriesOperation, XenharmonicSeriesPatternSpec } from '../types'
+import { SequenceType, XenharmonicSeriesPatternSpec } from './types'
 
 const sharedXenharmonicSeries: XenharmonicSeriesPatternSpec = {
     ...standardInitialPatternSpec,
     [ StandardPatternSpecProperties.PATTERN_PITCH_SCALAR ]: XENHARMONIC_SERIES_DEFAULT_PITCH,
     base: to.Base(from.Scalar(OCTAVE)),
     lowerBound: XENHARMONIC_SERIES_LOWER_BOUND,
-    operation: XenharmonicSeriesOperation.SERIES,
+    power: to.Power(-1),
+    sequenceType: SequenceType.PARTIAL_SUM,
     upperBound: XENHARMONIC_SERIES_UPPER_BOUND,
+    useBase: false,
 }
 
 const standardHarmonicSeries: XenharmonicSeriesPatternSpec = {
     ...sharedXenharmonicSeries,
-    operation: XenharmonicSeriesOperation.SEQUENCE,
+    power: to.Power(0),
 }
 
 const matharmonicSeries: XenharmonicSeriesPatternSpec = sharedXenharmonicSeries
@@ -26,7 +28,8 @@ const matharmonicSeries: XenharmonicSeriesPatternSpec = sharedXenharmonicSeries
 const sharedEdHarmonicSeries: XenharmonicSeriesPatternSpec = {
     ...sharedXenharmonicSeries,
     lowerBound: to.Index(0),
-    operation: XenharmonicSeriesOperation.PRODUCT_OF_POWERS,
+    sequenceType: SequenceType.PARTIAL_PRODUCT,
+    useBase: true,
 }
 
 const edTwoHarmonicSeries: XenharmonicSeriesPatternSpec = sharedEdHarmonicSeries

@@ -1,5 +1,5 @@
 import { PatternSpecPropertyType, standardPatternSpecAttributes } from '@musical-patterns/pattern'
-import { XenharmonicSeriesOperation, XenharmonicSeriesPatternSpecAttributes } from '../types'
+import { SequenceType, XenharmonicSeriesPatternSpecAttributes } from './types'
 
 const attributes: XenharmonicSeriesPatternSpecAttributes = {
     ...standardPatternSpecAttributes,
@@ -17,8 +17,20 @@ const attributes: XenharmonicSeriesPatternSpecAttributes = {
         },
         patternSpecPropertyType: PatternSpecPropertyType.RANGED,
     },
-    operation: {
-        constraint: Object.values(XenharmonicSeriesOperation),
+    power: {
+        patternSpecPropertyType: PatternSpecPropertyType.RANGED,
+    },
+    sequenceType: {
+        constraint: [
+            {
+                formattedName: 'partial sum',
+                key: SequenceType.PARTIAL_SUM,
+            },
+            {
+                formattedName: 'partial product',
+                key: SequenceType.PARTIAL_PRODUCT,
+            },
+        ],
         patternSpecPropertyType: PatternSpecPropertyType.OPTIONED,
     },
     upperBound: {
@@ -27,6 +39,9 @@ const attributes: XenharmonicSeriesPatternSpecAttributes = {
             min: 1,
         },
         patternSpecPropertyType: PatternSpecPropertyType.RANGED,
+    },
+    useBase: {
+        patternSpecPropertyType: PatternSpecPropertyType.TOGGLED,
     },
 }
 

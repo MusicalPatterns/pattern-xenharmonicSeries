@@ -3,31 +3,35 @@ import {
     RangedPatternSpecPropertyAttributes,
     StandardPatternSpec,
     StandardPatternSpecAttributes,
+    ToggledPatternSpecPropertyAttributes,
 } from '@musical-patterns/pattern'
-import { Base, Index } from '@musical-patterns/utilities'
+import { Base, Index, Power } from '@musical-patterns/utilities'
 
-enum XenharmonicSeriesOperation {
-    SEQUENCE = 'SEQUENCE',
-    SERIES = 'SERIES',
-    PRODUCT_OF_POWERS = 'PRODUCT_OF_POWERS',
+enum SequenceType {
+    PARTIAL_SUM = 'partial sum',
+    PARTIAL_PRODUCT = 'partial product',
 }
 
 interface XenharmonicSeriesPatternSpec extends StandardPatternSpec {
     base: Base,
     lowerBound: Index,
-    operation: XenharmonicSeriesOperation,
+    power: Power,
+    sequenceType: SequenceType,
     upperBound: Index,
+    useBase: boolean,
 }
 
 interface XenharmonicSeriesPatternSpecAttributes extends StandardPatternSpecAttributes {
     base: RangedPatternSpecPropertyAttributes,
     lowerBound: RangedPatternSpecPropertyAttributes,
-    operation: OptionedPatternSpecPropertyAttributes,
+    power: RangedPatternSpecPropertyAttributes,
+    sequenceType: OptionedPatternSpecPropertyAttributes,
     upperBound: RangedPatternSpecPropertyAttributes,
+    useBase: ToggledPatternSpecPropertyAttributes,
 }
 
 export {
-    XenharmonicSeriesOperation,
+    SequenceType,
     XenharmonicSeriesPatternSpec,
     XenharmonicSeriesPatternSpecAttributes,
 }

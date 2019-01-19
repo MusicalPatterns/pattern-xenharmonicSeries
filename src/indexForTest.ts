@@ -1,11 +1,11 @@
 // tslint:disable:no-reaching-imports
 
 export { buildScalars } from './materials/indexForTest'
-export { specData } from './specs'
 export {
+    specData,
     XenharmonicSeriesPatternSpec,
-    XenharmonicSeriesOperation,
-} from './types'
+    SequenceType,
+} from './specs'
 
 export { pattern } from './patterns'
 

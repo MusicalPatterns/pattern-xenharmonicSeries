@@ -3,8 +3,7 @@ import { PatternMetadata } from '@musical-patterns/pattern'
 import { buildPatterns, Pattern, PatternId, Patterns } from '@musical-patterns/registry'
 import { buildEntities, buildScales } from './materials'
 import { post } from './metadata'
-import { specData } from './specs'
-import { XenharmonicSeriesPatternSpec } from './types'
+import { specData, XenharmonicSeriesPatternSpec } from './specs'
 
 const material: PatternMaterial = {
     buildEntitiesFunction: buildEntities,

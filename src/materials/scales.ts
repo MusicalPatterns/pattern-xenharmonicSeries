@@ -1,7 +1,7 @@
 import { BuildScalesFunction, Scale } from '@musical-patterns/compiler'
 import { buildStandardScales, StandardPatternSpecProperties } from '@musical-patterns/pattern'
 import { Scalar, to } from '@musical-patterns/utilities'
-import { XenharmonicSeriesPatternSpec } from '../types'
+import { XenharmonicSeriesPatternSpec } from '../specs'
 import { buildScalars } from './scalars'
 
 const buildScales: BuildScalesFunction =
