@@ -1,19 +1,14 @@
-import { apply, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'
-import {
-    buildScalars,
-    initialSpec,
-    XenharmonicSeriesOperation,
-    XenharmonicSeriesPatternSpec,
-} from '../../../src/indexForTest'
+import { apply, DictionaryOf, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'
+import { buildScalars, specData, XenharmonicSeriesPatternSpec } from '../../../src/indexForTest'
 
 describe('scales', () => {
+    let presets: DictionaryOf<XenharmonicSeriesPatternSpec>
+    beforeEach(() => {
+        presets = specData.presets || {}
+    })
+
     it('harmonic series', () => {
-        const spec: XenharmonicSeriesPatternSpec = {
-            ...initialSpec,
-            lowerBound: to.Index(1),
-            operation: XenharmonicSeriesOperation.SEQUENCE,
-            upperBound: to.Index(7),
-        }
+        const spec: XenharmonicSeriesPatternSpec = presets.standardHarmonicSeries
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -22,12 +17,7 @@ describe('scales', () => {
     })
 
     it('matharmonic series', () => {
-        const spec: XenharmonicSeriesPatternSpec = {
-            ...initialSpec,
-            lowerBound: to.Index(1),
-            operation: XenharmonicSeriesOperation.SERIES,
-            upperBound: to.Index(7),
-        }
+        const spec: XenharmonicSeriesPatternSpec = presets.matharmonicSeries
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -41,13 +31,8 @@ describe('scales', () => {
         ].map(to.Scalar))
     })
 
-    it('edharmonic series', () => {
-        const spec: XenharmonicSeriesPatternSpec = {
-            base: to.Base(2),
-            lowerBound: to.Index(1),
-            operation: XenharmonicSeriesOperation.PRODUCT_OF_POWERS,
-            upperBound: to.Index(4),
-        }
+    it('ed-2 harmonic series', () => {
+        const spec: XenharmonicSeriesPatternSpec = presets.edTwoHarmonicSeries
         const scalars: Scalar[] = buildScalars(spec)
 
         // tslint:disable:binary-expression-operand-order
@@ -57,6 +42,20 @@ describe('scales', () => {
             2 * Math.sqrt(2),
             2 * Math.sqrt(2) * Math.cbrt(2),
             2 * Math.sqrt(2) * Math.cbrt(2) * from.Base(apply.Power(to.Base(2), to.Power(1 / 4))),
+        ].map(to.Scalar))
+    })
+
+    it('ed-3 harmonic series', () => {
+        const spec: XenharmonicSeriesPatternSpec = presets.edThreeHarmonicSeries
+        const scalars: Scalar[] = buildScalars(spec)
+
+        // tslint:disable:binary-expression-operand-order
+        testArraysAreClose(scalars, [
+            1,
+            3,
+            3 * Math.sqrt(3),
+            3 * Math.sqrt(3) * Math.cbrt(3),
+            3 * Math.sqrt(3) * Math.cbrt(3) * from.Base(apply.Power(to.Base(3), to.Power(1 / 4))),
         ].map(to.Scalar))
     })
 })

@@ -1,8 +1,8 @@
 import {
     OptionedPatternSpecPropertyAttributes,
-    PatternSpec,
-    PatternSpecAttributes,
     RangedPatternSpecPropertyAttributes,
+    StandardPatternSpec,
+    StandardPatternSpecAttributes,
 } from '@musical-patterns/pattern'
 import { Base, Index } from '@musical-patterns/utilities'
 
@@ -12,14 +12,14 @@ enum XenharmonicSeriesOperation {
     PRODUCT_OF_POWERS = 'PRODUCT_OF_POWERS',
 }
 
-interface XenharmonicSeriesPatternSpec extends PatternSpec {
+interface XenharmonicSeriesPatternSpec extends StandardPatternSpec {
     base: Base,
     lowerBound: Index,
     operation: XenharmonicSeriesOperation,
     upperBound: Index,
 }
 
-interface XenharmonicSeriesPatternSpecAttributes extends PatternSpecAttributes {
+interface XenharmonicSeriesPatternSpecAttributes extends StandardPatternSpecAttributes {
     base: RangedPatternSpecPropertyAttributes,
     lowerBound: RangedPatternSpecPropertyAttributes,
     operation: OptionedPatternSpecPropertyAttributes,

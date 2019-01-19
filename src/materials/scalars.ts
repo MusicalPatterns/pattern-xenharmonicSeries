@@ -1,10 +1,11 @@
-import { apply, from, numbers, offsetFromOneIndexedToZeroIndexed, Scalar, to } from '@musical-patterns/utilities'
+import { apply, from, numbers, Scalar, to } from '@musical-patterns/utilities'
 import { XenharmonicSeriesOperation, XenharmonicSeriesPatternSpec } from '../types'
 
 const buildScalars: (spec: XenharmonicSeriesPatternSpec) => Scalar[] =
     ({ base, operation, lowerBound, upperBound }: XenharmonicSeriesPatternSpec): Scalar[] => {
         const boundedNumbers: number[] = numbers
-            .slice(from.Index(offsetFromOneIndexedToZeroIndexed(lowerBound)), from.Index(upperBound))
+            .map((n: number): number => n - 1)
+            .slice(from.Index(lowerBound), apply.Offset(from.Index(upperBound), to.Offset(1)))
 
         switch (operation) {
             case XenharmonicSeriesOperation.SEQUENCE: {
@@ -26,10 +27,9 @@ const buildScalars: (spec: XenharmonicSeriesPatternSpec) => Scalar[] =
             case XenharmonicSeriesOperation.PRODUCT_OF_POWERS: {
                 let product: number = 1
 
-                return [ 1 ].concat(boundedNumbers
+                return boundedNumbers
                     .map((k: number) =>
-                        product *= from.Base(apply.Power(base, to.Power(1 / k)))),
-                )
+                        product *= from.Base(apply.Power(base, to.Power(k ? 1 / k : 0))))
                     .map(to.Scalar)
             }
             default:
