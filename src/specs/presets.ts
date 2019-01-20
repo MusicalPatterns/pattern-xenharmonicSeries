@@ -10,7 +10,7 @@ import { SequenceType, XenharmonicSeriesPatternSpec } from './types'
 const sharedXenharmonicSeries: XenharmonicSeriesPatternSpec = {
     ...standardInitialPatternSpec,
     [ StandardPatternSpecProperties.PATTERN_PITCH_SCALAR ]: XENHARMONIC_SERIES_DEFAULT_PITCH,
-    base: to.Base(from.Scalar(OCTAVE)),
+    base: OCTAVE,
     lowerBound: XENHARMONIC_SERIES_LOWER_BOUND,
     power: to.Power(-1),
     sequenceType: SequenceType.PARTIAL_SUM,
@@ -36,7 +36,7 @@ const edTwoHarmonicSeries: XenharmonicSeriesPatternSpec = sharedEdHarmonicSeries
 
 const edThreeHarmonicSeries: XenharmonicSeriesPatternSpec = {
     ...sharedEdHarmonicSeries,
-    base: to.Base(from.Scalar(TRITAVE)),
+    base: TRITAVE,
 }
 
 const presets: DictionaryOf<XenharmonicSeriesPatternSpec> = {
