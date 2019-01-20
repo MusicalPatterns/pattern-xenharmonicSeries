@@ -1,9 +1,9 @@
 import { to } from '@musical-patterns/utilities'
-import { buildBlock, specData, XenharmonicSeriesPatternSpec } from '../../../src/indexForTest'
+import { buildBlock, specData, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('blocks', () => {
     it('counts up from the lower bound to the upper bound', () => {
-        const spec: XenharmonicSeriesPatternSpec = {
+        const spec: XenharmonicSeriesSpec = {
             ...specData.initial,
             lowerBound: to.Index(3),
             upperBound: to.Index(5),

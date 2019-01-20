@@ -3,7 +3,7 @@
 export { buildScalars, buildBlock } from './materials/indexForTest'
 export {
     specData,
-    XenharmonicSeriesPatternSpec,
+    XenharmonicSeriesSpec,
     SequenceType,
 } from './specs'
 

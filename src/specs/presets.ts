@@ -1,15 +1,15 @@
-import { standardInitialPatternSpec, StandardPatternSpecProperties } from '@musical-patterns/pattern'
+import { standardInitialSpec, StandardSpecProperties } from '@musical-patterns/pattern'
 import { DictionaryOf, from, OCTAVE, to, TRITAVE } from '@musical-patterns/utilities'
 import {
     XENHARMONIC_SERIES_DEFAULT_PITCH,
     XENHARMONIC_SERIES_LOWER_BOUND,
     XENHARMONIC_SERIES_UPPER_BOUND,
 } from '../constants'
-import { SequenceType, XenharmonicSeriesPatternSpec } from './types'
+import { SequenceType, XenharmonicSeriesSpec } from './types'
 
-const sharedXenharmonicSeries: XenharmonicSeriesPatternSpec = {
-    ...standardInitialPatternSpec,
-    [ StandardPatternSpecProperties.PATTERN_PITCH_SCALAR ]: XENHARMONIC_SERIES_DEFAULT_PITCH,
+const sharedXenharmonicSeries: XenharmonicSeriesSpec = {
+    ...standardInitialSpec,
+    [ StandardSpecProperties.PATTERN_PITCH_SCALAR ]: XENHARMONIC_SERIES_DEFAULT_PITCH,
     base: OCTAVE,
     lowerBound: XENHARMONIC_SERIES_LOWER_BOUND,
     power: to.Power(-1),
@@ -18,28 +18,28 @@ const sharedXenharmonicSeries: XenharmonicSeriesPatternSpec = {
     useBase: false,
 }
 
-const standardHarmonicSeries: XenharmonicSeriesPatternSpec = {
+const standardHarmonicSeries: XenharmonicSeriesSpec = {
     ...sharedXenharmonicSeries,
     power: to.Power(0),
 }
 
-const matharmonicSeries: XenharmonicSeriesPatternSpec = sharedXenharmonicSeries
+const matharmonicSeries: XenharmonicSeriesSpec = sharedXenharmonicSeries
 
-const sharedEdHarmonicSeries: XenharmonicSeriesPatternSpec = {
+const sharedEdHarmonicSeries: XenharmonicSeriesSpec = {
     ...sharedXenharmonicSeries,
     lowerBound: to.Index(0),
     sequenceType: SequenceType.PARTIAL_PRODUCT,
     useBase: true,
 }
 
-const edTwoHarmonicSeries: XenharmonicSeriesPatternSpec = sharedEdHarmonicSeries
+const edTwoHarmonicSeries: XenharmonicSeriesSpec = sharedEdHarmonicSeries
 
-const edThreeHarmonicSeries: XenharmonicSeriesPatternSpec = {
+const edThreeHarmonicSeries: XenharmonicSeriesSpec = {
     ...sharedEdHarmonicSeries,
     base: TRITAVE,
 }
 
-const presets: DictionaryOf<XenharmonicSeriesPatternSpec> = {
+const presets: DictionaryOf<XenharmonicSeriesSpec> = {
     edThreeHarmonicSeries,
     edTwoHarmonicSeries,
     matharmonicSeries,

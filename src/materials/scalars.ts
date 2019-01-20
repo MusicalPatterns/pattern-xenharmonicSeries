@@ -12,7 +12,7 @@ import {
     to,
 } from '@musical-patterns/utilities'
 import { buildBoundedNumbers } from '../custom'
-import { SequenceType, XenharmonicSeriesPatternSpec } from '../specs'
+import { SequenceType, XenharmonicSeriesSpec } from '../specs'
 import { BuildSequenceParameters } from './types'
 
 const kToPower: (k: number, power: Power) => number =
@@ -38,8 +38,8 @@ const buildSequence: (parameters: BuildSequenceParameters) => Scalar[] =
             .map(to.Scalar)
     }
 
-const buildScalars: (spec: XenharmonicSeriesPatternSpec) => Scalar[] =
-    ({ base, sequenceType, power, lowerBound, upperBound, useBase }: XenharmonicSeriesPatternSpec): Scalar[] => {
+const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
+    ({ base, sequenceType, power, lowerBound, upperBound, useBase }: XenharmonicSeriesSpec): Scalar[] => {
         const boundedNumbers: number[] = buildBoundedNumbers(lowerBound, upperBound)
 
         let initialPartial: number

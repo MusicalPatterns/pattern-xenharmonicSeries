@@ -1,14 +1,14 @@
 import { apply, DictionaryOf, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'
-import { buildScalars, specData, XenharmonicSeriesPatternSpec } from '../../../src/indexForTest'
+import { buildScalars, specData, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('scales', () => {
-    let presets: DictionaryOf<XenharmonicSeriesPatternSpec>
+    let presets: DictionaryOf<XenharmonicSeriesSpec>
     beforeEach(() => {
         presets = specData.presets || {}
     })
 
     it('harmonic series', () => {
-        const spec: XenharmonicSeriesPatternSpec = presets.standardHarmonicSeries
+        const spec: XenharmonicSeriesSpec = presets.standardHarmonicSeries
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -17,7 +17,7 @@ describe('scales', () => {
     })
 
     it('matharmonic series', () => {
-        const spec: XenharmonicSeriesPatternSpec = presets.matharmonicSeries
+        const spec: XenharmonicSeriesSpec = presets.matharmonicSeries
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -32,7 +32,7 @@ describe('scales', () => {
     })
 
     it('ed-2 harmonic series', () => {
-        const spec: XenharmonicSeriesPatternSpec = presets.edTwoHarmonicSeries
+        const spec: XenharmonicSeriesSpec = presets.edTwoHarmonicSeries
         const scalars: Scalar[] = buildScalars(spec)
 
         // tslint:disable:binary-expression-operand-order
@@ -46,7 +46,7 @@ describe('scales', () => {
     })
 
     it('ed-3 harmonic series', () => {
-        const spec: XenharmonicSeriesPatternSpec = presets.edThreeHarmonicSeries
+        const spec: XenharmonicSeriesSpec = presets.edThreeHarmonicSeries
         const scalars: Scalar[] = buildScalars(spec)
 
         // tslint:disable:binary-expression-operand-order

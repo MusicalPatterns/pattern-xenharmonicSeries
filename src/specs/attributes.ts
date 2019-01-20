@@ -1,24 +1,24 @@
-import { PatternSpecPropertyType, standardPatternSpecAttributes } from '@musical-patterns/pattern'
-import { SequenceType, XenharmonicSeriesPatternSpecAttributes } from './types'
+import { SpecPropertyType, standardSpecAttributes } from '@musical-patterns/pattern'
+import { SequenceType, XenharmonicSeriesSpecAttributes } from './types'
 
-const attributes: XenharmonicSeriesPatternSpecAttributes = {
-    ...standardPatternSpecAttributes,
+const attributes: XenharmonicSeriesSpecAttributes = {
+    ...standardSpecAttributes,
     base: {
         constraint: {
             excludeMin: true,
             min: 1,
         },
-        patternSpecPropertyType: PatternSpecPropertyType.RANGED,
+        specPropertyType: SpecPropertyType.RANGED,
     },
     lowerBound: {
         constraint: {
             integer: true,
             min: 1,
         },
-        patternSpecPropertyType: PatternSpecPropertyType.RANGED,
+        specPropertyType: SpecPropertyType.RANGED,
     },
     power: {
-        patternSpecPropertyType: PatternSpecPropertyType.RANGED,
+        specPropertyType: SpecPropertyType.RANGED,
     },
     sequenceType: {
         constraint: [
@@ -31,17 +31,17 @@ const attributes: XenharmonicSeriesPatternSpecAttributes = {
                 key: SequenceType.PARTIAL_PRODUCT,
             },
         ],
-        patternSpecPropertyType: PatternSpecPropertyType.OPTIONED,
+        specPropertyType: SpecPropertyType.OPTIONED,
     },
     upperBound: {
         constraint: {
             integer: true,
             min: 1,
         },
-        patternSpecPropertyType: PatternSpecPropertyType.RANGED,
+        specPropertyType: SpecPropertyType.RANGED,
     },
     useBase: {
-        patternSpecPropertyType: PatternSpecPropertyType.TOGGLED,
+        specPropertyType: SpecPropertyType.TOGGLED,
     },
 }
 

@@ -1,5 +1,5 @@
 export { specData } from './data'
 export {
-    XenharmonicSeriesPatternSpec,
+    XenharmonicSeriesSpec,
     SequenceType,
 } from './types'

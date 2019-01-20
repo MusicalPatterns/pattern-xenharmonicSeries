@@ -1,9 +1,9 @@
 import { Block, to } from '@musical-patterns/utilities'
 import { buildBoundedNumbers } from '../custom'
-import { XenharmonicSeriesPatternSpec } from '../specs'
+import { XenharmonicSeriesSpec } from '../specs'
 
-const buildBlock: (spec: XenharmonicSeriesPatternSpec) => Block =
-    ({ lowerBound, upperBound }: XenharmonicSeriesPatternSpec): Block =>
+const buildBlock: (spec: XenharmonicSeriesSpec) => Block =
+    ({ lowerBound, upperBound }: XenharmonicSeriesSpec): Block =>
         to.Block(buildBoundedNumbers(lowerBound, upperBound))
 
 export {
