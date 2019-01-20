@@ -6,12 +6,12 @@ import {
     from,
     MULTIPLICATIVE_IDENTITY,
     multiply,
-    numbers,
     NumericOperation,
     Power,
     Scalar,
     to,
 } from '@musical-patterns/utilities'
+import { buildBoundedNumbers } from '../custom'
 import { SequenceType, XenharmonicSeriesPatternSpec } from '../specs'
 import { BuildSequenceParameters } from './types'
 
@@ -40,9 +40,7 @@ const buildSequence: (parameters: BuildSequenceParameters) => Scalar[] =
 
 const buildScalars: (spec: XenharmonicSeriesPatternSpec) => Scalar[] =
     ({ base, sequenceType, power, lowerBound, upperBound, useBase }: XenharmonicSeriesPatternSpec): Scalar[] => {
-        const boundedNumbers: number[] = numbers
-            .map((n: number): number => n - 1)
-            .slice(from.Index(lowerBound), apply.Offset(from.Index(upperBound), to.Offset(1)))
+        const boundedNumbers: number[] = buildBoundedNumbers(lowerBound, upperBound)
 
         let initialPartial: number
         let operation: NumericOperation
