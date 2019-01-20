@@ -1,6 +1,6 @@
 import { PatternMaterial } from '@musical-patterns/compiler'
 import { PatternMetadata } from '@musical-patterns/pattern'
-import { buildPatterns, Pattern, PatternId, Patterns } from '@musical-patterns/registry'
+import { buildPatterns, PatternFor, PatternId, Patterns } from '@musical-patterns/registry'
 import { buildEntities, buildScales } from './materials'
 import { post } from './metadata'
 import { specData, XenharmonicSeriesPatternSpec } from './specs'
@@ -18,7 +18,7 @@ const metadata: PatternMetadata = {
     originalPublish: '2016-09-20T07:00:00.000Z',
 }
 
-const pattern: Pattern<XenharmonicSeriesPatternSpec> = {
+const pattern: PatternFor<XenharmonicSeriesPatternSpec> = {
     material,
     metadata,
     patternId: PatternId.XENHARMONIC_SERIES,
