@@ -9,13 +9,13 @@
     "url": "https://github.com/MusicalPatterns/pattern-xenharmonicSeries.git"
   },
   "dependencies": {
-    "@musical-patterns/compiler": "^1.0.75",
+    "@musical-patterns/compiler": "^1.0.76",
     "@musical-patterns/pattern": "^1.0.117",
     "@musical-patterns/utilities": "^1.0.162"
   },
   "devDependencies": {
-    "@musical-patterns/cli": "^1.0.283",
-    "@musical-patterns/playroom": "^1.0.152",
-    "@musical-patterns/snapshot": "^1.0.23"
+    "@musical-patterns/cli": "^1.0.284",
+    "@musical-patterns/playroom": "^1.0.153",
+    "@musical-patterns/snapshot": "^1.0.24"
   }
 }
