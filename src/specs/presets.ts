@@ -1,7 +1,7 @@
 import { standardInitialSpec, StandardSpecProperties } from '@musical-patterns/pattern'
 import { DictionaryOf, from, OCTAVE, to, TRITAVE } from '@musical-patterns/utilities'
 import {
-    XENHARMONIC_SERIES_DEFAULT_PITCH,
+    XENHARMONIC_SERIES_BASE_FREQUENCY,
     XENHARMONIC_SERIES_LOWER_BOUND,
     XENHARMONIC_SERIES_UPPER_BOUND,
 } from '../constants'
@@ -9,7 +9,7 @@ import { SequenceType, XenharmonicSeriesSpec } from './types'
 
 const sharedXenharmonicSeries: XenharmonicSeriesSpec = {
     ...standardInitialSpec,
-    [ StandardSpecProperties.PATTERN_PITCH_SCALAR ]: XENHARMONIC_SERIES_DEFAULT_PITCH,
+    [ StandardSpecProperties.BASE_FREQUENCY ]: XENHARMONIC_SERIES_BASE_FREQUENCY,
     base: OCTAVE,
     lowerBound: XENHARMONIC_SERIES_LOWER_BOUND,
     power: to.Power(-1),
