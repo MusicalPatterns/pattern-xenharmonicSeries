@@ -1,14 +1,15 @@
+import { PresetFor } from '@musical-patterns/pattern'
 import { apply, DictionaryOf, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'
 import { buildScalars, specData, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('scales', () => {
-    let presets: DictionaryOf<XenharmonicSeriesSpec>
+    let presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>>
     beforeEach(() => {
         presets = specData.presets || {}
     })
 
     it('harmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.standardHarmonicSeries
+        const spec: XenharmonicSeriesSpec = presets.standardHarmonicSeries.spec
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -17,7 +18,7 @@ describe('scales', () => {
     })
 
     it('matharmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.matharmonicSeries
+        const spec: XenharmonicSeriesSpec = presets.matharmonicSeries.spec
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -31,8 +32,8 @@ describe('scales', () => {
         ].map(to.Scalar))
     })
 
-    it('ed-2 harmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.edTwoHarmonicSeries
+    it('2-edharmonic series', () => {
+        const spec: XenharmonicSeriesSpec = presets.edTwoHarmonicSeries.spec
         const scalars: Scalar[] = buildScalars(spec)
 
         // tslint:disable:binary-expression-operand-order
@@ -45,8 +46,8 @@ describe('scales', () => {
         ].map(to.Scalar))
     })
 
-    it('ed-3 harmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.edThreeHarmonicSeries
+    it('3-edharmonic series', () => {
+        const spec: XenharmonicSeriesSpec = presets.edThreeHarmonicSeries.spec
         const scalars: Scalar[] = buildScalars(spec)
 
         // tslint:disable:binary-expression-operand-order
@@ -56,6 +57,20 @@ describe('scales', () => {
             3 * Math.sqrt(3),
             3 * Math.sqrt(3) * Math.cbrt(3),
             3 * Math.sqrt(3) * Math.cbrt(3) * from.Base(apply.Power(to.Base(3), to.Power(1 / 4))),
+        ].map(to.Scalar))
+    })
+
+    it('e-edharmonic series', () => {
+        const spec: XenharmonicSeriesSpec = presets.edEulerHarmonicSeries.spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        // tslint:disable:binary-expression-operand-order
+        testArraysAreClose(scalars, [
+            1,
+            Math.E,
+            Math.E * Math.sqrt(Math.E),
+            Math.E * Math.sqrt(Math.E) * Math.cbrt(Math.E),
+            Math.E * Math.sqrt(Math.E) * Math.cbrt(Math.E) * from.Base(apply.Power(to.Base(Math.E), to.Power(1 / 4))),
         ].map(to.Scalar))
     })
 })
