@@ -1,6 +1,8 @@
+// tslint:disable:binary-expression-operand-order
+
 import { PresetFor } from '@musical-patterns/pattern'
 import { apply, DictionaryOf, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'
-import { buildScalars, specData, XenharmonicSeriesSpec } from '../../../src/indexForTest'
+import { buildScalars, specData, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('scales', () => {
     let presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>>
@@ -9,7 +11,7 @@ describe('scales', () => {
     })
 
     it('harmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.standardHarmonicSeries.spec
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.STANDARD_HARMONIC_SERIES ].spec
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -18,7 +20,7 @@ describe('scales', () => {
     })
 
     it('matharmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.matharmonicSeries.spec
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.MATHARMONIC_SERIES ].spec
         const scalars: Scalar[] = buildScalars(spec)
 
         testArraysAreClose(scalars, [
@@ -33,10 +35,9 @@ describe('scales', () => {
     })
 
     it('2-edharmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.edTwoHarmonicSeries.spec
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.ED_TWO_HARMONIC_SERIES ].spec
         const scalars: Scalar[] = buildScalars(spec)
 
-        // tslint:disable:binary-expression-operand-order
         testArraysAreClose(scalars, [
             1,
             2,
@@ -47,10 +48,9 @@ describe('scales', () => {
     })
 
     it('3-edharmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.edThreeHarmonicSeries.spec
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.ED_THREE_HARMONIC_SERIES ].spec
         const scalars: Scalar[] = buildScalars(spec)
 
-        // tslint:disable:binary-expression-operand-order
         testArraysAreClose(scalars, [
             1,
             3,
@@ -61,10 +61,9 @@ describe('scales', () => {
     })
 
     it('e-edharmonic series', () => {
-        const spec: XenharmonicSeriesSpec = presets.edEulerHarmonicSeries.spec
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES ].spec
         const scalars: Scalar[] = buildScalars(spec)
 
-        // tslint:disable:binary-expression-operand-order
         testArraysAreClose(scalars, [
             1,
             Math.E,
@@ -75,10 +74,9 @@ describe('scales', () => {
     })
 
     it('3rd tritave of odd harmonics scale', () => {
-        const spec: XenharmonicSeriesSpec = presets.thirdTritaveOddHarmonics.spec
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ].spec
         const scalars: Scalar[] = buildScalars(spec)
 
-        // tslint:disable:binary-expression-operand-order
         testArraysAreClose(scalars, [
             9 / 9,
             11 / 9,
@@ -107,6 +105,50 @@ describe('scales', () => {
             9 * 21 / 9,
             9 * 23 / 9,
             9 * 25 / 9,
+        ].map(to.Scalar))
+    })
+
+    it('8th octave of harmonics scale', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.EIGHTH_OCTAVE_HARMONICS ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            128 / 128,
+            129 / 128,
+            130 / 128,
+            131 / 128,
+        ].map(to.Scalar))
+    })
+
+    it('4th octave of harmonics scale', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.FOURTH_OCTAVE_HARMONICS ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            8 / 8,
+            9 / 8,
+            10 / 8,
+            11 / 8,
+            12 / 8,
+            13 / 8,
+            14 / 8,
+            15 / 8,
+            2 * 8 / 8,
+            2 * 9 / 8,
+            2 * 10 / 8,
+            2 * 11 / 8,
+            2 * 12 / 8,
+            2 * 13 / 8,
+            2 * 14 / 8,
+            2 * 15 / 8,
+            4 * 8 / 8,
+            4 * 9 / 8,
+            4 * 10 / 8,
+            4 * 11 / 8,
+            4 * 12 / 8,
+            4 * 13 / 8,
+            4 * 14 / 8,
+            4 * 15 / 8,
         ].map(to.Scalar))
     })
 })

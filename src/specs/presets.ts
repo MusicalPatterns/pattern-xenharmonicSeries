@@ -1,66 +1,50 @@
 import { PresetFor } from '@musical-patterns/pattern'
-import { DictionaryOf, EVERY_OTHER, from, to, TRITAVE } from '@musical-patterns/utilities'
-import { THIRD } from './constants'
+import { DictionaryOf } from '@musical-patterns/utilities'
 import { initial } from './initial'
-import { SequenceType, XenharmonicSeriesSpec, XenharmonicSeriesSpecProperty } from './types'
-
-const standardHarmonicSeriesSpec: XenharmonicSeriesSpec = {
-    ...initial,
-    [ XenharmonicSeriesSpecProperty.POWER ]: to.Power(0),
-}
-
-const sharedEdHarmonicSeriesSpec: XenharmonicSeriesSpec = {
-    ...initial,
-    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: to.Index(0),
-    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
-    [ XenharmonicSeriesSpecProperty.USE_BASE ]: true,
-}
-
-const edTwoHarmonicSeriesSpec: XenharmonicSeriesSpec = sharedEdHarmonicSeriesSpec
-
-const edThreeHarmonicSeriesSpec: XenharmonicSeriesSpec = {
-    ...sharedEdHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.BASE ]: TRITAVE,
-}
-
-const edEulerHarmonicSeriesSpec: XenharmonicSeriesSpec = {
-    ...sharedEdHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.BASE ]: to.Base(Math.E),
-}
-
-const thirdTritaveOddHarmonicsSpec: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: from.Count(THIRD) * from.Base(TRITAVE) - from.Scalar(EVERY_OTHER),
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: THIRD,
-    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: EVERY_OTHER,
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Index(from.Count(THIRD) * from.Base(TRITAVE)),
-}
+import {
+    edEulerHarmonicSeriesSpec,
+    edThreeHarmonicSeriesSpec,
+    edTwoHarmonicSeriesSpec,
+    eighthOctaveHarmonics,
+    fourthOctaveHarmonics,
+    standardHarmonicSeriesSpec,
+    thirdTritaveOddHarmonicsSpec,
+} from './presetSpecs'
+import { XenharmonicSeriesPreset, XenharmonicSeriesSpec } from './types'
 
 const presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>> = {
-    edEulerHarmonicSeries: {
+    [ XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES ]: {
         formattedName: 'e-edharmonic series',
         order: 5,
         spec: edEulerHarmonicSeriesSpec,
     },
-    edThreeHarmonicSeries: {
+    [ XenharmonicSeriesPreset.ED_THREE_HARMONIC_SERIES ]: {
         formattedName: '3-edharmonic series',
         order: 4,
         spec: edThreeHarmonicSeriesSpec,
     },
-    edTwoHarmonicSeries: {
+    [ XenharmonicSeriesPreset.ED_TWO_HARMONIC_SERIES ]: {
         formattedName: '2-edharmonic series',
         order: 3,
         spec: edTwoHarmonicSeriesSpec,
     },
-    matharmonicSeries: {
+    [ XenharmonicSeriesPreset.FOURTH_OCTAVE_HARMONICS ]: {
+        order: 7,
+        spec: fourthOctaveHarmonics,
+    },
+    [ XenharmonicSeriesPreset.MATHARMONIC_SERIES ]: {
         order: 2,
         spec: initial,
     },
-    standardHarmonicSeries: {
+    [ XenharmonicSeriesPreset.STANDARD_HARMONIC_SERIES ]: {
         order: 1,
         spec: standardHarmonicSeriesSpec,
     },
-    thirdTritaveOddHarmonics: {
+    [ XenharmonicSeriesPreset.EIGHTH_OCTAVE_HARMONICS ]: {
+        order: 8,
+        spec: eighthOctaveHarmonics,
+    },
+    [ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ]: {
         order: 6,
         spec: thirdTritaveOddHarmonicsSpec,
     },

@@ -11,7 +11,8 @@ export {
     specData,
     XenharmonicSeriesSpec,
     SequenceType,
-} from './specs'
+    XenharmonicSeriesPreset,
+} from './specs/indexForTest'
 
 export { pattern } from './patterns'
 

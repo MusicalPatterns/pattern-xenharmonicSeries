@@ -1,6 +1,6 @@
 {
   "name": "@musical-patterns/pattern-xenharmonic-series",
-  "version": "1.0.51",
+  "version": "1.0.52",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "license": "MIT",
@@ -10,12 +10,12 @@
   },
   "dependencies": {
     "@musical-patterns/compiler": "^1.0.76",
-    "@musical-patterns/pattern": "^1.0.126",
-    "@musical-patterns/utilities": "^1.0.170"
+    "@musical-patterns/pattern": "^1.0.128",
+    "@musical-patterns/utilities": "^1.0.171"
   },
   "devDependencies": {
     "@musical-patterns/cli": "^1.0.296",
-    "@musical-patterns/playroom": "^1.0.165",
+    "@musical-patterns/playroom": "^1.0.166",
     "@musical-patterns/snapshot": "^1.0.24"
   }
 }

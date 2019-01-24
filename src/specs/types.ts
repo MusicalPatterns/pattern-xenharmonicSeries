@@ -21,6 +21,17 @@ enum XenharmonicSeriesSpecProperty {
     USE_BASE = 'useBase',
 }
 
+enum XenharmonicSeriesPreset {
+    STANDARD_HARMONIC_SERIES = 'standardHarmonicSeries',
+    MATHARMONIC_SERIES = 'matharmonicSeries',
+    ED_TWO_HARMONIC_SERIES = 'edTwoHarmonicSeries',
+    ED_THREE_HARMONIC_SERIES = 'edThreeHarmonicSeries',
+    ED_EULER_HARMONIC_SERIES = 'edEulerHarmonicSeries',
+    THIRD_TRITAVE_ODD_HARMONICS = 'thirdTritaveOddHarmonics',
+    EIGHTH_OCTAVE_HARMONICS = 'eighthOctaveHarmonics',
+    FOURTH_OCTAVE_HARMONICS = 'fourthOctaveHarmonics',
+}
+
 enum SequenceType {
     PARTIAL_SUM = 'partial sum',
     PARTIAL_PRODUCT = 'partial product',
@@ -59,4 +70,5 @@ export {
     XenharmonicSeriesSpec,
     XenharmonicSeriesSpecAttributes,
     XenharmonicSeriesSpecProperty,
+    XenharmonicSeriesPreset,
 }
