@@ -16,4 +16,32 @@ describe('blocks', () => {
                 2,
             ])
     })
+
+    it('expands when there are multiple iterations', () => {
+        const spec: XenharmonicSeriesSpec = {
+            ...specData.initial,
+            iterations: to.Count(5),
+            lowerBound: to.Index(3),
+            upperBound: to.Index(5),
+        }
+
+        expect(buildBlock(spec))
+            .toEqual([
+                0,
+                1,
+                2,
+                3,
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+            ])
+    })
 })

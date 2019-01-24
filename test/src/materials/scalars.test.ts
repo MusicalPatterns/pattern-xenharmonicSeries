@@ -73,4 +73,40 @@ describe('scales', () => {
             Math.E * Math.sqrt(Math.E) * Math.cbrt(Math.E) * from.Base(apply.Power(to.Base(Math.E), to.Power(1 / 4))),
         ].map(to.Scalar))
     })
+
+    it('3rd tritave of odd harmonics scale', () => {
+        const spec: XenharmonicSeriesSpec = presets.thirdTritaveOddHarmonics.spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        // tslint:disable:binary-expression-operand-order
+        testArraysAreClose(scalars, [
+            9 / 9,
+            11 / 9,
+            13 / 9,
+            15 / 9,
+            17 / 9,
+            19 / 9,
+            21 / 9,
+            23 / 9,
+            25 / 9,
+            3 * 9 / 9,
+            3 * 11 / 9,
+            3 * 13 / 9,
+            3 * 15 / 9,
+            3 * 17 / 9,
+            3 * 19 / 9,
+            3 * 21 / 9,
+            3 * 23 / 9,
+            3 * 25 / 9,
+            9 * 9 / 9,
+            9 * 11 / 9,
+            9 * 13 / 9,
+            9 * 15 / 9,
+            9 * 17 / 9,
+            9 * 19 / 9,
+            9 * 21 / 9,
+            9 * 23 / 9,
+            9 * 25 / 9,
+        ].map(to.Scalar))
+    })
 })
