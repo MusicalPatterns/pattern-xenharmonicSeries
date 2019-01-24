@@ -9,7 +9,7 @@ import {
     fourthOctaveHarmonics,
     standardHarmonicSeriesSpec,
     thirdTritaveOddHarmonicsSpec,
-} from './presetSpecs'
+} from './specs'
 import { XenharmonicSeriesPreset, XenharmonicSeriesSpec } from './types'
 
 const presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>> = {

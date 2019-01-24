@@ -1,6 +1,6 @@
 import { SpecPropertyType, standardSpecAttributes } from '@musical-patterns/pattern'
 import { baseDescription, useBaseDescription } from './descriptions'
-import { specControlsOrder } from './order'
+import { specControlsOrder } from './orders'
 import { SequenceType, XenharmonicSeriesSpecAttributes, XenharmonicSeriesSpecProperty } from './types'
 
 const attributes: XenharmonicSeriesSpecAttributes = {

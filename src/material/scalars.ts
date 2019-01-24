@@ -12,7 +12,7 @@ import {
     to,
 } from '@musical-patterns/utilities'
 import { buildBoundedNumbers } from '../custom'
-import { SequenceType, XenharmonicSeriesSpec } from '../specs'
+import { SequenceType, XenharmonicSeriesSpec } from '../spec'
 import { BuildSequenceParameters, CalculatePartialFunction, CalculatePartialParameters } from './types'
 
 const indexToPower: CalculatePartialFunction =

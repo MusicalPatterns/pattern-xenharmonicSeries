@@ -7,7 +7,7 @@ export {
     buildRootPart,
     buildScales,
     buildEntities,
-} from './materials/indexForTest'
+} from './material/indexForTest'
 export {
     specData,
     XenharmonicSeriesSpec,
@@ -15,7 +15,7 @@ export {
     XenharmonicSeriesPreset,
     XenharmonicSeriesSpecProperty,
     initial,
-} from './specs/indexForTest'
+} from './spec/indexForTest'
 
 export { pattern } from './patterns'
 

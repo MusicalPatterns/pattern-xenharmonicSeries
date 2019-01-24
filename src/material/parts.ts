@@ -1,7 +1,7 @@
 import { NoteSpec } from '@musical-patterns/compiler'
 import { from } from '@musical-patterns/utilities'
 import { duration } from '../custom'
-import { XenharmonicSeriesSpec } from '../specs'
+import { XenharmonicSeriesSpec } from '../spec'
 import { buildBlock } from './blocks'
 import { buildNoteSpec, buildRootNoteSpec } from './notes'
 

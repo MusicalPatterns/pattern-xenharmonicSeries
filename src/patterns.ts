@@ -1,8 +1,8 @@
 import { Material } from '@musical-patterns/compiler'
 import { buildPatterns, Id, Metadata, PatternFor, Patterns } from '@musical-patterns/pattern'
-import { buildEntities, buildScales } from './materials'
+import { buildEntities, buildScales } from './material'
 import { post } from './metadata'
-import { specData, XenharmonicSeriesSpec } from './specs'
+import { specData, XenharmonicSeriesSpec } from './spec'
 
 const material: Material = {
     buildEntitiesFunction: buildEntities,

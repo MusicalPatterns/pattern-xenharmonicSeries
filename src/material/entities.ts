@@ -1,5 +1,5 @@
 import { BuildEntitiesFunction, Entity, TimbreNameEnum } from '@musical-patterns/compiler'
-import { XenharmonicSeriesSpec } from '../specs'
+import { XenharmonicSeriesSpec } from '../spec'
 import { buildRootPart, buildScalePart } from './parts'
 
 const buildEntities: BuildEntitiesFunction =

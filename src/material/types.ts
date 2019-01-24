@@ -1,5 +1,5 @@
 import { Base, NumericOperation, Power } from '@musical-patterns/utilities'
-import { XenharmonicSeriesSpec } from '../specs'
+import { XenharmonicSeriesSpec } from '../spec'
 
 interface BuildSequenceParameters {
     boundedNumbers: number[],

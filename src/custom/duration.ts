@@ -1,5 +1,5 @@
 import { from, Time, to } from '@musical-patterns/utilities'
-import { XenharmonicSeriesSpec } from '../specs'
+import { XenharmonicSeriesSpec } from '../spec'
 
 const duration: (spec: XenharmonicSeriesSpec) => Time =
     ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpec): Time =>
