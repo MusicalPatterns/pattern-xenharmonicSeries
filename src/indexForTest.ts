@@ -6,12 +6,15 @@ export {
     buildScalePart,
     buildRootPart,
     buildScales,
+    buildEntities,
 } from './materials/indexForTest'
 export {
     specData,
     XenharmonicSeriesSpec,
     SequenceType,
     XenharmonicSeriesPreset,
+    XenharmonicSeriesSpecProperty,
+    initial,
 } from './specs/indexForTest'
 
 export { pattern } from './patterns'
