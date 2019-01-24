@@ -58,7 +58,7 @@ const buildSequence: (parameters: BuildSequenceParameters) => number[] =
 
 const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
     (spec: XenharmonicSeriesSpec): Scalar[] => {
-        const { sequenceType, lowerBound, upperBound, iterations, ground, constant } = spec
+        const { sequenceType, lowerBound, upperBound, iterations } = spec
         const boundedNumbers: number[] = buildBoundedNumbers(lowerBound, to.Index(from.Index(upperBound) + 1))
 
         let initialPartial: number

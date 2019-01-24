@@ -2,6 +2,25 @@
   {
     "notes": [
       {
+        "duration": 22400,
+        "gain": 1,
+        "frequency": 220,
+        "position": [
+          0,
+          0,
+          0
+        ],
+        "sustain": 20160
+      }
+    ],
+    "voiceSpec": {
+      "timbreName": "CHORUS_STRINGS",
+      "voiceType": "OSCILLATOR"
+    }
+  },
+  {
+    "notes": [
+      {
         "duration": 700,
         "gain": 1,
         "frequency": 220,

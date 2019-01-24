@@ -1,6 +1,12 @@
 // tslint:disable:no-reaching-imports
 
-export { buildScalars, buildBlock } from './materials/indexForTest'
+export {
+    buildScalars,
+    buildBlock,
+    buildScalePart,
+    buildRootPart,
+    buildScales,
+} from './materials/indexForTest'
 export {
     specData,
     XenharmonicSeriesSpec,

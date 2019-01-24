@@ -1,2 +1,2 @@
 export { buildBoundedNumbers } from './bounds'
-export { ground } from './ground'
+export { duration } from './duration'

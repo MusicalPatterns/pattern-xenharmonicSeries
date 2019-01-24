@@ -13,6 +13,18 @@ const buildNoteSpec: (blockElement: number) => NoteSpec =
         },
     })
 
+const buildRootNoteSpec: (blockElement: number) => NoteSpec =
+    (blockElement: number): NoteSpec => ({
+        durationSpec: {
+            scalar: to.Scalar(blockElement),
+            scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX,
+        },
+        pitchSpec: {
+            scaleIndex: DEFAULT_PITCH_SCALE_INDEX,
+        },
+    })
+
 export {
     buildNoteSpec,
+    buildRootNoteSpec,
 }

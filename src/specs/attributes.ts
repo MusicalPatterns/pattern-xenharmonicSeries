@@ -1,60 +1,56 @@
-// tslint:disable:no-trailing-whitespace
-
 import { SpecPropertyType, standardSpecAttributes } from '@musical-patterns/pattern'
-import { SequenceType, XenharmonicSeriesSpecAttributes } from './types'
-
-const baseDescription: string = `
-when "use base" is on, will raise this number to what the term would have been otherwise 
-(otherwise, this value is ignored)
-`
-
-const useBaseDescription: string = `
-when on, will raise the "base" to what the term would have been otherwise (and otherwise will ignore it)
-`
+import { baseDescription, useBaseDescription } from './descriptions'
+import { specControlsOrder } from './order'
+import { SequenceType, XenharmonicSeriesSpecAttributes, XenharmonicSeriesSpecProperty } from './types'
 
 const attributes: XenharmonicSeriesSpecAttributes = {
     ...standardSpecAttributes,
-    base: {
+    [ XenharmonicSeriesSpecProperty.BASE ]: {
         constraint: {
             excludeMin: true,
             min: 1,
         },
         description: baseDescription,
-        order: 6,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.BASE),
         specPropertyType: SpecPropertyType.RANGED,
     },
-    constant: {
+    [ XenharmonicSeriesSpecProperty.CONSTANT ]: {
         description: 'a constant added to each element in the final sequence',
-        order: 7,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.CONSTANT),
         specPropertyType: SpecPropertyType.RANGED,
     },
-    ground: {
+    [ XenharmonicSeriesSpecProperty.GROUND ]: {
         description: 'divide all elements in the final sequence by the first such that the first is set to 1',
         formattedName: 'ground the sequence at 1',
-        order: 8,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.GROUND),
         specPropertyType: SpecPropertyType.TOGGLED,
     },
-    iterations: {
+    [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: {
+        description: 'whether to hold the root to compare each other note against',
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.HOLD_ROOT),
+        specPropertyType: SpecPropertyType.TOGGLED,
+    },
+    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: {
         description: 'how many times to climb by this scale before repeating',
         formattedName: 'scale iterations',
-        order: 9,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.SCALE_ITERATIONS),
         specPropertyType: SpecPropertyType.RANGED,
     },
-    lowerBound: {
+    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: {
         constraint: {
             integer: true,
         },
         description: 'lower bound of the partial summation/product',
         formattedName: 'lower bound of summation/product',
-        order: 3,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.LOWER_BOUND),
         specPropertyType: SpecPropertyType.RANGED,
     },
-    power: {
+    [ XenharmonicSeriesSpecProperty.POWER ]: {
         description: 'the power to raise the index of summation/product to in each term',
-        order: 2,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.POWER),
         specPropertyType: SpecPropertyType.RANGED,
     },
-    sequenceType: {
+    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: {
         constraint: [
             {
                 formattedName: 'partial sum',
@@ -68,26 +64,26 @@ const attributes: XenharmonicSeriesSpecAttributes = {
             },
         ],
         description: 'Σ or Π',
-        order: 1,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.SEQUENCE_TYPE),
         specPropertyType: SpecPropertyType.OPTIONED,
     },
-    termCoefficient: {
+    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: {
         description: 'a coefficient applied to each term',
-        order: 8,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.TERM_COEFFICIENT),
         specPropertyType: SpecPropertyType.RANGED,
     },
-    upperBound: {
+    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: {
         constraint: {
             integer: true,
         },
         description: 'upper bound of the partial summation/product',
         formattedName: 'upper bound of summation/product',
-        order: 4,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.UPPER_BOUND),
         specPropertyType: SpecPropertyType.RANGED,
     },
-    useBase: {
+    [ XenharmonicSeriesSpecProperty.USE_BASE ]: {
         description: useBaseDescription,
-        order: 5,
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.USE_BASE),
         specPropertyType: SpecPropertyType.TOGGLED,
     },
 }
