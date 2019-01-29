@@ -1,5 +1,5 @@
 import { calculateNoteSpecsTotalCompiledDuration, NoteSpec } from '@musical-patterns/compiler'
-import { DEFAULT_DURATIONS_SCALE_INDEX, DEFAULT_PITCH_SCALE_INDEX } from '@musical-patterns/pattern'
+import { STANDARD_DURATIONS_SCALE_INDEX, STANDARD_PITCH_SCALE_INDEX } from '@musical-patterns/pattern'
 import { Time, to } from '@musical-patterns/utilities'
 import { buildRootPart, buildScalePart, buildScales, specData, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
@@ -21,28 +21,28 @@ describe('parts', () => {
             expect(part)
                 .toEqual([
                     {
-                        durationSpec: { scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(0), scaleIndex: DEFAULT_PITCH_SCALE_INDEX },
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        durationSpec: { scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(1), scaleIndex: DEFAULT_PITCH_SCALE_INDEX },
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        durationSpec: { scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(2), scaleIndex: DEFAULT_PITCH_SCALE_INDEX },
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        durationSpec: { scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(3), scaleIndex: DEFAULT_PITCH_SCALE_INDEX },
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        durationSpec: { scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(4), scaleIndex: DEFAULT_PITCH_SCALE_INDEX },
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        durationSpec: { scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(5), scaleIndex: DEFAULT_PITCH_SCALE_INDEX },
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })
@@ -55,8 +55,8 @@ describe('parts', () => {
             expect(rootPart)
                 .toEqual([
                     {
-                        durationSpec: { scalar: to.Scalar(6), scaleIndex: DEFAULT_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { scaleIndex: DEFAULT_PITCH_SCALE_INDEX },
+                        durationSpec: { scalar: to.Scalar(6), scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })
