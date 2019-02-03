@@ -2,6 +2,7 @@
 
 export {
     buildScalars,
+    buildSegment,
     buildBlock,
     buildScalePart,
     buildRootPart,

@@ -12,6 +12,7 @@ const specControlsOrder: XenharmonicSeriesSpecProperty[] = [
     XenharmonicSeriesSpecProperty.GROUND,
     XenharmonicSeriesSpecProperty.TERM_COEFFICIENT,
     XenharmonicSeriesSpecProperty.SCALE_ITERATIONS,
+    XenharmonicSeriesSpecProperty.STACK,
 ]
 
 export {
