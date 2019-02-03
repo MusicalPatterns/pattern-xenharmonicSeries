@@ -18,8 +18,14 @@ interface CalculatePartialParameters {
     spec: XenharmonicSeriesSpec
 }
 
+interface SequenceTypeParameters {
+    initialPartial: number,
+    operation: NumericOperation,
+}
+
 export {
     BuildSequenceParameters,
     CalculatePartialFunction,
     CalculatePartialParameters,
+    SequenceTypeParameters,
 }
