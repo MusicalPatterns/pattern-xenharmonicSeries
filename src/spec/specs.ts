@@ -1,5 +1,14 @@
-import { apply, EVERY_OTHER, from, HALF, OCTAVE, to, TRITAVE, windowStepCount } from '@musical-patterns/utilities'
-import { EIGHTH, FOURTH, THIRD, XENHARMONIC_SERIES_SCALE_ITERATIONS } from './constants'
+import { EVERY_OTHER, from, OCTAVE, to, TRITAVE, windowStepCount } from '@musical-patterns/utilities'
+import {
+    DU_PARTICULATE,
+    EIGHTH,
+    EIGHTH_OCTAVE_HARMONICS_CONSTANT,
+    FOURTH,
+    FOURTH_OCTAVE_HARMONICS_CONSTANT,
+    THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
+    THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
+    XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+} from './constants'
 import { initial } from './initial'
 import { SequenceType, XenharmonicSeriesSpec, XenharmonicSeriesSpecProperty } from './types'
 
@@ -29,34 +38,22 @@ const edEulerHarmonicSeriesSpec: XenharmonicSeriesSpec = {
 
 const thirdTritaveOddHarmonicsSpec: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: apply.Offset(
-        from.Base(apply.Power(TRITAVE, to.Power(apply.Offset(from.Count(THIRD), to.Offset(-1))))),
-        to.Offset(-from.Scalar(EVERY_OTHER)),
-    ),
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_SCALE_ITERATIONS,
+    [ XenharmonicSeriesSpecProperty.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
     [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: EVERY_OTHER,
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: apply.Scalar(
-        to.Index(from.Count(windowStepCount(TRITAVE, THIRD))),
-        HALF,
-    ),
+    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
 }
 
 const fourthOctaveHarmonics: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: apply.Offset(
-        from.Base(apply.Power(OCTAVE, to.Power(apply.Offset(from.Count(FOURTH), to.Offset(-1))))),
-        to.Offset(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
-    ),
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_SCALE_ITERATIONS,
+    [ XenharmonicSeriesSpecProperty.CONSTANT ]: FOURTH_OCTAVE_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Index(from.Count(windowStepCount(OCTAVE, FOURTH))),
 }
 
 const eighthOctaveHarmonics: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: apply.Offset(
-        from.Base(apply.Power(OCTAVE, to.Power(apply.Offset(from.Count(EIGHTH), to.Offset(-1))))),
-        to.Offset(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
-    ),
+    [ XenharmonicSeriesSpecProperty.CONSTANT ]: EIGHTH_OCTAVE_HARMONICS_CONSTANT,
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Index(from.Count(windowStepCount(OCTAVE, EIGHTH))),
 }
 
@@ -66,9 +63,23 @@ const subharmonicSeriesSpec: XenharmonicSeriesSpec = {
 }
 
 const superparticularSeriesSpec: XenharmonicSeriesSpec = {
-    ...initial,
-    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.SEQUENCE,
+    ...subharmonicSeriesSpec,
     [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: true,
+}
+
+const duperparticularSeriesSpec: XenharmonicSeriesSpec = {
+    ...superparticularSeriesSpec,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DU_PARTICULATE,
+}
+
+const subparticularSeriesSpec: XenharmonicSeriesSpec = {
+    ...standardHarmonicSeriesSpec,
+    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: true,
+}
+
+const dubparticularSeriesSpec: XenharmonicSeriesSpec = {
+    ...subparticularSeriesSpec,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DU_PARTICULATE,
 }
 
 export {
@@ -81,4 +92,7 @@ export {
     thirdTritaveOddHarmonicsSpec,
     subharmonicSeriesSpec,
     superparticularSeriesSpec,
+    duperparticularSeriesSpec,
+    subparticularSeriesSpec,
+    dubparticularSeriesSpec,
 }

@@ -181,4 +181,47 @@ describe('scales', () => {
             8 / 7,
         ].map(to.Scalar))
     })
+
+    it('duperparticular series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            3 / 1,
+            4 / 2,
+            5 / 3,
+            6 / 4,
+            7 / 5,
+            8 / 6,
+            9 / 7,
+        ].map(to.Scalar))
+    })
+
+    it('subparticular series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SUBPARTICULAR_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            1 / 2,
+            2 / 3,
+            3 / 4,
+            4 / 5,
+            5 / 6,
+            6 / 7,
+        ].map(to.Scalar))
+    })
+
+    it('dubparticular series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.DUBPARTICULAR_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            1 / 3,
+            2 / 4,
+            3 / 5,
+            4 / 6,
+            5 / 7,
+            6 / 8,
+        ].map(to.Scalar))
+    })
 })

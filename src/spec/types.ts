@@ -35,6 +35,9 @@ enum XenharmonicSeriesPreset {
     FOURTH_OCTAVE_HARMONICS = 'fourthOctaveHarmonics',
     SUBHARMONIC_SERIES = 'subharmonicSeries',
     SUPERPARTICULAR_SERIES = 'superparticularSeries',
+    DUPERPARTICULAR_SERIES = 'duperparticularSeries',
+    SUBPARTICULAR_SERIES = 'subparticularSeries',
+    DUBPARTICULAR_SERIES = 'dubparticularSeries',
 }
 
 enum SequenceType {

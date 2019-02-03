@@ -2,6 +2,8 @@ import { PresetFor } from '@musical-patterns/pattern'
 import { DictionaryOf } from '@musical-patterns/utilities'
 import { initial } from './initial'
 import {
+    dubparticularSeriesSpec,
+    duperparticularSeriesSpec,
     edEulerHarmonicSeriesSpec,
     edThreeHarmonicSeriesSpec,
     edTwoHarmonicSeriesSpec,
@@ -9,6 +11,7 @@ import {
     fourthOctaveHarmonics,
     standardHarmonicSeriesSpec,
     subharmonicSeriesSpec,
+    subparticularSeriesSpec,
     superparticularSeriesSpec,
     thirdTritaveOddHarmonicsSpec,
 } from './specs'
@@ -57,6 +60,18 @@ const presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>> = {
     [ XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES ]: {
         order: 10,
         spec: superparticularSeriesSpec,
+    },
+    [ XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES ]: {
+        order: 11,
+        spec: duperparticularSeriesSpec,
+    },
+    [ XenharmonicSeriesPreset.SUBPARTICULAR_SERIES ]: {
+        order: 12,
+        spec: subparticularSeriesSpec,
+    },
+    [ XenharmonicSeriesPreset.DUBPARTICULAR_SERIES ]: {
+        order: 13,
+        spec: dubparticularSeriesSpec,
     },
 }
 
