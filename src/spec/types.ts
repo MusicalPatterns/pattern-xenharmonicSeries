@@ -22,6 +22,7 @@ enum XenharmonicSeriesSpecProperty {
     UPPER_BOUND = 'upperBound',
     USE_BASE = 'useBase',
     USE_PARTICULATE = 'useParticulate',
+    DESCENDING = 'descending',
 }
 
 enum XenharmonicSeriesPreset {
@@ -49,6 +50,7 @@ enum SequenceType {
 interface XenharmonicSeriesSpec extends Spec {
     [ XenharmonicSeriesSpecProperty.BASE ]: Base,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: number,
+    [ XenharmonicSeriesSpecProperty.DESCENDING ]: boolean,
     [ XenharmonicSeriesSpecProperty.GROUND ]: boolean,
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: boolean,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: Count,
@@ -66,6 +68,7 @@ interface XenharmonicSeriesSpec extends Spec {
 interface XenharmonicSeriesSpecAttributes extends SpecAttributes {
     [ XenharmonicSeriesSpecProperty.BASE ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: RangedSpecPropertyAttributes,
+    [ XenharmonicSeriesSpecProperty.DESCENDING ]: ToggledSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.GROUND ]: ToggledSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: ToggledSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: RangedSpecPropertyAttributes,

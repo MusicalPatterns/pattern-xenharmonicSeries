@@ -1,7 +1,14 @@
 import { calculateNoteSpecsTotalCompiledDuration, NoteSpec } from '@musical-patterns/compiler'
 import { STANDARD_DURATIONS_SCALE_INDEX, STANDARD_PITCH_SCALE_INDEX } from '@musical-patterns/pattern'
 import { Time, to } from '@musical-patterns/utilities'
-import { buildRootPart, buildScalePart, buildScales, specData, XenharmonicSeriesSpec } from '../../../src/indexForTest'
+import {
+    buildRootPart,
+    buildScalePart,
+    buildScales,
+    specData,
+    XenharmonicSeriesSpec,
+    XenharmonicSeriesSpecProperty,
+} from '../../../src/indexForTest'
 
 describe('parts', () => {
     let spec: XenharmonicSeriesSpec
@@ -43,6 +50,42 @@ describe('parts', () => {
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
                         pitchSpec: { index: to.Index(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                    },
+                ])
+        })
+
+        it('can descend', () => {
+            const reversedSpec: XenharmonicSeriesSpec = {
+                ...spec,
+                [ XenharmonicSeriesSpecProperty.DESCENDING ]: true,
+            }
+            const part: NoteSpec[] = buildScalePart(reversedSpec)
+
+            expect(part)
+                .toEqual([
+                    {
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                    },
+                    {
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                    },
+                    {
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                    },
+                    {
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                    },
+                    {
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                    },
+                    {
+                        durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        pitchSpec: { index: to.Index(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })

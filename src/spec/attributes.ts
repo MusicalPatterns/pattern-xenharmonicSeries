@@ -1,3 +1,5 @@
+// tslint:disable:max-file-line-count
+
 import {
     OptionedConstraint,
     RangedConstraint,
@@ -90,6 +92,11 @@ const attributes: XenharmonicSeriesSpecAttributes = {
     [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: {
         description: 'turn use of particulate effect on or off',
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.USE_PARTICULATE),
+        specPropertyType: SpecPropertyType.TOGGLED,
+    },
+    [ XenharmonicSeriesSpecProperty.DESCENDING ]: {
+        description: 'reverse the scale so that it descends in steps (not necessarily in pitch)',
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.DESCENDING),
         specPropertyType: SpecPropertyType.TOGGLED,
     },
 }

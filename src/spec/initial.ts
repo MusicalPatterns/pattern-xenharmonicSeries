@@ -13,6 +13,7 @@ const initial: XenharmonicSeriesSpec = {
     [ StandardSpecProperties.BASE_FREQUENCY ]: XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY,
     [ XenharmonicSeriesSpecProperty.BASE ]: OCTAVE,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: 0,
+    [ XenharmonicSeriesSpecProperty.DESCENDING ]: false,
     [ XenharmonicSeriesSpecProperty.GROUND ]: true,
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: true,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: to.Count(1),

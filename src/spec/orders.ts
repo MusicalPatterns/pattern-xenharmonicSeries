@@ -8,6 +8,7 @@ const specControlsOrder: XenharmonicSeriesSpecProperty[] = [
     XenharmonicSeriesSpecProperty.UPPER_BOUND,
     XenharmonicSeriesSpecProperty.USE_BASE,
     XenharmonicSeriesSpecProperty.BASE,
+    XenharmonicSeriesSpecProperty.DESCENDING,
     XenharmonicSeriesSpecProperty.CONSTANT,
     XenharmonicSeriesSpecProperty.GROUND,
     XenharmonicSeriesSpecProperty.TERM_COEFFICIENT,
