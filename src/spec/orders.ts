@@ -13,6 +13,8 @@ const specControlsOrder: XenharmonicSeriesSpecProperty[] = [
     XenharmonicSeriesSpecProperty.TERM_COEFFICIENT,
     XenharmonicSeriesSpecProperty.SCALE_ITERATIONS,
     XenharmonicSeriesSpecProperty.STACK,
+    XenharmonicSeriesSpecProperty.USE_PARTICULATE,
+    XenharmonicSeriesSpecProperty.PARTICULATE,
 ]
 
 export {

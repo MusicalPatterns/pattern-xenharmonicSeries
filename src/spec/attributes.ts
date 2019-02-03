@@ -46,6 +46,12 @@ const attributes: XenharmonicSeriesSpecAttributes = {
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.LOWER_BOUND),
         specPropertyType: SpecPropertyType.RANGED,
     },
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: {
+        constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.PARTICULATE ] as RangedConstraint,
+        description: 'divide each term by the term in the position this # of terms later',
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.PARTICULATE),
+        specPropertyType: SpecPropertyType.RANGED,
+    },
     [ XenharmonicSeriesSpecProperty.POWER ]: {
         description: 'the power to raise the index of summation/product to in each term',
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.POWER),
@@ -79,6 +85,11 @@ const attributes: XenharmonicSeriesSpecAttributes = {
     [ XenharmonicSeriesSpecProperty.USE_BASE ]: {
         description: useBaseDescription,
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.USE_BASE),
+        specPropertyType: SpecPropertyType.TOGGLED,
+    },
+    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: {
+        description: 'turn use of particulate effect on or off',
+        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.USE_PARTICULATE),
         specPropertyType: SpecPropertyType.TOGGLED,
     },
 }

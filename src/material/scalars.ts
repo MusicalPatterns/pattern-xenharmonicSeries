@@ -1,3 +1,5 @@
+// tslint:disable:max-file-line-count
+
 import {
     add,
     ADDITIVE_IDENTITY,
@@ -15,6 +17,10 @@ import { buildBoundedNumbers } from '../custom'
 import { SequenceType, XenharmonicSeriesSpec } from '../spec'
 import { BuildSequenceParameters, CalculatePartialFunction, CalculatePartialParameters } from './types'
 
+const replace: NumericOperation =
+    (a: number, b: number): number =>
+        b
+
 const indexToPower: CalculatePartialFunction =
     (k: number, power: Power): number =>
         apply.Power(k, power) === Infinity ? 0 : apply.Power(k, power)
@@ -27,7 +33,9 @@ const calculatePartial: (parameters: CalculatePartialParameters) => number =
     ({ spec, index, calculatePartialFunction, partial, operation }: CalculatePartialParameters): number => {
         const { power, base, termCoefficient } = spec
 
-        return operation(partial, apply.Scalar(calculatePartialFunction(index, power, base), termCoefficient))
+        const term: number = apply.Scalar(calculatePartialFunction(index, power, base), termCoefficient)
+
+        return operation(partial, term)
     }
 
 const buildSequence: (parameters: BuildSequenceParameters) => number[] =
@@ -57,6 +65,7 @@ const buildSequence: (parameters: BuildSequenceParameters) => number[] =
     }
 
 const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
+    // tslint:disable-next-line:cyclomatic-complexity
     (spec: XenharmonicSeriesSpec): Scalar[] => {
         const { sequenceType, lowerBound, upperBound, iterations } = spec
         const boundedNumbers: number[] = buildBoundedNumbers(lowerBound, to.Index(from.Index(upperBound) + 1))
@@ -74,11 +83,21 @@ const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
                 operation = multiply
                 break
             }
+            case SequenceType.SEQUENCE: {
+                initialPartial = 0
+                operation = replace
+                break
+            }
             default:
                 throw new Error('Unknown sequence type.')
         }
 
-        const sequence: number[] = buildSequence({ boundedNumbers, spec, initialPartial, operation })
+        let sequence: number[] = buildSequence({ boundedNumbers, spec, initialPartial, operation })
+        if (spec.useParticulate) {
+            sequence = sequence.map((n: number, index: number): number =>
+                n / apply.Index(sequence, apply.Offset(to.Index(index), spec.particulate)))
+        }
+
         const window: number = sequence.pop() as number
 
         let results: number[] = []

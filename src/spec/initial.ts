@@ -17,11 +17,13 @@ const initial: XenharmonicSeriesSpec = {
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: true,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: to.Count(1),
     [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: to.Offset(1),
     [ XenharmonicSeriesSpecProperty.POWER ]: XENHARMONIC_SERIES_INITIAL_POWER,
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_SUM,
     [ XenharmonicSeriesSpecProperty.STACK ]: [ to.Index(0) ],
     [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: MULTIPLICATIVE_IDENTITY,
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: XENHARMONIC_SERIES_INITIAL_UPPER_BOUND,
+    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: false,
     [ XenharmonicSeriesSpecProperty.USE_BASE ]: false,
 }
 

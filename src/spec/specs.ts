@@ -60,6 +60,17 @@ const eighthOctaveHarmonics: XenharmonicSeriesSpec = {
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Index(from.Count(windowStepCount(OCTAVE, EIGHTH))),
 }
 
+const subharmonicSeriesSpec: XenharmonicSeriesSpec = {
+    ...initial,
+    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.SEQUENCE,
+}
+
+const superparticularSeriesSpec: XenharmonicSeriesSpec = {
+    ...initial,
+    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.SEQUENCE,
+    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: true,
+}
+
 export {
     edEulerHarmonicSeriesSpec,
     edThreeHarmonicSeriesSpec,
@@ -68,4 +79,6 @@ export {
     standardHarmonicSeriesSpec,
     eighthOctaveHarmonics,
     thirdTritaveOddHarmonicsSpec,
+    subharmonicSeriesSpec,
+    superparticularSeriesSpec,
 }

@@ -8,6 +8,8 @@ import {
     eighthOctaveHarmonics,
     fourthOctaveHarmonics,
     standardHarmonicSeriesSpec,
+    subharmonicSeriesSpec,
+    superparticularSeriesSpec,
     thirdTritaveOddHarmonicsSpec,
 } from './specs'
 import { XenharmonicSeriesPreset, XenharmonicSeriesSpec } from './types'
@@ -47,6 +49,14 @@ const presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>> = {
     [ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ]: {
         order: 6,
         spec: thirdTritaveOddHarmonicsSpec,
+    },
+    [ XenharmonicSeriesPreset.SUBHARMONIC_SERIES ]: {
+        order: 9,
+        spec: subharmonicSeriesSpec,
+    },
+    [ XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES ]: {
+        order: 10,
+        spec: superparticularSeriesSpec,
     },
 }
 

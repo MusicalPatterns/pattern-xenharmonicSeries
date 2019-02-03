@@ -151,4 +151,34 @@ describe('scales', () => {
             4 * 15 / 8,
         ].map(to.Scalar))
     })
+
+    it('subharmonic series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SUBHARMONIC_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            1 / 1,
+            1 / 2,
+            1 / 3,
+            1 / 4,
+            1 / 5,
+            1 / 6,
+            1 / 7,
+        ].map(to.Scalar))
+    })
+
+    it('superparticular series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            2 / 1,
+            3 / 2,
+            4 / 3,
+            5 / 4,
+            6 / 5,
+            7 / 6,
+            8 / 7,
+        ].map(to.Scalar))
+    })
 })

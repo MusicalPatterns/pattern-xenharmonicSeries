@@ -10,6 +10,10 @@ const xenharmonicSeriesConstraints: DictionaryOf<Constraint> = {
     [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: {
         integer: true,
     },
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: {
+        integer: true,
+        min: 0,
+    },
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: [
         {
             formattedName: 'partial sum',

@@ -5,7 +5,7 @@ import {
     SpecAttributes,
     ToggledSpecPropertyAttributes,
 } from '@musical-patterns/pattern'
-import { Base, Count, Index, Power, Scalar } from '@musical-patterns/utilities'
+import { Base, Count, Index, Offset, Power, Scalar } from '@musical-patterns/utilities'
 
 enum XenharmonicSeriesSpecProperty {
     BASE = 'base',
@@ -14,12 +14,14 @@ enum XenharmonicSeriesSpecProperty {
     HOLD_ROOT = 'holdRoot',
     SCALE_ITERATIONS = 'iterations',
     LOWER_BOUND = 'lowerBound',
+    PARTICULATE = 'particulate',
     POWER = 'power',
     SEQUENCE_TYPE = 'sequenceType',
     STACK = 'stack',
     TERM_COEFFICIENT = 'termCoefficient',
     UPPER_BOUND = 'upperBound',
     USE_BASE = 'useBase',
+    USE_PARTICULATE = 'useParticulate',
 }
 
 enum XenharmonicSeriesPreset {
@@ -31,11 +33,14 @@ enum XenharmonicSeriesPreset {
     THIRD_TRITAVE_ODD_HARMONICS = 'thirdTritaveOddHarmonics',
     EIGHTH_OCTAVE_HARMONICS = 'eighthOctaveHarmonics',
     FOURTH_OCTAVE_HARMONICS = 'fourthOctaveHarmonics',
+    SUBHARMONIC_SERIES = 'subharmonicSeries',
+    SUPERPARTICULAR_SERIES = 'superparticularSeries',
 }
 
 enum SequenceType {
     PARTIAL_SUM = 'partial sum',
     PARTIAL_PRODUCT = 'partial product',
+    SEQUENCE = 'sequence',
 }
 
 interface XenharmonicSeriesSpec extends Spec {
@@ -45,12 +50,14 @@ interface XenharmonicSeriesSpec extends Spec {
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: boolean,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: Count,
     [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: Index,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: Offset,
     [ XenharmonicSeriesSpecProperty.POWER ]: Power,
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType,
     [ XenharmonicSeriesSpecProperty.STACK ]: Index[],
     [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: Scalar,
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: Index,
     [ XenharmonicSeriesSpecProperty.USE_BASE ]: boolean,
+    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: boolean,
 }
 
 interface XenharmonicSeriesSpecAttributes extends SpecAttributes {
@@ -60,12 +67,14 @@ interface XenharmonicSeriesSpecAttributes extends SpecAttributes {
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: ToggledSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: RangedSpecPropertyAttributes,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.POWER ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: OptionedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.STACK ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.USE_BASE ]: ToggledSpecPropertyAttributes,
+    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: ToggledSpecPropertyAttributes,
 }
 
 export {
