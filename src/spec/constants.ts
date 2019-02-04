@@ -4,9 +4,11 @@ import {
     apply,
     Count,
     EVERY_OTHER,
-    from, HALF, Index,
+    from,
+    Index,
     OCTAVE,
     Offset,
+    ONE_HALF,
     to,
     TRITAVE,
     windowStepCount,
@@ -25,7 +27,7 @@ const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: number = apply.Offset(
 )
 const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Index = apply.Scalar(
     to.Index(from.Count(windowStepCount(TRITAVE, THIRD))),
-    HALF,
+    ONE_HALF,
 )
 const XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT: Count = to.Count(3)
 const FOURTH_OCTAVE_HARMONICS_CONSTANT: number = apply.Offset(
