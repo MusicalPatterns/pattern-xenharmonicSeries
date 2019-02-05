@@ -19,26 +19,26 @@ import {
 import { initial } from './initial'
 import { XenharmonicSeriesSpecProperty } from './types'
 
-const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: number = apply.Offset(
+const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Offset = to.Offset(apply.Offset(
     from.Base(apply.Power(TRITAVE, to.Power(from.Index(apply.Offset(THIRD, to.Offset(-1)))))),
     to.Offset(-from.Scalar(EVERY_OTHER)),
-)
+))
 const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Index = apply.Scalar(
     to.Index(from.Count(windowStepCount(TRITAVE, to.Count(from.Index(THIRD))))),
     ONE_HALF,
 )
 const XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT: Count = to.Count(3)
-const FOURTH_OCTAVE_HARMONICS_CONSTANT: number = apply.Offset(
+const FOURTH_OCTAVE_HARMONICS_CONSTANT: Offset = to.Offset(apply.Offset(
     from.Base(apply.Power(OCTAVE, to.Power(from.Index(apply.Offset(FOURTH, to.Offset(-1)))))),
     to.Offset(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
-)
+))
 const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Index = to.Index(from.Count(
     windowStepCount(OCTAVE, to.Count(from.Index(FOURTH))),
 ))
-const EIGHTH_OCTAVE_HARMONICS_CONSTANT: number = apply.Offset(
+const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Offset = to.Offset(apply.Offset(
     from.Base(apply.Power(OCTAVE, to.Power(from.Index(apply.Offset(EIGHTH, to.Offset(-1)))))),
     to.Offset(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
-)
+))
 const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Index = to.Index(from.Count(
     windowStepCount(OCTAVE, to.Count(from.Index(EIGHTH))),
 ))

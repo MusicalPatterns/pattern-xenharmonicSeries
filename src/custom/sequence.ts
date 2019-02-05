@@ -1,46 +1,78 @@
-import { apply, Base, from, Power, to } from '@musical-patterns/utilities'
-import { BuildSequenceParameters, CalculatePartialFunction, CalculatePartialParameters } from './types'
+import { apply, Base, from, inverse, Power, to } from '@musical-patterns/utilities'
+import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../nominal'
+import {
+    BuildSequenceParameters,
+    CalculatePartialParameters,
+    CalculateTermFunction,
+    XenharmonicSequence,
+} from './types'
 
-const indexToPower: CalculatePartialFunction =
-    (k: number, power: Power): number =>
-        apply.Power(k, power) === Infinity ? 0 : apply.Power(k, power)
+const indexToPower: CalculateTermFunction =
+    (k: number, power: Power): Term =>
+        xenharmonicSeriesTo.Term(
+            apply.Power(k, power) === Infinity ? 0 : apply.Power(k, power),
+        )
 
-const indexToPowerUsingBase: CalculatePartialFunction =
-    (k: number, power: Power, base: Base = to.Base(1)): number =>
-        from.Base(apply.Power(base, to.Power(indexToPower(k, power))))
+const indexToPowerUsingBase: CalculateTermFunction =
+    (k: number, power: Power, base: Base = to.Base(1)): Term =>
+        xenharmonicSeriesTo.Term(from.Base(
+            apply.Power(
+                base,
+                to.Power(xenharmonicSeriesFrom.Term(
+                    indexToPower(k, power),
+                )),
+            ),
+        ))
 
-const calculatePartial: (parameters: CalculatePartialParameters) => number =
-    ({ spec, index, calculatePartialFunction, partial, operation }: CalculatePartialParameters): number => {
+const calculateNextPartial: (parameters: CalculatePartialParameters) => PartialSumOrProduct =
+    ({ spec, index, calculateTermFunction, partial, operation }: CalculatePartialParameters): PartialSumOrProduct => {
         const { power, base, termCoefficient } = spec
 
-        const term: number = apply.Scalar(calculatePartialFunction(index, power, base), termCoefficient)
+        const term: Term = calculateTermFunction(index, power, base)
+        const termWithCoefficientApplied: Term = apply.Scalar(term, termCoefficient)
 
-        return operation(partial, term)
+        return xenharmonicSeriesTo.PartialSumOrProduct(
+            operation(
+                xenharmonicSeriesFrom.PartialSumOrProduct(partial),
+                xenharmonicSeriesFrom.Term(termWithCoefficientApplied),
+            ),
+        )
     }
 
-const buildSequence: (parameters: BuildSequenceParameters) => number[] =
-    ({ initialPartial, operation, boundedNumbers, spec }: BuildSequenceParameters): number[] => {
+const buildSequence: (parameters: BuildSequenceParameters) => XenharmonicSequence =
+    ({ partialSeed, operation, boundedNumbers, spec }: BuildSequenceParameters): XenharmonicSequence => {
         const { constant, useBase, ground } = spec
-        let partial: number = initialPartial
+        let previousPartial: PartialSumOrProduct = partialSeed
 
-        let firstElement: number
+        let firstPartial: PartialSumOrProduct
 
         return boundedNumbers
-            .map((index: number) => {
-                const calculatePartialFunction: CalculatePartialFunction =
+            .map((index: number): PartialSumOrProduct => {
+                const calculateTermFunction: CalculateTermFunction =
                     useBase ? indexToPowerUsingBase : indexToPower
 
-                partial = calculatePartial({ partial, operation, calculatePartialFunction, index, spec })
+                previousPartial = calculateNextPartial({
+                    calculateTermFunction,
+                    index,
+                    operation,
+                    partial: previousPartial,
+                    spec,
+                })
 
-                return partial
+                return previousPartial
             })
-            .map((term: number) => term + constant)
-            .map((term: number) => {
-                if (!firstElement) {
-                    firstElement = term
+            .map((partial: PartialSumOrProduct) => apply.Offset(partial, constant))
+            .map((partial: PartialSumOrProduct) => {
+                if (!firstPartial) {
+                    firstPartial = partial
                 }
 
-                return ground ? term / firstElement : term
+                return ground ?
+                    apply.Scalar(
+                        partial,
+                        to.Scalar(inverse(xenharmonicSeriesFrom.PartialSumOrProduct(firstPartial))),
+                    ) :
+                    partial
             })
     }
 

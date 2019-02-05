@@ -1,31 +1,35 @@
 import { Base, NumericOperation, Power } from '@musical-patterns/utilities'
+import { PartialSumOrProduct, Term } from '../nominal'
 import { XenharmonicSeriesSpec } from '../spec'
 
 interface BuildSequenceParameters {
     boundedNumbers: number[],
-    initialPartial: number,
     operation: NumericOperation,
+    partialSeed: PartialSumOrProduct,
     spec: XenharmonicSeriesSpec,
 }
 
-type CalculatePartialFunction = (k: number, power: Power, base?: Base) => number
+type CalculateTermFunction = (k: number, power: Power, base?: Base) => Term
 
 interface CalculatePartialParameters {
-    calculatePartialFunction: CalculatePartialFunction,
+    calculateTermFunction: CalculateTermFunction,
     index: number,
     operation: NumericOperation,
-    partial: number,
+    partial: PartialSumOrProduct,
     spec: XenharmonicSeriesSpec
 }
 
 interface SequenceTypeParameters {
-    initialPartial: number,
     operation: NumericOperation,
+    partialSeed: PartialSumOrProduct,
 }
+
+type XenharmonicSequence = PartialSumOrProduct[]
 
 export {
     BuildSequenceParameters,
-    CalculatePartialFunction,
+    CalculateTermFunction,
     CalculatePartialParameters,
     SequenceTypeParameters,
+    XenharmonicSequence,
 }

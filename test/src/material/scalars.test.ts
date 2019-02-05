@@ -4,7 +4,7 @@ import { PresetFor } from '@musical-patterns/pattern'
 import { apply, DictionaryOf, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'
 import { buildScalars, specData, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
-describe('scales', () => {
+describe('scalars', () => {
     let presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>>
     beforeEach(() => {
         presets = specData.presets || {}

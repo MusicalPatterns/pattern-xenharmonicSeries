@@ -49,7 +49,7 @@ enum SequenceType {
 
 interface XenharmonicSeriesSpec extends Spec {
     [ XenharmonicSeriesSpecProperty.BASE ]: Base,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: number,
+    [ XenharmonicSeriesSpecProperty.CONSTANT ]: Offset,
     [ XenharmonicSeriesSpecProperty.DESCENDING ]: boolean,
     [ XenharmonicSeriesSpecProperty.GROUND ]: boolean,
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: boolean,

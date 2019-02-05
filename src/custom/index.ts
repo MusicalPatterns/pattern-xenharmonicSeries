@@ -5,3 +5,7 @@ export { applyIterations } from './iterations'
 export { applyParticulate } from './particulate'
 export { buildSequence } from './sequence'
 export { getSequenceTypeParameters } from './sequenceType'
+
+export {
+    XenharmonicSequence,
+} from './types'
