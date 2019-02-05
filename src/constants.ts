@@ -1,11 +1,20 @@
 // tslint:disable no-magic-numbers
 
-import { Frequency, Index, Power, to } from '@musical-patterns/utilities'
+import {
+    Frequency,
+    Index,
+    Power,
+    SCIENTIFIC_PITCHES,
+    ScientificPitchNoteName,
+    ScientificPitchOctaveNumber,
+    to,
+} from '@musical-patterns/utilities'
 
 const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Index = to.Index(1)
 const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Index = to.Index(32)
 
-const XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY: Frequency = to.Frequency(220)
+const XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY: Frequency =
+    SCIENTIFIC_PITCHES[ ScientificPitchNoteName.A ][ ScientificPitchOctaveNumber._3 ]
 const XENHARMONIC_SERIES_INITIAL_POWER: Power = to.Power(-1)
 
 export {
