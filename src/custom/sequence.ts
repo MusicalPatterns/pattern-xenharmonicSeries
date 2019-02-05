@@ -1,4 +1,4 @@
-import { apply, Base, from, inverse, Power, to } from '@musical-patterns/utilities'
+import { apply, Base, from, Power, reciprocal, to } from '@musical-patterns/utilities'
 import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../nominal'
 import {
     BuildSequenceParameters,
@@ -70,7 +70,7 @@ const buildSequence: (parameters: BuildSequenceParameters) => XenharmonicSequenc
                 return ground ?
                     apply.Scalar(
                         partial,
-                        to.Scalar(inverse(xenharmonicSeriesFrom.PartialSumOrProduct(firstPartial))),
+                        to.Scalar(reciprocal(xenharmonicSeriesFrom.PartialSumOrProduct(firstPartial))),
                     ) :
                     partial
             })

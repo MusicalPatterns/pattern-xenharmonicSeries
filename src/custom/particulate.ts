@@ -1,4 +1,4 @@
-import { apply, inverse, Offset, to } from '@musical-patterns/utilities'
+import { apply, Offset, reciprocal, to } from '@musical-patterns/utilities'
 import { from as xenharmonicSeriesFrom, PartialSumOrProduct, to as xenharmonicSeriesTo } from '../nominal'
 import { XenharmonicSequence } from './types'
 
@@ -9,7 +9,7 @@ const applyParticulate: (sequence: XenharmonicSequence, particulate: Offset) => 
                 apply.Scalar(
                     xenharmonicSeriesFrom.PartialSumOrProduct(partial),
                     to.Scalar(
-                        inverse(
+                        reciprocal(
                             xenharmonicSeriesFrom.PartialSumOrProduct(
                                 apply.Index(
                                     sequence,
