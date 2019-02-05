@@ -1,10 +1,10 @@
-import { EVERY_OTHER, from, OCTAVE, to, TRITAVE, windowStepCount } from '@musical-patterns/utilities'
+import { EVERY_OTHER, to, TRITAVE } from '@musical-patterns/utilities'
 import {
-    DU_PARTICULATE,
-    EIGHTH,
+    DUPER_OR_DUB_PARTICULATE,
     EIGHTH_OCTAVE_HARMONICS_CONSTANT,
-    FOURTH,
+    EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND,
     FOURTH_OCTAVE_HARMONICS_CONSTANT,
+    FOURTH_OCTAVE_HARMONICS_UPPER_BOUND,
     THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
     THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
     XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
@@ -48,13 +48,13 @@ const fourthOctaveHarmonics: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: FOURTH_OCTAVE_HARMONICS_CONSTANT,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Index(from.Count(windowStepCount(OCTAVE, FOURTH))),
+    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: FOURTH_OCTAVE_HARMONICS_UPPER_BOUND,
 }
 
 const eighthOctaveHarmonics: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: EIGHTH_OCTAVE_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Index(from.Count(windowStepCount(OCTAVE, EIGHTH))),
+    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND,
 }
 
 const subharmonicSeriesSpec: XenharmonicSeriesSpec = {
@@ -69,7 +69,7 @@ const superparticularSeriesSpec: XenharmonicSeriesSpec = {
 
 const duperparticularSeriesSpec: XenharmonicSeriesSpec = {
     ...superparticularSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DU_PARTICULATE,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
 }
 
 const subparticularSeriesSpec: XenharmonicSeriesSpec = {
@@ -79,7 +79,7 @@ const subparticularSeriesSpec: XenharmonicSeriesSpec = {
 
 const dubparticularSeriesSpec: XenharmonicSeriesSpec = {
     ...subparticularSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DU_PARTICULATE,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
 }
 
 export {
