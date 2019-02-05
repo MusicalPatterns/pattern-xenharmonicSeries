@@ -1,4 +1,4 @@
-// tslint:disable:no-magic-numbers
+// tslint:disable no-magic-numbers
 
 import { Frequency, Index, Power, to } from '@musical-patterns/utilities'
 

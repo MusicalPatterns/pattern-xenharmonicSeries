@@ -1,4 +1,4 @@
-// tslint:disable:binary-expression-operand-order no-identical-expressions
+// tslint:disable binary-expression-operand-order no-identical-expressions
 
 import { PresetFor } from '@musical-patterns/pattern'
 import { apply, DictionaryOf, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'

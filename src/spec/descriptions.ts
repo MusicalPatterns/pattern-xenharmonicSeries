@@ -1,4 +1,4 @@
-// tslint:disable:no-trailing-whitespace
+// tslint:disable no-trailing-whitespace
 
 const baseDescription: string = `
 when "use base" is on, will raise this number to what the term would have been otherwise 

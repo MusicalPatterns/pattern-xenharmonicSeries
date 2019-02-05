@@ -1,4 +1,4 @@
-// tslint:disable:no-reaching-imports
+// tslint:disable no-reaching-imports
 
 export { specData } from './data'
 export { initial } from './initial'
