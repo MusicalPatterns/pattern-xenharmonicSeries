@@ -2,7 +2,7 @@
 
 import {
     Frequency,
-    Index,
+    Ordinal,
     Power,
     SCIENTIFIC_PITCHES,
     ScientificPitchNoteName,
@@ -10,8 +10,8 @@ import {
     to,
 } from '@musical-patterns/utilities'
 
-const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Index = to.Index(1)
-const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Index = to.Index(32)
+const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Ordinal = to.Ordinal(1)
+const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal = to.Ordinal(32)
 
 const XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY: Frequency =
     SCIENTIFIC_PITCHES[ ScientificPitchNoteName.A ][ ScientificPitchOctaveNumber._3 ]

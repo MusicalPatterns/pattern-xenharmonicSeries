@@ -15,9 +15,9 @@ describe('parts', () => {
     beforeEach(() => {
         spec = {
             ...specData.initial,
-            iterations: to.Count(2),
-            lowerBound: to.Index(3),
-            upperBound: to.Index(5),
+            iterations: to.Cardinal(2),
+            lowerBound: to.Ordinal(3),
+            upperBound: to.Ordinal(5),
         }
     })
 
@@ -29,27 +29,27 @@ describe('parts', () => {
                 .toEqual([
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })
@@ -65,27 +65,27 @@ describe('parts', () => {
                 .toEqual([
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         durationSpec: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitchSpec: { index: to.Index(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitchSpec: { index: to.Ordinal(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })

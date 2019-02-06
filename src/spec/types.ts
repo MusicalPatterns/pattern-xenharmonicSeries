@@ -5,7 +5,7 @@ import {
     SpecAttributes,
     ToggledSpecPropertyAttributes,
 } from '@musical-patterns/pattern'
-import { Base, Count, Index, Offset, Power, Scalar } from '@musical-patterns/utilities'
+import { Base, Cardinal, Ordinal, Power, Scalar, Translation } from '@musical-patterns/utilities'
 
 enum XenharmonicSeriesSpecProperty {
     BASE = 'base',
@@ -49,18 +49,18 @@ enum SequenceType {
 
 interface XenharmonicSeriesSpec extends Spec {
     [ XenharmonicSeriesSpecProperty.BASE ]: Base,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: Offset,
+    [ XenharmonicSeriesSpecProperty.CONSTANT ]: Translation,
     [ XenharmonicSeriesSpecProperty.DESCENDING ]: boolean,
     [ XenharmonicSeriesSpecProperty.GROUND ]: boolean,
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: boolean,
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: Count,
-    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: Index,
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: Offset,
+    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: Cardinal,
+    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: Ordinal,
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: Translation,
     [ XenharmonicSeriesSpecProperty.POWER ]: Power,
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType,
-    [ XenharmonicSeriesSpecProperty.STACK ]: Index[],
+    [ XenharmonicSeriesSpecProperty.STACK ]: Ordinal[],
     [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: Scalar,
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: Index,
+    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: Ordinal,
     [ XenharmonicSeriesSpecProperty.USE_BASE ]: boolean,
     [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: boolean,
 }

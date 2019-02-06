@@ -61,7 +61,7 @@ const buildSequence: (parameters: BuildSequenceParameters) => XenharmonicSequenc
 
                 return previousPartial
             })
-            .map((partial: PartialSumOrProduct) => apply.Offset(partial, constant))
+            .map((partial: PartialSumOrProduct) => apply.Translation(partial, constant))
             .map((partial: PartialSumOrProduct) => {
                 if (!firstPartial) {
                     firstPartial = partial

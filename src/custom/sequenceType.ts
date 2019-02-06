@@ -17,7 +17,7 @@ const getSequenceTypeParameters: (sequenceType: SequenceType) => SequenceTypePar
         let operation: NumericOperation
         switch (sequenceType) {
             case SequenceType.PARTIAL_SUM: {
-                partialSeed = to.PartialSumOrProduct(from.Offset(ADDITIVE_IDENTITY))
+                partialSeed = to.PartialSumOrProduct(from.Translation(ADDITIVE_IDENTITY))
                 operation = add
                 break
             }

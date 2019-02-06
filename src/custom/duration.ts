@@ -3,7 +3,7 @@ import { XenharmonicSeriesSpec } from '../spec'
 
 const duration: (spec: XenharmonicSeriesSpec) => Time =
     ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpec): Time =>
-        to.Time((from.Index(upperBound) - from.Index(lowerBound) + 1) * from.Count(iterations))
+        to.Time((from.Ordinal(upperBound) - from.Ordinal(lowerBound) + 1) * from.Cardinal(iterations))
 
 export {
     duration,

@@ -14,7 +14,7 @@ const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
         const { sequenceType, lowerBound, upperBound, iterations, particulate, useParticulate } = spec
 
         const { partialSeed, operation } = getSequenceTypeParameters(sequenceType)
-        const boundedNumbers: number[] = buildBoundedNumbers(lowerBound, to.Index(from.Index(upperBound) + 1))
+        const boundedNumbers: number[] = buildBoundedNumbers(lowerBound, to.Ordinal(from.Ordinal(upperBound) + 1))
 
         let sequence: XenharmonicSequence = buildSequence({ boundedNumbers, spec, partialSeed, operation })
 

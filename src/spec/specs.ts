@@ -19,7 +19,7 @@ const standardHarmonicSeriesSpec: XenharmonicSeriesSpec = {
 
 const sharedEdHarmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...initial,
-    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: to.Index(0),
+    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: to.Ordinal(0),
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
     [ XenharmonicSeriesSpecProperty.USE_BASE ]: true,
 }

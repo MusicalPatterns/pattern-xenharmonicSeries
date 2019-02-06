@@ -1,8 +1,11 @@
-import { apply, from, Index, to, zeroAndPositiveIntegers } from '@musical-patterns/utilities'
+import { apply, from, Ordinal, to, zeroAndPositiveIntegers } from '@musical-patterns/utilities'
 
-const buildBoundedNumbers: (lowerBound: Index, upperBound: Index) => number[] =
-    (lowerBound: Index, upperBound: Index): number[] =>
-        zeroAndPositiveIntegers.slice(from.Index(lowerBound), apply.Offset(from.Index(upperBound), to.Offset(1)))
+const buildBoundedNumbers: (lowerBound: Ordinal, upperBound: Ordinal) => number[] =
+    (lowerBound: Ordinal, upperBound: Ordinal): number[] =>
+        zeroAndPositiveIntegers.slice(
+            from.Ordinal(lowerBound),
+            apply.Translation(from.Ordinal(upperBound), to.Translation(1)),
+        )
 
 export {
     buildBoundedNumbers,

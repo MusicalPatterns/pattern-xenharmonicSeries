@@ -8,7 +8,7 @@ const buildNoteSpec: (blockElement: number) => NoteSpec =
             scaleIndex: STANDARD_DURATIONS_SCALE_INDEX,
         },
         pitchSpec: {
-            index: to.Index(blockElement),
+            index: to.Ordinal(blockElement),
             scaleIndex: STANDARD_PITCH_SCALE_INDEX,
         },
     })

@@ -2,47 +2,47 @@
 
 import {
     apply,
-    Count,
+    Cardinal,
     EIGHTH,
     EVERY_OTHER,
     FOURTH,
     from,
-    Index,
     OCTAVE,
-    Offset,
     ONE_HALF,
+    Ordinal,
     THIRD,
     to,
+    Translation,
     TRITAVE,
     windowStepCount,
 } from '@musical-patterns/utilities'
 import { initial } from './initial'
 import { XenharmonicSeriesSpecProperty } from './types'
 
-const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Offset = to.Offset(apply.Offset(
-    from.Base(apply.Power(TRITAVE, to.Power(from.Index(apply.Offset(THIRD, to.Offset(-1)))))),
-    to.Offset(-from.Scalar(EVERY_OTHER)),
+const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation = to.Translation(apply.Translation(
+    from.Base(apply.Power(TRITAVE, to.Power(from.Ordinal(apply.Translation(THIRD, to.Translation(-1)))))),
+    to.Translation(-from.Scalar(EVERY_OTHER)),
 ))
-const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Index = apply.Scalar(
-    to.Index(from.Count(windowStepCount(TRITAVE, to.Count(from.Index(THIRD))))),
+const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal = apply.Scalar(
+    to.Ordinal(from.Cardinal(windowStepCount(TRITAVE, to.Cardinal(from.Ordinal(THIRD))))),
     ONE_HALF,
 )
-const XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT: Count = to.Count(3)
-const FOURTH_OCTAVE_HARMONICS_CONSTANT: Offset = to.Offset(apply.Offset(
-    from.Base(apply.Power(OCTAVE, to.Power(from.Index(apply.Offset(FOURTH, to.Offset(-1)))))),
-    to.Offset(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
+const XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT: Cardinal = to.Cardinal(3)
+const FOURTH_OCTAVE_HARMONICS_CONSTANT: Translation = to.Translation(apply.Translation(
+    from.Base(apply.Power(OCTAVE, to.Power(from.Ordinal(apply.Translation(FOURTH, to.Translation(-1)))))),
+    to.Translation(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
 ))
-const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Index = to.Index(from.Count(
-    windowStepCount(OCTAVE, to.Count(from.Index(FOURTH))),
+const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(
+    windowStepCount(OCTAVE, to.Cardinal(from.Ordinal(FOURTH))),
 ))
-const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Offset = to.Offset(apply.Offset(
-    from.Base(apply.Power(OCTAVE, to.Power(from.Index(apply.Offset(EIGHTH, to.Offset(-1)))))),
-    to.Offset(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
+const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation = to.Translation(apply.Translation(
+    from.Base(apply.Power(OCTAVE, to.Power(from.Ordinal(apply.Translation(EIGHTH, to.Translation(-1)))))),
+    to.Translation(-from.Scalar(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])),
 ))
-const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Index = to.Index(from.Count(
-    windowStepCount(OCTAVE, to.Count(from.Index(EIGHTH))),
+const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(
+    windowStepCount(OCTAVE, to.Cardinal(from.Ordinal(EIGHTH))),
 ))
-const DUPER_OR_DUB_PARTICULATE: Offset = to.Offset(2)
+const DUPER_OR_DUB_PARTICULATE: Translation = to.Translation(2)
 
 export {
     THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,

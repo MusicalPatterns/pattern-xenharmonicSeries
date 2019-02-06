@@ -5,8 +5,8 @@ describe('blocks', () => {
     it('starting with 0, counts up the range between the lower and upper bounds, inclusively', () => {
         const spec: XenharmonicSeriesSpec = {
             ...specData.initial,
-            lowerBound: to.Index(3),
-            upperBound: to.Index(5),
+            lowerBound: to.Ordinal(3),
+            upperBound: to.Ordinal(5),
         }
 
         expect(buildBlock(spec))
@@ -20,9 +20,9 @@ describe('blocks', () => {
     it('expands when there are multiple iterations', () => {
         const spec: XenharmonicSeriesSpec = {
             ...specData.initial,
-            iterations: to.Count(5),
-            lowerBound: to.Index(3),
-            upperBound: to.Index(5),
+            iterations: to.Cardinal(5),
+            lowerBound: to.Ordinal(3),
+            upperBound: to.Ordinal(5),
         }
 
         expect(buildBlock(spec))

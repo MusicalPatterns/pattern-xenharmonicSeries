@@ -1,28 +1,28 @@
 import { NoteSpec } from '@musical-patterns/compiler'
 import { Segment } from '@musical-patterns/pattern'
-import { apply, from, Index, Maybe, to } from '@musical-patterns/utilities'
+import { apply, from, Maybe, Ordinal, to } from '@musical-patterns/utilities'
 import { buildSegment, initial, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('segments', () => {
-    it('can stack offset copies of the scale to create chords as you go up it', () => {
+    it('can stack translated copies of the scale to create chords as you go up it', () => {
         const spec: XenharmonicSeriesSpec = {
             ...initial,
-            stack: [ 0, 2 ].map(to.Index),
+            stack: [ 0, 2 ].map(to.Ordinal),
         }
         const segment: Segment = buildSegment(spec)
 
-        const firstPart: NoteSpec[] = apply.Index(segment, to.Index(0))
-        const secondPart: NoteSpec[] = apply.Index(segment, to.Index(1))
+        const firstPart: NoteSpec[] = apply.Ordinal(segment, to.Ordinal(0))
+        const secondPart: NoteSpec[] = apply.Ordinal(segment, to.Ordinal(1))
 
         firstPart.forEach((firstNoteSpec: NoteSpec, index: number) => {
-            const secondNoteSpec: NoteSpec = apply.Index(secondPart, to.Index(index))
+            const secondNoteSpec: NoteSpec = apply.Ordinal(secondPart, to.Ordinal(index))
             if (firstNoteSpec.pitchSpec) {
-                const firstPitchIndex: Maybe<Index> = firstNoteSpec.pitchSpec.index
+                const firstPitchIndex: Maybe<Ordinal> = firstNoteSpec.pitchSpec.index
                 if (firstPitchIndex !== undefined && secondNoteSpec.pitchSpec) {
-                    const secondPitchIndex: Maybe<Index> = secondNoteSpec.pitchSpec.index
+                    const secondPitchIndex: Maybe<Ordinal> = secondNoteSpec.pitchSpec.index
                     if (secondPitchIndex) {
-                        expect(from.Index(firstPitchIndex) + 2)
-                            .toBe(from.Index(secondPitchIndex))
+                        expect(from.Ordinal(firstPitchIndex) + 2)
+                            .toBe(from.Ordinal(secondPitchIndex))
                     }
                     else {
                         fail()
