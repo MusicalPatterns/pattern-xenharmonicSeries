@@ -67,7 +67,7 @@ const attributes: XenharmonicSeriesSpecAttributes = {
     },
     [ XenharmonicSeriesSpecProperty.STACK ]: {
         constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.STACK ] as RangedConstraint,
-        description: 'an array of offsets defining a polyad which is applied to each step of the scale',
+        description: 'an array of translations defining a polyad which is applied to each step of the scale',
         isArrayed: true,
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.STACK),
         specPropertyType: SpecPropertyType.RANGED,

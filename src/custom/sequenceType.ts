@@ -1,10 +1,10 @@
 import {
-    add,
     ADDITIVE_IDENTITY,
     from,
     MULTIPLICATIVE_IDENTITY,
-    multiply,
     NumericOperation,
+    product,
+    sum,
 } from '@musical-patterns/utilities'
 import { PartialSumOrProduct, to } from '../nominal'
 import { SequenceType } from '../spec'
@@ -18,12 +18,12 @@ const getSequenceTypeParameters: (sequenceType: SequenceType) => SequenceTypePar
         switch (sequenceType) {
             case SequenceType.PARTIAL_SUM: {
                 partialSeed = to.PartialSumOrProduct(from.Translation(ADDITIVE_IDENTITY))
-                operation = add
+                operation = sum
                 break
             }
             case SequenceType.PARTIAL_PRODUCT: {
                 partialSeed = to.PartialSumOrProduct(from.Scalar(MULTIPLICATIVE_IDENTITY))
-                operation = multiply
+                operation = product
                 break
             }
             case SequenceType.SEQUENCE: {

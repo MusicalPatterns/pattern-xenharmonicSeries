@@ -1,10 +1,6 @@
-interface PartialSumOrProduct extends Number {
-    _PartialBrand: string,
-}
+type PartialSumOrProduct = number & { _PartialSumOrProductBrand: void }
 
-interface Term extends Number {
-    _TermBrand: string,
-}
+type Term = number & { _TermBrand: void }
 
 export {
     PartialSumOrProduct,

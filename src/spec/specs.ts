@@ -1,4 +1,4 @@
-import { EVERY_OTHER, to, TRITAVE } from '@musical-patterns/utilities'
+import { EVERY_OTHER, from, to, TRITAVE } from '@musical-patterns/utilities'
 import {
     DUPER_OR_DUB_PARTICULATE,
     EIGHTH_OCTAVE_HARMONICS_CONSTANT,
@@ -40,7 +40,7 @@ const thirdTritaveOddHarmonicsSpec: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: EVERY_OTHER,
+    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: to.Scalar(from.Cardinal(EVERY_OTHER)),
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
 }
 

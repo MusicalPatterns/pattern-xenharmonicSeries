@@ -70,7 +70,7 @@ const buildSequence: (parameters: BuildSequenceParameters) => XenharmonicSequenc
                 return ground ?
                     apply.Scalar(
                         partial,
-                        to.Scalar(reciprocal(xenharmonicSeriesFrom.PartialSumOrProduct(firstPartial))),
+                        to.Scalar(xenharmonicSeriesFrom.PartialSumOrProduct(reciprocal(firstPartial))),
                     ) :
                     partial
             })
