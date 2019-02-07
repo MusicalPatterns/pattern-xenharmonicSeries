@@ -9,6 +9,7 @@ import {
     DictionaryOf,
     E,
     from,
+    product,
     Scalar,
     SQUARE_ROOT_OF_THREE,
     SQUARE_ROOT_OF_TWO,
@@ -56,9 +57,9 @@ describe('scalars', () => {
         testArraysAreClose(scalars, [
             1,
             2,
-            2 * SQUARE_ROOT_OF_TWO,
-            2 * SQUARE_ROOT_OF_TWO * CUBE_ROOT_OF_TWO,
-            2 * SQUARE_ROOT_OF_TWO * CUBE_ROOT_OF_TWO * apply.Power(2, to.Power(1 / 4)),
+            product(2, SQUARE_ROOT_OF_TWO),
+            product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO),
+            product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO, apply.Power(2, to.Power(1 / 4))),
         ].map(to.Scalar))
     })
 
@@ -69,9 +70,9 @@ describe('scalars', () => {
         testArraysAreClose(scalars, [
             1,
             3,
-            3 * SQUARE_ROOT_OF_THREE,
-            3 * SQUARE_ROOT_OF_THREE * CUBE_ROOT_OF_THREE,
-            3 * SQUARE_ROOT_OF_THREE * CUBE_ROOT_OF_THREE * apply.Power(3, to.Power(1 / 4)),
+            product(3, SQUARE_ROOT_OF_THREE),
+            product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE),
+            product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE, apply.Power(3, to.Power(1 / 4))),
         ].map(to.Scalar))
     })
 
@@ -82,9 +83,9 @@ describe('scalars', () => {
         testArraysAreClose(scalars, [
             1,
             rawE,
-            rawE * squareRoot(rawE),
-            rawE * squareRoot(rawE) * cubeRoot(rawE),
-            rawE * squareRoot(rawE) * cubeRoot(rawE) * apply.Power(rawE, to.Power(1 / 4)),
+            product(rawE, squareRoot(rawE)),
+            product(rawE, squareRoot(rawE), cubeRoot(rawE)),
+            product(rawE, squareRoot(rawE), cubeRoot(rawE), apply.Power(rawE, to.Power(1 / 4))),
         ].map(to.Scalar))
     })
 
