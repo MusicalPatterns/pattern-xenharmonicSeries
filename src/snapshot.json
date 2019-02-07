@@ -26,7 +26,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 403.3333333333333,
+        "frequency": 403.33333,
         "position": [
           0,
           0,
@@ -37,7 +37,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 458.33333333333326,
+        "frequency": 458.33333,
         "position": [
           0,
           0,
@@ -48,7 +48,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 502.3333333333333,
+        "frequency": 502.33333,
         "position": [
           0,
           0,
@@ -59,7 +59,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 538.9999999999999,
+        "frequency": 539,
         "position": [
           0,
           0,
@@ -70,7 +70,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 570.4285714285713,
+        "frequency": 570.42857,
         "position": [
           0,
           0,
@@ -81,7 +81,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 597.9285714285713,
+        "frequency": 597.92857,
         "position": [
           0,
           0,
@@ -92,7 +92,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 622.3730158730158,
+        "frequency": 622.37302,
         "position": [
           0,
           0,
@@ -103,7 +103,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 644.3730158730158,
+        "frequency": 644.37302,
         "position": [
           0,
           0,
@@ -114,7 +114,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 664.3730158730158,
+        "frequency": 664.37302,
         "position": [
           0,
           0,
@@ -125,7 +125,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 682.7063492063492,
+        "frequency": 682.70635,
         "position": [
           0,
           0,
@@ -136,7 +136,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 699.6294261294262,
+        "frequency": 699.62943,
         "position": [
           0,
           0,
@@ -147,7 +147,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 715.3437118437118,
+        "frequency": 715.34371,
         "position": [
           0,
           0,
@@ -158,7 +158,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 730.0103785103786,
+        "frequency": 730.01038,
         "position": [
           0,
           0,
@@ -169,7 +169,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 743.7603785103786,
+        "frequency": 743.76038,
         "position": [
           0,
           0,
@@ -180,7 +180,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 756.7015549809668,
+        "frequency": 756.70155,
         "position": [
           0,
           0,
@@ -191,7 +191,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 768.9237772031889,
+        "frequency": 768.92378,
         "position": [
           0,
           0,
@@ -202,7 +202,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 780.5027245716101,
+        "frequency": 780.50272,
         "position": [
           0,
           0,
@@ -213,7 +213,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 791.50272457161,
+        "frequency": 791.50272,
         "position": [
           0,
           0,
@@ -224,7 +224,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 801.9789150478005,
+        "frequency": 801.97892,
         "position": [
           0,
           0,
@@ -235,7 +235,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 811.9789150478005,
+        "frequency": 811.97892,
         "position": [
           0,
           0,
@@ -246,7 +246,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 821.5441324391048,
+        "frequency": 821.54413,
         "position": [
           0,
           0,
@@ -257,7 +257,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 830.7107991057715,
+        "frequency": 830.7108,
         "position": [
           0,
           0,
@@ -268,7 +268,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 839.5107991057715,
+        "frequency": 839.5108,
         "position": [
           0,
           0,
@@ -279,7 +279,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 847.9723375673099,
+        "frequency": 847.97234,
         "position": [
           0,
           0,
@@ -290,7 +290,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 856.1204857154581,
+        "frequency": 856.12049,
         "position": [
           0,
           0,
@@ -301,7 +301,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 863.9776285726009,
+        "frequency": 863.97763,
         "position": [
           0,
           0,
@@ -312,7 +312,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 871.5638354691527,
+        "frequency": 871.56384,
         "position": [
           0,
           0,
@@ -323,7 +323,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 878.8971688024859,
+        "frequency": 878.89717,
         "position": [
           0,
           0,
@@ -334,7 +334,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 885.9939429960344,
+        "frequency": 885.99394,
         "position": [
           0,
           0,
@@ -345,7 +345,7 @@
       {
         "duration": 700,
         "gain": 1,
-        "frequency": 892.8689429960344,
+        "frequency": 892.86894,
         "position": [
           0,
           0,

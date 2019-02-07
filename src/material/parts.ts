@@ -1,12 +1,12 @@
 import { NoteSpec } from '@musical-patterns/compiler'
-import { Block, from, Ordinal, to } from '@musical-patterns/utilities'
+import { Block, from, INITIAL, Ordinal, to } from '@musical-patterns/utilities'
 import { duration } from '../custom'
 import { XenharmonicSeriesSpec } from '../spec'
 import { buildBlock } from './blocks'
 import { buildNoteSpec, buildRootNoteSpec } from './notes'
 
 const buildScalePart: (spec: XenharmonicSeriesSpec, stackIndex?: Ordinal) => NoteSpec[] =
-    (spec: XenharmonicSeriesSpec, stackIndex: Ordinal = to.Ordinal(0)): NoteSpec[] => {
+    (spec: XenharmonicSeriesSpec, stackIndex: Ordinal = INITIAL): NoteSpec[] => {
         let block: Block = buildBlock(spec, stackIndex)
 
         if (spec.descending) {

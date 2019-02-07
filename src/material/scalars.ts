@@ -1,4 +1,4 @@
-import { apply, Scalar, to } from '@musical-patterns/utilities'
+import { apply, INCLUSIVE, Scalar, to } from '@musical-patterns/utilities'
 import {
     applyIterations,
     applyParticulate,
@@ -16,7 +16,7 @@ const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
         const { partialSeed, operation } = getSequenceTypeParameters(sequenceType)
         const boundedNumbers: number[] = buildBoundedNumbers(
             lowerBound,
-            apply.Translation(upperBound, to.Translation(1)),
+            apply.Translation(upperBound, INCLUSIVE),
         )
 
         let sequence: XenharmonicSequence = buildSequence({ boundedNumbers, spec, partialSeed, operation })

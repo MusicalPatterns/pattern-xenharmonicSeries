@@ -1,4 +1,4 @@
-import { E, EVERY_OTHER, from, to, TRITAVE } from '@musical-patterns/utilities'
+import { E, EVERY_OTHER, from, INITIAL, to, TRITAVE } from '@musical-patterns/utilities'
 import {
     DUPER_OR_DUB_PARTICULATE,
     EIGHTH_OCTAVE_HARMONICS_CONSTANT,
@@ -19,7 +19,7 @@ const standardHarmonicSeriesSpec: XenharmonicSeriesSpec = {
 
 const sharedEdHarmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...initial,
-    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: to.Ordinal(0),
+    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: INITIAL,
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
     [ XenharmonicSeriesSpecProperty.USE_BASE ]: true,
 }

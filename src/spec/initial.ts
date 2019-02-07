@@ -1,5 +1,5 @@
 import { standardInitialSpec, StandardSpecProperties } from '@musical-patterns/pattern'
-import { MULTIPLICATIVE_IDENTITY, OCTAVE, to } from '@musical-patterns/utilities'
+import { INITIAL, MULTIPLICATIVE_IDENTITY, NEXT, NO_TRANSLATION, OCTAVE, to } from '@musical-patterns/utilities'
 import {
     XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY,
     XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
@@ -12,16 +12,16 @@ const initial: XenharmonicSeriesSpec = {
     ...standardInitialSpec,
     [ StandardSpecProperties.BASE_FREQUENCY ]: XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY,
     [ XenharmonicSeriesSpecProperty.BASE ]: OCTAVE,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: to.Translation(0),
+    [ XenharmonicSeriesSpecProperty.CONSTANT ]: NO_TRANSLATION,
     [ XenharmonicSeriesSpecProperty.DESCENDING ]: false,
     [ XenharmonicSeriesSpecProperty.GROUND ]: true,
     [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: true,
     [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: to.Cardinal(1),
     [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: to.Translation(1),
+    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: NEXT,
     [ XenharmonicSeriesSpecProperty.POWER ]: XENHARMONIC_SERIES_INITIAL_POWER,
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_SUM,
-    [ XenharmonicSeriesSpecProperty.STACK ]: [ to.Ordinal(0) ],
+    [ XenharmonicSeriesSpecProperty.STACK ]: [ INITIAL ],
     [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: MULTIPLICATIVE_IDENTITY,
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: XENHARMONIC_SERIES_INITIAL_UPPER_BOUND,
     [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: false,
