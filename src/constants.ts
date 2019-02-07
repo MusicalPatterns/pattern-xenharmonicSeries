@@ -2,6 +2,7 @@
 
 import {
     Frequency,
+    negative,
     Ordinal,
     Power,
     SCIENTIFIC_PITCHES,
@@ -15,7 +16,7 @@ const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal = to.Ordinal(32)
 
 const XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY: Frequency =
     SCIENTIFIC_PITCHES[ ScientificPitchNoteName.A ][ ScientificPitchOctaveNumber._3 ]
-const XENHARMONIC_SERIES_INITIAL_POWER: Power = to.Power(-1)
+const XENHARMONIC_SERIES_INITIAL_POWER: Power = to.Power(negative(1))
 
 export {
     XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,

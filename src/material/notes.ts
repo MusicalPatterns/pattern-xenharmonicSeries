@@ -2,21 +2,21 @@ import { NoteSpec } from '@musical-patterns/compiler'
 import { STANDARD_DURATIONS_SCALE_INDEX, STANDARD_PITCH_SCALE_INDEX } from '@musical-patterns/pattern'
 import { to } from '@musical-patterns/utilities'
 
-const buildNoteSpec: (blockElement: number) => NoteSpec =
-    (blockElement: number): NoteSpec => ({
+const buildNoteSpec: (cell: number) => NoteSpec =
+    (cell: number): NoteSpec => ({
         durationSpec: {
             scaleIndex: STANDARD_DURATIONS_SCALE_INDEX,
         },
         pitchSpec: {
-            index: to.Ordinal(blockElement),
+            index: to.Ordinal(cell),
             scaleIndex: STANDARD_PITCH_SCALE_INDEX,
         },
     })
 
-const buildRootNoteSpec: (blockElement: number) => NoteSpec =
-    (blockElement: number): NoteSpec => ({
+const buildRootNoteSpec: (cell: number) => NoteSpec =
+    (cell: number): NoteSpec => ({
         durationSpec: {
-            scalar: to.Scalar(blockElement),
+            scalar: to.Scalar(cell),
             scaleIndex: STANDARD_DURATIONS_SCALE_INDEX,
         },
         pitchSpec: {

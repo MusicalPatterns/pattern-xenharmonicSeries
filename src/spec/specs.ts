@@ -1,4 +1,4 @@
-import { EVERY_OTHER, from, to, TRITAVE } from '@musical-patterns/utilities'
+import { E, EVERY_OTHER, from, to, TRITAVE } from '@musical-patterns/utilities'
 import {
     DUPER_OR_DUB_PARTICULATE,
     EIGHTH_OCTAVE_HARMONICS_CONSTANT,
@@ -33,7 +33,7 @@ const edThreeHarmonicSeriesSpec: XenharmonicSeriesSpec = {
 
 const edEulerHarmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...sharedEdHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.BASE ]: to.Base(Math.E),
+    [ XenharmonicSeriesSpecProperty.BASE ]: E,
 }
 
 const thirdTritaveOddHarmonicsSpec: XenharmonicSeriesSpec = {

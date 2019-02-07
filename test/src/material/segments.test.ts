@@ -5,9 +5,10 @@ import { buildSegment, initial, XenharmonicSeriesSpec } from '../../../src/index
 
 describe('segments', () => {
     it('can stack translated copies of the scale to create chords as you go up it', () => {
+        const stack: number = 2
         const spec: XenharmonicSeriesSpec = {
             ...initial,
-            stack: [ 0, 2 ].map(to.Ordinal),
+            stack: [ 0, stack ].map(to.Ordinal),
         }
         const segment: Segment = buildSegment(spec)
 
@@ -21,8 +22,8 @@ describe('segments', () => {
                 if (firstPitchIndex !== undefined && secondNoteSpec.pitchSpec) {
                     const secondPitchIndex: Maybe<Ordinal> = secondNoteSpec.pitchSpec.index
                     if (secondPitchIndex) {
-                        expect(from.Ordinal(firstPitchIndex) + 2)
-                            .toBe(from.Ordinal(secondPitchIndex))
+                        expect(apply.Translation(firstPitchIndex, to.Translation(stack)))
+                            .toBe(secondPitchIndex)
                     }
                     else {
                         fail()

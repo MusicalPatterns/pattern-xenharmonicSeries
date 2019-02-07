@@ -1,11 +1,26 @@
 // tslint:disable binary-expression-operand-order no-identical-expressions
 
 import { PresetFor } from '@musical-patterns/pattern'
-import { apply, DictionaryOf, from, Scalar, testArraysAreClose, to } from '@musical-patterns/utilities'
+import {
+    apply,
+    CUBE_ROOT_OF_THREE,
+    CUBE_ROOT_OF_TWO,
+    cubeRoot,
+    DictionaryOf,
+    E,
+    from,
+    Scalar,
+    SQUARE_ROOT_OF_THREE,
+    SQUARE_ROOT_OF_TWO,
+    squareRoot,
+    testArraysAreClose,
+    to,
+} from '@musical-patterns/utilities'
 import { buildScalars, specData, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('scalars', () => {
     let presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>>
+    const rawE: number = from.Base(E)
     beforeEach(() => {
         presets = specData.presets || {}
     })
@@ -41,9 +56,9 @@ describe('scalars', () => {
         testArraysAreClose(scalars, [
             1,
             2,
-            2 * Math.sqrt(2),
-            2 * Math.sqrt(2) * Math.cbrt(2),
-            2 * Math.sqrt(2) * Math.cbrt(2) * from.Base(apply.Power(to.Base(2), to.Power(1 / 4))),
+            2 * SQUARE_ROOT_OF_TWO,
+            2 * SQUARE_ROOT_OF_TWO * CUBE_ROOT_OF_TWO,
+            2 * SQUARE_ROOT_OF_TWO * CUBE_ROOT_OF_TWO * apply.Power(2, to.Power(1 / 4)),
         ].map(to.Scalar))
     })
 
@@ -54,9 +69,9 @@ describe('scalars', () => {
         testArraysAreClose(scalars, [
             1,
             3,
-            3 * Math.sqrt(3),
-            3 * Math.sqrt(3) * Math.cbrt(3),
-            3 * Math.sqrt(3) * Math.cbrt(3) * from.Base(apply.Power(to.Base(3), to.Power(1 / 4))),
+            3 * SQUARE_ROOT_OF_THREE,
+            3 * SQUARE_ROOT_OF_THREE * CUBE_ROOT_OF_THREE,
+            3 * SQUARE_ROOT_OF_THREE * CUBE_ROOT_OF_THREE * apply.Power(3, to.Power(1 / 4)),
         ].map(to.Scalar))
     })
 
@@ -66,10 +81,10 @@ describe('scalars', () => {
 
         testArraysAreClose(scalars, [
             1,
-            Math.E,
-            Math.E * Math.sqrt(Math.E),
-            Math.E * Math.sqrt(Math.E) * Math.cbrt(Math.E),
-            Math.E * Math.sqrt(Math.E) * Math.cbrt(Math.E) * from.Base(apply.Power(to.Base(Math.E), to.Power(1 / 4))),
+            rawE,
+            rawE * squareRoot(rawE),
+            rawE * squareRoot(rawE) * cubeRoot(rawE),
+            rawE * squareRoot(rawE) * cubeRoot(rawE) * apply.Power(rawE, to.Power(1 / 4)),
         ].map(to.Scalar))
     })
 
