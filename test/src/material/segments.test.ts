@@ -1,6 +1,6 @@
 import { NoteSpec } from '@musical-patterns/compiler'
 import { Segment } from '@musical-patterns/pattern'
-import { apply, from, Maybe, Ordinal, to } from '@musical-patterns/utilities'
+import { apply, forEach, Maybe, Ordinal, to } from '@musical-patterns/utilities'
 import { buildSegment, initial, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('segments', () => {
@@ -15,8 +15,8 @@ describe('segments', () => {
         const firstPart: NoteSpec[] = apply.Ordinal(segment, to.Ordinal(0))
         const secondPart: NoteSpec[] = apply.Ordinal(segment, to.Ordinal(1))
 
-        firstPart.forEach((firstNoteSpec: NoteSpec, index: number) => {
-            const secondNoteSpec: NoteSpec = apply.Ordinal(secondPart, to.Ordinal(index))
+        forEach(firstPart, (firstNoteSpec: NoteSpec, index: Ordinal) => {
+            const secondNoteSpec: NoteSpec = apply.Ordinal(secondPart, index)
             if (firstNoteSpec.pitchSpec) {
                 const firstPitchIndex: Maybe<Ordinal> = firstNoteSpec.pitchSpec.index
                 if (firstPitchIndex !== undefined && secondNoteSpec.pitchSpec) {
