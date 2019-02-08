@@ -1,9 +1,9 @@
-import { apply, difference, from, INCLUSIVE, Time, to } from '@musical-patterns/utilities'
+import { apply, difference, from, INCLUSIVE, Ms, to } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpec } from '../spec'
 
-const duration: (spec: XenharmonicSeriesSpec) => Time =
-    ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpec): Time =>
-        to.Time(from.Ordinal(apply.Cardinal(
+const duration: (spec: XenharmonicSeriesSpec) => Ms =
+    ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpec): Ms =>
+        to.Ms(from.Ordinal(apply.Cardinal(
             apply.Translation(difference(upperBound, lowerBound), INCLUSIVE),
             iterations,
         )))

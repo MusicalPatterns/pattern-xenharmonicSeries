@@ -1,6 +1,6 @@
 import { calculateNoteSpecsTotalCompiledDuration, NoteSpec } from '@musical-patterns/compiler'
 import { STANDARD_DURATIONS_SCALE_INDEX, STANDARD_PITCH_SCALE_INDEX } from '@musical-patterns/pattern'
-import { Time, to } from '@musical-patterns/utilities'
+import { Ms, to } from '@musical-patterns/utilities'
 import {
     buildRootPart,
     buildScalePart,
@@ -106,8 +106,8 @@ describe('parts', () => {
     })
 
     it('both parts have the same duration', () => {
-        const rootPartDuration: Time = calculateNoteSpecsTotalCompiledDuration(buildRootPart(spec), buildScales(spec))
-        const scalePartDuration: Time = calculateNoteSpecsTotalCompiledDuration(buildScalePart(spec), buildScales(spec))
+        const rootPartDuration: Ms = calculateNoteSpecsTotalCompiledDuration(buildRootPart(spec), buildScales(spec))
+        const scalePartDuration: Ms = calculateNoteSpecsTotalCompiledDuration(buildScalePart(spec), buildScales(spec))
 
         expect(rootPartDuration)
             .toBe(scalePartDuration)

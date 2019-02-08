@@ -1,7 +1,7 @@
 // tslint:disable no-magic-numbers
 
 import {
-    Frequency,
+    Hz,
     negative,
     Ordinal,
     Power,
@@ -14,7 +14,7 @@ import {
 const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Ordinal = to.Ordinal(1)
 const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal = to.Ordinal(32)
 
-const XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY: Frequency =
+const XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY: Hz =
     SCIENTIFIC_PITCHES[ ScientificPitchNoteName.A ][ ScientificPitchOctaveNumber._3 ]
 const XENHARMONIC_SERIES_INITIAL_POWER: Power = to.Power(negative(1))
 

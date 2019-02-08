@@ -18,7 +18,7 @@ const buildScalePart: (spec: XenharmonicSeriesSpec, stackIndex?: Ordinal) => Not
 
 const buildRootPart: (spec: XenharmonicSeriesSpec) => NoteSpec[] =
     (spec: XenharmonicSeriesSpec): NoteSpec[] =>
-        [ buildRootNoteSpec(from.Time(duration(spec))) ]
+        [ buildRootNoteSpec(from.Ms(duration(spec))) ]
 
 export {
     buildScalePart,
