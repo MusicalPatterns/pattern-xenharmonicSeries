@@ -1,4 +1,4 @@
-import { apply, INCLUSIVE, Scalar, to } from '@musical-patterns/utilities'
+import { apply, INCLUSIVE, Scalar } from '@musical-patterns/utilities'
 import {
     applyIterations,
     applyParticulate,
