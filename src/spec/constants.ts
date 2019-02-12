@@ -58,6 +58,10 @@ const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(
 ))
 const DUPER_OR_DUB_PARTICULATE: Translation = to.Translation(2)
 
+const INDEX_FOR_THIRDS: Ordinal = to.Ordinal(2)
+const INDEX_FOR_FOURTHS: Ordinal = to.Ordinal(3)
+const INDEX_FOR_FIFTHS: Ordinal = to.Ordinal(4)
+
 export {
     THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
     THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
@@ -67,4 +71,7 @@ export {
     EIGHTH_OCTAVE_HARMONICS_CONSTANT,
     EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND,
     DUPER_OR_DUB_PARTICULATE,
+    INDEX_FOR_FIFTHS,
+    INDEX_FOR_FOURTHS,
+    INDEX_FOR_THIRDS,
 }

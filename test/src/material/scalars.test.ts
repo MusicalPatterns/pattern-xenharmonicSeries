@@ -15,6 +15,7 @@ import {
     SQUARE_ROOT_OF_TWO,
     squareRoot,
     testArraysAreClose,
+    testIsCloseTo,
     to,
 } from '@musical-patterns/utilities'
 import { buildScalars, specData, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
@@ -239,5 +240,20 @@ describe('scalars', () => {
             5 / 7,
             6 / 8,
         ].map(to.Scalar))
+    })
+
+    it('third tritave odd harmonics with stacked thirds adds extra iterations to cover the extra reach of the stacking', () => {
+        const controlSpec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ].spec
+        const controlScalars: Scalar[] = buildScalars(controlSpec)
+
+        const stackingSpec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS_WITH_STACKED_THIRDS ].spec
+        const scalarsWithStacking: Scalar[] = buildScalars(stackingSpec)
+
+        expect(scalarsWithStacking.length)
+            .toBe(controlScalars.length + 9)
+        testIsCloseTo(
+            scalarsWithStacking[ scalarsWithStacking.length - 1 ],
+            apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar(3)),
+        )
     })
 })

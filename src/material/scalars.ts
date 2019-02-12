@@ -1,9 +1,10 @@
-import { apply, INCLUSIVE, Ordinal, Scalar, Translation } from '@musical-patterns/utilities'
+import { apply, Cardinal, INCLUSIVE, Ordinal, Scalar, to, Translation } from '@musical-patterns/utilities'
 import {
     applyIterations,
     applyParticulate,
     buildBoundedNumbers,
     buildSequence,
+    calculateNeededExtraIterationsForStack,
     getSequenceTypeParameters,
     XenharmonicSequence,
 } from '../custom'
@@ -16,8 +17,7 @@ const maybeExtendBoundForParticulate:
 
 const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
     (spec: XenharmonicSeriesSpec): Scalar[] => {
-        const { sequenceType, lowerBound, upperBound, iterations, particulate, useParticulate } = spec
-
+        const { sequenceType, lowerBound, upperBound, iterations, particulate, useParticulate, stack } = spec
         const { partialSeed, operation } = getSequenceTypeParameters(sequenceType)
         const boundedNumbers: number[] = buildBoundedNumbers(
             lowerBound,
@@ -30,7 +30,9 @@ const buildScalars: (spec: XenharmonicSeriesSpec) => Scalar[] =
             sequence = applyParticulate(sequence, particulate)
         }
 
-        return applyIterations(sequence, iterations)
+        const neededExtraIterations: Cardinal = calculateNeededExtraIterationsForStack(stack, sequence)
+
+        return applyIterations(sequence, apply.Translation(iterations, to.Translation((neededExtraIterations))))
     }
 
 export {

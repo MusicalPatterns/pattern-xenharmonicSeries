@@ -1,4 +1,4 @@
-import { apply, Block, difference, EXCLUSIVE, from, INITIAL, Integer, Ordinal, to } from '@musical-patterns/utilities'
+import { apply, Block, EXCLUSIVE, from, INITIAL, Integer, Ordinal, to } from '@musical-patterns/utilities'
 import { buildBoundedNumbers, noteCount } from '../custom'
 import { XenharmonicSeriesSpec } from '../spec'
 
