@@ -18,9 +18,7 @@ const indexToPowerUsingBase: CalculateTermFunction =
         xenharmonicSeriesTo.Term(from.Base(
             apply.Power(
                 base,
-                to.Power(xenharmonicSeriesFrom.Term(
-                    indexToPower(k, power),
-                )),
+                to.Power(xenharmonicSeriesFrom.Term(indexToPower(k, power))),
             ),
         ))
 

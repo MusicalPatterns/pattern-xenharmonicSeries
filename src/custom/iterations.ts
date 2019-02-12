@@ -14,12 +14,14 @@ const applyIterations: (sequence: XenharmonicSequence, iterations: Cardinal) => 
 
         let results: Scalar[] = []
         for (let index: number = 0; index < from.Cardinal(iterations); index += 1) {
+            const windowScaling: number = from.Base(apply.Power(
+                window,
+                to.Power(index),
+            ))
             const iteration: Scalar[] = sequence.map((partial: PartialSumOrProduct) =>
                 apply.Scalar(
                     partial,
-                    to.Scalar(from.Base(
-                        apply.Power(window, to.Power(index)),
-                    )),
+                    to.Scalar(windowScaling),
                 ),
             )
                 .map(xenharmonicSeriesFrom.PartialSumOrProduct)
