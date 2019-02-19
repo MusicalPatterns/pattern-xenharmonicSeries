@@ -35,6 +35,9 @@ const presetsOrder: XenharmonicSeriesPreset[] = [
     XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES,
     XenharmonicSeriesPreset.SUBPARTICULAR_SERIES,
     XenharmonicSeriesPreset.DUBPARTICULAR_SERIES,
+    XenharmonicSeriesPreset.FIVE_DENOMINATED_HARMONIC_SERIES,
+    XenharmonicSeriesPreset.SEVEN_DENOMINATED_HARMONIC_SERIES,
+    XenharmonicSeriesPreset.TWELVE_DENOMINATED_HARMONIC_SERIES,
 ]
 
 export {

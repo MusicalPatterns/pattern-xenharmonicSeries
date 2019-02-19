@@ -1,8 +1,9 @@
-// tslint:disable no-magic-numbers
+// tslint:disable no-magic-numbers max-file-line-count
 
 import {
     apply,
     Cardinal,
+    Denominator,
     EIGHTH,
     EVERY_OTHER,
     FOURTH,
@@ -62,6 +63,33 @@ const INDEX_FOR_THIRDS: Ordinal = to.Ordinal(2)
 const INDEX_FOR_FOURTHS: Ordinal = to.Ordinal(3)
 const INDEX_FOR_FIFTHS: Ordinal = to.Ordinal(4)
 
+const FIVE_DENOMINATOR: Denominator = to.Denominator(5)
+const FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Ratio([
+    to.Numerator(from.Denominator(apply.Translation(
+        FIVE_DENOMINATOR,
+        to.Translation(negative(1)),
+    ))),
+    FIVE_DENOMINATOR,
+]))
+
+const SEVEN_DENOMINATOR: Denominator = to.Denominator(7)
+const SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Ratio([
+    to.Numerator(from.Denominator(apply.Translation(
+        SEVEN_DENOMINATOR,
+        to.Translation(negative(1)),
+    ))),
+    SEVEN_DENOMINATOR,
+]))
+
+const TWELVE_DENOMINATOR: Denominator = to.Denominator(12)
+const TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Ratio([
+    to.Numerator(from.Denominator(apply.Translation(
+        TWELVE_DENOMINATOR,
+        to.Translation(negative(1)),
+    ))),
+    TWELVE_DENOMINATOR,
+]))
+
 export {
     THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
     THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
@@ -74,4 +102,10 @@ export {
     INDEX_FOR_FIFTHS,
     INDEX_FOR_FOURTHS,
     INDEX_FOR_THIRDS,
+    FIVE_DENOMINATOR,
+    FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    SEVEN_DENOMINATOR,
+    SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    TWELVE_DENOMINATOR,
+    TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
 }

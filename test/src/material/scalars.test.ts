@@ -256,4 +256,100 @@ describe('scalars', () => {
             apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar(3)),
         )
     })
+
+    it('5-denominated harmonic series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.FIVE_DENOMINATED_HARMONIC_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            5 / 5,
+            6 / 5,
+            7 / 5,
+            8 / 5,
+            9 / 5,
+            2 * 5 / 5,
+            2 * 6 / 5,
+            2 * 7 / 5,
+            2 * 8 / 5,
+            2 * 9 / 5,
+            4 * 5 / 5,
+            4 * 6 / 5,
+            4 * 7 / 5,
+            4 * 8 / 5,
+            4 * 9 / 5,
+        ].map(to.Scalar))
+    })
+
+    it('7-denominated harmonic series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SEVEN_DENOMINATED_HARMONIC_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            7 / 7,
+            8 / 7,
+            9 / 7,
+            10 / 7,
+            11 / 7,
+            12 / 7,
+            13 / 7,
+            2 * 7 / 7,
+            2 * 8 / 7,
+            2 * 9 / 7,
+            2 * 10 / 7,
+            2 * 11 / 7,
+            2 * 12 / 7,
+            2 * 13 / 7,
+            4 * 7 / 7,
+            4 * 8 / 7,
+            4 * 9 / 7,
+            4 * 10 / 7,
+            4 * 11 / 7,
+            4 * 12 / 7,
+            4 * 13 / 7,
+        ].map(to.Scalar))
+    })
+
+    it('12-denominated harmonic series', () => {
+        const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.TWELVE_DENOMINATED_HARMONIC_SERIES ].spec
+        const scalars: Scalar[] = buildScalars(spec)
+
+        testArraysAreClose(scalars, [
+            12 / 12,
+            13 / 12,
+            14 / 12,
+            15 / 12,
+            16 / 12,
+            17 / 12,
+            18 / 12,
+            19 / 12,
+            20 / 12,
+            21 / 12,
+            22 / 12,
+            23 / 12,
+            2 * 12 / 12,
+            2 * 13 / 12,
+            2 * 14 / 12,
+            2 * 15 / 12,
+            2 * 16 / 12,
+            2 * 17 / 12,
+            2 * 18 / 12,
+            2 * 19 / 12,
+            2 * 20 / 12,
+            2 * 21 / 12,
+            2 * 22 / 12,
+            2 * 23 / 12,
+            4 * 12 / 12,
+            4 * 13 / 12,
+            4 * 14 / 12,
+            4 * 15 / 12,
+            4 * 16 / 12,
+            4 * 17 / 12,
+            4 * 18 / 12,
+            4 * 19 / 12,
+            4 * 20 / 12,
+            4 * 21 / 12,
+            4 * 22 / 12,
+            4 * 23 / 12,
+        ].map(to.Scalar))
+    })
 })

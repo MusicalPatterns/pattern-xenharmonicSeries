@@ -10,15 +10,17 @@ import {
     edEulerHarmonicSeriesSpec,
     edThreeHarmonicSeriesSpec,
     edTwoHarmonicSeriesSpec,
-    eighthOctaveHarmonics,
+    eighthOctaveHarmonics, fiveDenominatedHarmonicSeries,
     fourthOctaveHarmonics,
+    sevenDenominatedHarmonicSeries,
     standardHarmonicSeriesSpec,
     subharmonicSeriesSpec,
     subparticularSeriesSpec,
     superparticularSeriesSpec,
-    thirdTritaveOddHarmonicsSpec, thirdTritaveOddHarmonicsWithStackedFifthsSpec,
+    thirdTritaveOddHarmonicsSpec,
+    thirdTritaveOddHarmonicsWithStackedFifthsSpec,
     thirdTritaveOddHarmonicsWithStackedFourthsSpec,
-    thirdTritaveOddHarmonicsWithStackedThirdsSpec,
+    thirdTritaveOddHarmonicsWithStackedThirdsSpec, twelveDenominatedHarmonicSeries,
 } from './specs'
 import { XenharmonicSeriesPreset, XenharmonicSeriesSpec } from './types'
 
@@ -105,6 +107,24 @@ const presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>> = {
         description: 'like subparticular, but off by 2 (1/3, 2/4, 3/5, 4/6...)',
         order: presetsOrder.indexOf(XenharmonicSeriesPreset.DUBPARTICULAR_SERIES),
         spec: dubparticularSeriesSpec,
+    },
+    [ XenharmonicSeriesPreset.FIVE_DENOMINATED_HARMONIC_SERIES ]: {
+        description: 'the harmonic series, but each term divided by 5 - an octave of that sliced and repeated',
+        formattedName: '5-denominated harmonic series',
+        order: presetsOrder.indexOf(XenharmonicSeriesPreset.FIVE_DENOMINATED_HARMONIC_SERIES),
+        spec: fiveDenominatedHarmonicSeries,
+    },
+    [ XenharmonicSeriesPreset.SEVEN_DENOMINATED_HARMONIC_SERIES ]: {
+        description: 'the harmonic series, but each term divided by 7 - an octave of that sliced and repeated',
+        formattedName: '7-denominated harmonic series',
+        order: presetsOrder.indexOf(XenharmonicSeriesPreset.SEVEN_DENOMINATED_HARMONIC_SERIES),
+        spec: sevenDenominatedHarmonicSeries,
+    },
+    [ XenharmonicSeriesPreset.TWELVE_DENOMINATED_HARMONIC_SERIES ]: {
+        description: 'the harmonic series, but each term divided by 12 - an octave of that sliced and repeated',
+        formattedName: '12-denominated harmonic series',
+        order: presetsOrder.indexOf(XenharmonicSeriesPreset.TWELVE_DENOMINATED_HARMONIC_SERIES),
+        spec: twelveDenominatedHarmonicSeries,
     },
 }
 

@@ -42,6 +42,9 @@ enum XenharmonicSeriesPreset {
     DUPERPARTICULAR_SERIES = 'duperparticularSeries',
     SUBPARTICULAR_SERIES = 'subparticularSeries',
     DUBPARTICULAR_SERIES = 'dubparticularSeries',
+    FIVE_DENOMINATED_HARMONIC_SERIES = 'fiveDenominatedHarmonicSeries',
+    SEVEN_DENOMINATED_HARMONIC_SERIES = 'sevenDenominatedHarmonicSeries',
+    TWELVE_DENOMINATED_HARMONIC_SERIES = 'twelveDenominatedHarmonicSeries',
 }
 
 enum SequenceType {
