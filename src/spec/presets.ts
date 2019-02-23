@@ -10,7 +10,8 @@ import {
     edEulerHarmonicSeriesSpec,
     edThreeHarmonicSeriesSpec,
     edTwoHarmonicSeriesSpec,
-    eighthOctaveHarmonics, fiveDenominatedHarmonicSeries,
+    eighthOctaveHarmonics,
+    fiveDenominatedHarmonicSeries,
     fourthOctaveHarmonics,
     sevenDenominatedHarmonicSeries,
     standardHarmonicSeriesSpec,
@@ -20,7 +21,8 @@ import {
     thirdTritaveOddHarmonicsSpec,
     thirdTritaveOddHarmonicsWithStackedFifthsSpec,
     thirdTritaveOddHarmonicsWithStackedFourthsSpec,
-    thirdTritaveOddHarmonicsWithStackedThirdsSpec, twelveDenominatedHarmonicSeries,
+    thirdTritaveOddHarmonicsWithStackedThirdsSpec,
+    twelveDenominatedHarmonicSeries,
 } from './specs'
 import { XenharmonicSeriesPreset, XenharmonicSeriesSpec } from './types'
 

@@ -1,4 +1,5 @@
 import { apply, Cardinal, INCLUSIVE, Ordinal, Scalar, to, Translation } from '@musical-patterns/utilities'
+import { XenharmonicSeriesSpec } from '../spec'
 import {
     applyIterations,
     applyParticulate,
@@ -7,8 +8,7 @@ import {
     calculateNeededExtraIterationsForStack,
     getSequenceTypeParameters,
     XenharmonicSequence,
-} from '../custom'
-import { XenharmonicSeriesSpec } from '../spec'
+} from './custom'
 
 const maybeExtendBoundForParticulate:
     (upperBound: Ordinal, useParticulate: boolean, particulate: Translation) => Ordinal =

@@ -1,6 +1,6 @@
 import { Base, NumericOperation, Power } from '@musical-patterns/utilities'
-import { PartialSumOrProduct, Term } from '../nominal'
-import { XenharmonicSeriesSpec } from '../spec'
+import { PartialSumOrProduct, Term } from '../../nominal'
+import { XenharmonicSeriesSpec } from '../../spec'
 
 interface BuildSequenceParameters {
     boundedNumbers: number[],

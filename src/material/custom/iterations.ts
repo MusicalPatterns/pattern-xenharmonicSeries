@@ -1,5 +1,5 @@
 import { apply, Base, Cardinal, from, Maybe, Scalar, to } from '@musical-patterns/utilities'
-import { from as xenharmonicSeriesFrom, PartialSumOrProduct } from '../nominal'
+import { from as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominal'
 import { XenharmonicSequence } from './types'
 
 const applyIterations: (sequence: XenharmonicSequence, iterations: Cardinal) => Scalar[] =

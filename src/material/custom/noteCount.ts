@@ -1,5 +1,5 @@
 import { apply, Cardinal, difference, from, INCLUSIVE, to } from '@musical-patterns/utilities'
-import { XenharmonicSeriesSpec } from '../spec'
+import { XenharmonicSeriesSpec } from '../../spec'
 
 const noteCount: (spec: XenharmonicSeriesSpec) => Cardinal =
     ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpec): Cardinal =>
