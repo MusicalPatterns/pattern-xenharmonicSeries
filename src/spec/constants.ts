@@ -64,7 +64,7 @@ const INDEX_FOR_FOURTHS: Ordinal = to.Ordinal(3)
 const INDEX_FOR_FIFTHS: Ordinal = to.Ordinal(4)
 
 const FIVE_DENOMINATOR: Denominator = to.Denominator(5)
-const FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Ratio([
+const FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Fraction([
     to.Numerator(from.Denominator(apply.Translation(
         FIVE_DENOMINATOR,
         to.Translation(negative(1)),
@@ -73,7 +73,7 @@ const FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(fr
 ]))
 
 const SEVEN_DENOMINATOR: Denominator = to.Denominator(7)
-const SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Ratio([
+const SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Fraction([
     to.Numerator(from.Denominator(apply.Translation(
         SEVEN_DENOMINATOR,
         to.Translation(negative(1)),
@@ -82,7 +82,7 @@ const SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(f
 ]))
 
 const TWELVE_DENOMINATOR: Denominator = to.Denominator(12)
-const TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Ratio([
+const TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation = to.Translation(from.Fraction([
     to.Numerator(from.Denominator(apply.Translation(
         TWELVE_DENOMINATOR,
         to.Translation(negative(1)),
