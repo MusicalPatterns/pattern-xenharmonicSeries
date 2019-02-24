@@ -1,4 +1,4 @@
-import { apply, Base, from, Power, reciprocal, to } from '@musical-patterns/utilities'
+import { apply, Base, from, INITIAL, Ordinal, Power, reciprocal, to } from '@musical-patterns/utilities'
 import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../../nominal'
 import {
     BuildSequenceParameters,
@@ -8,17 +8,17 @@ import {
 } from './types'
 
 const indexToPower: CalculateTermFunction =
-    (k: number, power: Power): Term =>
-        xenharmonicSeriesTo.Term(
-            apply.Power(k, power) === Infinity ? 0 : apply.Power(k, power),
-        )
+    (index: Ordinal, power: Power): Term =>
+        xenharmonicSeriesTo.Term(from.Ordinal(
+            apply.Power(index, power) === Infinity ? INITIAL : apply.Power(index, power),
+        ))
 
 const indexToPowerUsingBase: CalculateTermFunction =
-    (k: number, power: Power, base: Base = to.Base(1)): Term =>
+    (index: Ordinal, power: Power, base: Base = to.Base(1)): Term =>
         xenharmonicSeriesTo.Term(from.Base(
             apply.Power(
                 base,
-                to.Power(xenharmonicSeriesFrom.Term(indexToPower(k, power))),
+                to.Power(xenharmonicSeriesFrom.Term(indexToPower(index, power))),
             ),
         ))
 
@@ -45,7 +45,8 @@ const buildSequence: (parameters: BuildSequenceParameters) => XenharmonicSequenc
         let firstPartial: PartialSumOrProduct
 
         return boundedNumbers
-            .map((index: number): PartialSumOrProduct => {
+            .map(to.Ordinal)
+            .map((index: Ordinal): PartialSumOrProduct => {
                 const calculateTermFunction: CalculateTermFunction =
                     useBase ? indexToPowerUsingBase : indexToPower
 
