@@ -1,7 +1,7 @@
 import {
     OptionedSpecPropertyAttributes,
     RangedSpecPropertyAttributes,
-    SpecAttributesFor,
+    SpecAttributes,
     StandardSpec,
     ToggledSpecPropertyAttributes,
 } from '@musical-patterns/pattern'
@@ -71,7 +71,7 @@ interface XenharmonicSeriesSpec extends StandardSpec {
     [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: boolean,
 }
 
-interface XenharmonicSeriesSpecAttributes extends SpecAttributesFor<XenharmonicSeriesSpec> {
+interface XenharmonicSeriesSpecAttributes extends SpecAttributes<XenharmonicSeriesSpec> {
     [ XenharmonicSeriesSpecProperty.BASE ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.DESCENDING ]: ToggledSpecPropertyAttributes,

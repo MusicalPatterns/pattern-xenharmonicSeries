@@ -1,6 +1,6 @@
 // tslint:disable binary-expression-operand-order no-identical-expressions
 
-import { PresetFor } from '@musical-patterns/pattern'
+import { Preset } from '@musical-patterns/pattern'
 import {
     apply,
     CUBE_ROOT_OF_THREE,
@@ -21,7 +21,7 @@ import {
 import { buildScalars, specData, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('scalars', () => {
-    let presets: DictionaryOf<PresetFor<XenharmonicSeriesSpec>>
+    let presets: DictionaryOf<Preset<XenharmonicSeriesSpec>>
     const rawE: number = from.Base(E)
     beforeEach(() => {
         presets = specData.presets || {}
