@@ -1,8 +1,8 @@
 import {
     OptionedSpecPropertyAttributes,
     RangedSpecPropertyAttributes,
-    Spec,
-    SpecAttributes,
+    SpecAttributesFor,
+    StandardSpec,
     ToggledSpecPropertyAttributes,
 } from '@musical-patterns/pattern'
 import { Base, Cardinal, Ordinal, Power, Scalar, Translation } from '@musical-patterns/utilities'
@@ -53,7 +53,7 @@ enum SequenceType {
     SEQUENCE = 'sequence',
 }
 
-interface XenharmonicSeriesSpec extends Spec {
+interface XenharmonicSeriesSpec extends StandardSpec {
     [ XenharmonicSeriesSpecProperty.BASE ]: Base,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: Translation,
     [ XenharmonicSeriesSpecProperty.DESCENDING ]: boolean,
@@ -71,7 +71,7 @@ interface XenharmonicSeriesSpec extends Spec {
     [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: boolean,
 }
 
-interface XenharmonicSeriesSpecAttributes extends SpecAttributes {
+interface XenharmonicSeriesSpecAttributes extends SpecAttributesFor<XenharmonicSeriesSpec> {
     [ XenharmonicSeriesSpecProperty.BASE ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.CONSTANT ]: RangedSpecPropertyAttributes,
     [ XenharmonicSeriesSpecProperty.DESCENDING ]: ToggledSpecPropertyAttributes,
