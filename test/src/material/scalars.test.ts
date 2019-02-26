@@ -7,7 +7,7 @@ import {
     CUBE_ROOT_OF_TWO,
     cubeRoot,
     DictionaryOf,
-    E,
+    E, Frequency,
     from,
     product,
     Scalar,
@@ -29,16 +29,17 @@ describe('scalars', () => {
 
     it('harmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.STANDARD_HARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1, 2, 3, 4, 5, 6, 7,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('matharmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.MATHARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1 / 1,
@@ -48,12 +49,13 @@ describe('scalars', () => {
             137 / 60,
             49 / 20,
             363 / 140,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('2-edharmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.ED_TWO_HARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1,
@@ -61,12 +63,13 @@ describe('scalars', () => {
             product(2, SQUARE_ROOT_OF_TWO),
             product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO),
             product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO, apply.Power(2, to.Power(1 / 4))),
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('3-edharmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.ED_THREE_HARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1,
@@ -74,12 +77,13 @@ describe('scalars', () => {
             product(3, SQUARE_ROOT_OF_THREE),
             product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE),
             product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE, apply.Power(3, to.Power(1 / 4))),
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('e-edharmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1,
@@ -87,12 +91,13 @@ describe('scalars', () => {
             product(rawE, squareRoot(rawE)),
             product(rawE, squareRoot(rawE), cubeRoot(rawE)),
             product(rawE, squareRoot(rawE), cubeRoot(rawE), apply.Power(rawE, to.Power(1 / 4))),
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('3rd tritave of odd harmonics scale', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             9 / 9,
@@ -122,24 +127,26 @@ describe('scalars', () => {
             9 * 21 / 9,
             9 * 23 / 9,
             9 * 25 / 9,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('8th octave of harmonics scale', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.EIGHTH_OCTAVE_HARMONICS ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             128 / 128,
             129 / 128,
             130 / 128,
             131 / 128,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('4th octave of harmonics scale', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.FOURTH_OCTAVE_HARMONICS ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             8 / 8,
@@ -166,12 +173,13 @@ describe('scalars', () => {
             4 * 13 / 8,
             4 * 14 / 8,
             4 * 15 / 8,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('subharmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SUBHARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1 / 1,
@@ -181,12 +189,13 @@ describe('scalars', () => {
             1 / 5,
             1 / 6,
             1 / 7,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('superparticular series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             2 / 1,
@@ -196,12 +205,13 @@ describe('scalars', () => {
             6 / 5,
             7 / 6,
             8 / 7,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('duperparticular series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             3 / 1,
@@ -211,12 +221,13 @@ describe('scalars', () => {
             7 / 5,
             8 / 6,
             9 / 7,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('subparticular series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SUBPARTICULAR_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1 / 2,
@@ -225,12 +236,13 @@ describe('scalars', () => {
             4 / 5,
             5 / 6,
             6 / 7,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('dubparticular series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.DUBPARTICULAR_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             1 / 3,
@@ -239,15 +251,16 @@ describe('scalars', () => {
             4 / 6,
             5 / 7,
             6 / 8,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('third tritave odd harmonics with stacked thirds adds extra iterations to cover the extra reach of the stacking', () => {
         const controlSpec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ].spec
-        const controlScalars: Scalar[] = buildScalars(controlSpec)
+        const controlScalars: Array<Scalar<Frequency>> = buildScalars(controlSpec)
 
         const stackingSpec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS_WITH_STACKED_THIRDS ].spec
-        const scalarsWithStacking: Scalar[] = buildScalars(stackingSpec)
+        const scalarsWithStacking: Array<Scalar<Frequency>> = buildScalars(stackingSpec)
 
         expect(scalarsWithStacking.length)
             .toBe(controlScalars.length + 9)
@@ -259,7 +272,7 @@ describe('scalars', () => {
 
     it('5-denominated harmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.FIVE_DENOMINATED_HARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             5 / 5,
@@ -277,12 +290,13 @@ describe('scalars', () => {
             4 * 7 / 5,
             4 * 8 / 5,
             4 * 9 / 5,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('7-denominated harmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.SEVEN_DENOMINATED_HARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             7 / 7,
@@ -306,12 +320,13 @@ describe('scalars', () => {
             4 * 11 / 7,
             4 * 12 / 7,
             4 * 13 / 7,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 
     it('12-denominated harmonic series', () => {
         const spec: XenharmonicSeriesSpec = presets[ XenharmonicSeriesPreset.TWELVE_DENOMINATED_HARMONIC_SERIES ].spec
-        const scalars: Scalar[] = buildScalars(spec)
+        const scalars: Array<Scalar<Frequency>> = buildScalars(spec)
 
         testArraysAreCloseSoFar(scalars, [
             12 / 12,
@@ -350,6 +365,7 @@ describe('scalars', () => {
             4 * 21 / 12,
             4 * 22 / 12,
             4 * 23 / 12,
-        ].map(to.Scalar))
+        ].map(to.Scalar)
+            .map(to.Frequency))
     })
 })
