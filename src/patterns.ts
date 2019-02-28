@@ -15,6 +15,7 @@ const metadata: Metadata = {
     mostRecentPublish: process.env.PUBLISH_DATE || '2016-09-20T07:00:00.000Z',
     musicalIdeaIllustrated: 'pitch series inspired by the harmonic series',
     originalPublish: '2016-09-20T07:00:00.000Z',
+    version: process.env.PATTERN_VERSION || 'unknown',
 }
 
 const pattern: Pattern<XenharmonicSeriesSpec> = {
