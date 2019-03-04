@@ -3,7 +3,7 @@ import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../spec
 import {
     applyIterations,
     applyParticulate,
-    buildBoundedNumbers,
+    buildBoundedIntegers,
     buildSequence,
     calculateNeededExtraIterationsForStack,
     getSequenceTypeParameters,
@@ -19,7 +19,7 @@ const buildScalars: (spec: XenharmonicSeriesSpec) => Array<Scalar<Frequency>> =
     (spec: XenharmonicSeriesSpec): Array<Scalar<Frequency>> => {
         const { sequenceType, lowerBound, upperBound, iterations, particulate, useParticulate, stack } = spec
         const { partialSeed, operation } = getSequenceTypeParameters(sequenceType)
-        const boundedNumbers: number[] = buildBoundedNumbers(
+        const boundedNumbers: number[] = buildBoundedIntegers(
             lowerBound,
             apply.Translation(maybeExtendBoundForParticulate(upperBound, useParticulate, particulate), INCLUSIVE),
         )

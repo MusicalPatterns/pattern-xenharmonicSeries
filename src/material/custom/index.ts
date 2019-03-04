@@ -1,5 +1,5 @@
-export { buildBoundedNumbers } from './bounds'
-export { noteCount } from './noteCount'
+export { buildBoundedIntegers } from './bounds'
+export { calculateNoteCount } from './noteCount'
 export { replace } from './replace'
 export { applyIterations } from './iterations'
 export { applyParticulate } from './particulate'
