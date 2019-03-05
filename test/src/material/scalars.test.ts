@@ -10,6 +10,7 @@ import {
     E,
     Frequency,
     from,
+    lastElement,
     product,
     Scalar,
     SQUARE_ROOT_OF_THREE,
@@ -266,7 +267,7 @@ describe('scalars', () => {
         expect(scalarsWithStacking.length)
             .toBe(controlScalars.length + 9)
         testIsCloseTo(
-            scalarsWithStacking[ scalarsWithStacking.length - 1 ],
+            lastElement(scalarsWithStacking),
             apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar(3)),
         )
     })
