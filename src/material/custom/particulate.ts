@@ -1,5 +1,6 @@
 import {
     apply,
+    indexOfLastElement,
     INITIAL,
     map,
     negative,
@@ -15,8 +16,11 @@ import { XenharmonicSequence } from './types'
 
 const applyParticulate: (sequence: XenharmonicSequence, particulate: Translation) => XenharmonicSequence =
     (sequence: XenharmonicSequence, particulate: Translation): XenharmonicSequence => {
-        const particulateSequence: XenharmonicSequence = map(
-            sequence,
+        const trimBackOffTheExtraTermsWeNeededToApplyParticulate: XenharmonicSequence =
+            slice(sequence, INITIAL, apply.Translation(indexOfLastElement(sequence), negative(particulate)))
+
+        return map(
+            trimBackOffTheExtraTermsWeNeededToApplyParticulate,
             (partial: PartialSumOrProduct, index: Ordinal): PartialSumOrProduct => {
                 const particulateIndex: Ordinal = apply.Translation(index, particulate)
                 const particulatePartial: PartialSumOrProduct = apply.Ordinal(sequence, particulateIndex)
@@ -26,15 +30,6 @@ const applyParticulate: (sequence: XenharmonicSequence, particulate: Translation
 
                 return apply.Scalar(partial, particulateScalar)
             },
-        )
-
-        const trimBackOffTheExtraTermsWeNeededToApplyParticulate: Ordinal =
-            apply.Translation(to.Ordinal(particulateSequence.length), negative(particulate))
-
-        return slice(
-            particulateSequence,
-            INITIAL,
-            trimBackOffTheExtraTermsWeNeededToApplyParticulate,
         )
     }
 
