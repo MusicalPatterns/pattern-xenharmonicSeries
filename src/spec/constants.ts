@@ -11,8 +11,10 @@ import {
     negative,
     OCTAVE,
     ONE_HALF,
+    Operand,
     Ordinal,
     PREVIOUS,
+    Scalar,
     THIRD,
     to,
     Translation,
@@ -45,14 +47,14 @@ const FOURTH_OCTAVE_HARMONICS_CONSTANT: Translation = to.Translation(apply.Trans
             PREVIOUS,
         ))),
     )),
-    to.Translation(from.Scalar(negative(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])) as number),
+    to.Translation(from.Scalar<Operand, Scalar>(negative(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]))),
 ))
 const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(
     windowIterationHarmonicStepCount(OCTAVE, FOURTH),
 ))
 const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation = to.Translation(apply.Translation(
     from.Base(apply.Power(OCTAVE, to.Power(from.Ordinal(apply.Translation(EIGHTH, to.Translation(negative(1))))))),
-    to.Translation(from.Scalar(negative(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ])) as number),
+    to.Translation(from.Scalar<Operand, Scalar>(negative(initial[ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]))),
 ))
 const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(
     windowIterationHarmonicStepCount(OCTAVE, EIGHTH),

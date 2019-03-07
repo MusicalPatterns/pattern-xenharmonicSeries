@@ -1,11 +1,11 @@
-import { apply, Base, Cardinal, Frequency, from, Maybe, Scalar, to } from '@musical-patterns/utilities'
+import { apply, Base, Cardinal, Frequency, from, isUndefined, Maybe, Scalar, to } from '@musical-patterns/utilities'
 import { from as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominal'
 import { XenharmonicSequence } from './types'
 
 const applyIterations: (sequence: XenharmonicSequence, iterations: Cardinal) => Array<Scalar<Frequency>> =
     (sequence: XenharmonicSequence, iterations: Cardinal): Array<Scalar<Frequency>> => {
         const terminalPartial: Maybe<PartialSumOrProduct> = sequence.pop()
-        if (!terminalPartial) {
+        if (isUndefined(terminalPartial)) {
             return sequence
                 .map(xenharmonicSeriesFrom.PartialSumOrProduct)
                 .map(to.Scalar)

@@ -1,4 +1,4 @@
-import { apply, Base, from, INITIAL, Ordinal, Power, reciprocal, to } from '@musical-patterns/utilities'
+import { apply, Base, from, INITIAL, isUndefined, Ordinal, Power, reciprocal, to } from '@musical-patterns/utilities'
 import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../../nominal'
 import {
     BuildSequenceParameters,
@@ -62,7 +62,7 @@ const buildSequence: (parameters: BuildSequenceParameters) => XenharmonicSequenc
             })
             .map((partial: PartialSumOrProduct) => apply.Translation(partial, constant))
             .map((partial: PartialSumOrProduct) => {
-                if (!firstPartial) {
+                if (isUndefined(firstPartial)) {
                     firstPartial = partial
                 }
 

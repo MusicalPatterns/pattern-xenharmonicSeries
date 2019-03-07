@@ -6,7 +6,7 @@ import {
     SpecPropertyType,
     standardSpecAttributes,
 } from '@musical-patterns/pattern'
-import { xenharmonicSeriesConstraints } from './constraints'
+import { xenharmonicSeriesOptionedConstraints, xenharmonicSeriesRangedConstraints } from './constraints'
 import { baseDescription, useBaseDescription } from './descriptions'
 import { specControlsOrder } from './orders'
 import { XenharmonicSeriesSpecAttributes, XenharmonicSeriesSpecProperty } from './types'
@@ -14,7 +14,7 @@ import { XenharmonicSeriesSpecAttributes, XenharmonicSeriesSpecProperty } from '
 const attributes: XenharmonicSeriesSpecAttributes = {
     ...standardSpecAttributes,
     [ XenharmonicSeriesSpecProperty.BASE ]: {
-        constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.BASE ] as RangedConstraint,
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.BASE ],
         description: baseDescription,
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.BASE),
         specPropertyType: SpecPropertyType.RANGED,
@@ -42,14 +42,14 @@ const attributes: XenharmonicSeriesSpecAttributes = {
         specPropertyType: SpecPropertyType.RANGED,
     },
     [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: {
-        constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.LOWER_BOUND ] as RangedConstraint,
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.LOWER_BOUND ],
         description: 'lower bound of the partial summation/product',
         formattedName: 'lower bound of summation/product',
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.LOWER_BOUND),
         specPropertyType: SpecPropertyType.RANGED,
     },
     [ XenharmonicSeriesSpecProperty.PARTICULATE ]: {
-        constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.PARTICULATE ] as RangedConstraint,
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.PARTICULATE ],
         description: 'divide each term by the term in the position this # of terms later',
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.PARTICULATE),
         specPropertyType: SpecPropertyType.RANGED,
@@ -60,13 +60,13 @@ const attributes: XenharmonicSeriesSpecAttributes = {
         specPropertyType: SpecPropertyType.RANGED,
     },
     [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: {
-        constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ] as OptionedConstraint,
+        constraint: xenharmonicSeriesOptionedConstraints[ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ],
         description: 'Σ or Π',
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.SEQUENCE_TYPE),
         specPropertyType: SpecPropertyType.OPTIONED,
     },
     [ XenharmonicSeriesSpecProperty.STACK ]: {
-        constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.STACK ] as RangedConstraint,
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.STACK ],
         description: 'an array of translations defining a polyad which is applied to each step of the scale',
         isArrayed: true,
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.STACK),
@@ -78,7 +78,7 @@ const attributes: XenharmonicSeriesSpecAttributes = {
         specPropertyType: SpecPropertyType.RANGED,
     },
     [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: {
-        constraint: xenharmonicSeriesConstraints[ XenharmonicSeriesSpecProperty.UPPER_BOUND ] as RangedConstraint,
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.UPPER_BOUND ],
         description: 'upper bound of the partial summation/product',
         formattedName: 'upper bound of summation/product',
         order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.UPPER_BOUND),
