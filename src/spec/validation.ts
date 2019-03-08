@@ -1,8 +1,8 @@
-import { SpecValidationFunction, SpecValidationResults } from '@musical-patterns/pattern'
+import { ValidationFunction, ValidationResults } from '@musical-patterns/pattern'
 import { XenharmonicSeriesSpec } from './types'
 
-const validationFunction: SpecValidationFunction<XenharmonicSeriesSpec> =
-    (spec: XenharmonicSeriesSpec): SpecValidationResults<XenharmonicSeriesSpec> => {
+const validationFunction: ValidationFunction<XenharmonicSeriesSpec> =
+    (spec: XenharmonicSeriesSpec): ValidationResults<XenharmonicSeriesSpec> => {
         if (spec.upperBound < spec.lowerBound) {
             return {
                 lowerBound: 'cannot be more than the upper bound',
