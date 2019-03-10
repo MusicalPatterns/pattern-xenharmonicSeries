@@ -4,10 +4,10 @@ export {
     buildScalars,
     buildSegment,
     buildBlock,
-    buildScalePart,
-    buildRootPart,
-    buildScales,
-    buildEntities,
+    buildScaleNotes,
+    buildRootNotes,
+    materializeScales,
+    materializeEntities,
 } from './material/indexForTest'
 export {
     data,

@@ -1,4 +1,4 @@
-import { NoteSpec } from '@musical-patterns/compiler'
+import { Note } from '@musical-patterns/compiler'
 import { Segment } from '@musical-patterns/pattern'
 import { apply, forEach, isUndefined, Maybe, Ordinal, to } from '@musical-patterns/utilities'
 import { buildSegment, initial, XenharmonicSeriesSpec } from '../../../src/indexForTest'
@@ -12,15 +12,15 @@ describe('segments', () => {
         }
         const segment: Segment = buildSegment(spec)
 
-        const firstPart: NoteSpec[] = apply.Ordinal(segment, to.Ordinal(0))
-        const secondPart: NoteSpec[] = apply.Ordinal(segment, to.Ordinal(1))
+        const notes: Note[] = apply.Ordinal(segment, to.Ordinal(0))
+        const stackedNotes: Note[] = apply.Ordinal(segment, to.Ordinal(1))
 
-        forEach(firstPart, (firstNoteSpec: NoteSpec, index: Ordinal) => {
-            const secondNoteSpec: NoteSpec = apply.Ordinal(secondPart, index)
-            if (firstNoteSpec.pitchSpec) {
-                const firstPitchIndex: Maybe<Ordinal> = firstNoteSpec.pitchSpec.index
-                if (!isUndefined(firstPitchIndex) && secondNoteSpec.pitchSpec) {
-                    const secondPitchIndex: Maybe<Ordinal> = secondNoteSpec.pitchSpec.index
+        forEach(notes, (firstNote: Note, index: Ordinal) => {
+            const stackedNote: Note = apply.Ordinal(stackedNotes, index)
+            if (firstNote.pitch) {
+                const firstPitchIndex: Maybe<Ordinal> = firstNote.pitch.index
+                if (!isUndefined(firstPitchIndex) && stackedNote.pitch) {
+                    const secondPitchIndex: Maybe<Ordinal> = stackedNote.pitch.index
                     if (secondPitchIndex) {
                         expect(apply.Translation(firstPitchIndex, to.Translation(stack)))
                             .toBe(secondPitchIndex)

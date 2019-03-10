@@ -1,6 +1,6 @@
 [
   {
-    "notes": [
+    "sounds": [
       {
         "duration": 700,
         "gain": 1,
@@ -354,13 +354,13 @@
         "sustain": 699.9
       }
     ],
-    "voiceSpec": {
+    "sourceRequest": {
       "timbreName": "GUITAR_FUZZ",
-      "voiceType": "OSCILLATOR"
+      "sourceType": "OSCILLATOR"
     }
   },
   {
-    "notes": [
+    "sounds": [
       {
         "duration": 22400,
         "gain": 1,
@@ -373,9 +373,9 @@
         "sustain": 22399.9
       }
     ],
-    "voiceSpec": {
+    "sourceRequest": {
       "timbreName": "CHORUS_STRINGS",
-      "voiceType": "OSCILLATOR"
+      "sourceType": "OSCILLATOR"
     }
   }
 ]

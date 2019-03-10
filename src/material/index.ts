@@ -1,5 +1,5 @@
-export { buildEntities } from './entities'
-export { buildScales } from './scales'
+export { materializeEntities } from './entities'
+export { materializeScales } from './scales'
 export {
     buildSuperparticularSeriesScalars,
     buildDuperparticularSeriesScalars,

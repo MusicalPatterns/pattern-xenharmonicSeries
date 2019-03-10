@@ -1,12 +1,12 @@
-import { BuildScalesFunction, Scale } from '@musical-patterns/compiler'
-import { buildStandardScales } from '@musical-patterns/pattern'
+import { MaterializeScales, Scale } from '@musical-patterns/compiler'
+import { materializeStandardScales } from '@musical-patterns/pattern'
 import { from, to } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpec } from '../spec'
 import { buildScalars } from './scalars'
 
-const buildScales: BuildScalesFunction =
+const materializeScales: MaterializeScales =
     (spec: XenharmonicSeriesSpec): Scale[] =>
-        buildStandardScales(
+        materializeStandardScales(
             spec,
             {
                 pitchScalars: buildScalars(spec)
@@ -16,5 +16,5 @@ const buildScales: BuildScalesFunction =
         )
 
 export {
-    buildScales,
+    materializeScales,
 }

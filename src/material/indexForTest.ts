@@ -2,7 +2,7 @@
 
 export { buildScalars } from './scalars'
 export { buildBlock } from './blocks'
-export { buildScalePart, buildRootPart } from './parts'
-export { buildScales } from './scales'
-export { buildEntities } from './entities'
+export { buildScaleNotes, buildRootNotes } from './notes'
+export { materializeScales } from './scales'
+export { materializeEntities } from './entities'
 export { buildSegment } from './segments'
