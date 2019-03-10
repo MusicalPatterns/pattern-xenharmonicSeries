@@ -26,7 +26,7 @@ describe('scalars', () => {
     let presets: DictionaryOf<Preset<XenharmonicSeriesSpec>>
     const rawE: number = from.Base(E)
     beforeEach(() => {
-        presets = data.presets || {}
+        presets = data.presets!
     })
 
     it('harmonic series', () => {

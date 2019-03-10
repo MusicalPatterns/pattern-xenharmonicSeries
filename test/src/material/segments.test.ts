@@ -1,6 +1,6 @@
 import { Note } from '@musical-patterns/compiler'
 import { Segment } from '@musical-patterns/pattern'
-import { apply, forEach, isUndefined, Maybe, Ordinal, to } from '@musical-patterns/utilities'
+import { apply, forEach, Ordinal, to } from '@musical-patterns/utilities'
 import { buildSegment, initial, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('segments', () => {
@@ -15,27 +15,10 @@ describe('segments', () => {
         const notes: Note[] = apply.Ordinal(segment, to.Ordinal(0))
         const stackedNotes: Note[] = apply.Ordinal(segment, to.Ordinal(1))
 
-        forEach(notes, (firstNote: Note, index: Ordinal) => {
+        forEach(notes, (note: Note, index: Ordinal) => {
             const stackedNote: Note = apply.Ordinal(stackedNotes, index)
-            if (firstNote.pitch) {
-                const firstPitchIndex: Maybe<Ordinal> = firstNote.pitch.index
-                if (!isUndefined(firstPitchIndex) && stackedNote.pitch) {
-                    const secondPitchIndex: Maybe<Ordinal> = stackedNote.pitch.index
-                    if (secondPitchIndex) {
-                        expect(apply.Translation(firstPitchIndex, to.Translation(stack)))
-                            .toBe(secondPitchIndex)
-                    }
-                    else {
-                        fail()
-                    }
-                }
-                else {
-                    fail()
-                }
-            }
-            else {
-                fail()
-            }
+            expect(apply.Translation(note.pitch!.index, to.Translation(stack)))
+                .toBe(stackedNote.pitch!.index)
         })
     })
 })
