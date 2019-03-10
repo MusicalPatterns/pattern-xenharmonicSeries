@@ -1,103 +1,98 @@
 // tslint:disable max-file-line-count
 
-import {
-    OptionedConstraint,
-    RangedConstraint,
-    SpecPropertyType,
-    standardSpecAttributes,
-} from '@musical-patterns/pattern'
+import { PropertyType, standardAttributes } from '@musical-patterns/pattern'
 import { xenharmonicSeriesOptionedConstraints, xenharmonicSeriesRangedConstraints } from './constraints'
 import { baseDescription, useBaseDescription } from './descriptions'
 import { specControlsOrder } from './orders'
-import { XenharmonicSeriesSpecAttributes, XenharmonicSeriesSpecProperty } from './types'
+import { XenharmonicSeriesAttributes, XenharmonicSeriesProperty } from './types'
 
-const attributes: XenharmonicSeriesSpecAttributes = {
-    ...standardSpecAttributes,
-    [ XenharmonicSeriesSpecProperty.BASE ]: {
-        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.BASE ],
+const attributes: XenharmonicSeriesAttributes = {
+    ...standardAttributes,
+    [ XenharmonicSeriesProperty.BASE ]: {
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesProperty.BASE ],
         description: baseDescription,
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.BASE),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.BASE),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: {
+    [ XenharmonicSeriesProperty.CONSTANT ]: {
         description: 'a constant added to each element in the final sequence',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.CONSTANT),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.CONSTANT),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.GROUND ]: {
+    [ XenharmonicSeriesProperty.GROUND ]: {
         description: 'divide all elements in the final sequence by the first such that the first is set to 1',
         formattedName: 'ground the sequence at 1',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.GROUND),
-        specPropertyType: SpecPropertyType.TOGGLED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.GROUND),
+        propertyType: PropertyType.TOGGLED,
     },
-    [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: {
+    [ XenharmonicSeriesProperty.HOLD_ROOT ]: {
         description: 'whether to hold the root to compare each other note against',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.HOLD_ROOT),
-        specPropertyType: SpecPropertyType.TOGGLED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.HOLD_ROOT),
+        propertyType: PropertyType.TOGGLED,
     },
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: {
+    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: {
         description: 'how many times to climb by this scale before repeating',
         formattedName: 'scale iterations',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.SCALE_ITERATIONS),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.SCALE_ITERATIONS),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: {
-        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.LOWER_BOUND ],
+    [ XenharmonicSeriesProperty.LOWER_BOUND ]: {
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesProperty.LOWER_BOUND ],
         description: 'lower bound of the partial summation/product',
         formattedName: 'lower bound of summation/product',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.LOWER_BOUND),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.LOWER_BOUND),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: {
-        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.PARTICULATE ],
+    [ XenharmonicSeriesProperty.PARTICULATE ]: {
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesProperty.PARTICULATE ],
         description: 'divide each term by the term in the position this # of terms later',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.PARTICULATE),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.PARTICULATE),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.POWER ]: {
+    [ XenharmonicSeriesProperty.POWER ]: {
         description: 'the power to raise the index of summation/product to in each term',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.POWER),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.POWER),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: {
-        constraint: xenharmonicSeriesOptionedConstraints[ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ],
+    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: {
+        constraint: xenharmonicSeriesOptionedConstraints[ XenharmonicSeriesProperty.SEQUENCE_TYPE ],
         description: 'Σ or Π',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.SEQUENCE_TYPE),
-        specPropertyType: SpecPropertyType.OPTIONED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.SEQUENCE_TYPE),
+        propertyType: PropertyType.OPTIONED,
     },
-    [ XenharmonicSeriesSpecProperty.STACK ]: {
-        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.STACK ],
+    [ XenharmonicSeriesProperty.STACK ]: {
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesProperty.STACK ],
         description: 'an array of translations defining a polyad which is applied to each step of the scale',
         isArrayed: true,
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.STACK),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.STACK),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: {
+    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: {
         description: 'a coefficient applied to each term',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.TERM_COEFFICIENT),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.TERM_COEFFICIENT),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: {
-        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpecProperty.UPPER_BOUND ],
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: {
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesProperty.UPPER_BOUND ],
         description: 'upper bound of the partial summation/product',
         formattedName: 'upper bound of summation/product',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.UPPER_BOUND),
-        specPropertyType: SpecPropertyType.RANGED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.UPPER_BOUND),
+        propertyType: PropertyType.RANGED,
     },
-    [ XenharmonicSeriesSpecProperty.USE_BASE ]: {
+    [ XenharmonicSeriesProperty.USE_BASE ]: {
         description: useBaseDescription,
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.USE_BASE),
-        specPropertyType: SpecPropertyType.TOGGLED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.USE_BASE),
+        propertyType: PropertyType.TOGGLED,
     },
-    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: {
+    [ XenharmonicSeriesProperty.USE_PARTICULATE ]: {
         description: 'turn use of particulate effect on or off',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.USE_PARTICULATE),
-        specPropertyType: SpecPropertyType.TOGGLED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.USE_PARTICULATE),
+        propertyType: PropertyType.TOGGLED,
     },
-    [ XenharmonicSeriesSpecProperty.DESCENDING ]: {
+    [ XenharmonicSeriesProperty.DESCENDING ]: {
         description: 'reverse the scale so that it descends in steps (not necessarily in pitch)',
-        order: specControlsOrder.indexOf(XenharmonicSeriesSpecProperty.DESCENDING),
-        specPropertyType: SpecPropertyType.TOGGLED,
+        order: specControlsOrder.indexOf(XenharmonicSeriesProperty.DESCENDING),
+        propertyType: PropertyType.TOGGLED,
     },
 }
 

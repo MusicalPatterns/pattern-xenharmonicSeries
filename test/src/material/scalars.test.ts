@@ -20,13 +20,13 @@ import {
     testIsCloseTo,
     to,
 } from '@musical-patterns/utilities'
-import { buildScalars, specData, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
+import { buildScalars, data, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('scalars', () => {
     let presets: DictionaryOf<Preset<XenharmonicSeriesSpec>>
     const rawE: number = from.Base(E)
     beforeEach(() => {
-        presets = specData.presets || {}
+        presets = data.presets || {}
     })
 
     it('harmonic series', () => {

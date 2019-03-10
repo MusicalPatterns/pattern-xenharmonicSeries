@@ -1,4 +1,4 @@
-import { buildEntities, initial, XenharmonicSeriesSpec, XenharmonicSeriesSpecProperty } from '../../../src/indexForTest'
+import { buildEntities, initial, XenharmonicSeriesProperty, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('entities', () => {
     it('when hold root is true, includes the root entity', () => {
@@ -10,7 +10,7 @@ describe('entities', () => {
     it('when hold root is false, excludes the root entity', () => {
         const spec: XenharmonicSeriesSpec = {
             ...initial,
-            [ XenharmonicSeriesSpecProperty.HOLD_ROOT ]: false,
+            [ XenharmonicSeriesProperty.HOLD_ROOT ]: false,
         }
 
         expect(buildEntities(spec).length)

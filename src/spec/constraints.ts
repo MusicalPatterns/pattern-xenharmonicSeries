@@ -1,38 +1,38 @@
 import { OptionedConstraint, RangedConstraint } from '@musical-patterns/pattern'
 import { DictionaryOf } from '@musical-patterns/utilities'
-import { SequenceType, XenharmonicSeriesSpecProperty } from './types'
+import { SequenceType, XenharmonicSeriesProperty } from './types'
 
 const xenharmonicSeriesRangedConstraints: DictionaryOf<RangedConstraint> = {
-    [ XenharmonicSeriesSpecProperty.BASE ]: {
+    [ XenharmonicSeriesProperty.BASE ]: {
         excludeMin: true,
         min: 1,
     },
-    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: {
+    [ XenharmonicSeriesProperty.LOWER_BOUND ]: {
         integer: true,
     },
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: {
-        integer: true,
-        min: 0,
-    },
-    [ XenharmonicSeriesSpecProperty.STACK ]: {
+    [ XenharmonicSeriesProperty.PARTICULATE ]: {
         integer: true,
         min: 0,
     },
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: {
+    [ XenharmonicSeriesProperty.STACK ]: {
+        integer: true,
+        min: 0,
+    },
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: {
         integer: true,
     },
 }
 const xenharmonicSeriesOptionedConstraints: DictionaryOf<OptionedConstraint> = {
-    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: [
+    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: [
         {
             formattedName: 'partial sum',
-            key: SequenceType.PARTIAL_SUM,
             order: 1,
+            value: SequenceType.PARTIAL_SUM,
         },
         {
             formattedName: 'partial product',
-            key: SequenceType.PARTIAL_PRODUCT,
             order: 2,
+            value: SequenceType.PARTIAL_PRODUCT,
         },
     ],
 }

@@ -1,11 +1,11 @@
-import { SpecData } from '@musical-patterns/pattern'
+import { Data } from '@musical-patterns/pattern'
 import { attributes } from './attributes'
 import { initial } from './initial'
 import { presets } from './presets'
 import { XenharmonicSeriesSpec } from './types'
 import { validationFunction } from './validation'
 
-const specData: SpecData<XenharmonicSeriesSpec> = {
+const data: Data<XenharmonicSeriesSpec> = {
     attributes,
     initial,
     presets,
@@ -13,5 +13,5 @@ const specData: SpecData<XenharmonicSeriesSpec> = {
 }
 
 export {
-    specData,
+    data,
 }

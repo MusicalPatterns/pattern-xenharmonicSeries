@@ -1,21 +1,21 @@
-import { XenharmonicSeriesPreset, XenharmonicSeriesSpecProperty } from './types'
+import { XenharmonicSeriesPreset, XenharmonicSeriesProperty } from './types'
 
-const specControlsOrder: XenharmonicSeriesSpecProperty[] = [
-    XenharmonicSeriesSpecProperty.SEQUENCE_TYPE,
-    XenharmonicSeriesSpecProperty.HOLD_ROOT,
-    XenharmonicSeriesSpecProperty.POWER,
-    XenharmonicSeriesSpecProperty.LOWER_BOUND,
-    XenharmonicSeriesSpecProperty.UPPER_BOUND,
-    XenharmonicSeriesSpecProperty.USE_BASE,
-    XenharmonicSeriesSpecProperty.BASE,
-    XenharmonicSeriesSpecProperty.DESCENDING,
-    XenharmonicSeriesSpecProperty.CONSTANT,
-    XenharmonicSeriesSpecProperty.GROUND,
-    XenharmonicSeriesSpecProperty.TERM_COEFFICIENT,
-    XenharmonicSeriesSpecProperty.SCALE_ITERATIONS,
-    XenharmonicSeriesSpecProperty.STACK,
-    XenharmonicSeriesSpecProperty.USE_PARTICULATE,
-    XenharmonicSeriesSpecProperty.PARTICULATE,
+const specControlsOrder: XenharmonicSeriesProperty[] = [
+    XenharmonicSeriesProperty.SEQUENCE_TYPE,
+    XenharmonicSeriesProperty.HOLD_ROOT,
+    XenharmonicSeriesProperty.POWER,
+    XenharmonicSeriesProperty.LOWER_BOUND,
+    XenharmonicSeriesProperty.UPPER_BOUND,
+    XenharmonicSeriesProperty.USE_BASE,
+    XenharmonicSeriesProperty.BASE,
+    XenharmonicSeriesProperty.DESCENDING,
+    XenharmonicSeriesProperty.CONSTANT,
+    XenharmonicSeriesProperty.GROUND,
+    XenharmonicSeriesProperty.TERM_COEFFICIENT,
+    XenharmonicSeriesProperty.SCALE_ITERATIONS,
+    XenharmonicSeriesProperty.STACK,
+    XenharmonicSeriesProperty.USE_PARTICULATE,
+    XenharmonicSeriesProperty.PARTICULATE,
 ]
 
 const presetsOrder: XenharmonicSeriesPreset[] = [

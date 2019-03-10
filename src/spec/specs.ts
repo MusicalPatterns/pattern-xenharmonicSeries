@@ -21,124 +21,124 @@ import {
     XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 } from './constants'
 import { initial } from './initial'
-import { SequenceType, XenharmonicSeriesSpec, XenharmonicSeriesSpecProperty } from './types'
+import { SequenceType, XenharmonicSeriesProperty, XenharmonicSeriesSpec } from './types'
 
 const standardHarmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...initial,
-    [ XenharmonicSeriesSpecProperty.POWER ]: to.Power(0),
+    [ XenharmonicSeriesProperty.POWER ]: to.Power(0),
 }
 
 const sharedEdHarmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...initial,
-    [ XenharmonicSeriesSpecProperty.LOWER_BOUND ]: INITIAL,
-    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
-    [ XenharmonicSeriesSpecProperty.USE_BASE ]: true,
+    [ XenharmonicSeriesProperty.LOWER_BOUND ]: INITIAL,
+    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
+    [ XenharmonicSeriesProperty.USE_BASE ]: true,
 }
 
 const edTwoHarmonicSeriesSpec: XenharmonicSeriesSpec = sharedEdHarmonicSeriesSpec
 
 const edThreeHarmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...sharedEdHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.BASE ]: TRITAVE,
+    [ XenharmonicSeriesProperty.BASE ]: TRITAVE,
 }
 
 const edEulerHarmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...sharedEdHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.BASE ]: E,
+    [ XenharmonicSeriesProperty.BASE ]: E,
 }
 
 const thirdTritaveOddHarmonicsSpec: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: to.Scalar(from.Cardinal(EVERY_OTHER)),
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
+    [ XenharmonicSeriesProperty.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Cardinal(EVERY_OTHER)),
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
 }
 
 const thirdTritaveOddHarmonicsWithStackedThirdsSpec: XenharmonicSeriesSpec = {
     ...thirdTritaveOddHarmonicsSpec,
-    [ XenharmonicSeriesSpecProperty.STACK ]: [ INITIAL, INDEX_FOR_THIRDS ],
+    [ XenharmonicSeriesProperty.STACK ]: [ INITIAL, INDEX_FOR_THIRDS ],
 }
 
 const thirdTritaveOddHarmonicsWithStackedFourthsSpec: XenharmonicSeriesSpec = {
     ...thirdTritaveOddHarmonicsSpec,
-    [ XenharmonicSeriesSpecProperty.STACK ]: [ INITIAL, INDEX_FOR_FOURTHS ],
+    [ XenharmonicSeriesProperty.STACK ]: [ INITIAL, INDEX_FOR_FOURTHS ],
 }
 
 const thirdTritaveOddHarmonicsWithStackedFifthsSpec: XenharmonicSeriesSpec = {
     ...thirdTritaveOddHarmonicsSpec,
-    [ XenharmonicSeriesSpecProperty.STACK ]: [ INITIAL, INDEX_FOR_FIFTHS ],
+    [ XenharmonicSeriesProperty.STACK ]: [ INITIAL, INDEX_FOR_FIFTHS ],
 }
 
 const fourthOctaveHarmonics: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: FOURTH_OCTAVE_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: FOURTH_OCTAVE_HARMONICS_UPPER_BOUND,
+    [ XenharmonicSeriesProperty.CONSTANT ]: FOURTH_OCTAVE_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: FOURTH_OCTAVE_HARMONICS_UPPER_BOUND,
 }
 
 const eighthOctaveHarmonics: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: EIGHTH_OCTAVE_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND,
+    [ XenharmonicSeriesProperty.CONSTANT ]: EIGHTH_OCTAVE_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND,
 }
 
 const subharmonicSeriesSpec: XenharmonicSeriesSpec = {
     ...initial,
-    [ XenharmonicSeriesSpecProperty.SEQUENCE_TYPE ]: SequenceType.SEQUENCE,
+    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: SequenceType.SEQUENCE,
 }
 
 const superparticularSeriesSpec: XenharmonicSeriesSpec = {
     ...subharmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: true,
+    [ XenharmonicSeriesProperty.USE_PARTICULATE ]: true,
 }
 
 const duperparticularSeriesSpec: XenharmonicSeriesSpec = {
     ...superparticularSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
+    [ XenharmonicSeriesProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
 }
 
 const subparticularSeriesSpec: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.USE_PARTICULATE ]: true,
+    [ XenharmonicSeriesProperty.USE_PARTICULATE ]: true,
 }
 
 const dubparticularSeriesSpec: XenharmonicSeriesSpec = {
     ...subparticularSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
+    [ XenharmonicSeriesProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
 }
 
 const fiveDenominatedHarmonicSeries: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
+    [ XenharmonicSeriesProperty.CONSTANT ]: FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
         to.Numerator(1),
         FIVE_DENOMINATOR,
     ])),
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(FIVE_DENOMINATOR)),
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(FIVE_DENOMINATOR)),
+    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 }
 
 const sevenDenominatedHarmonicSeries: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
+    [ XenharmonicSeriesProperty.CONSTANT ]: SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
         to.Numerator(1),
         SEVEN_DENOMINATOR,
     ])),
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(SEVEN_DENOMINATOR)),
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(SEVEN_DENOMINATOR)),
+    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 }
 
 const twelveDenominatedHarmonicSeries: XenharmonicSeriesSpec = {
     ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesSpecProperty.CONSTANT ]: TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesSpecProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
+    [ XenharmonicSeriesProperty.CONSTANT ]: TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
         to.Numerator(1),
         TWELVE_DENOMINATOR,
     ])),
-    [ XenharmonicSeriesSpecProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(TWELVE_DENOMINATOR)),
-    [ XenharmonicSeriesSpecProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(TWELVE_DENOMINATOR)),
+    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 }
 
 export {

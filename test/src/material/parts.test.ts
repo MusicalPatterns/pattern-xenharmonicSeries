@@ -5,16 +5,16 @@ import {
     buildRootPart,
     buildScalePart,
     buildScales,
-    specData,
+    data,
+    XenharmonicSeriesProperty,
     XenharmonicSeriesSpec,
-    XenharmonicSeriesSpecProperty,
 } from '../../../src/indexForTest'
 
 describe('parts', () => {
     let spec: XenharmonicSeriesSpec
     beforeEach(() => {
         spec = {
-            ...specData.initial,
+            ...data.initial,
             iterations: to.Cardinal(2),
             lowerBound: to.Ordinal(3),
             upperBound: to.Ordinal(5),
@@ -57,7 +57,7 @@ describe('parts', () => {
         it('can descend', () => {
             const reversedSpec: XenharmonicSeriesSpec = {
                 ...spec,
-                [ XenharmonicSeriesSpecProperty.DESCENDING ]: true,
+                [ XenharmonicSeriesProperty.DESCENDING ]: true,
             }
             const part: NoteSpec[] = buildScalePart(reversedSpec)
 

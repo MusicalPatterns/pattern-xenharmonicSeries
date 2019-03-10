@@ -1,10 +1,10 @@
 import { to } from '@musical-patterns/utilities'
-import { buildBlock, specData, XenharmonicSeriesSpec } from '../../../src/indexForTest'
+import { buildBlock, data, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('blocks', () => {
     it('starting with 0, counts up the range between the lower and upper bounds, inclusively', () => {
         const spec: XenharmonicSeriesSpec = {
-            ...specData.initial,
+            ...data.initial,
             lowerBound: to.Ordinal(3),
             upperBound: to.Ordinal(5),
         }
@@ -19,7 +19,7 @@ describe('blocks', () => {
 
     it('expands when there are multiple iterations', () => {
         const spec: XenharmonicSeriesSpec = {
-            ...specData.initial,
+            ...data.initial,
             iterations: to.Cardinal(5),
             lowerBound: to.Ordinal(3),
             upperBound: to.Ordinal(5),

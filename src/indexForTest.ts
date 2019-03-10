@@ -10,11 +10,11 @@ export {
     buildEntities,
 } from './material/indexForTest'
 export {
-    specData,
+    data,
     XenharmonicSeriesSpec,
     SequenceType,
     XenharmonicSeriesPreset,
-    XenharmonicSeriesSpecProperty,
+    XenharmonicSeriesProperty,
     initial,
 } from './spec/indexForTest'
 
