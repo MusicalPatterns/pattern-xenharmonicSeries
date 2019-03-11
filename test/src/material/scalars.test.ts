@@ -6,11 +6,11 @@ import {
     CUBE_ROOT_OF_THREE,
     CUBE_ROOT_OF_TWO,
     cubeRoot,
-    DictionaryOf,
     E,
     Frequency,
     from,
     lastElement,
+    ObjectOf,
     product,
     Scalar,
     SQUARE_ROOT_OF_THREE,
@@ -23,7 +23,7 @@ import {
 import { buildScalars, data, XenharmonicSeriesPreset, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('scalars', () => {
-    let presets: DictionaryOf<Preset<XenharmonicSeriesSpec>>
+    let presets: ObjectOf<Preset<XenharmonicSeriesSpec>>
     const rawE: number = from.Base(E)
     beforeEach(() => {
         presets = data.presets!

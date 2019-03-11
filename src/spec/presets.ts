@@ -1,7 +1,7 @@
 // tslint:disable max-file-line-count
 
 import { Preset } from '@musical-patterns/pattern'
-import { DictionaryOf } from '@musical-patterns/utilities'
+import { ObjectOf } from '@musical-patterns/utilities'
 import { initial } from './initial'
 import { presetsOrder } from './orders'
 import {
@@ -26,7 +26,7 @@ import {
 } from './specs'
 import { XenharmonicSeriesPreset, XenharmonicSeriesSpec } from './types'
 
-const presets: DictionaryOf<Preset<XenharmonicSeriesSpec>> = {
+const presets: ObjectOf<Preset<XenharmonicSeriesSpec>> = {
     [ XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES ]: {
         description: 'moves by shrinking equal divisions of the interval e (first by 1/2, then by 1/3, then 1/4...)',
         formattedName: 'e-edharmonic series',
