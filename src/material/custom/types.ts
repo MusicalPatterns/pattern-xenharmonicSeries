@@ -2,17 +2,17 @@ import { Base, NumericOperation, Ordinal, Power } from '@musical-patterns/utilit
 import { PartialSumOrProduct, Term } from '../../nominal'
 import { XenharmonicSeriesSpec } from '../../spec'
 
-interface BuildSequenceParameters {
+interface ComputeSequenceParameters {
     boundedNumbers: number[],
     operation: NumericOperation,
     partialSeed: PartialSumOrProduct,
     spec: XenharmonicSeriesSpec,
 }
 
-type CalculateTermFunction = (index: Ordinal, power: Power, base?: Base) => Term
+type ComputeTermFunction = (index: Ordinal, power: Power, base?: Base) => Term
 
-interface CalculatePartialParameters {
-    calculateTermFunction: CalculateTermFunction,
+interface ComputePartialParameters {
+    computeTermFunction: ComputeTermFunction,
     index: Ordinal,
     operation: NumericOperation,
     partial: PartialSumOrProduct,
@@ -27,9 +27,9 @@ interface SequenceTypeParameters {
 type XenharmonicSequence = PartialSumOrProduct[]
 
 export {
-    BuildSequenceParameters,
-    CalculateTermFunction,
-    CalculatePartialParameters,
+    ComputeSequenceParameters,
+    ComputeTermFunction,
+    ComputePartialParameters,
     SequenceTypeParameters,
     XenharmonicSequence,
 }

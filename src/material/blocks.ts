@@ -1,13 +1,13 @@
 import { apply, Block, EXCLUSIVE, from, INITIAL, Integer, Ordinal, to } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpec } from '../spec'
-import { buildBoundedIntegers, calculateNoteCount } from './custom'
+import { computeBoundedIntegers, computeNoteCount } from './custom'
 
-const buildBlock: (spec: XenharmonicSeriesSpec, stackIndex?: Ordinal) => Block =
+const computeBlock: (spec: XenharmonicSeriesSpec, stackIndex?: Ordinal) => Block =
     (spec: XenharmonicSeriesSpec, stackIndex: Ordinal = INITIAL): Block => {
-        const boundedIntegers: Integer[] = buildBoundedIntegers(
+        const boundedIntegers: Integer[] = computeBoundedIntegers(
             INITIAL,
             to.Ordinal(from.Cardinal(apply.Translation(
-                calculateNoteCount(spec),
+                computeNoteCount(spec),
                 EXCLUSIVE,
             ))),
         )
@@ -17,5 +17,5 @@ const buildBlock: (spec: XenharmonicSeriesSpec, stackIndex?: Ordinal) => Block =
     }
 
 export {
-    buildBlock,
+    computeBlock,
 }

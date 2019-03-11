@@ -1,5 +1,5 @@
 import { to } from '@musical-patterns/utilities'
-import { buildBlock, data, XenharmonicSeriesSpec } from '../../../src/indexForTest'
+import { computeBlock, data, XenharmonicSeriesSpec } from '../../../src/indexForTest'
 
 describe('blocks', () => {
     it('starting with 0, counts up the range between the lower and upper bounds, inclusively', () => {
@@ -9,7 +9,7 @@ describe('blocks', () => {
             upperBound: to.Ordinal(5),
         }
 
-        expect(buildBlock(spec))
+        expect(computeBlock(spec))
             .toEqual([
                 0,
                 1,
@@ -25,7 +25,7 @@ describe('blocks', () => {
             upperBound: to.Ordinal(5),
         }
 
-        expect(buildBlock(spec))
+        expect(computeBlock(spec))
             .toEqual([
                 0,
                 1,

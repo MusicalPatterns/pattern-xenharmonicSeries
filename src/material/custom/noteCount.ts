@@ -1,7 +1,7 @@
 import { apply, Cardinal, difference, from, INCLUSIVE, to } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpec } from '../../spec'
 
-const calculateNoteCount: (spec: XenharmonicSeriesSpec) => Cardinal =
+const computeNoteCount: (spec: XenharmonicSeriesSpec) => Cardinal =
     ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpec): Cardinal =>
         to.Cardinal(from.Ordinal(apply.Scalar(
             apply.Translation(difference(upperBound, lowerBound), INCLUSIVE),
@@ -9,5 +9,5 @@ const calculateNoteCount: (spec: XenharmonicSeriesSpec) => Cardinal =
         )))
 
 export {
-    calculateNoteCount,
+    computeNoteCount,
 }

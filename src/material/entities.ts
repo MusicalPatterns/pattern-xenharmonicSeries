@@ -1,14 +1,14 @@
 import { Entity, MaterializeEntities, Note, TimbreNameEnum } from '@musical-patterns/compiler'
 import { Segment } from '@musical-patterns/pattern'
 import { XenharmonicSeriesSpec } from '../spec'
-import { buildRootNotes } from './notes'
-import { buildSegment } from './segments'
+import { computeRootNotes } from './notes'
+import { computeSegment } from './segments'
 
 const materializeEntities: MaterializeEntities =
     (spec: XenharmonicSeriesSpec): Entity[] => {
         const entities: Entity[] = []
 
-        const segment: Segment = buildSegment(spec)
+        const segment: Segment = computeSegment(spec)
         segment.forEach((notes: Note[]) => {
             entities.push({
                 notes,
@@ -18,7 +18,7 @@ const materializeEntities: MaterializeEntities =
 
         if (spec.holdRoot) {
             entities.push({
-                notes: buildRootNotes(spec),
+                notes: computeRootNotes(spec),
                 timbreName: TimbreNameEnum.CHORUS_STRINGS,
             })
         }

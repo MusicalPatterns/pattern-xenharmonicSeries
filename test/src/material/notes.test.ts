@@ -1,9 +1,9 @@
-import { calculateNotesTotalCompiledDuration, Note } from '@musical-patterns/compiler'
+import { computeNotesTotalCompiledDuration, Note } from '@musical-patterns/compiler'
 import { STANDARD_DURATIONS_SCALE_INDEX, STANDARD_PITCH_SCALE_INDEX } from '@musical-patterns/pattern'
 import { Ms, to } from '@musical-patterns/utilities'
 import {
-    buildRootNotes,
-    buildScaleNotes,
+    computeRootNotes,
+    computeScaleNotes,
     data,
     materializeScales,
     XenharmonicSeriesProperty,
@@ -23,7 +23,7 @@ describe('notes', () => {
 
     describe('scale notes', () => {
         it('plays through the whole scale', () => {
-            const notes: Note[] = buildScaleNotes(spec)
+            const notes: Note[] = computeScaleNotes(spec)
 
             expect(notes)
                 .toEqual([
@@ -59,7 +59,7 @@ describe('notes', () => {
                 ...spec,
                 [ XenharmonicSeriesProperty.DESCENDING ]: true,
             }
-            const notes: Note[] = buildScaleNotes(reversedSpec)
+            const notes: Note[] = computeScaleNotes(reversedSpec)
 
             expect(notes)
                 .toEqual([
@@ -93,7 +93,7 @@ describe('notes', () => {
 
     describe('root notes', () => {
         it('holds the first pitch for the entire duration', () => {
-            const rootNotes: Note[] = buildRootNotes(spec)
+            const rootNotes: Note[] = computeRootNotes(spec)
 
             expect(rootNotes)
                 .toEqual([
@@ -106,8 +106,8 @@ describe('notes', () => {
     })
 
     it('both sets of notes have the same duration', () => {
-        const rootNotesDuration: Ms = calculateNotesTotalCompiledDuration(buildRootNotes(spec), materializeScales(spec))
-        const scaleNotesDuration: Ms = calculateNotesTotalCompiledDuration(buildScaleNotes(spec), materializeScales(spec))
+        const rootNotesDuration: Ms = computeNotesTotalCompiledDuration(computeRootNotes(spec), materializeScales(spec))
+        const scaleNotesDuration: Ms = computeNotesTotalCompiledDuration(computeScaleNotes(spec), materializeScales(spec))
 
         expect(rootNotesDuration)
             .toBe(scaleNotesDuration)

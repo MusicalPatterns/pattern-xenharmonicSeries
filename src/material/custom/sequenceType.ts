@@ -11,7 +11,7 @@ import { SequenceType } from '../../spec'
 import { replace } from './replace'
 import { SequenceTypeParameters } from './types'
 
-const getSequenceTypeParameters: (sequenceType: SequenceType) => SequenceTypeParameters =
+const computeSequenceTypeParameters: (sequenceType: SequenceType) => SequenceTypeParameters =
     (sequenceType: SequenceType): SequenceTypeParameters => {
         let partialSeed: PartialSumOrProduct
         let operation: NumericOperation
@@ -39,5 +39,5 @@ const getSequenceTypeParameters: (sequenceType: SequenceType) => SequenceTypePar
     }
 
 export {
-    getSequenceTypeParameters,
+    computeSequenceTypeParameters,
 }

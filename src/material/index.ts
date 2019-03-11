@@ -1,8 +1,8 @@
 export { materializeEntities } from './entities'
 export { materializeScales } from './scales'
 export {
-    buildSuperparticularSeriesScalars,
-    buildDuperparticularSeriesScalars,
-    buildSubparticularSeriesScalars,
-    buildDubparticularSeriesScalars,
+    computeSuperparticularSeriesScalars,
+    computeDuperparticularSeriesScalars,
+    computeSubparticularSeriesScalars,
+    computeDubparticularSeriesScalars,
 } from './scalars'

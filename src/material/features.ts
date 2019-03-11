@@ -7,7 +7,7 @@ import {
 } from '@musical-patterns/pattern'
 import { ContourElement, to } from '@musical-patterns/utilities'
 
-const buildNote: (contourElement: ContourElement<PitchOnly>) => Note =
+const computeNote: (contourElement: ContourElement<PitchOnly>) => Note =
     ([ pitch ]: ContourElement<PitchOnly>): Note => ({
         duration: {
             scaleIndex: STANDARD_DURATIONS_SCALE_INDEX,
@@ -18,7 +18,7 @@ const buildNote: (contourElement: ContourElement<PitchOnly>) => Note =
         },
     })
 
-const buildRootNote: (contourElement: ContourElement<DurationOnly>) => Note =
+const computeRootNote: (contourElement: ContourElement<DurationOnly>) => Note =
     ([ duration ]: ContourElement<DurationOnly>): Note => ({
         duration: {
             scalar: to.Scalar(duration),
@@ -30,6 +30,6 @@ const buildRootNote: (contourElement: ContourElement<DurationOnly>) => Note =
     })
 
 export {
-    buildNote,
-    buildRootNote,
+    computeNote,
+    computeRootNote,
 }

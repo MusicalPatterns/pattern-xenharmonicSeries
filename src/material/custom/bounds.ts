@@ -1,6 +1,6 @@
 import { apply, INCLUSIVE, Integer, Ordinal, slice, zeroAndPositiveIntegers } from '@musical-patterns/utilities'
 
-const buildBoundedIntegers: (lowerBound: Ordinal, upperBound: Ordinal) => Integer[] =
+const computeBoundedIntegers: (lowerBound: Ordinal, upperBound: Ordinal) => Integer[] =
     (lowerBound: Ordinal, upperBound: Ordinal): Integer[] =>
         slice(
             zeroAndPositiveIntegers,
@@ -9,5 +9,5 @@ const buildBoundedIntegers: (lowerBound: Ordinal, upperBound: Ordinal) => Intege
         )
 
 export {
-    buildBoundedIntegers,
+    computeBoundedIntegers,
 }

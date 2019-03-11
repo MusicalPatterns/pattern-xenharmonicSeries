@@ -1,10 +1,10 @@
 export { pattern, patterns } from './patterns'
 
 export {
-    buildSuperparticularSeriesScalars,
-    buildDuperparticularSeriesScalars,
-    buildSubparticularSeriesScalars,
-    buildDubparticularSeriesScalars,
+    computeSuperparticularSeriesScalars,
+    computeDuperparticularSeriesScalars,
+    computeSubparticularSeriesScalars,
+    computeDubparticularSeriesScalars,
 } from './material'
 
 // tslint:disable-next-line no-default-import
