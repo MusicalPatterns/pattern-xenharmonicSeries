@@ -23,8 +23,8 @@ const indexToPowerUsingBase: ComputeTermFunction =
         ))
 
 const computeNextPartial: (parameters: ComputePartialParameters) => PartialSumOrProduct =
-    ({ spec, index, computeTermFunction, partial, operation }: ComputePartialParameters): PartialSumOrProduct => {
-        const { power, base, termCoefficient } = spec
+    ({ specs, index, computeTermFunction, partial, operation }: ComputePartialParameters): PartialSumOrProduct => {
+        const { power, base, termCoefficient } = specs
 
         const term: Term = computeTermFunction(index, power, base)
         const termWithCoefficientApplied: Term = apply.Scalar(term, termCoefficient)
@@ -38,8 +38,8 @@ const computeNextPartial: (parameters: ComputePartialParameters) => PartialSumOr
     }
 
 const computeSequence: (parameters: ComputeSequenceParameters) => XenharmonicSequence =
-    ({ partialSeed, operation, boundedNumbers, spec }: ComputeSequenceParameters): XenharmonicSequence => {
-        const { constant, useBase, ground } = spec
+    ({ partialSeed, operation, boundedNumbers, specs }: ComputeSequenceParameters): XenharmonicSequence => {
+        const { constant, useBase, ground } = specs
         let previousPartial: PartialSumOrProduct = partialSeed
 
         let firstPartial: PartialSumOrProduct
@@ -55,7 +55,7 @@ const computeSequence: (parameters: ComputeSequenceParameters) => XenharmonicSeq
                     index,
                     operation,
                     partial: previousPartial,
-                    spec,
+                    specs,
                 })
 
                 return previousPartial

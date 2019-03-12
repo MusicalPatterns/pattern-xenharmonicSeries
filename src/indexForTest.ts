@@ -10,11 +10,11 @@ export {
     materializeEntities,
 } from './material/indexForTest'
 export {
-    data,
-    XenharmonicSeriesSpec,
+    spec,
+    XenharmonicSeriesSpecs,
     SequenceType,
     XenharmonicSeriesPreset,
-    XenharmonicSeriesProperty,
+    XenharmonicSeriesSpec,
     initial,
 } from './spec/indexForTest'
 

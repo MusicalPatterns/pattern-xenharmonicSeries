@@ -22,7 +22,7 @@ import {
     windowIterationHarmonicStepCount,
 } from '@musical-patterns/utilities'
 import { initial } from './initial'
-import { XenharmonicSeriesProperty } from './types'
+import { XenharmonicSeriesSpec } from './types'
 
 const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation = to.Translation(apply.Translation(
     from.Base(apply.Power(
@@ -48,7 +48,7 @@ const FOURTH_OCTAVE_HARMONICS_CONSTANT: Translation = to.Translation(apply.Trans
         ))),
     )),
     to.Translation(from.Scalar<NoOperation, Scalar>(
-        negative(initial[ XenharmonicSeriesProperty.TERM_COEFFICIENT ]),
+        negative(initial[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
     )),
 ))
 const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(
@@ -57,7 +57,7 @@ const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(
 const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation = to.Translation(apply.Translation(
     from.Base(apply.Power(OCTAVE, to.Power(from.Ordinal(apply.Translation(EIGHTH, to.Translation(negative(1))))))),
     to.Translation(from.Scalar<NoOperation, Scalar>(
-        negative(initial[ XenharmonicSeriesProperty.TERM_COEFFICIENT ]),
+        negative(initial[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
     )),
 ))
 const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal = to.Ordinal(from.Cardinal(

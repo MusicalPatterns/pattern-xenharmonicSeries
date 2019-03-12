@@ -1,29 +1,29 @@
 import { OptionedConstraint, RangedConstraint } from '@musical-patterns/pattern'
 import { ObjectOf } from '@musical-patterns/utilities'
-import { SequenceType, XenharmonicSeriesProperty } from './types'
+import { SequenceType, XenharmonicSeriesSpec } from './types'
 
 const xenharmonicSeriesRangedConstraints: ObjectOf<RangedConstraint> = {
-    [ XenharmonicSeriesProperty.BASE ]: {
+    [ XenharmonicSeriesSpec.BASE ]: {
         excludeMin: true,
         min: 1,
     },
-    [ XenharmonicSeriesProperty.LOWER_BOUND ]: {
+    [ XenharmonicSeriesSpec.LOWER_BOUND ]: {
         integer: true,
     },
-    [ XenharmonicSeriesProperty.PARTICULATE ]: {
-        integer: true,
-        min: 0,
-    },
-    [ XenharmonicSeriesProperty.STACK ]: {
+    [ XenharmonicSeriesSpec.PARTICULATE ]: {
         integer: true,
         min: 0,
     },
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: {
+    [ XenharmonicSeriesSpec.STACK ]: {
+        integer: true,
+        min: 0,
+    },
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: {
         integer: true,
     },
 }
 const xenharmonicSeriesOptionedConstraints: ObjectOf<OptionedConstraint> = {
-    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: [
+    [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: [
         {
             formattedName: 'partial sum',
             order: 1,

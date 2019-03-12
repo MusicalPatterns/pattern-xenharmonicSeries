@@ -21,142 +21,142 @@ import {
     XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 } from './constants'
 import { initial } from './initial'
-import { SequenceType, XenharmonicSeriesProperty, XenharmonicSeriesSpec } from './types'
+import { SequenceType, XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from './types'
 
-const standardHarmonicSeriesSpec: XenharmonicSeriesSpec = {
+const standardHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     ...initial,
-    [ XenharmonicSeriesProperty.POWER ]: to.Power(0),
+    [ XenharmonicSeriesSpec.POWER ]: to.Power(0),
 }
 
-const sharedEdHarmonicSeriesSpec: XenharmonicSeriesSpec = {
+const sharedEdHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     ...initial,
-    [ XenharmonicSeriesProperty.LOWER_BOUND ]: INITIAL,
-    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
-    [ XenharmonicSeriesProperty.USE_BASE ]: true,
+    [ XenharmonicSeriesSpec.LOWER_BOUND ]: INITIAL,
+    [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
+    [ XenharmonicSeriesSpec.USE_BASE ]: true,
 }
 
-const edTwoHarmonicSeriesSpec: XenharmonicSeriesSpec = sharedEdHarmonicSeriesSpec
+const edTwoHarmonicSeriesSpecs: XenharmonicSeriesSpecs = sharedEdHarmonicSeriesSpecs
 
-const edThreeHarmonicSeriesSpec: XenharmonicSeriesSpec = {
-    ...sharedEdHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.BASE ]: TRITAVE,
+const edThreeHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
+    ...sharedEdHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.BASE ]: TRITAVE,
 }
 
-const edEulerHarmonicSeriesSpec: XenharmonicSeriesSpec = {
-    ...sharedEdHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.BASE ]: E,
+const edEulerHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
+    ...sharedEdHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.BASE ]: E,
 }
 
-const thirdTritaveOddHarmonicsSpec: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Cardinal(EVERY_OTHER)),
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
+const thirdTritaveOddHarmonicsSpecs: XenharmonicSeriesSpecs = {
+    ...standardHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: to.Scalar(from.Cardinal(EVERY_OTHER)),
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
 }
 
-const thirdTritaveOddHarmonicsWithStackedThirdsSpec: XenharmonicSeriesSpec = {
-    ...thirdTritaveOddHarmonicsSpec,
-    [ XenharmonicSeriesProperty.STACK ]: [ INITIAL, INDEX_FOR_THIRDS ],
+const thirdTritaveOddHarmonicsWithStackedThirdsSpecs: XenharmonicSeriesSpecs = {
+    ...thirdTritaveOddHarmonicsSpecs,
+    [ XenharmonicSeriesSpec.STACK ]: [ INITIAL, INDEX_FOR_THIRDS ],
 }
 
-const thirdTritaveOddHarmonicsWithStackedFourthsSpec: XenharmonicSeriesSpec = {
-    ...thirdTritaveOddHarmonicsSpec,
-    [ XenharmonicSeriesProperty.STACK ]: [ INITIAL, INDEX_FOR_FOURTHS ],
+const thirdTritaveOddHarmonicsWithStackedFourthsSpecs: XenharmonicSeriesSpecs = {
+    ...thirdTritaveOddHarmonicsSpecs,
+    [ XenharmonicSeriesSpec.STACK ]: [ INITIAL, INDEX_FOR_FOURTHS ],
 }
 
-const thirdTritaveOddHarmonicsWithStackedFifthsSpec: XenharmonicSeriesSpec = {
-    ...thirdTritaveOddHarmonicsSpec,
-    [ XenharmonicSeriesProperty.STACK ]: [ INITIAL, INDEX_FOR_FIFTHS ],
+const thirdTritaveOddHarmonicsWithStackedFifthsSpecs: XenharmonicSeriesSpecs = {
+    ...thirdTritaveOddHarmonicsSpecs,
+    [ XenharmonicSeriesSpec.STACK ]: [ INITIAL, INDEX_FOR_FIFTHS ],
 }
 
-const fourthOctaveHarmonics: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.CONSTANT ]: FOURTH_OCTAVE_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: FOURTH_OCTAVE_HARMONICS_UPPER_BOUND,
+const fourthOctaveHarmonics: XenharmonicSeriesSpecs = {
+    ...standardHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.CONSTANT ]: FOURTH_OCTAVE_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: FOURTH_OCTAVE_HARMONICS_UPPER_BOUND,
 }
 
-const eighthOctaveHarmonics: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.CONSTANT ]: EIGHTH_OCTAVE_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND,
+const eighthOctaveHarmonics: XenharmonicSeriesSpecs = {
+    ...standardHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.CONSTANT ]: EIGHTH_OCTAVE_HARMONICS_CONSTANT,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND,
 }
 
-const subharmonicSeriesSpec: XenharmonicSeriesSpec = {
+const subharmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     ...initial,
-    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: SequenceType.SEQUENCE,
+    [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType.SEQUENCE,
 }
 
-const superparticularSeriesSpec: XenharmonicSeriesSpec = {
-    ...subharmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.USE_PARTICULATE ]: true,
+const superparticularSeriesSpecs: XenharmonicSeriesSpecs = {
+    ...subharmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.USE_PARTICULATE ]: true,
 }
 
-const duperparticularSeriesSpec: XenharmonicSeriesSpec = {
-    ...superparticularSeriesSpec,
-    [ XenharmonicSeriesProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
+const duperparticularSeriesSpecs: XenharmonicSeriesSpecs = {
+    ...superparticularSeriesSpecs,
+    [ XenharmonicSeriesSpec.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
 }
 
-const subparticularSeriesSpec: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.USE_PARTICULATE ]: true,
+const subparticularSeriesSpecs: XenharmonicSeriesSpecs = {
+    ...standardHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.USE_PARTICULATE ]: true,
 }
 
-const dubparticularSeriesSpec: XenharmonicSeriesSpec = {
-    ...subparticularSeriesSpec,
-    [ XenharmonicSeriesProperty.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
+const dubparticularSeriesSpecs: XenharmonicSeriesSpecs = {
+    ...subparticularSeriesSpecs,
+    [ XenharmonicSeriesSpec.PARTICULATE ]: DUPER_OR_DUB_PARTICULATE,
 }
 
-const fiveDenominatedHarmonicSeries: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.CONSTANT ]: FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
+const fiveDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
+    ...standardHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.CONSTANT ]: FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
         to.Numerator(1),
         FIVE_DENOMINATOR,
     ])),
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(FIVE_DENOMINATOR)),
-    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: to.Ordinal(from.Denominator(FIVE_DENOMINATOR)),
+    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 }
 
-const sevenDenominatedHarmonicSeries: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.CONSTANT ]: SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
+const sevenDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
+    ...standardHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.CONSTANT ]: SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
         to.Numerator(1),
         SEVEN_DENOMINATOR,
     ])),
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(SEVEN_DENOMINATOR)),
-    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: to.Ordinal(from.Denominator(SEVEN_DENOMINATOR)),
+    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 }
 
-const twelveDenominatedHarmonicSeries: XenharmonicSeriesSpec = {
-    ...standardHarmonicSeriesSpec,
-    [ XenharmonicSeriesProperty.CONSTANT ]: TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
+const twelveDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
+    ...standardHarmonicSeriesSpecs,
+    [ XenharmonicSeriesSpec.CONSTANT ]: TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: to.Scalar(from.Fraction([
         to.Numerator(1),
         TWELVE_DENOMINATOR,
     ])),
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: to.Ordinal(from.Denominator(TWELVE_DENOMINATOR)),
-    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: to.Ordinal(from.Denominator(TWELVE_DENOMINATOR)),
+    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
 }
 
 export {
-    edEulerHarmonicSeriesSpec,
-    edThreeHarmonicSeriesSpec,
-    edTwoHarmonicSeriesSpec,
+    edEulerHarmonicSeriesSpecs,
+    edThreeHarmonicSeriesSpecs,
+    edTwoHarmonicSeriesSpecs,
     fourthOctaveHarmonics,
-    standardHarmonicSeriesSpec,
+    standardHarmonicSeriesSpecs,
     eighthOctaveHarmonics,
-    thirdTritaveOddHarmonicsSpec,
-    thirdTritaveOddHarmonicsWithStackedThirdsSpec,
-    thirdTritaveOddHarmonicsWithStackedFourthsSpec,
-    thirdTritaveOddHarmonicsWithStackedFifthsSpec,
-    subharmonicSeriesSpec,
-    superparticularSeriesSpec,
-    duperparticularSeriesSpec,
-    subparticularSeriesSpec,
-    dubparticularSeriesSpec,
+    thirdTritaveOddHarmonicsSpecs,
+    thirdTritaveOddHarmonicsWithStackedThirdsSpecs,
+    thirdTritaveOddHarmonicsWithStackedFourthsSpecs,
+    thirdTritaveOddHarmonicsWithStackedFifthsSpecs,
+    subharmonicSeriesSpecs,
+    superparticularSeriesSpecs,
+    duperparticularSeriesSpecs,
+    subparticularSeriesSpecs,
+    dubparticularSeriesSpecs,
     fiveDenominatedHarmonicSeries,
     sevenDenominatedHarmonicSeries,
     twelveDenominatedHarmonicSeries,

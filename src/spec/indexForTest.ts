@@ -1,11 +1,11 @@
 // tslint:disable no-reaching-imports
 
-export { data } from './data'
+export { spec } from './spec'
 export { initial } from './initial'
 
 export {
-    XenharmonicSeriesSpec,
+    XenharmonicSeriesSpecs,
     SequenceType,
     XenharmonicSeriesPreset,
-    XenharmonicSeriesProperty,
+    XenharmonicSeriesSpec,
 } from './types'

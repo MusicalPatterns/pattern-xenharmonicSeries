@@ -1,7 +1,7 @@
-export { data } from './data'
+export { spec } from './spec'
 export { presets } from './presets'
 export {
-    XenharmonicSeriesSpec,
+    XenharmonicSeriesSpecs,
     SequenceType,
     XenharmonicSeriesPreset,
 } from './types'

@@ -1,13 +1,13 @@
 import {
-    Attributes,
-    OptionedPropertyAttributes,
-    RangedPropertyAttributes,
-    Spec,
-    ToggledPropertyAttributes,
+    Configurations,
+    OptionedConfiguration,
+    RangedConfiguration,
+    Specs,
+    ToggledConfiguration,
 } from '@musical-patterns/pattern'
 import { Base, Cardinal, Ordinal, Power, Scalar, Translation } from '@musical-patterns/utilities'
 
-enum XenharmonicSeriesProperty {
+enum XenharmonicSeriesSpec {
     BASE = 'base',
     CONSTANT = 'constant',
     GROUND = 'ground',
@@ -53,46 +53,46 @@ enum SequenceType {
     SEQUENCE = 'sequence',
 }
 
-interface XenharmonicSeriesSpec extends Spec {
-    [ XenharmonicSeriesProperty.BASE ]: Base,
-    [ XenharmonicSeriesProperty.CONSTANT ]: Translation,
-    [ XenharmonicSeriesProperty.DESCENDING ]: boolean,
-    [ XenharmonicSeriesProperty.GROUND ]: boolean,
-    [ XenharmonicSeriesProperty.HOLD_ROOT ]: boolean,
-    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: Cardinal,
-    [ XenharmonicSeriesProperty.LOWER_BOUND ]: Ordinal,
-    [ XenharmonicSeriesProperty.PARTICULATE ]: Translation,
-    [ XenharmonicSeriesProperty.POWER ]: Power,
-    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: SequenceType,
-    [ XenharmonicSeriesProperty.STACK ]: Ordinal[],
-    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: Scalar,
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: Ordinal,
-    [ XenharmonicSeriesProperty.USE_BASE ]: boolean,
-    [ XenharmonicSeriesProperty.USE_PARTICULATE ]: boolean,
+interface XenharmonicSeriesSpecs extends Specs {
+    [ XenharmonicSeriesSpec.BASE ]: Base,
+    [ XenharmonicSeriesSpec.CONSTANT ]: Translation,
+    [ XenharmonicSeriesSpec.DESCENDING ]: boolean,
+    [ XenharmonicSeriesSpec.GROUND ]: boolean,
+    [ XenharmonicSeriesSpec.HOLD_ROOT ]: boolean,
+    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: Cardinal,
+    [ XenharmonicSeriesSpec.LOWER_BOUND ]: Ordinal,
+    [ XenharmonicSeriesSpec.PARTICULATE ]: Translation,
+    [ XenharmonicSeriesSpec.POWER ]: Power,
+    [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType,
+    [ XenharmonicSeriesSpec.STACK ]: Ordinal[],
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: Scalar,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: Ordinal,
+    [ XenharmonicSeriesSpec.USE_BASE ]: boolean,
+    [ XenharmonicSeriesSpec.USE_PARTICULATE ]: boolean,
 }
 
-interface XenharmonicSeriesAttributes extends Attributes<XenharmonicSeriesSpec> {
-    [ XenharmonicSeriesProperty.BASE ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.CONSTANT ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.DESCENDING ]: ToggledPropertyAttributes,
-    [ XenharmonicSeriesProperty.GROUND ]: ToggledPropertyAttributes,
-    [ XenharmonicSeriesProperty.HOLD_ROOT ]: ToggledPropertyAttributes,
-    [ XenharmonicSeriesProperty.SCALE_ITERATIONS ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.LOWER_BOUND ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.PARTICULATE ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.POWER ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.SEQUENCE_TYPE ]: OptionedPropertyAttributes,
-    [ XenharmonicSeriesProperty.STACK ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.TERM_COEFFICIENT ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.UPPER_BOUND ]: RangedPropertyAttributes,
-    [ XenharmonicSeriesProperty.USE_BASE ]: ToggledPropertyAttributes,
-    [ XenharmonicSeriesProperty.USE_PARTICULATE ]: ToggledPropertyAttributes,
+interface XenharmonicSeriesConfigurations extends Configurations<XenharmonicSeriesSpecs> {
+    [ XenharmonicSeriesSpec.BASE ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.CONSTANT ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.DESCENDING ]: ToggledConfiguration,
+    [ XenharmonicSeriesSpec.GROUND ]: ToggledConfiguration,
+    [ XenharmonicSeriesSpec.HOLD_ROOT ]: ToggledConfiguration,
+    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.LOWER_BOUND ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.PARTICULATE ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.POWER ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: OptionedConfiguration,
+    [ XenharmonicSeriesSpec.STACK ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.USE_BASE ]: ToggledConfiguration,
+    [ XenharmonicSeriesSpec.USE_PARTICULATE ]: ToggledConfiguration,
 }
 
 export {
     SequenceType,
+    XenharmonicSeriesSpecs,
+    XenharmonicSeriesConfigurations,
     XenharmonicSeriesSpec,
-    XenharmonicSeriesAttributes,
-    XenharmonicSeriesProperty,
     XenharmonicSeriesPreset,
 }

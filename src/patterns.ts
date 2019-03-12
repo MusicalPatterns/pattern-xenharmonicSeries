@@ -2,7 +2,7 @@ import { Material } from '@musical-patterns/compiler'
 import { Id, Metadata, Pattern, Patterns } from '@musical-patterns/pattern'
 import { materializeEntities, materializeScales } from './material'
 import { post } from './metadata'
-import { data, XenharmonicSeriesSpec } from './spec'
+import { spec, XenharmonicSeriesSpecs } from './spec'
 
 const material: Material = {
     materializeEntities,
@@ -18,11 +18,11 @@ const metadata: Metadata = {
     version: process.env.PATTERN_VERSION || 'unknown',
 }
 
-const pattern: Pattern<XenharmonicSeriesSpec> = {
-    data,
+const pattern: Pattern<XenharmonicSeriesSpecs> = {
     id: Id.XENHARMONIC_SERIES,
     material,
     metadata,
+    spec,
 }
 
 const patterns: Partial<Patterns> = {
