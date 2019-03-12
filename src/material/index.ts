@@ -1,5 +1,4 @@
-export { materializeEntities } from './entities'
-export { materializeScales } from './scales'
+export { material } from './materials'
 export {
     computeSuperparticularSeriesScalars,
     computeDuperparticularSeriesScalars,
