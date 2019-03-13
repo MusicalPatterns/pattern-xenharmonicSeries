@@ -11,7 +11,7 @@ import {
     to,
     Translation,
 } from '@musical-patterns/utilities'
-import { from as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominal'
+import { from as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominals'
 import { XenharmonicSequence } from './types'
 
 const applyParticulate: (sequence: XenharmonicSequence, particulate: Translation) => XenharmonicSequence =

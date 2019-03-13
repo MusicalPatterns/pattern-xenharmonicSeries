@@ -1,5 +1,5 @@
 import { Base, NumericOperation, Ordinal, Power } from '@musical-patterns/utilities'
-import { PartialSumOrProduct, Term } from '../../nominal'
+import { PartialSumOrProduct, Term } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 
 interface ComputeSequenceParameters {

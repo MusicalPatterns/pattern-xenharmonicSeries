@@ -1,5 +1,5 @@
 import { apply, Base, from, INITIAL, isUndefined, Ordinal, Power, reciprocal, to } from '@musical-patterns/utilities'
-import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../../nominal'
+import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../../nominals'
 import {
     ComputePartialParameters,
     ComputeSequenceParameters,

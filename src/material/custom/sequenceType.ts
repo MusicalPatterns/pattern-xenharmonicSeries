@@ -6,7 +6,7 @@ import {
     product,
     sum,
 } from '@musical-patterns/utilities'
-import { PartialSumOrProduct, to } from '../../nominal'
+import { PartialSumOrProduct, to } from '../../nominals'
 import { SequenceType } from '../../spec'
 import { replace } from './replace'
 import { SequenceTypeParameters } from './types'

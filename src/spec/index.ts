@@ -1,4 +1,4 @@
-export { spec } from './spec'
+export { spec } from './specs'
 export { presets } from './presets'
 export {
     XenharmonicSeriesSpecs,

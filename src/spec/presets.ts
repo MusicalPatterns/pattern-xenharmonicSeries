@@ -2,7 +2,7 @@
 
 import { Preset } from '@musical-patterns/pattern'
 import { ObjectOf } from '@musical-patterns/utilities'
-import { initial } from './initial'
+import { initial } from './initials'
 import { presetsOrder } from './orders'
 import {
     dubparticularSeriesSpecs,
@@ -23,7 +23,7 @@ import {
     thirdTritaveOddHarmonicsWithStackedFourthsSpecs,
     thirdTritaveOddHarmonicsWithStackedThirdsSpecs,
     twelveDenominatedHarmonicSeries,
-} from './specs'
+} from './spec'
 import { XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from './types'
 
 const presets: ObjectOf<Preset<XenharmonicSeriesSpecs>> = {

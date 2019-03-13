@@ -21,8 +21,8 @@ import {
     TRITAVE,
     windowIterationHarmonicStepCount,
 } from '@musical-patterns/utilities'
-import { initial } from './initial'
-import { XenharmonicSeriesSpec } from './types'
+import { initial } from '../initials'
+import { XenharmonicSeriesSpec } from '../types'
 
 const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation = to.Translation(apply.Translation(
     from.Base(apply.Power(
