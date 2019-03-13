@@ -1,9 +1,9 @@
 import { E, INITIAL, TRITAVE } from '@musical-patterns/utilities'
-import { initial } from '../initials'
+import { initialSpecs } from '../initials'
 import { SequenceType, XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from '../types'
 
 const sharedEdHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
-    ...initial,
+    ...initialSpecs,
     [ XenharmonicSeriesSpec.LOWER_BOUND ]: INITIAL,
     [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
     [ XenharmonicSeriesSpec.USE_BASE ]: true,

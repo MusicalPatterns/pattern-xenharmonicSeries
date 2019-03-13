@@ -14,7 +14,7 @@ describe('notes', () => {
     let specs: XenharmonicSeriesSpecs
     beforeEach(() => {
         specs = {
-            ...spec.initial,
+            ...spec.initialSpecs,
             iterations: to.Cardinal(2),
             lowerBound: to.Ordinal(3),
             upperBound: to.Ordinal(5),

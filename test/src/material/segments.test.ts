@@ -1,13 +1,13 @@
 import { Note } from '@musical-patterns/compiler'
 import { Segment } from '@musical-patterns/pattern'
 import { apply, forEach, Ordinal, to } from '@musical-patterns/utilities'
-import { computeSegment, initial, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
+import { computeSegment, initialSpecs, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
 
 describe('segments', () => {
     it('can stack translated copies of the scale to create chords as you go up it', () => {
         const stack: number = 2
         const specs: XenharmonicSeriesSpecs = {
-            ...initial,
+            ...initialSpecs,
             stack: [ 0, stack ].map(to.Ordinal),
         }
         const segment: Segment = computeSegment(specs)

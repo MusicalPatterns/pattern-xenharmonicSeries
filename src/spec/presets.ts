@@ -2,7 +2,7 @@
 
 import { Preset } from '@musical-patterns/pattern'
 import { ObjectOf } from '@musical-patterns/utilities'
-import { initial } from './initials'
+import { initialSpecs } from './initials'
 import { presetsOrder } from './orders'
 import {
     dubparticularSeriesSpecs,
@@ -53,7 +53,7 @@ const presets: ObjectOf<Preset<XenharmonicSeriesSpecs>> = {
     [ XenharmonicSeriesPreset.MATHARMONIC_SERIES ]: {
         description: 'moves by the steps of the mathematical harmonic series (first by 1/2, then by 1/3, then 1/4...)',
         order: presetsOrder.indexOf(XenharmonicSeriesPreset.MATHARMONIC_SERIES),
-        specs: initial,
+        specs: initialSpecs,
     },
     [ XenharmonicSeriesPreset.STANDARD_HARMONIC_SERIES ]: {
         description: 'is the sequence of positive integers (1, 2, 3, 4...)',

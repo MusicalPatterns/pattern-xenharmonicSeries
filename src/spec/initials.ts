@@ -8,7 +8,7 @@ import {
 } from '../constants'
 import { SequenceType, XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from './types'
 
-const initial: XenharmonicSeriesSpecs = {
+const initialSpecs: XenharmonicSeriesSpecs = {
     ...standardInitialSpecs,
     [ StandardSpec.BASE_FREQUENCY ]: XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY,
     [ XenharmonicSeriesSpec.BASE ]: OCTAVE,
@@ -29,5 +29,5 @@ const initial: XenharmonicSeriesSpecs = {
 }
 
 export {
-    initial,
+    initialSpecs,
 }

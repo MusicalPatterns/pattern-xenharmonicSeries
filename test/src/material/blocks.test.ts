@@ -4,7 +4,7 @@ import { computeBlock, spec, XenharmonicSeriesSpecs } from '../../../src/indexFo
 describe('blocks', () => {
     it('starting with 0, counts up the range between the lower and upper bounds, inclusively', () => {
         const specs: XenharmonicSeriesSpecs = {
-            ...spec.initial,
+            ...spec.initialSpecs,
             lowerBound: to.Ordinal(3),
             upperBound: to.Ordinal(5),
         }
@@ -19,7 +19,7 @@ describe('blocks', () => {
 
     it('expands when there are multiple iterations', () => {
         const specs: XenharmonicSeriesSpecs = {
-            ...spec.initial,
+            ...spec.initialSpecs,
             iterations: to.Cardinal(5),
             lowerBound: to.Ordinal(3),
             upperBound: to.Ordinal(5),
