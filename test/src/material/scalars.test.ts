@@ -267,7 +267,7 @@ describe('scalars', () => {
         expect(scalarsWithStacking.length)
             .toBe(controlScalars.length + 9)
         testIsCloseTo(
-            lastElement(scalarsWithStacking),
+            lastElement<Array<Scalar<Frequency>>, Scalar<Frequency>>(scalarsWithStacking),
             apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar(3)),
         )
     })
