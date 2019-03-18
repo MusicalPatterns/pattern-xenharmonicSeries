@@ -7,9 +7,9 @@ import {
     CUBE_ROOT_OF_TWO,
     cubeRoot,
     E,
+    finalElement,
     Frequency,
     from,
-    lastElement,
     ObjectOf,
     product,
     Scalar,
@@ -267,7 +267,7 @@ describe('scalars', () => {
         expect(scalarsWithStacking.length)
             .toBe(controlScalars.length + 9)
         testIsCloseTo(
-            lastElement(scalarsWithStacking),
+            finalElement(scalarsWithStacking),
             apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar(3)),
         )
     })

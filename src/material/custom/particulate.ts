@@ -1,6 +1,6 @@
 import {
     apply,
-    indexOfLastElement,
+    indexOfFinalElement,
     INITIAL,
     map,
     negative,
@@ -17,7 +17,7 @@ import { XenharmonicSequence } from './types'
 const applyParticulate: (sequence: XenharmonicSequence, particulate: Translation) => XenharmonicSequence =
     (sequence: XenharmonicSequence, particulate: Translation): XenharmonicSequence => {
         const trimBackOffTheExtraTermsWeNeededToApplyParticulate: XenharmonicSequence =
-            slice(sequence, INITIAL, apply.Translation(indexOfLastElement(sequence), negative(particulate)))
+            slice(sequence, INITIAL, apply.Translation(indexOfFinalElement(sequence), negative(particulate)))
 
         return map(
             trimBackOffTheExtraTermsWeNeededToApplyParticulate,
