@@ -2,7 +2,7 @@ import {
     Configurations,
     OptionedConfiguration,
     RangedConfiguration,
-    Specs,
+    StandardSpecs,
     ToggledConfiguration,
 } from '@musical-patterns/pattern'
 import { Base, Cardinal, Ordinal, Power, Scalar, Translation } from '@musical-patterns/utilities'
@@ -53,7 +53,7 @@ enum SequenceType {
     SEQUENCE = 'sequence',
 }
 
-interface XenharmonicSeriesSpecs extends Specs {
+interface XenharmonicSeriesSpecs extends StandardSpecs {
     [ XenharmonicSeriesSpec.BASE ]: Base,
     [ XenharmonicSeriesSpec.CONSTANT ]: Translation,
     [ XenharmonicSeriesSpec.DESCENDING ]: boolean,

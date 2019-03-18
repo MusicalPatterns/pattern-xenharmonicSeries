@@ -1,7 +1,9 @@
+// tslint:disable ban-types
+
 import { NumericOperation } from '@musical-patterns/utilities'
 
 const replace: NumericOperation =
-    (value: number, valueToReplaceOriginalValue: number): number =>
+    (value: Number, valueToReplaceOriginalValue: Number): Number =>
         valueToReplaceOriginalValue
 
 export {
