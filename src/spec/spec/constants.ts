@@ -32,7 +32,7 @@ const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation = to.Translation(apply.T
             PREVIOUS,
         ))),
     )),
-    to.Translation(from.Cardinal(negative(EVERY_OTHER))),
+    to.Translation(from.Scalar<number, Scalar>(negative(EVERY_OTHER))),
 ))
 const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal = apply.Scalar(
     to.Ordinal(from.Cardinal(windowIterationHarmonicStepCount(TRITAVE, THIRD))),

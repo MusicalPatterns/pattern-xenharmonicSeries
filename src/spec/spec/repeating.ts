@@ -18,7 +18,7 @@ const thirdTritaveOddHarmonicsSpecs: XenharmonicSeriesSpecs = {
     ...standardHarmonicSeriesSpecs,
     [ XenharmonicSeriesSpec.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
     [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: to.Scalar(from.Cardinal(EVERY_OTHER)),
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: EVERY_OTHER,
     [ XenharmonicSeriesSpec.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
 }
 
