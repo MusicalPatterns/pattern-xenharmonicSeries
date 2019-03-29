@@ -1,7 +1,1357 @@
 <div class="row">
     <div class="middle">
         <p>
-            the matharmonic series and edharmonic series
+            This pattern has become a compilation. It began with just the two related bizarro takes on the
+            harmonic series I developed together back in 2016: the matharmonic series and the edharmonic series. But
+            when it came time to implement some of the other musical scales I've described that are also based on the
+            harmonic series, I balked at the idea of introducing a separate pattern as their home, and/or I was tempted
+            by the challenge to achieve them using the same underlying mechanisms through which I was bringing the
+            matharmonic and edharmonic to life. Well, I shouldn't write the act off as a mere indulgence; indeed I have
+            many good reasons for my goal to standardize my recent musical work under a single system.
+        </p>
+        <p>
+            So in the end, this pattern contains the power to take the form of my <a href="#matharmonic-edharmonic">matharmonic
+            and edharmonic series</a>, as well as the <a href="#third-tritave">third tritave of the odd harmonics</a>,
+            and my set of <a href="#particular">"particular" series</a>, plus some others. To make this happen,
+            Xenharmonic series has by far the most complicated specs of any of my patterns, with a whopping thirteen
+            interactive controls. Please check out the presets — those are my original patterns — but take a look at
+            which of the controls they care about, and explore fiddling with them and creating new Frankenstein scales
+            from all the harmonic series related ideas at play here.
+        </p>
+        <p>
+            I suppose I'll more or less copy and paste the material from my original blog posts on these families of
+            patterns, to save time. Don't expect my writing voice to be the same in each segment though...
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h3 id="matharmonic-edharmonic">
+            Matharmonic and Edharmonic series
+        </h3>
+        <p>
+            I've come up a couple variations on the harmonic series.
+        </p>
+        <h4>
+            §1. Spoiler Alert
+        </h4>
+        <p>
+            Let's go right ahead to my final results. This is for the benefit of harder core math folks who may not be
+            into slogging through my discovery process. If you are not so mathy, I suggest you skip to the end of this
+            section where the sound samples live, and then slog through my discovery process with me to gradually piece
+            these math expressions together.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            So if the traditional harmonic series is defined as beginning with a base frequency a and stepping up the
+            integer multiples of that frequency, then we can write the sequence of frequencies <b>{S<sub>n</sub>}</b>
+            where <b>n ≥
+            1</b> and <b>S<sub>n</sub></b> =
+        </p>
+        <p style="display: flex; justify-content: center; width: 90%;">
+            <img src="codecogseqn-4.gif" height="55px">
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            which admittedly looks a bit over the top expressed as a partial sum, but it helps for comparison with the
+            first variation I'm proposing which actually uses the <b>k</b> in an otherwise identical
+            <b>S<sub>n</sub></b> (though for aesthetic reasons which we'll get to later the actual final version of this
+            will be a tad different):
+        </p>
+        <p style="display: flex; justify-content: center; width: 90%;">
+            <img src="codecogseqn-1.gif" height="55px">
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            We also propose the variations where <b>S<sub>n</sub></b> =
+        </p>
+        <p style="display: flex; justify-content: center; width: 90%;">
+            <img src="codecogseqn-3.gif" height="55px">
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            and <b>b > 1</b> (we in particular will look at <b>b = 2</b>).
+        </p>
+        <p>
+            And here's what these three series sound like, if you wanna spoil the surprise by experiencing them without
+            further dramatic buildup.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h5>Traditional harmonic</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283668418&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h5>Matharmonic</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283668416&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h5>2-Edharmonic</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283668420&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Please turn back now if these matters are of no interest to you either mathically or musically.
+        </p>
+        <h4>
+            §2. A Tale of Two Series
+        </h4>
+        <p>
+            This all began with a simple enough question: what is the relationship between the musical harmonic series
+            and the mathematical harmonic series?
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Without having pried the issue apart before, I'd been cruising through life comfortable with the assumption
+            that the former was an application of the latter to the musical domain: the terms of the mathematical
+            harmonic series being <b>1, ½, ⅓, ¼, ...</b> and the musical harmonic series the succession of pitches you
+            hear plucking strings of those lengths<sup>1</sup>.
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>1</sup> Plus I also knew that they both had something to do with logarithms (more on this later).
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            But there's more to the mathematical harmonic series than that: it is not merely the <i>sequence</i> of its
+            terms
+            <b>1, ½, ⅓, ¼, ...</b> but the <i>summation</i> of those terms: <b>1 + ½ + ⅓ + ¼ + ...</b> In the previous ¶
+            I was
+            simulating the ignorance of my youth by glossing over this fact.
+        </p>
+        <p>
+            In math, you see, a distinction is made between a <i>series</i> and a <i>sequence</i>. A <i>sequence</i> is
+            an ordered collection
+            of objects (terms); optionally it can include repeated terms and/or be infinite in length. A <i>series</i>,
+            on the
+            other hand, is the sum total of the terms of such a sequence (in particular if it is one of the infinite
+            kind).
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            So the mathematical harmonic series qualifies as a series in math-speak (as we would hope it would).
+            But the musical harmonic series? Not so much. It is no singular object, the expression of the sum of some
+            infinite mathematical sequence. It is, rather, one such sequence of objects. Being the succession of
+            multiples of a base sound wave frequency which increase by 1 each time — <b>1x, 2x, 3x, 4x,
+            ...</b><sup>2</sup> —
+            we can see that it has a definite order, and it will go on infinitely, and while it does not happen to
+            contain any copies of any of its terms that's perfectly fine.
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>2</sup> This being the effect of strings getting subdivided into lengths of <b>1, ½, ⅓, ¼, ...</b>; if
+            you took the terms of the mathematical harmonic series directly as your multiples what you'd end up with is
+            what we call the subharmonic series.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            To be clear: I'm not at all proposing an effort to rally the musical community around a renaming of one of
+            the fundamental building blocks of music. Outside of mathematical settings, we can get away with "series" as
+            the descriptor of the musical harmonic series. Since the general sense of series refers to a number of
+            similar things coming one after another. Which, of course, the musical harmonic series is.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            And I couldn't really get away with conforming the musical harmonic series to math-speak even if I wanted
+            to, because not only was I wrong about the musical harmonic series being an application of a math idea to
+            music, it turns out I was extra wrong i.e. that it's the other way around<sup>3</sup>. When the Divine
+            Brotherhood of
+            Pythagoras came up with the original (musical) harmonic series, infinity was not yet well understood, and
+            mathematical series hadn't been invented/discovered. Over a millennia later when mathematicians finally
+            conceived of their series — the sum of the infinite sequence of the reciprocals of the natural numbers: <b>1
+            +
+            ½ + ⅓ + ¼ + ... + 1/k</b> as <b>k</b> approaches infinity, or in Big Sigma notation:
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p style="display: flex; justify-content: center; width: 90%;">
+            <img src="codecogseqn-6.gif" height="55px">
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>3</sup> That is to say that if anything we should gripe about the mathematical harmonic series failing
+            to conform to the music-speak, except that a) there is no technical meaning of series in music to worry
+            about, and b) I have no idea as to the historical and etymological (dis)continuity between our modern
+            English collision on meanings of "series" and these mathematicians' naming in the first place.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            — they could have named it anything, but I suppose why not name it "harmonic" after something related to it
+            and for which both it and its name are beautiful<sup>4</sup>?
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>4</sup> The name might have been intermediated by the harmonic mean. I am not even beginning to attempt
+            to write math history here. I'm intimidated by David Foster Wallace's <i>Everything and More: A Compact
+            History of Infinity</i> and criticisms theroef (though I have definitely cribbed its style here).
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h4>
+            §3. Sonic boomerang
+        </h4>
+        <p>
+            Now that I had nailed down the relationship between the mathematical and musical harmonic series, and
+            learned that I had been wrong about the musical harmonic series being the mathematical harmonic series
+            applied to music, I began to wonder: in what way(s) <i>could</i> I apply the mathematical harmonic series to
+            music?
+            Bring this puppy back around!
+        </p>
+        <p>
+            So there's another term in math called a <i>partial sum</i>. It's related to the math concept of a series.
+            If the
+            series is defined as the sum of "all" of the terms of an infinite sequence, then a partial sum is defined as
+            the sum of some finite number of them.
+        </p>
+        <p>
+            So the first partial sum of the harmonic series, written <b>S<sub>1</sub></b>, is trivially <b>1</b>.
+        </p>
+        <p>
+            <b>S<sub>2</sub></b> is <b>3/2</b>, because
+            <br>
+            <b>1/1 + 1/2 =</b>
+            <br>
+            <b>2/2 + 1/2 =</b>
+            <br>
+            <b>3/2</b>.
+        </p>
+        <p>
+            And <b>S<sub>3</sub></b> is <b>11/6</b>, because
+            <br>
+            <b>1/1 + 1/2 + 1/3 =</b>
+            <br>
+            <b>6/6 + 3/6 + 2/6 =</b>
+            <br>
+            <b>11/6</b>.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            And so on. So the sequence of partial sums<sup>1</sup> of the mathematical harmonic series is
+            <b>
+                <br>
+                1/1,
+                <br>
+                3/2,
+                <br>
+                11/6,
+                <br>
+                25/12,
+                <br>
+                137/60,
+                <br>
+                49/20,
+                <br>
+                363/140,
+                <br>
+                ...
+            </b>
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>1</sup> As far as I've found, we have no special term for a sequence of partial sums.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            So if you thought before that there was no practical difference between the math concept of series which
+            involves summation (since who cares what the sum total of all these terms are, isn't it just <b>∞</b>?) and
+            the general usage of series, that I was merely splitting hairs over whether we connected terms with commas
+            or plus signs, now you see where my interest lay. Already things are looking mighty interesting, at least if
+            you're into microtonal/xenharmonic/alt-tuning stuff like I am.
+        </p>
+        <p>
+            Remember that the musical harmonic series is a sequence of pitches starting at some base frequency and
+            moving up increasing multiples of it, <b>1x, 2x, 3x, 4x, ...</b> Well, we can deploy this new sequence in
+            much the same way.
+        </p>
+        <p>
+            Suppose we start with a base frequency of <b>220 Hz</b>. The harmonic series on <b>220 Hz</b> would go <b>220
+            Hz</b>,
+            440 Hz, 660 Hz, 880 Hz, ...</b> But this experimental series of ours goes differently: <b>220 Hz, 330 Hz,
+            403.3 Hz, 458.3 Hz,
+            ...</b>
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Except that's there's a little fudging I'd like to do, and this isn't pretty, so I'll get it out of the way
+            right now, and you can probably ignore this bit if you're in a hurry. You'll notice that the first steps of
+            the harmonic series proportionally are <b>2x</b> and <b>3/2x</b>. We have a <b>3/2x</b> move our new series,
+            too, but it's its first step. I'd like those to align. Plus, you'll notice that we never actually get to use
+            the <b>1</b>which is the first term of our new series as an interval. So I think it's fair to say for our
+            new series that we'll start at <b>0</b>, then <b>+ 1</b>, then <b>+ ½</b>, etc. Except that we can't use <b>0</b>
+            as a multiplier on frequency<sup>2</sup>, so we instead have to make our expression for our frequencies a
+            little more complicated: it'll be <b>a</b> at <b>n = 1</b>, and for all further <b>a</b>:
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>2</sup> 0 Hz don't exist.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p style="display: flex; justify-content: center; width: 90%;">
+            <img src="codecogseqn3.gif" height="55px">
+        </p>
+        <p>
+            That way our experimental series will go <b>220 Hz, 440 Hz, 660 Hz, 806.6 Hz, 916.6 Hz, ...</b> much closer
+            to the
+            traditional harmonic series. And this is what accounts for that extraction of an <b>n</b> as an <b>a</b>
+            back in the intro. Ugh, sorry about that. Promise it's worth it in the sound.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Here's what the harmonic series on <b>220 Hz</b> sounds like, with the base frequency droning underneath for
+            comparison:
+        </p>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283668418&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            And here's what our new series sounds like:
+        </p>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283668416&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            What is this beast? I like it. It sounds interesting. I want to know more. Since it's an application of the
+            mathematical harmonic series in a manner evocative of the musical harmonic series, maybe I'll call it the
+            "matharmonic series"<sup>3</sup>.
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>3</sup> I also considered "metaharmonic" and "epiharmonic" for their self-referentiality/uponicity, as
+            this series involves taking one sense of the harmonic series and applying it to another, but something just
+            didn't quite feel self-referential/uponicious enough.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h4>
+            §4. Yay, charts!
+        </h4>
+        <p>
+            One of the first things I note is that after not too long the matharmonic series starts to rise in pitch
+            much more slowly than the harmonic series, and it even begins to sound like it might stop rising altogether
+            at some point.
+        </p>
+        <a href="https://cmloegcmluin.files.wordpress.com/2016/09/freq-hz.png" target="_blank">
+            <img src="freq-hz.png" width="90%">
+        </a>
+        <p>
+            It'd be too easy to conclude this was completely explained by how its rate of rise decreases over time. Too
+            easy as in wrong. Since as you probably noticed, the harmonic series <i>also</i> seems to be slowing down,
+            even
+            though we know its rate of rise remains constant.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Depending on how familiar you are with the harmonic series, you may or may not be surprised by this
+            phenomenon. Its explanation lies in human pitch perception, which in math-speak we'd say is
+            <i>logarithmic.</i>
+        </p>
+        <p>
+            We'll define logarithms later, but for now it should suffice to say that we hear relationships between
+            pitches through ratios not differences. So while the <i>difference</i> between each pair of adjacent terms
+            in the
+            musical harmonic series remains constant, sure, look at their <i>ratios</i> as you go farther up: <b>2:1,
+            3:2, 4:3,
+            5:4, 6:5, ...</b><sup>1</sup>
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>1</sup> These are called "superparticular ratios". Which I mention mostly just 'cuz it's such
+            a cool name.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            If this doesn't quite seal the deal for you, putting it in decimal form may: <b>2, 1.5, 1.<span
+                style="text-decoration:overline;">3</span>, 1.25, 1.2,
+            ...</b>
+            The ratios are getting smaller. Meaning that while we're actually continuing to move by the same absolute
+            amounts of <i>frequency</i>, we're perceiving less of a relative change in <i>pitch</i> each time.
+        </p>
+        <p>
+            Frequency tells what a sound wave actually is; pitch tells how we hear it.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            A traditional graph is fine for frequency, but a better way to visualize pitch is to use a graph with a
+            logarithmic scale (again, deferring definition). If we space things vertically by ratios (but importantly
+            keep spacing things horizontally by difference, which traditional spacing we call <i>linear</i>), we can now
+            see
+            what we've been hearing<sup>2</sup>:
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>2</sup> The units here, cents, are a common way of measuring logarithmic pitch. Don't worry
+            about it for now.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <img src="pitch-cents.png" width="90%">
+        <p>
+            And here we can also see that the matharmonic series is doubly curved-off. So we could say that the rising
+            of the traditional harmonic series is fighting only against the diminishing returns of perceptual
+            significance in upwards frequency motion, while the matharmonic series contends with <i>both</i> that <i>as
+            well as</i> an
+            actual decreasing in its rate of upward frequency motion.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h4>
+            §5. It's log, it's log
+        </h4>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            On the pitch chart, the harmonic series looks curved. And I noticed that on the frequency chart — where the
+            harmonic series looks straight — the matharmonic series looks curved in a similar way. So now I began to
+            wonder: just what was the relationship between these two curves?
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            I already knew about logarithmic pitch perception. And I also already knew that the mathematical harmonic
+            series had something to do with logarithms<sup>1</sup>. But if you recall, before I started picking all this
+            apart I
+            thought that the musical and mathematical harmonic series were essentially the same thing, so in my head
+            this was all just fuzzily conflated; whatever logarithmic aspects each one exuded I assumed were nothing but
+            different manifestations of a shared fundamental element.
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>1</sup> Which I hinted at in a footnote from towards the beginning of the very first section. Hey,
+            we're finally to the foreshadowed moment!
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Now that I had come to the realization that the relationship between the musical and mathematical harmonic
+            series was merely inspirational (not identical), though, I knew I couldn't take anything for granted
+            anymore. "Something to do with logarithms" was no longer good enough.
+        </p>
+        <p>
+            So, like my grandfather always said to do, I reviewed the text.
+        </p>
+    </div>
+
+    <div class="right">
+        <img src="img_1666.jpg" width="50%">
+        <p>
+            <i>"Let's review the text."</i>
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            What I found was that the partial sums of the mathematical harmonic series roughly approximates the <i>natural
+            logarithm.</i> That is, the logarithm that gets its own cool notation <b>ln</b>, the base <b>e</b>
+            logarithm,
+            where <b>e</b> is one
+            of those transcendental mathematical constants, in fact one of the most famousest ones ever, <b>≈
+            2.71828</b>. So
+            the curve that the matharmonic series was exhibiting in frequency space was then indeed a logarithmic curve:
+            the natural kind.
+        </p>
+        <p>
+            And what of the harmonic series, in pitch space? Well that one I knew was a base <b>2</b> logarithm, as I
+            had
+            chosen the ratio <b>2:1</b> to space things vertically, because that is the most specialest ratio in pitch
+            perception, the one of <i>pitch class equivalence</i>: it is the one which — for whatever human
+            psychoacoustic
+            reasons — gives us what we hear as a higher or lower version of the same note, and thus we even go so far as
+            to name them as different numbers of the same letter e.g. <b>A3</b>, <b>A4</b>, <b>A5</b>.
+        </p>
+        <p>
+            For the record, <b>2 ≠ 2.71828</b>.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            It took some time for it to sink for me in that there was nothing and had never been anything inherently
+            linking the musical harmonic series to base <b>2</b>. This was so difficult to accept what with the ubiquity
+            of
+            music-speak of "octaves<sup>2</sup> of the harmonic series". The harmonic series is linked to the
+            logarithmicity of our
+            pitch perception, yes, because it is a primal demonstration of it. But I could have picked any logarithmic
+            scale I wanted to illustrate the logarithmicity of pitch perception: <b>2</b>, <b>3</b>, <b>5/4</b>,
+            <b>e</b>, whatever. The fact that
+            every <b>2n</b> entry in the harmonic series happens to sound "samey" — and that there's no other special
+            ratio
+            quite like that — was why I picked <b>2</b> as my base, but it has nothing inherently to do with this
+            general
+            logarithmicity of pitch perception.
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>2</sup> A legacy word for the <b>2:1</b> ratio. Okay, this is an admittedly xenharmano-snarky footnote.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            And it's here that we arrive at the kind of wild (to me anyhow) realization that the logarithmic aspects of
+            the musical harmonic series and the mathematical harmonic series are completely unrelated. The spectrum of
+            color imbued by the base <b>2</b> logarithmic lens through which we perceive pitch class equivalence has
+            nothing to
+            do with the fact that partial sums of sequences of reciprocals of its terms approximate a base <b>e</b>
+            logarithm.
+        </p>
+        <p>
+            2 : hearing :: e : reasoning.
+        </p>
+        <p>
+            So the matharmonic scale in pitch space's doubly-curved-off-ness was accounted for by layering two <i>different</i>
+            logarithms: it was already an ln in linear space, then it got plot on a <b>log<sub>2</sub></b> scale.
+        </p>
+        <h4>
+            §6. The harmony of nature
+        </h4>
+        <p>
+            Naturally my next topic of wonderment became: if the base <b>2</b> logarithmicity of pitch class equivalence
+            is a
+            given, what if I deployed the mathematical harmonic series in all its base <b>e</b> logarithmic glory
+            directly into
+            that space?
+        </p>
+        <p>
+            In other words, what if I attempted to draw my matharmonic series — instead of my frequency chart — on my
+            pitch chart, using its <b>2x</b> intervals as my units?
+        </p>
+        <p>
+            Well alright, but how does it work to use the <b>2x</b> interval as the unit of the mathematical harmonic
+            series
+            (which is again <b>1 + ½ + ⅓ + ¼ + ...</b>)? I'll tell you that it's not multiplying repeatedly by these
+            fractions
+            of <b>2</b>. That'd be too easy (again, as in wrong). In order to "pretend" our logarithmic scale is a
+            linear
+            scale, we have to express whatever we're "adding" or "subtracting" in terms of a power of <b>2</b> which we
+            would
+            then multiply by.
+        </p>
+        <p>
+            You may think that notion sounds ridiculous, but believe it or not this is most likely how most of your
+            interactions with musical pitch have gone in your life. If you've been participating in the standard Western
+            tuning system (e.g. classical, jazz, pop, rock, most music), then whenever you treated pitch linearly, say,
+            by counting up twelve equal steps from <b>A4</b> to <b>A5</b>, adding one step at a time (<b>A4</b>,
+            <b>B♭4</b>,
+            <b>B4</b>, <b>C5</b>, <b>D♭5</b>, <b>D5</b>, <b>E♭5</b>, <b>E5</b>,
+            <b> F5</b>, <b>F♯5</b>, <b>G5</b>, <b>G♯5</b>, <b>A5</b>), what you were actually doing under the hood was
+            multiplying the frequency of your
+            pitch by the twelfth root of <b>2</b>, and you did it twelve times in a row.
+        </p>
+        <p>
+            A <i>root</i> just being a power less than <b>1</b>, and the <i>nth root of 2</i> just being another way of
+            saying "multiply n of me
+            together to get 2". Just like how the square root of <b>2</b> aka <b>√2</b> aka <b>2<sup>½</sup></b> is the
+            number you multiply by
+            itself to get <b>2</b>, i.e. you multiply two of it together to get <b>2</b>.
+        </p>
+        <p>
+            Try it yourself! The twelfth root of <b>2 ≈ 1.059463</b>. Multiply twelve of those together and you get
+            <b>2</b>. The frequency of <b>A4</b> is <b>440 Hz</b>, <b>Bb4</b> is <b>466.16</b>, and <b>B4</b> is <b>493.88</b>.
+            Both <b>466.16 / 440</b> and <b>493.88 / 466.16 ≈ 1.059463</b>.
+        </p>
+        <p>
+            And <b>493.88 / 440</b> is the sixth root of <b>2</b> aka <b>2<sup>⅙</sup></b>, which you may recall that
+            you can sum powers when multiplying
+            like bases e.g. <b>x2 ⋅ x3 = x5</b> (and of course <b>1/12 + 1/12 = 1/6</b>). What this demonstrates clearly
+            is how
+            expressing pitches in terms of powers of <b>2</b> has given us the power to gear down one mathematical order
+            of
+            complexity from multiplication to addition. Multiplying twelve 12th roots of <b>2</b> would involve us
+            summing
+            their powers up to <b>12 / 12</b>, and of course <b>2^(12/12) = 2^1 = 2</b>.
+        </p>
+        <p>
+            Enough explanation. Back to the task at hand. We're going to take the terms of the mathematical harmonic
+            series and create a new sequence which is those as powers/roots of <b>2</b>. Then we'll create a new series
+            out of
+            that sequence. Except that since our terms aren't terms but factors (i.e. we're gonna multiply them, not add
+            them), we'll use the Big Pi notation:
+        </p>
+        <p style="display: flex; justify-content: center; width: 90%;">
+            <img src="codecogseqn-8.gif" height="55px">
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            or, since the radical sign is radical dudes,
+        </p>
+        <p style="display: flex; justify-content: center; width: 90%;">
+            <img src="codecogseqn-7.gif" height="55px">
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Then we'll consider the partial products of this, using those as multipliers on some base frequency. In
+            other words, the first step of our new musical series will be the base. The second step will be <b>2</b>
+            times the
+            frequency of the base. The third step will be <b>2√2</b> its frequency. The fourth step will be <b>2 ⋅ √2 ⋅
+            3√2 =
+            2^(3/2)</b>. Then fifth step <b>2^(11/6)</b>, sixth <b>2^(25/12)</b>, seventh <b>2^(137/60)</b>, etc.
+            (you're recognizing these
+            powers, right?)
+        </p>
+        <p>
+            Here's what that sounds like:
+        </p>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283668420&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            And here's what that looks like on our frequency and pitch charts<sup>1</sup>:
+        </p>
+        <img src="freq-hz-atn.png" width="90%">
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>1</sup> As we might have expected, we get a slightly more curved-off line than the traditional harmonic
+            series. It
+            helps me anyway to think of it this way, in terms of the definition of a logarithm (which we have thus far
+            gotten away with ignoring): the number you'd have to raise your logarithmic base to get a given number. So
+            when you look at a base <b>2</b> logarithmic graph, you're not surprised that you reach <b>y = 1</b> once
+            <b>x = 2</b>, <b>y = 2</b>
+            once <b>x = 4</b>, and <b>y = 3</b> once <b>x = 8</b>, because <b>21 = 2</b>, <b>22 = 4</b>, and <b>23 =
+            8</b>, respectively. Accordingly, when you
+            look at a base <b>e</b> logarithmic graph, you're not surprised that you reach <b>y = 1</b> once <b>x =
+            e</b>, and <b>y = 2</b> once <b>x =
+            e</b><sup>2</sup>. So since in the base <b>e</b> logarithmic graph you don't reach <b>y = 2</b> until <b>x =
+            e2 ≈ 7.389056</b>, but you reach it
+            by <b>x = 4</b> in the base <b>2</b> logarithmic graph, it's clear that the base e version rises more
+            slowly. In fact, the
+            larger the number you use for your base (<b>10</b> is also common) the increasingly extremely curved off
+            your curve
+            will be.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <img src="pitch-cents-atn.png" width="90%">
+        <p>
+            Due to our fudging of the matharmonic series, it actually is "beating" the edharmonic series for just a
+            couple steps before it is forever overtaken.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            If you are familiar with some microtonal/xenharmonic terminology, you can also think of this as moving
+            upwards first by one step of <b>1ed2</b>, then by one step of <b>2ed2</b>, then by one step of <b>3ed2</b>,
+            etc.<sup>2</sup> And thus I dub
+            thees new series the "2-edharmonic series" or — since 2 will be assumed if left unspecified — the
+            "edharmonic series"<sup>3</sup>.
+        </p>
+    </div>
+
+    <div class="right">
+        <p>
+            <sup>2</sup> Because the <b>12ed2</b> that is the standard Western tuning is so highly composite, you can
+            hear the
+            first five
+            pitches of this new series on your guitar or piano. Start on any fret/key. Then go up by twelve frets/keys.
+            Then
+            go up by six frets/keys. Then by four. Then by three. It's not until you get to the step of <b>5ed2</b> that
+            you first
+            encounter a pitch interval unable to be expressed in terms of <b>12ed2</b> steps (i.e <b>1ed2 -> 12 * 1/12,
+            2ed2 -> 6
+            * 1/12, 3ed2 -> 4 * 1/12, 4ed2 -> 3 * 1/12</b>). You could also think of this as moving by <b>1200</b>
+            cents, then <b>600</b>
+            cents, then <b>400</b>, then <b>300</b>, and it's only once you get to <b>240</b> that you're not a multiple
+            of <b>100</b>.
+            <br>
+            <br>
+            <sup>3</sup> I tried to find if there was some preexisting name for the nth root series or nth root product,
+            but I couldn't find one.
+        </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h4>
+            §7. Lies
+        </h4>
+        <p>
+            As teased in section §1, you can make an edharmonic series out of any positive factor you want. Here's a
+            couple that might be of interest:
+        </p>
+        <h5>
+            3-edharmonic
+        </h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283672078&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h5>
+            e-edharmonic
+        </h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283672096&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            No, I don't think there's anything particularly special about drawing a <b>ln</b> on logarithmic scale with
+            <b>e</b> as
+            units; tantamount to squaring <b>e</b> maybe?
+        </p>
+        <p>
+            I think the matharmonic series and the edharmonic series are probably the most interesting of these new
+            harmonic series. Two different ways of marrying <b>2</b> and <b>e</b>. One is drawing <b>e</b> and then
+            putting it
+            into <b>2</b>, the other is drawing <b>e</b> directly onto <b>2</b>.
+        </p>
+        <p> I suppose you could also experiment with doing a <b>log<sub>2</sub></b> in frequency and then seeing it get
+            <b>log<sub>2</sub></b>'d
+            again by
+            pitch. But I wouldn't think it'd be so interesting. Basically just shooting for points in the traditional
+            harmonic series, but instead of taking 1 step to reach each next one, taking 2<sup>n</sup> steps.
+            And here's where I admit that this all made a great story and all, but that my actual experience of
+            questioning, learning, and ideating here was so clumsy, out-of-order, and chaotic that I probably couldn't
+            even relate it if I thought it would be a good idea to do so. I think I actually began at the ending here,
+            by coming up with the edharmonic series out of nowhere, in terms of steps of shrinking <b>ed2</b>'s.
+            Although there
+            is some truth to questioning the relationship between the music and math versions of the harmonic series, so
+            probably my experience was something like working forwards and backwards through this stuff sameltimeously,
+            meeting at several points in the middle. You'll just have to deal with this idealized take on what it might
+            have been like to come up with this stuff semi-straightforwardly.
+        </p>
+        <p> If you are interested in more harmonic series related hijinx, feel free to check out my <a
+                href="https://cmloegcmluin.wordpress.com/2015/04/13/harmonic-circle/" target="_blank">"harmonic
+            circle"</a> or keeping reading here to learn about the <a href="#third-tritave" target="_blank">"third
+            tritave of odd harmonics".</a>
+        </p>
+        <p>
+            If say you want to adjust the root, hear chords, change the speed, combine series, etc. you can do all that
+            here and more.
+        </p>
+        <p>
+            Since the matharmonic and edharmonic series are not anchored by the octave in the same way as the
+            traditional harmonic series, and their lower steps are the relatively more interesting ones, perhaps the
+            best pieces to compose with them would involve kind of regular resetting to the root and/or switching to
+            move subharmonically.
+        </p>
+        <p> But until then, here are some Scala files for scales which are <i>all</i> octave-repeating (again despite
+            the
+            matharmonic or edharmonic scales not repeating the octave interval regularly) if you just want to try to
+            improv something maybe:
+        </p>
+        <p>
+            <a href="https://www.dropbox.com/s/wkeqyds60fajsbz/4th-octave-harmonic-scale.scl?dl=0" target="_blank">4th
+                octave of the traditional harmonic series</a>
+            <br>
+            ! 4th-octave-harmonic-scale.scl
+            <br>
+            !
+            <br>
+            The 4th octave of the harmonic series, harmonics 8-15
+            <br>
+            8
+            <br>
+            !
+            <br>
+            9/8
+            <br>
+            5/4
+            <br>
+            11/8
+            <br>
+            3/2
+            <br>
+            13/8
+            <br>
+            7/4
+            <br>
+            15/8
+            <br>
+            2/1
+        </p>
+        <p>
+            <a href="https://www.dropbox.com/s/j3y3s21g6ttol5x/octaves-1-through-3-matharmonic-scale.scl?dl=0"
+               target="_blank">Octaves 1-3 of the matharmonic series</a>
+            <br>
+            ! octaves-1-through-3-matharmonic-scale.scl
+            <br>
+            !
+            <br>
+            Partial sums of math harmonic series (1 + 1/2 + 1/3 + 1/4 + ...)
+            <br>
+            45
+            <br>
+            !
+            <br>
+            3/2
+            <br>
+            11/6
+            <br>
+            25/24
+            <br>
+            137/120
+            <br>
+            49/40
+            <br>
+            363/280
+            <br>
+            761/560
+            <br>
+            7129/5040
+            <br>
+            7381/5040
+            <br>
+            83711/55440
+            <br>
+            86021/55440
+            <br>
+            1145993/720720
+            <br>
+            1171733/720720
+            <br>
+            1195757/720720
+            <br>
+            2436559/1441440
+            <br>
+            42142223/24504480
+            <br>
+            14274301/8168160
+            <br>
+            275295799/155195040
+            <br>
+            1016.51000
+            <br>
+            1027.93000
+            <br>
+            1038.76000
+            <br>
+            1049.06000
+            <br>
+            1058.87000
+            <br>
+            1068.23000
+            <br>
+            1077.19000
+            <br>
+            1085.77000
+            <br>
+            1094.01000
+            <br>
+            1101.92000
+            <br>
+            1109.54000
+            <br>
+            1116.88000
+            <br>
+            1123.96000
+            <br>
+            1130.80000
+            <br>
+            1137.41000
+            <br>
+            1143.81000
+            <br>
+            1150.01000
+            <br>
+            1156.02000
+            <br>
+            1161.85000
+            <br>
+            1167.51000
+            <br>
+            1173.02000
+            <br>
+            1178.37000
+            <br>
+            1183.58000
+            <br>
+            1188.65000
+            <br>
+            1193.60000
+            <br>
+            1198.42000
+            <br>
+            2/1
+        </p>
+        <p>
+            <a href="https://www.dropbox.com/s/5hzrlml3h8pnolo/octaves-1-through-3-edharmonic-scale.scl?dl=0"
+               target="_blank">Octaves 1-3 of the edharmonic scale</a>
+            <br>
+            ! octaves-1-through-3-edharmonic-scale.scl
+            <br>
+            !
+            <br>
+            Add steps of successive ed2s (1200 cents + 600 + 400 + 300 + 240 ...)
+            <br>
+            29
+            <br>!
+            <br>
+            23.85281
+            <br>
+            100.00000
+            <br>
+            123.85281
+            <br>
+            216.16051
+            <br>
+            301.87479
+            <br>
+            340.00000
+            <br>
+            381.87479
+            <br>
+            456.87479
+            <br>
+            527.46303
+            <br>
+            540.00000
+            <br>
+            594.12969
+            <br>
+            600.00000
+            <br>
+            657.28759
+            <br>
+            711.42857
+            <br>
+            717.28759
+            <br>
+            774.43045
+            <br>
+            828.97590
+            <br>
+            861.42857
+            <br>
+            881.14981
+            <br>
+            931.14981
+            <br>
+            979.14981
+            <br>
+            994.76190
+            <br>
+            1000.00000
+            <br>
+            1025.30366
+            <br>
+            1069.74810
+            <br>
+            1112.60525
+            <br>
+            1114.76190
+            <br>
+            1153.98456
+            <br>
+            1193.98456
+            <br>
+            1200
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h3 id="third-tritave">
+            Third Tritave of Odd Harmonics
+        </h3>
+        <p>
+            Back at <a href="https://untwelve.org/" target="_blank">Untwelve</a> Summer Camp 2016 this idea popped in my
+            head: what if we only used odd members
+            of the harmonic series?
+        </p>
+        <p>
+            Listening to the odds from the harmonic series is one thing, and sounds nice and interesting enough:
+        </p>
+        <h5>Odds of the First Four Tritaves of the Harmonic Series</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283742078&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right">
+    </div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            I wanted to make a repeating scale out of this, but I was thwarted because an octave-repeating scale
+            essentially introduces even harmonics, e.g. the 5th harmonic copy-pasted up an octave sounds like the (5 *
+            2)th harmonic.
+        </p>
+        <p>
+            This idea sat on the cutting room floor for a few weeks then before I had an "aha" moment on my xenharmonic
+            series, realizing that there was nothing inherently linking the harmonic series to the octave. I could also
+            look at tritaves of the harmonic series, and make a tritave-repeating scale.
+        </p>
+        <p>
+            As a bonus this would solidify the connection between this idea and the one from which the tritave arose:
+            the Bohlen-Pierce Scale, which is based on harmonic intervals eschewing 2 as a factor.
+            So here's me going up and then back down three tritaves of this tritave-repeating harmonic scale.
+        </p>
+        <h5>Three Tritaves of the Third Tritave's Odd Harmonics</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283742076&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <h5>Three Tritaves of the Third Tritave's Odd Harmonics - w/ Tritaves</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283742075&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <h5>Three Tritaves of the Third Tritave's Odd Harmonics - w/ Thirds</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283742073&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <h5>Three Tritaves of the Third Tritave's Odd Harmonics - w/ Fourths</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283742069&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+        <h5>Three Tritaves of the Third Tritave's Odd Harmonics - w/ Fifths</h5>
+        <iframe scrolling="no" frameborder="no" allow="autoplay" width="90%"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/283742063&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <p>
+            Here is the scala file:
+            <a href="https://www.dropbox.com/s/1xrcjedykx6iomb/3rd-tritave-odd-harmonics.scl?dl=0" target="_blank">Third
+                Tritave of Odd Harmonics</a>
+            <br>
+            ! 3rd-tritave-odd-harmonics.scl
+            <br>
+            !
+            <br>
+            Odds from the 3rd tritave of the harmonic series
+            <br>
+            9
+            <br>
+            !
+            <br>
+            11/9
+            <br>
+            13/9
+            <br>
+            5/3
+            <br>
+            17/9
+            <br>
+            19/9
+            <br>
+            7/3
+            <br>
+            23/9
+            <br>
+            25/9
+            <br>
+            3/1
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h3 id="particular">
+            Particular Series
+        </h3>
+        <p>
+            If you look at the ratios between successive members of the harmonic series, they all superparticular
+            ratios, that is, of the form <b>(n+1)/n</b>. But what if you made a scale out of these superparticular
+            ratios
+            themselves?
+        </p>
+        <p>
+            <b>2/1, 3/2, 4/3, 5/4, 6/5...</b>
+        </p>
+        <p>
+            As you can see, the scale is descending in pitch, as the subharmonic series does. In fact, the
+            superparticular series can be thought of as a harmonic series multiplied by a subharmonic series. Of course
+            if it was that simple the scales would just cancel out and you'd have a endless series of <b>1, 1, 1, 1,
+            ...</b> But
+            if you offset the harmonic series and the subharmonic series by 1 step, then you can get superparticular
+            series.
+        </p>
+        <p>
+            If you offset them in the other direction, you get the subparticular series:
+        </p>
+        <p>
+            <b>1/2, 2/3, 3/4, 4/5, 5/6...</b>
+        </p>
+        <p>
+            Where every member is a subparticular ratio, of the form <b>n/(n+1)</b>. Much less is said about
+            subparticular
+            ratios (compare 68,000 Google hits for subparticular and basically none for subparticular). But I see no
+            reason not to make the generalization. You can see that like the standard harmonic series, the subparticular
+            series ascends in pitch.
+        </p>
+        <p>
+            Next I propose the duperparticular series:
+        </p>
+        <p>
+            <b>3/1, 4/2, 5/3, 6/4, 7/5, ...</b>
+        </p>
+        <p>
+            The name comes from "super duper", the objectively hilarious reduplicative of the adjective "super". What's
+            happening
+            now is that every entry in the series is of the form <b>(n+2)/n</b>. Of course I do not find anything in the
+            literature about duperparticular ratios, because they are a silly thing, but the scale is interesting. Note
+            that as a consequence of being off by 2, every other entry in this series is not going to be in lowest terms
+            right off the bat, because it will be a ratio of two even numbers to each other.
+        </p>
+        <p>
+            Finally I propose the dubparticular series, which is the cross-pollination of the idea behind the
+            duperparticular series and subparticular series:
+        </p>
+        <p>
+            <b>1/3, 2/4, 3/5, 4/6, 5/7, ...</b>
+        </p>
+        <p>
+            You can continue to create scales in this family, but I'm sure what you'd name them, or if they'd be of much
+            interest.
+        </p>
+        <p>
+            If you'd like to hear a song I've composed using these four scales, along with the standard harmonic and
+            subharmonic series, check it out here: <a href="https://soundcloud.com/cmloegcmluin/zdaubyaos">https://soundcloud.com/cmloegcmluin/zdaubyaos</a>
+            It also uses these ratios extensively in its rhythms.
+        </p>
+    </div>
+
+    <div class="right"></div>
+</div>
+
+<div class="row">
+    <div class="middle">
+        <h3 id="denominated">
+            Denominated Harmonic Series
+        </h3>
+        <p>
+            I came up with the name "denominated harmonic series" before I noticed that they were already named and
+            well-described and explored. More info here: <a href="https://en.xen.wiki/w/Overtone_scales#Over-n_Scales"
+                                                            target="_blank">https://en.xen.wiki/w/Overtone_scales#Over-n_Scales</a>
         </p>
     </div>
 
