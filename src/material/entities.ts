@@ -11,14 +11,14 @@ const materializeEntities: MaterializeEntities =
         const segment: Segment = computeSegment(specs)
         segment.forEach((notes: Note[]) => {
             entities.push({
-                notes,
+                sections: [ { notes } ],
                 timbreName: TimbreNameEnum.GUITAR_FUZZ,
             })
         })
 
         if (specs.holdRoot) {
             entities.push({
-                notes: computeRootNotes(specs),
+                sections: [ { notes: computeRootNotes(specs) } ],
                 timbreName: TimbreNameEnum.CHORUS_STRINGS,
             })
         }
