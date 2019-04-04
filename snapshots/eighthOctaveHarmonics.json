@@ -3,6 +3,7 @@
   "totalDuration": 89600,
   "voices": [
     {
+      "delay": 0,
       "sounds": [
         {
           "duration": 700,
@@ -1420,6 +1421,7 @@
       "segnoIndex": 0
     },
     {
+      "delay": 0,
       "sounds": [
         {
           "duration": 89600,
