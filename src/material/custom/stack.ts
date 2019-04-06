@@ -1,8 +1,7 @@
-import { apply, Cardinal, max, negative, Ordinal, to, totalElements } from '@musical-patterns/utilities'
-import { XenharmonicSequence } from './types'
+import { apply, Cardinal, from, max, negative, Ordinal, to, totalElements } from '@musical-patterns/utilities'
 
-const computeNeededExtraIterationsForStack: (stack: Ordinal[], sequence: XenharmonicSequence) => Cardinal =
-    (stack: Ordinal[], sequence: XenharmonicSequence): Cardinal => {
+const computeNeededExtraIterationsForStack: (stack: Ordinal[]) => Cardinal =
+    (stack: Ordinal[]): Cardinal => {
         const maxStack: Ordinal = max(...stack)
         let neededExtraIterations: Cardinal = to.Cardinal(0)
         const sequenceLength: Cardinal = totalElements(stack)
@@ -11,7 +10,7 @@ const computeNeededExtraIterationsForStack: (stack: Ordinal[], sequence: Xenharm
             neededExtraIterations = apply.Translation(neededExtraIterations, to.Translation(1))
             countOfStackedPitchesWhichStillExceedTheScale = apply.Translation(
                 countOfStackedPitchesWhichStillExceedTheScale,
-                to.Translation(negative(sequenceLength)),
+                to.Translation(from.Cardinal(negative(sequenceLength))),
             )
         }
 

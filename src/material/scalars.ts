@@ -1,4 +1,14 @@
-import { apply, Cardinal, Frequency, INCLUSIVE, Ordinal, Scalar, to, Translation } from '@musical-patterns/utilities'
+import {
+    apply,
+    Cardinal,
+    Frequency,
+    from,
+    INCLUSIVE,
+    Ordinal,
+    Scalar,
+    to,
+    Translation,
+} from '@musical-patterns/utilities'
 import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from '../spec'
 import {
     applyIterations,
@@ -30,9 +40,12 @@ const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Frequency>
             sequence = applyParticulate(sequence, particulate)
         }
 
-        const neededExtraIterations: Cardinal = computeNeededExtraIterationsForStack(stack, sequence)
+        const neededExtraIterations: Cardinal = computeNeededExtraIterationsForStack(stack)
 
-        return applyIterations(sequence, apply.Translation(iterations, to.Translation((neededExtraIterations))))
+        return applyIterations(
+            sequence,
+            apply.Translation(iterations, to.Translation(from.Cardinal(neededExtraIterations))),
+        )
     }
 
 const computeSuperparticularSeriesScalars: () => Array<Scalar<Frequency>> =
