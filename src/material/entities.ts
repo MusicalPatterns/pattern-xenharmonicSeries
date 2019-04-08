@@ -1,5 +1,4 @@
-import { Entity, MaterializeEntities, Note, TimbreNameEnum } from '@musical-patterns/material'
-import { Segment } from '@musical-patterns/pattern'
+import { Entity, MaterializeEntities, Note, Segment, TimbreNameEnum } from '@musical-patterns/material'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeRootNotes } from './notes'
 import { computeSegment } from './segments'

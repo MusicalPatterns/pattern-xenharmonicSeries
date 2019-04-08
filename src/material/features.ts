@@ -1,10 +1,10 @@
-import { Note } from '@musical-patterns/material'
 import {
     DurationOnly,
+    Note,
     PitchOnly,
     STANDARD_DURATIONS_SCALE_INDEX,
     STANDARD_PITCH_SCALE_INDEX,
-} from '@musical-patterns/pattern'
+} from '@musical-patterns/material'
 import { ContourElement, to } from '@musical-patterns/utilities'
 
 const computeNote: (contourElement: ContourElement<PitchOnly>) => Note =

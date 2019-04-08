@@ -1,5 +1,9 @@
-import { computeNotesTotalCompiledDuration, Note } from '@musical-patterns/material'
-import { STANDARD_DURATIONS_SCALE_INDEX, STANDARD_PITCH_SCALE_INDEX } from '@musical-patterns/pattern'
+import {
+    computeNotesTotalCompiledDuration,
+    Note,
+    STANDARD_DURATIONS_SCALE_INDEX,
+    STANDARD_PITCH_SCALE_INDEX,
+} from '@musical-patterns/material'
 import { Ms, to } from '@musical-patterns/utilities'
 import {
     computeRootNotes,

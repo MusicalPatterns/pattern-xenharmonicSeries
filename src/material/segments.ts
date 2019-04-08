@@ -1,5 +1,4 @@
-import { Note } from '@musical-patterns/material'
-import { Segment } from '@musical-patterns/pattern'
+import { Note, Segment } from '@musical-patterns/material'
 import { Ordinal } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeScaleNotes } from './notes'

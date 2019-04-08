@@ -1,5 +1,4 @@
-import { Note } from '@musical-patterns/material'
-import { DurationOnly, PitchOnly } from '@musical-patterns/pattern'
+import { DurationOnly, Note, PitchOnly } from '@musical-patterns/material'
 import { Block, Cardinal, ContourElement, from, INITIAL, Ordinal, to } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeBlock } from './blocks'

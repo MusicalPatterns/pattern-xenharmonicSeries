@@ -1,6 +1,6 @@
 // tslint:disable max-file-line-count
 
-import { InputType, standardConfigurations } from '@musical-patterns/pattern'
+import { InputType, standardConfigurations } from '@musical-patterns/spec'
 import { xenharmonicSeriesOptionedConstraints, xenharmonicSeriesRangedConstraints } from './constraints'
 import { baseDescription, useBaseDescription } from './descriptions'
 import { specsOrder } from './orders'

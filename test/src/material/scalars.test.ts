@@ -1,6 +1,6 @@
 // tslint:disable binary-expression-operand-order no-identical-expressions
 
-import { Preset } from '@musical-patterns/pattern'
+import { Preset } from '@musical-patterns/spec'
 import {
     apply,
     CUBE_ROOT_OF_THREE,

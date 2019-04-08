@@ -4,7 +4,7 @@ import {
     RangedConfiguration,
     StandardSpecs,
     ToggledConfiguration,
-} from '@musical-patterns/pattern'
+} from '@musical-patterns/spec'
 import { Base, Cardinal, Ordinal, Power, Scalar, Translation } from '@musical-patterns/utilities'
 
 enum XenharmonicSeriesSpec {

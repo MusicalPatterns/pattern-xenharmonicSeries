@@ -1,5 +1,4 @@
-import { MaterializeScales, Scale } from '@musical-patterns/material'
-import { materializeStandardScales } from '@musical-patterns/pattern'
+import { MaterializeScales, materializeStandardScales, Scale } from '@musical-patterns/material'
 import { from, to } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeScalars } from './scalars'

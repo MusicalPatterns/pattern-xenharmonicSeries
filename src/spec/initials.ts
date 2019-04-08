@@ -1,4 +1,4 @@
-import { standardInitialSpecs, StandardSpec } from '@musical-patterns/pattern'
+import { standardInitialSpecs, StandardSpec } from '@musical-patterns/spec'
 import { INITIAL, MULTIPLICATIVE_IDENTITY, NEXT, NO_TRANSLATION, OCTAVE, to } from '@musical-patterns/utilities'
 import {
     XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY,
