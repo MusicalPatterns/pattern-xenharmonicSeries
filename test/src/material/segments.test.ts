@@ -1,4 +1,4 @@
-import { Note } from '@musical-patterns/compiler'
+import { Note } from '@musical-patterns/material'
 import { Segment } from '@musical-patterns/pattern'
 import { apply, forEach, Ordinal, to } from '@musical-patterns/utilities'
 import { computeSegment, initialSpecs, XenharmonicSeriesSpecs } from '../../../src/indexForTest'

@@ -1,4 +1,4 @@
-import { Note } from '@musical-patterns/compiler'
+import { Note } from '@musical-patterns/material'
 import { Segment } from '@musical-patterns/pattern'
 import { Ordinal } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpecs } from '../spec'
