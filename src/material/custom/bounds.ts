@@ -1,9 +1,9 @@
-import { apply, INCLUSIVE, Integer, Ordinal, slice, zeroAndPositiveIntegers } from '@musical-patterns/utilities'
+import { apply, INCLUSIVE, Integer, Ordinal, slice, ZERO_AND_POSITIVE_INTEGERS } from '@musical-patterns/utilities'
 
 const computeBoundedIntegers: (lowerBound: Ordinal, upperBound: Ordinal) => Integer[] =
     (lowerBound: Ordinal, upperBound: Ordinal): Integer[] =>
         slice(
-            zeroAndPositiveIntegers,
+            ZERO_AND_POSITIVE_INTEGERS,
             lowerBound,
             apply.Translation(upperBound, INCLUSIVE),
         )
