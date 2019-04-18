@@ -12,7 +12,7 @@ const specsOrder: XenharmonicSeriesSpec[] = [
     XenharmonicSeriesSpec.CONSTANT,
     XenharmonicSeriesSpec.GROUND,
     XenharmonicSeriesSpec.TERM_COEFFICIENT,
-    XenharmonicSeriesSpec.SCALE_ITERATIONS,
+    XenharmonicSeriesSpec.ITERATIONS,
     XenharmonicSeriesSpec.STACK,
     XenharmonicSeriesSpec.USE_PARTICULATE,
     XenharmonicSeriesSpec.PARTICULATE,

@@ -3,8 +3,10 @@ import {
     INCLUSIVE,
     indexOfFinalElement,
     INITIAL,
+    insteadOf,
     map,
     negative,
+    ofFrom,
     Ordinal,
     reciprocal,
     Scalar,
@@ -12,11 +14,12 @@ import {
     to,
     Translation,
 } from '@musical-patterns/utilities'
-import { from as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominals'
+import { PartialSumOrProduct } from '../../nominals'
+import { Particulate } from '../../types'
 import { XenharmonicSequence } from './types'
 
-const applyParticulate: (sequence: XenharmonicSequence, particulate: Translation) => XenharmonicSequence =
-    (sequence: XenharmonicSequence, particulate: Translation): XenharmonicSequence => {
+const applyParticulate: (sequence: XenharmonicSequence, particulate: Particulate) => XenharmonicSequence =
+    (sequence: XenharmonicSequence, particulate: Particulate): XenharmonicSequence => {
         const trimBackOffTheExtraTermsWeNeededToApplyParticulate: XenharmonicSequence =
             slice(
                 sequence,
@@ -25,16 +28,19 @@ const applyParticulate: (sequence: XenharmonicSequence, particulate: Translation
                     apply.Translation(
                         indexOfFinalElement(sequence), negative(particulate),
                     ),
-                    INCLUSIVE,
+                    insteadOf<Translation, Ordinal<PartialSumOrProduct>>(INCLUSIVE),
                 ),
             )
 
         return map(
             trimBackOffTheExtraTermsWeNeededToApplyParticulate,
-            (partial: PartialSumOrProduct, index: Ordinal): PartialSumOrProduct => {
-                const particulateIndex: Ordinal = apply.Translation(index, particulate)
-                const particulatePartial: PartialSumOrProduct = apply.Ordinal(sequence, particulateIndex)
-                const particulateScalar: Scalar = to.Scalar(xenharmonicSeriesFrom.PartialSumOrProduct(reciprocal(
+            (partial: PartialSumOrProduct, index: Ordinal<PartialSumOrProduct>): PartialSumOrProduct => {
+                const particulateIndex: Ordinal<PartialSumOrProduct> = apply.Translation(index, particulate)
+                const particulatePartial: PartialSumOrProduct = apply.Ordinal(
+                    sequence,
+                    particulateIndex,
+                )
+                const particulateScalar: Scalar<PartialSumOrProduct> = to.Scalar(ofFrom(reciprocal(
                     particulatePartial,
                 )))
 

@@ -1,4 +1,4 @@
-import { EVERY_OTHER, from, INITIAL, to } from '@musical-patterns/utilities'
+import { INITIAL } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from '../types'
 import {
     EIGHTH_OCTAVE_HARMONICS_CONSTANT,
@@ -9,16 +9,17 @@ import {
     INDEX_FOR_FOURTHS,
     INDEX_FOR_THIRDS,
     THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
+    THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT,
     THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
-    XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT,
 } from './constants'
 import { standardHarmonicSeriesSpecs } from './standard'
 
 const thirdTritaveOddHarmonicsSpecs: XenharmonicSeriesSpecs = {
     ...standardHarmonicSeriesSpecs,
     [ XenharmonicSeriesSpec.CONSTANT ]: THIRD_TRITAVE_ODD_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
-    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: EVERY_OTHER,
+    [ XenharmonicSeriesSpec.ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT,
     [ XenharmonicSeriesSpec.UPPER_BOUND ]: THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND,
 }
 
@@ -40,7 +41,7 @@ const thirdTritaveOddHarmonicsWithStackedFifthsSpecs: XenharmonicSeriesSpecs = {
 const fourthOctaveHarmonics: XenharmonicSeriesSpecs = {
     ...standardHarmonicSeriesSpecs,
     [ XenharmonicSeriesSpec.CONSTANT ]: FOURTH_OCTAVE_HARMONICS_CONSTANT,
-    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_SCALE_ITERATIONS_WHEN_PRESENT,
+    [ XenharmonicSeriesSpec.ITERATIONS ]: XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT,
     [ XenharmonicSeriesSpec.UPPER_BOUND ]: FOURTH_OCTAVE_HARMONICS_UPPER_BOUND,
 }
 

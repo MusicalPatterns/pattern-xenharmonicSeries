@@ -279,7 +279,7 @@ describe('scalars', () => {
             .toBe(controlScalars.length + 9)
         expect(finalElement(scalarsWithStacking))
             .toBeCloseToTyped(
-                apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar(3)),
+                apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar<Scalar<Frequency>>(3)),
             )
     })
 

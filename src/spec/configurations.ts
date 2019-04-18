@@ -30,11 +30,11 @@ const configurations: XenharmonicSeriesConfigurations = {
         inputType: InputType.TOGGLED,
         order: specsOrder.indexOf(XenharmonicSeriesSpec.HOLD_ROOT),
     },
-    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: {
+    [ XenharmonicSeriesSpec.ITERATIONS ]: {
         description: 'how many times to climb by this scale before repeating',
         formattedName: 'scale iterations',
         inputType: InputType.RANGED,
-        order: specsOrder.indexOf(XenharmonicSeriesSpec.SCALE_ITERATIONS),
+        order: specsOrder.indexOf(XenharmonicSeriesSpec.ITERATIONS),
     },
     [ XenharmonicSeriesSpec.LOWER_BOUND ]: {
         constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpec.LOWER_BOUND ],

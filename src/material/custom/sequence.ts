@@ -1,10 +1,12 @@
 import {
     apply,
     Base,
+    Frequency,
     from,
     INITIAL,
     isUndefined,
     NumericOperation,
+    ofFrom,
     Ordinal,
     Power,
     reciprocal,
@@ -16,17 +18,17 @@ import { computeNextPartial } from './nextPartial'
 import { ComputeSequenceParameters, ComputeTermFunction, XenharmonicSequence } from './types'
 
 const indexToPower: ComputeTermFunction =
-    (index: Ordinal, power: Power): Term =>
+    (index: Ordinal, power: Power<Ordinal>): Term =>
         xenharmonicSeriesTo.Term(from.Ordinal(
-            apply.Power(index, power) === Infinity ? INITIAL : apply.Power(index, power),
+            apply.Power(index, power) === to.Ordinal(Infinity) ? INITIAL : apply.Power(index, power),
         ))
 
 const indexToPowerUsingBase: ComputeTermFunction =
-    (index: Ordinal, power: Power, base: Base = to.Base(1)): Term =>
-        xenharmonicSeriesTo.Term(from.Base(
+    (index: Ordinal, power: Power<Ordinal>, base: Base<Frequency> = to.Base<Frequency>(1)): Term =>
+        xenharmonicSeriesTo.Term(from.Base<Frequency>(
             apply.Power(
                 base,
-                to.Power(xenharmonicSeriesFrom.Term(indexToPower(index, power))),
+                to.Power<Base<Frequency>>(xenharmonicSeriesFrom.Term(indexToPower(index, power))),
             ),
         ))
 
@@ -67,7 +69,7 @@ const computeSequence: (parameters: {
                 return ground ?
                     apply.Scalar(
                         partial,
-                        to.Scalar(xenharmonicSeriesFrom.PartialSumOrProduct(reciprocal(firstPartial))),
+                        to.Scalar(ofFrom(reciprocal(firstPartial))),
                     ) :
                     partial
             })

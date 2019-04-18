@@ -1,4 +1,9 @@
-import { initialSpecs, materializeEntities, XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
+import {
+    initialSpecs,
+    materializeEntities,
+    XenharmonicSeriesSpec,
+    XenharmonicSeriesSpecs,
+} from '../../../src/indexForTest'
 
 describe('entities', () => {
     it('when hold root is true, includes the root entity', () => {

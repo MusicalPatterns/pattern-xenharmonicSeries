@@ -5,7 +5,6 @@ export { initialSpecs } from './initials'
 
 export {
     XenharmonicSeriesSpecs,
-    SequenceType,
     XenharmonicSeriesPreset,
     XenharmonicSeriesSpec,
 } from './types'

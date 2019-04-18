@@ -12,10 +12,12 @@ export {
 export {
     spec,
     XenharmonicSeriesSpecs,
-    SequenceType,
     XenharmonicSeriesPreset,
     XenharmonicSeriesSpec,
     initialSpecs,
 } from './spec/indexForTest'
+export {
+    SequenceType,
+} from './types'
 
 export { pattern } from './patterns'

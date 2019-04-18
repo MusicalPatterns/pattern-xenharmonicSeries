@@ -4,10 +4,12 @@ import {
     finalIndexFromElementsTotal,
     from,
     INITIAL,
+    insteadOf,
     Integer,
     Ordinal,
     to,
 } from '@musical-patterns/utilities'
+import { PartialSumOrProduct } from '../nominals'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeBoundedIntegers, computeNoteCount } from './custom'
 
@@ -15,11 +17,15 @@ const computeBlock: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal) => Blo
     (specs: XenharmonicSeriesSpecs, stackIndex: Ordinal = INITIAL): Block => {
         const boundedIntegers: Integer[] = computeBoundedIntegers(
             INITIAL,
-            finalIndexFromElementsTotal(computeNoteCount(specs)),
+            insteadOf<Ordinal, PartialSumOrProduct>(finalIndexFromElementsTotal(computeNoteCount(specs))),
         )
 
         return to.Block(boundedIntegers
-            .map((integer: Integer) => apply.Translation(integer, to.Translation(from.Ordinal(stackIndex)))))
+            .map(
+                (integer: Integer) =>
+                    apply.Translation(integer, to.Translation(to.Integer(from.Ordinal(stackIndex)))),
+            ),
+        )
     }
 
 export {

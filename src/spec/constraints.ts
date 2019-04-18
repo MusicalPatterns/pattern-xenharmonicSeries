@@ -1,6 +1,7 @@
 import { computeBasicOptionedConstraintFromEnum, OptionedConstraint, RangedConstraint } from '@musical-patterns/spec'
 import { ObjectOf } from '@musical-patterns/utilities'
-import { SequenceType, XenharmonicSeriesSpec } from './types'
+import { SequenceType } from '../types'
+import { XenharmonicSeriesSpec } from './types'
 
 const xenharmonicSeriesRangedConstraints: ObjectOf<RangedConstraint> = {
     [ XenharmonicSeriesSpec.BASE ]: {

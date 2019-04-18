@@ -5,14 +5,16 @@ import {
     StandardSpecs,
     ToggledConfiguration,
 } from '@musical-patterns/spec'
-import { Base, Cardinal, Ordinal, Power, Scalar, Translation } from '@musical-patterns/utilities'
+import { Base, Cardinal, Frequency, Ordinal, Power, Scalar, Translation } from '@musical-patterns/utilities'
+import { PartialSumOrProduct, Term } from '../nominals'
+import { Particulate, SequenceType } from '../types'
 
 enum XenharmonicSeriesSpec {
     BASE = 'base',
     CONSTANT = 'constant',
     GROUND = 'ground',
     HOLD_ROOT = 'holdRoot',
-    SCALE_ITERATIONS = 'iterations',
+    ITERATIONS = 'iterations',
     LOWER_BOUND = 'lowerBound',
     PARTICULATE = 'particulate',
     POWER = 'power',
@@ -47,26 +49,20 @@ enum XenharmonicSeriesPreset {
     TWELVE_DENOMINATED_HARMONIC_SERIES = 'twelveDenominatedHarmonicSeries',
 }
 
-enum SequenceType {
-    PARTIAL_SUM = 'partial sum',
-    PARTIAL_PRODUCT = 'partial product',
-    SEQUENCE = 'sequence',
-}
-
 interface XenharmonicSeriesSpecs extends StandardSpecs {
-    [ XenharmonicSeriesSpec.BASE ]: Base,
-    [ XenharmonicSeriesSpec.CONSTANT ]: Translation,
+    [ XenharmonicSeriesSpec.BASE ]: Base<Frequency>,
+    [ XenharmonicSeriesSpec.CONSTANT ]: Translation<PartialSumOrProduct>,
     [ XenharmonicSeriesSpec.DESCENDING ]: boolean,
     [ XenharmonicSeriesSpec.GROUND ]: boolean,
     [ XenharmonicSeriesSpec.HOLD_ROOT ]: boolean,
-    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: Cardinal,
-    [ XenharmonicSeriesSpec.LOWER_BOUND ]: Ordinal,
-    [ XenharmonicSeriesSpec.PARTICULATE ]: Translation,
-    [ XenharmonicSeriesSpec.POWER ]: Power,
+    [ XenharmonicSeriesSpec.ITERATIONS ]: Cardinal,
+    [ XenharmonicSeriesSpec.LOWER_BOUND ]: Ordinal<PartialSumOrProduct>,
+    [ XenharmonicSeriesSpec.PARTICULATE ]: Particulate,
+    [ XenharmonicSeriesSpec.POWER ]: Power<Ordinal>,
     [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType,
     [ XenharmonicSeriesSpec.STACK ]: Ordinal[],
-    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: Scalar,
-    [ XenharmonicSeriesSpec.UPPER_BOUND ]: Ordinal,
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: Scalar<Term>,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: Ordinal<PartialSumOrProduct>,
     [ XenharmonicSeriesSpec.USE_BASE ]: boolean,
     [ XenharmonicSeriesSpec.USE_PARTICULATE ]: boolean,
 }
@@ -77,7 +73,7 @@ interface XenharmonicSeriesConfigurations extends Configurations<XenharmonicSeri
     [ XenharmonicSeriesSpec.DESCENDING ]: ToggledConfiguration,
     [ XenharmonicSeriesSpec.GROUND ]: ToggledConfiguration,
     [ XenharmonicSeriesSpec.HOLD_ROOT ]: ToggledConfiguration,
-    [ XenharmonicSeriesSpec.SCALE_ITERATIONS ]: RangedConfiguration,
+    [ XenharmonicSeriesSpec.ITERATIONS ]: RangedConfiguration,
     [ XenharmonicSeriesSpec.LOWER_BOUND ]: RangedConfiguration,
     [ XenharmonicSeriesSpec.PARTICULATE ]: RangedConfiguration,
     [ XenharmonicSeriesSpec.POWER ]: RangedConfiguration,
@@ -90,7 +86,6 @@ interface XenharmonicSeriesConfigurations extends Configurations<XenharmonicSeri
 }
 
 export {
-    SequenceType,
     XenharmonicSeriesSpecs,
     XenharmonicSeriesConfigurations,
     XenharmonicSeriesSpec,
