@@ -3,12 +3,12 @@ import { XenharmonicSeriesSpecs } from '../../spec'
 
 const computeNoteCount: (specs: XenharmonicSeriesSpecs) => Cardinal =
     ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpecs): Cardinal =>
-        to.Cardinal(from.Ordinal(apply.Scalar(
+        to.Cardinal(from.Ordinal(apply.Multiple(
             apply.Translation(
                 difference(upperBound, lowerBound),
                 INCLUSIVE,
             ),
-            to.Scalar<Ordinal>(from.Cardinal(iterations)),
+            to.Multiple<Ordinal>(from.Cardinal(iterations)),
         )))
 
 export {

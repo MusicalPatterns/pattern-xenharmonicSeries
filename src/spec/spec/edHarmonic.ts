@@ -7,19 +7,19 @@ const sharedEdHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     ...initialSpecs,
     [ XenharmonicSeriesSpec.LOWER_BOUND ]: INITIAL,
     [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType.PARTIAL_PRODUCT,
-    [ XenharmonicSeriesSpec.USE_BASE ]: true,
+    [ XenharmonicSeriesSpec.USE_LOGARITHM ]: true,
 }
 
 const edTwoHarmonicSeriesSpecs: XenharmonicSeriesSpecs = sharedEdHarmonicSeriesSpecs
 
 const edThreeHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     ...sharedEdHarmonicSeriesSpecs,
-    [ XenharmonicSeriesSpec.BASE ]: TRITAVE,
+    [ XenharmonicSeriesSpec.LOGARITHM ]: TRITAVE,
 }
 
 const edEulerHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     ...sharedEdHarmonicSeriesSpecs,
-    [ XenharmonicSeriesSpec.BASE ]: E,
+    [ XenharmonicSeriesSpec.LOGARITHM ]: E,
 }
 
 export {

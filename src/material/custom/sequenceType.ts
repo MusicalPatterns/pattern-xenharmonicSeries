@@ -2,9 +2,9 @@ import {
     ADDITIVE_IDENTITY,
     from,
     MULTIPLICATIVE_IDENTITY,
-    NumericOperation,
     product,
     sum,
+    TwoToOneNumericOperation,
 } from '@musical-patterns/utilities'
 import { PartialSumOrProduct, to } from '../../nominals'
 import { SequenceType } from '../../types'
@@ -12,12 +12,12 @@ import { replace } from './replace'
 import { SequenceTypeParameters } from './types'
 
 const computeSequenceTypeParameters: (sequenceType: SequenceType) => {
-    operation: NumericOperation,
+    operation: TwoToOneNumericOperation,
     partialSeed: PartialSumOrProduct,
 } =
     (sequenceType: SequenceType): SequenceTypeParameters => {
         let partialSeed: PartialSumOrProduct
-        let operation: NumericOperation
+        let operation: TwoToOneNumericOperation
         switch (sequenceType) {
             case SequenceType.PARTIAL_SUM: {
                 partialSeed = to.PartialSumOrProduct(from.Translation(ADDITIVE_IDENTITY))

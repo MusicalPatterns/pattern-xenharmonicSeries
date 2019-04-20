@@ -2,7 +2,6 @@
 
 import {
     apply,
-    Base,
     Cardinal,
     DECREMENT,
     Denominator,
@@ -10,7 +9,7 @@ import {
     EVERY_OTHER,
     FOURTH,
     Frequency,
-    from,
+    from, Logarithm,
     negative,
     OCTAVE,
     ONE_HALF,
@@ -29,32 +28,32 @@ import { initialSpecs } from '../initials'
 import { XenharmonicSeriesSpec } from '../types'
 
 const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Base<Frequency>(apply.Translation(
-        apply.Power(
+    to.Translation<PartialSumOrProduct>(from.Logarithm<Frequency>(apply.Translation(
+        apply.Exponent(
             TRITAVE,
-            to.Power<Base<Frequency>>(from.Ordinal(apply.Translation(
+            to.Exponent<Logarithm<Frequency>>(from.Ordinal(apply.Translation(
                 THIRD,
                 DECREMENT,
             ))),
         ),
-        to.Translation<Base<Frequency>>(negative(from.Multiple<Ordinal>(EVERY_OTHER))),
+        to.Translation<Logarithm<Frequency>>(negative(from.Multiple<Ordinal>(EVERY_OTHER))),
     )))
 const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> = apply.Scalar(
     to.Ordinal<PartialSumOrProduct>(from.Cardinal(windowIterationHarmonicStepCount(TRITAVE, THIRD))),
     ONE_HALF,
 )
-const THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT: Scalar<Term> = to.Scalar<Term>(from.Multiple<Ordinal>(EVERY_OTHER))
+const THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT: Scalar<Term> = to.Scalar<Term>(2)
 const XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT: Cardinal = to.Cardinal(3)
 const FOURTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Base<Frequency>(apply.Translation(
-        apply.Power(
+    to.Translation<PartialSumOrProduct>(from.Logarithm<Frequency>(apply.Translation(
+        apply.Exponent(
             OCTAVE,
-            to.Power<Base<Frequency>>(from.Ordinal(apply.Translation(
+            to.Exponent<Logarithm<Frequency>>(from.Ordinal(apply.Translation(
                 FOURTH,
                 PREVIOUS,
             ))),
         ),
-        to.Translation<Base<Frequency>>(from.Scalar<Term>(
+        to.Translation<Logarithm<Frequency>>(from.Scalar<Term>(
             negative(initialSpecs[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
         )),
     )))
@@ -63,15 +62,15 @@ const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> = to.Ord
     windowIterationHarmonicStepCount(OCTAVE, FOURTH),
 ))
 const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Base<Frequency>(apply.Translation(
-        apply.Power(
+    to.Translation<PartialSumOrProduct>(from.Logarithm<Frequency>(apply.Translation(
+        apply.Exponent(
             OCTAVE,
-            to.Power<Base<Frequency>>(from.Ordinal(apply.Translation(
+            to.Exponent<Logarithm<Frequency>>(from.Ordinal(apply.Translation(
                 EIGHTH,
                 PREVIOUS,
             ))),
         ),
-        to.Translation<Base<Frequency>>(from.Scalar<Term>(
+        to.Translation<Logarithm<Frequency>>(from.Scalar<Term>(
             negative(initialSpecs[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
         )),
     )))

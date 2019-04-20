@@ -1,45 +1,47 @@
 import {
     apply,
-    Base,
+    Exponent,
     Frequency,
     from,
     INITIAL,
     isUndefined,
-    NumericOperation,
+    Logarithm,
     ofFrom,
     Ordinal,
-    Power,
     reciprocal,
     to,
+    TwoToOneNumericOperation,
 } from '@musical-patterns/utilities'
 import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 import { computeNextPartial } from './nextPartial'
 import { ComputeSequenceParameters, ComputeTermFunction, XenharmonicSequence } from './types'
 
-const indexToPower: ComputeTermFunction =
-    (index: Ordinal, power: Power<Ordinal>): Term =>
-        xenharmonicSeriesTo.Term(from.Ordinal(
-            apply.Power(index, power) === to.Ordinal(Infinity) ? INITIAL : apply.Power(index, power),
-        ))
+const indexToExponent: ComputeTermFunction =
+    (index: Ordinal, exponent: Exponent): Term =>
+        xenharmonicSeriesTo.Term(
+            apply.Exponent(from.Ordinal(index), exponent) === Infinity ?
+                INITIAL :
+                apply.Exponent(from.Ordinal(index), exponent),
+        )
 
-const indexToPowerUsingBase: ComputeTermFunction =
-    (index: Ordinal, power: Power<Ordinal>, base: Base<Frequency> = to.Base<Frequency>(1)): Term =>
-        xenharmonicSeriesTo.Term(from.Base<Frequency>(
-            apply.Power(
-                base,
-                to.Power<Base<Frequency>>(xenharmonicSeriesFrom.Term(indexToPower(index, power))),
+const indexToExponentUsingLogarithm: ComputeTermFunction =
+    (index: Ordinal, exponent: Exponent, logarithm: Logarithm<Frequency> = to.Logarithm<Frequency>(1)): Term =>
+        xenharmonicSeriesTo.Term(from.Logarithm<Frequency>(
+            apply.Exponent(
+                logarithm,
+                to.Exponent<Logarithm<Frequency>>(xenharmonicSeriesFrom.Term(indexToExponent(index, exponent))),
             ),
         ))
 
 const computeSequence: (parameters: {
     boundedNumbers: number[],
-    operation: NumericOperation,
+    operation: TwoToOneNumericOperation,
     partialSeed: PartialSumOrProduct,
     specs: XenharmonicSeriesSpecs,
 }) => XenharmonicSequence =
     ({ partialSeed, operation, boundedNumbers, specs }: ComputeSequenceParameters): XenharmonicSequence => {
-        const { constant, useBase, ground } = specs
+        const { constant, useLogarithm, ground } = specs
         let previousPartial: PartialSumOrProduct = partialSeed
 
         let firstPartial: PartialSumOrProduct
@@ -48,7 +50,7 @@ const computeSequence: (parameters: {
             .map(to.Ordinal)
             .map((index: Ordinal): PartialSumOrProduct => {
                 const computeTermFunction: ComputeTermFunction =
-                    useBase ? indexToPowerUsingBase : indexToPower
+                    useLogarithm ? indexToExponentUsingLogarithm : indexToExponent
 
                 previousPartial = computeNextPartial({
                     computeTermFunction,

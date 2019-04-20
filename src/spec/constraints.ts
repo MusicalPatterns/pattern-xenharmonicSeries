@@ -4,7 +4,7 @@ import { SequenceType } from '../types'
 import { XenharmonicSeriesSpec } from './types'
 
 const xenharmonicSeriesRangedConstraints: ObjectOf<RangedConstraint> = {
-    [ XenharmonicSeriesSpec.BASE ]: {
+    [ XenharmonicSeriesSpec.LOGARITHM ]: {
         excludeMin: true,
         min: 1,
     },

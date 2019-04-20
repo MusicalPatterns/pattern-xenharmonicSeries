@@ -1,6 +1,6 @@
-import { NumericOperation } from '@musical-patterns/utilities'
+import { TwoToOneNumericOperation } from '@musical-patterns/utilities'
 
-const replace: NumericOperation =
+const replace: TwoToOneNumericOperation =
     (value: Number, valueToReplaceOriginalValue: Number): Number =>
         valueToReplaceOriginalValue
 

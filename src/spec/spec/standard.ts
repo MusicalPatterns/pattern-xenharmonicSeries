@@ -1,11 +1,11 @@
-import { Ordinal, to } from '@musical-patterns/utilities'
+import { to } from '@musical-patterns/utilities'
 import { SequenceType } from '../../types'
 import { initialSpecs } from '../initials'
 import { XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from '../types'
 
 const standardHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     ...initialSpecs,
-    [ XenharmonicSeriesSpec.POWER ]: to.Power<Ordinal>(0),
+    [ XenharmonicSeriesSpec.EXPONENT ]: to.Exponent(0),
 }
 
 const subharmonicSeriesSpecs: XenharmonicSeriesSpecs = {

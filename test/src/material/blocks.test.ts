@@ -1,12 +1,12 @@
 import { to } from '@musical-patterns/utilities'
-import { computeBlock, spec, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
+import { computeBlock, PartialSumOrProduct, spec, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
 
 describe('blocks', () => {
     it('starting with 0, counts up the range between the lower and upper bounds, inclusively', () => {
         const specs: XenharmonicSeriesSpecs = {
             ...spec.initialSpecs,
-            lowerBound: to.Ordinal(3),
-            upperBound: to.Ordinal(5),
+            lowerBound: to.Ordinal<PartialSumOrProduct>(3),
+            upperBound: to.Ordinal<PartialSumOrProduct>(5),
         }
 
         expect(computeBlock(specs))
@@ -21,8 +21,8 @@ describe('blocks', () => {
         const specs: XenharmonicSeriesSpecs = {
             ...spec.initialSpecs,
             iterations: to.Cardinal(5),
-            lowerBound: to.Ordinal(3),
-            upperBound: to.Ordinal(5),
+            lowerBound: to.Ordinal<PartialSumOrProduct>(3),
+            upperBound: to.Ordinal<PartialSumOrProduct>(5),
         }
 
         expect(computeBlock(specs))

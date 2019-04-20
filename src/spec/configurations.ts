@@ -2,17 +2,17 @@
 
 import { InputType, standardConfigurations } from '@musical-patterns/spec'
 import { xenharmonicSeriesOptionedConstraints, xenharmonicSeriesRangedConstraints } from './constraints'
-import { baseDescription, useBaseDescription } from './descriptions'
+import { logarithmDescription, useLogarithmDescription } from './descriptions'
 import { specsOrder } from './orders'
 import { XenharmonicSeriesConfigurations, XenharmonicSeriesSpec } from './types'
 
 const configurations: XenharmonicSeriesConfigurations = {
     ...standardConfigurations,
-    [ XenharmonicSeriesSpec.BASE ]: {
-        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpec.BASE ],
-        description: baseDescription,
+    [ XenharmonicSeriesSpec.LOGARITHM ]: {
+        constraint: xenharmonicSeriesRangedConstraints[ XenharmonicSeriesSpec.LOGARITHM ],
+        description: logarithmDescription,
         inputType: InputType.RANGED,
-        order: specsOrder.indexOf(XenharmonicSeriesSpec.BASE),
+        order: specsOrder.indexOf(XenharmonicSeriesSpec.LOGARITHM),
     },
     [ XenharmonicSeriesSpec.CONSTANT ]: {
         description: 'a constant added to each element in the final sequence',
@@ -49,10 +49,10 @@ const configurations: XenharmonicSeriesConfigurations = {
         inputType: InputType.RANGED,
         order: specsOrder.indexOf(XenharmonicSeriesSpec.PARTICULATE),
     },
-    [ XenharmonicSeriesSpec.POWER ]: {
-        description: 'the power to raise the index of summation/product to in each term',
+    [ XenharmonicSeriesSpec.EXPONENT ]: {
+        description: 'the exponent to raise the index of summation/product to in each term',
         inputType: InputType.RANGED,
-        order: specsOrder.indexOf(XenharmonicSeriesSpec.POWER),
+        order: specsOrder.indexOf(XenharmonicSeriesSpec.EXPONENT),
     },
     [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: {
         constraint: xenharmonicSeriesOptionedConstraints[ XenharmonicSeriesSpec.SEQUENCE_TYPE ],
@@ -79,10 +79,10 @@ const configurations: XenharmonicSeriesConfigurations = {
         inputType: InputType.RANGED,
         order: specsOrder.indexOf(XenharmonicSeriesSpec.UPPER_BOUND),
     },
-    [ XenharmonicSeriesSpec.USE_BASE ]: {
-        description: useBaseDescription,
+    [ XenharmonicSeriesSpec.USE_LOGARITHM ]: {
+        description: useLogarithmDescription,
         inputType: InputType.TOGGLED,
-        order: specsOrder.indexOf(XenharmonicSeriesSpec.USE_BASE),
+        order: specsOrder.indexOf(XenharmonicSeriesSpec.USE_LOGARITHM),
     },
     [ XenharmonicSeriesSpec.USE_PARTICULATE ]: {
         description: 'turn use of particulate effect on or off',

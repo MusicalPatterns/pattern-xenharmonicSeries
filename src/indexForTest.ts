@@ -19,5 +19,8 @@ export {
 export {
     SequenceType,
 } from './types'
+export {
+    PartialSumOrProduct,
+} from './nominals'
 
 export { pattern } from './patterns'

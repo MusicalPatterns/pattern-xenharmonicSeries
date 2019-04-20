@@ -1,26 +1,26 @@
-import { Base, Frequency, NumericOperation, Ordinal, Power } from '@musical-patterns/utilities'
+import { Exponent, Frequency, Logarithm, Ordinal, TwoToOneNumericOperation } from '@musical-patterns/utilities'
 import { PartialSumOrProduct, Term } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 
 interface ComputeSequenceParameters {
     boundedNumbers: number[],
-    operation: NumericOperation,
+    operation: TwoToOneNumericOperation,
     partialSeed: PartialSumOrProduct,
     specs: XenharmonicSeriesSpecs,
 }
 
-type ComputeTermFunction = (index: Ordinal, power: Power<Ordinal>, base?: Base<Frequency>) => Term
+type ComputeTermFunction = (index: Ordinal, exponent: Exponent, logarithm?: Logarithm<Frequency>) => Term
 
 interface ComputePartialParameters {
     computeTermFunction: ComputeTermFunction,
     index: Ordinal,
-    operation: NumericOperation,
+    operation: TwoToOneNumericOperation,
     partial: PartialSumOrProduct,
     specs: XenharmonicSeriesSpecs
 }
 
 interface SequenceTypeParameters {
-    operation: NumericOperation,
+    operation: TwoToOneNumericOperation,
     partialSeed: PartialSumOrProduct,
 }
 

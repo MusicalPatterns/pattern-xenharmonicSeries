@@ -8,8 +8,8 @@ import {
     cubeRoot,
     E,
     finalElement,
-    Frequency,
     from,
+    Hz,
     ObjectOf,
     product,
     Scalar,
@@ -22,25 +22,24 @@ import { computeScalars, spec, XenharmonicSeriesPreset, XenharmonicSeriesSpecs }
 
 describe('scalars', () => {
     let presets: ObjectOf<Preset<XenharmonicSeriesSpecs>>
-    const rawE: number = from.Base(E)
+    const rawE: number = from.Logarithm(E)
     beforeEach(() => {
         presets = spec.presets!
     })
 
     it('harmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.STANDARD_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
                 1, 2, 3, 4, 5, 6, 7,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('matharmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.MATHARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -51,13 +50,12 @@ describe('scalars', () => {
                 137 / 60,
                 49 / 20,
                 363 / 140,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('2-edharmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.ED_TWO_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -65,14 +63,13 @@ describe('scalars', () => {
                 2,
                 product(2, SQUARE_ROOT_OF_TWO),
                 product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO),
-                product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO, apply.Power(2, to.Power(1 / 4))),
-            ].map(to.Scalar)
-                .map(to.Frequency))
+                product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO, apply.Exponent(2, to.Exponent(1 / 4))),
+            ].map(to.Scalar))
     })
 
     it('3-edharmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.ED_THREE_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -80,14 +77,13 @@ describe('scalars', () => {
                 3,
                 product(3, SQUARE_ROOT_OF_THREE),
                 product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE),
-                product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE, apply.Power(3, to.Power(1 / 4))),
-            ].map(to.Scalar)
-                .map(to.Frequency))
+                product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE, apply.Exponent(3, to.Exponent(1 / 4))),
+            ].map(to.Scalar))
     })
 
     it('e-edharmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -95,14 +91,13 @@ describe('scalars', () => {
                 rawE,
                 product(rawE, squareRoot(rawE)),
                 product(rawE, squareRoot(rawE), cubeRoot(rawE)),
-                product(rawE, squareRoot(rawE), cubeRoot(rawE), apply.Power(rawE, to.Power(1 / 4))),
-            ].map(to.Scalar)
-                .map(to.Frequency))
+                product(rawE, squareRoot(rawE), cubeRoot(rawE), apply.Exponent(rawE, to.Exponent(1 / 4))),
+            ].map(to.Scalar))
     })
 
     it('3rd tritave of odd harmonics scale', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -133,13 +128,12 @@ describe('scalars', () => {
                 9 * 21 / 9,
                 9 * 23 / 9,
                 9 * 25 / 9,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('8th octave of harmonics scale', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.EIGHTH_OCTAVE_HARMONICS ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -147,13 +141,12 @@ describe('scalars', () => {
                 129 / 128,
                 130 / 128,
                 131 / 128,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('4th octave of harmonics scale', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.FOURTH_OCTAVE_HARMONICS ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -181,13 +174,12 @@ describe('scalars', () => {
                 4 * 13 / 8,
                 4 * 14 / 8,
                 4 * 15 / 8,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('subharmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.SUBHARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -198,13 +190,12 @@ describe('scalars', () => {
                 1 / 5,
                 1 / 6,
                 1 / 7,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('superparticular series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -215,13 +206,12 @@ describe('scalars', () => {
                 6 / 5,
                 7 / 6,
                 8 / 7,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('duperparticular series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -232,13 +222,12 @@ describe('scalars', () => {
                 7 / 5,
                 8 / 6,
                 9 / 7,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('subparticular series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.SUBPARTICULAR_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -248,13 +237,12 @@ describe('scalars', () => {
                 4 / 5,
                 5 / 6,
                 6 / 7,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('dubparticular series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.DUBPARTICULAR_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -264,28 +252,27 @@ describe('scalars', () => {
                 4 / 6,
                 5 / 7,
                 6 / 8,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('third tritave odd harmonics with stacked thirds adds extra iterations to cover the extra reach of the stacking', () => {
         const controlSpecs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS ].specs
-        const controlScalars: Array<Scalar<Frequency>> = computeScalars(controlSpecs)
+        const controlScalars: Array<Scalar<Hz>> = computeScalars(controlSpecs)
 
         const stackingSpecs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS_WITH_STACKED_THIRDS ].specs
-        const scalarsWithStacking: Array<Scalar<Frequency>> = computeScalars(stackingSpecs)
+        const scalarsWithStacking: Array<Scalar<Hz>> = computeScalars(stackingSpecs)
 
         expect(scalarsWithStacking.length)
             .toBe(controlScalars.length + 9)
         expect(finalElement(scalarsWithStacking))
             .toBeCloseToTyped(
-                apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar<Scalar<Frequency>>(3)),
+                apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar<Scalar<Hz>>(3)),
             )
     })
 
     it('5-denominated harmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.FIVE_DENOMINATED_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -304,13 +291,12 @@ describe('scalars', () => {
                 4 * 7 / 5,
                 4 * 8 / 5,
                 4 * 9 / 5,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('7-denominated harmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.SEVEN_DENOMINATED_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -335,13 +321,12 @@ describe('scalars', () => {
                 4 * 11 / 7,
                 4 * 12 / 7,
                 4 * 13 / 7,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 
     it('12-denominated harmonic series', () => {
         const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.TWELVE_DENOMINATED_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Frequency>> = computeScalars(specs)
+        const scalars: Array<Scalar<Hz>> = computeScalars(specs)
 
         expect(scalars)
             .toBeCloseSoFar([
@@ -381,7 +366,6 @@ describe('scalars', () => {
                 4 * 21 / 12,
                 4 * 22 / 12,
                 4 * 23 / 12,
-            ].map(to.Scalar)
-                .map(to.Frequency))
+            ].map(to.Scalar))
     })
 })
