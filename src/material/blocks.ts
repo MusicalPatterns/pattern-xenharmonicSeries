@@ -1,13 +1,13 @@
 import {
-    apply,
+    as,
     Block,
     finalIndexFromElementsTotal,
-    from,
     INITIAL,
     insteadOf,
     Integer,
+    notAs,
     Ordinal,
-    to,
+    use,
 } from '@musical-patterns/utilities'
 import { PartialSumOrProduct } from '../nominals'
 import { XenharmonicSeriesSpecs } from '../spec'
@@ -20,10 +20,10 @@ const computeBlock: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal) => Blo
             insteadOf<Ordinal, PartialSumOrProduct>(finalIndexFromElementsTotal(computeNoteCount(specs))),
         )
 
-        return to.Block(boundedIntegers
+        return as.Block(boundedIntegers
             .map(
                 (integer: Integer) =>
-                    apply.Translation(integer, to.Translation(to.Integer(from.Ordinal(stackIndex)))),
+                    use.Translation(integer, as.Translation(as.Integer(notAs.Ordinal(stackIndex)))),
             ),
         )
     }

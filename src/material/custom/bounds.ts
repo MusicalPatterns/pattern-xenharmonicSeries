@@ -1,4 +1,4 @@
-import { apply, INCLUSIVE, Integer, Ordinal, slice, ZERO_AND_POSITIVE_INTEGERS } from '@musical-patterns/utilities'
+import { INCLUSIVE, Integer, Ordinal, slice, use, ZERO_AND_POSITIVE_INTEGERS } from '@musical-patterns/utilities'
 import { PartialSumOrProduct } from '../../nominals'
 
 const computeBoundedIntegers:
@@ -7,7 +7,7 @@ const computeBoundedIntegers:
         slice(
             ZERO_AND_POSITIVE_INTEGERS,
             lowerBound,
-            apply.Translation(upperBound, INCLUSIVE),
+            use.Translation(upperBound, INCLUSIVE),
         )
 
 export {

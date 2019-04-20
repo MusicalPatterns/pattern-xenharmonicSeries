@@ -1,18 +1,18 @@
 import {
-    apply,
+    as,
     INCLUSIVE,
     indexOfFinalElement,
     INITIAL,
     insteadOf,
     map,
     negative,
-    ofFrom,
+    ofNotAs,
     Ordinal,
     reciprocal,
     Scalar,
     slice,
-    to,
     Translation,
+    use,
 } from '@musical-patterns/utilities'
 import { PartialSumOrProduct } from '../../nominals'
 import { Particulate } from '../../types'
@@ -24,8 +24,8 @@ const applyParticulate: (sequence: XenharmonicSequence, particulate: Particulate
             slice(
                 sequence,
                 INITIAL,
-                apply.Translation(
-                    apply.Translation(
+                use.Translation(
+                    use.Translation(
                         indexOfFinalElement(sequence), negative(particulate),
                     ),
                     insteadOf<Translation, Ordinal<PartialSumOrProduct>>(INCLUSIVE),
@@ -35,16 +35,16 @@ const applyParticulate: (sequence: XenharmonicSequence, particulate: Particulate
         return map(
             trimBackOffTheExtraTermsWeNeededToApplyParticulate,
             (partial: PartialSumOrProduct, index: Ordinal<PartialSumOrProduct>): PartialSumOrProduct => {
-                const particulateIndex: Ordinal<PartialSumOrProduct> = apply.Translation(index, particulate)
-                const particulatePartial: PartialSumOrProduct = apply.Ordinal(
+                const particulateIndex: Ordinal<PartialSumOrProduct> = use.Translation(index, particulate)
+                const particulatePartial: PartialSumOrProduct = use.Ordinal(
                     sequence,
                     particulateIndex,
                 )
-                const particulateScalar: Scalar<PartialSumOrProduct> = to.Scalar(ofFrom(reciprocal(
+                const particulateScalar: Scalar<PartialSumOrProduct> = as.Scalar(ofNotAs(reciprocal(
                     particulatePartial,
                 )))
 
-                return apply.Scalar(partial, particulateScalar)
+                return use.Scalar(partial, particulateScalar)
             },
         )
     }

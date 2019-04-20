@@ -5,7 +5,7 @@ import { computeNominalInterface, DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE } 
 type PartialSumOrProduct = Number & { _NominalBrand: 'PartialSumOrProduct' }
 type Term = Number & { _NominalBrand: 'Term' }
 
-const { to, from } = computeNominalInterface({
+const { as, notAs } = computeNominalInterface({
     number: {
         PartialSumOrProduct: DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE as PartialSumOrProduct,
         Term: DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE as Term,
@@ -13,8 +13,8 @@ const { to, from } = computeNominalInterface({
 })
 
 export {
-    to,
-    from,
+    as,
+    notAs,
     PartialSumOrProduct,
     Term,
 }

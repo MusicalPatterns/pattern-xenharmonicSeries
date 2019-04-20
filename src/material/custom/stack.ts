@@ -1,27 +1,27 @@
 import {
-    apply,
+    as,
     Cardinal,
-    from,
     length,
     max,
     negative,
-    ofFrom,
+    notAs,
+    ofNotAs,
     ONE_MORE,
     Ordinal,
-    to,
+    use,
 } from '@musical-patterns/utilities'
 
 const computeNeededExtraIterationsForStack: (stack: Ordinal[]) => Cardinal =
     (stack: Ordinal[]): Cardinal => {
         const maxStack: Ordinal = max(...stack)
-        let neededExtraIterations: Cardinal = to.Cardinal(0)
+        let neededExtraIterations: Cardinal = as.Cardinal(0)
         const sequenceLength: Cardinal<Ordinal> = length(stack)
-        let countOfStackedPitchesWhichStillExceedTheScale: Cardinal<Ordinal> = to.Cardinal(ofFrom(maxStack))
-        while (from.Cardinal(countOfStackedPitchesWhichStillExceedTheScale) > 0) {
-            neededExtraIterations = apply.Translation(neededExtraIterations, ONE_MORE)
-            countOfStackedPitchesWhichStillExceedTheScale = apply.Translation(
+        let countOfStackedPitchesWhichStillExceedTheScale: Cardinal<Ordinal> = as.Cardinal(ofNotAs(maxStack))
+        while (notAs.Cardinal(countOfStackedPitchesWhichStillExceedTheScale) > 0) {
+            neededExtraIterations = use.Translation(neededExtraIterations, ONE_MORE)
+            countOfStackedPitchesWhichStillExceedTheScale = use.Translation(
                 countOfStackedPitchesWhichStillExceedTheScale,
-                to.Translation(ofFrom(negative(sequenceLength))),
+                as.Translation(ofNotAs(negative(sequenceLength))),
             )
         }
 

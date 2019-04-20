@@ -1,18 +1,18 @@
 import {
-    apply,
+    as,
     Exponent,
     Frequency,
-    from,
     INITIAL,
     isUndefined,
     Logarithm,
-    ofFrom,
+    notAs,
+    ofNotAs,
     Ordinal,
     reciprocal,
-    to,
     TwoToOneNumericOperation,
+    use,
 } from '@musical-patterns/utilities'
-import { from as xenharmonicSeriesFrom, PartialSumOrProduct, Term, to as xenharmonicSeriesTo } from '../../nominals'
+import { as as xenharmonicSeriesTo, notAs as xenharmonicSeriesFrom, PartialSumOrProduct, Term } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 import { computeNextPartial } from './nextPartial'
 import { ComputeSequenceParameters, ComputeTermFunction, XenharmonicSequence } from './types'
@@ -20,17 +20,17 @@ import { ComputeSequenceParameters, ComputeTermFunction, XenharmonicSequence } f
 const indexToExponent: ComputeTermFunction =
     (index: Ordinal, exponent: Exponent): Term =>
         xenharmonicSeriesTo.Term(
-            apply.Exponent(from.Ordinal(index), exponent) === Infinity ?
+            use.Exponent(notAs.Ordinal(index), exponent) === Infinity ?
                 INITIAL :
-                apply.Exponent(from.Ordinal(index), exponent),
+                use.Exponent(notAs.Ordinal(index), exponent),
         )
 
 const indexToExponentUsingLogarithm: ComputeTermFunction =
-    (index: Ordinal, exponent: Exponent, logarithm: Logarithm<Frequency> = to.Logarithm<Frequency>(1)): Term =>
-        xenharmonicSeriesTo.Term(from.Logarithm<Frequency>(
-            apply.Exponent(
+    (index: Ordinal, exponent: Exponent, logarithm: Logarithm<Frequency> = as.Logarithm<Frequency>(1)): Term =>
+        xenharmonicSeriesTo.Term(notAs.Logarithm<Frequency>(
+            use.Exponent(
                 logarithm,
-                to.Exponent<Logarithm<Frequency>>(xenharmonicSeriesFrom.Term(indexToExponent(index, exponent))),
+                as.Exponent<Logarithm<Frequency>>(xenharmonicSeriesFrom.Term(indexToExponent(index, exponent))),
             ),
         ))
 
@@ -47,7 +47,7 @@ const computeSequence: (parameters: {
         let firstPartial: PartialSumOrProduct
 
         return boundedNumbers
-            .map(to.Ordinal)
+            .map(as.Ordinal)
             .map((index: Ordinal): PartialSumOrProduct => {
                 const computeTermFunction: ComputeTermFunction =
                     useLogarithm ? indexToExponentUsingLogarithm : indexToExponent
@@ -62,16 +62,16 @@ const computeSequence: (parameters: {
 
                 return previousPartial
             })
-            .map((partial: PartialSumOrProduct) => apply.Translation(partial, constant))
+            .map((partial: PartialSumOrProduct) => use.Translation(partial, constant))
             .map((partial: PartialSumOrProduct) => {
                 if (isUndefined(firstPartial)) {
                     firstPartial = partial
                 }
 
                 return ground ?
-                    apply.Scalar(
+                    use.Scalar(
                         partial,
-                        to.Scalar(ofFrom(reciprocal(firstPartial))),
+                        as.Scalar(ofNotAs(reciprocal(firstPartial))),
                     ) :
                     partial
             })

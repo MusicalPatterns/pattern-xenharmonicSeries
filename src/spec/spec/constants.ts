@@ -1,7 +1,7 @@
 // tslint:disable no-magic-numbers max-file-line-count
 
 import {
-    apply,
+    as,
     Cardinal,
     DECREMENT,
     Denominator,
@@ -9,17 +9,18 @@ import {
     EVERY_OTHER,
     FOURTH,
     Frequency,
-    from, Logarithm,
+    Logarithm,
     negative,
+    notAs,
     OCTAVE,
     ONE_HALF,
     Ordinal,
     PREVIOUS,
     Scalar,
     THIRD,
-    to,
     Translation,
     TRITAVE,
+    use,
     windowIterationHarmonicStepCount,
 } from '@musical-patterns/utilities'
 import { PartialSumOrProduct, Term } from '../../nominals'
@@ -28,88 +29,90 @@ import { initialSpecs } from '../initials'
 import { XenharmonicSeriesSpec } from '../types'
 
 const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Logarithm<Frequency>(apply.Translation(
-        apply.Exponent(
+    as.Translation<PartialSumOrProduct>(notAs.Logarithm<Frequency>(use.Translation(
+        use.Exponent(
             TRITAVE,
-            to.Exponent<Logarithm<Frequency>>(from.Ordinal(apply.Translation(
+            as.Exponent<Logarithm<Frequency>>(notAs.Ordinal(use.Translation(
                 THIRD,
                 DECREMENT,
             ))),
         ),
-        to.Translation<Logarithm<Frequency>>(negative(from.Multiple<Ordinal>(EVERY_OTHER))),
+        as.Translation<Logarithm<Frequency>>(negative(notAs.Multiple<Ordinal>(EVERY_OTHER))),
     )))
-const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> = apply.Scalar(
-    to.Ordinal<PartialSumOrProduct>(from.Cardinal(windowIterationHarmonicStepCount(TRITAVE, THIRD))),
+const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> = use.Scalar(
+    as.Ordinal<PartialSumOrProduct>(notAs.Cardinal(windowIterationHarmonicStepCount(TRITAVE, THIRD))),
     ONE_HALF,
 )
-const THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT: Scalar<Term> = to.Scalar<Term>(2)
-const XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT: Cardinal = to.Cardinal(3)
+const THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT: Scalar<Term> = as.Scalar<Term>(2)
+const XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT: Cardinal = as.Cardinal(3)
 const FOURTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Logarithm<Frequency>(apply.Translation(
-        apply.Exponent(
+    as.Translation<PartialSumOrProduct>(notAs.Logarithm<Frequency>(use.Translation(
+        use.Exponent(
             OCTAVE,
-            to.Exponent<Logarithm<Frequency>>(from.Ordinal(apply.Translation(
+            as.Exponent<Logarithm<Frequency>>(notAs.Ordinal(use.Translation(
                 FOURTH,
                 PREVIOUS,
             ))),
         ),
-        to.Translation<Logarithm<Frequency>>(from.Scalar<Term>(
+        as.Translation<Logarithm<Frequency>>(notAs.Scalar<Term>(
             negative(initialSpecs[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
         )),
     )))
 
-const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> = to.Ordinal<PartialSumOrProduct>(from.Cardinal(
-    windowIterationHarmonicStepCount(OCTAVE, FOURTH),
-))
+const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> =
+    as.Ordinal<PartialSumOrProduct>(notAs.Cardinal(
+        windowIterationHarmonicStepCount(OCTAVE, FOURTH),
+    ))
 const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Logarithm<Frequency>(apply.Translation(
-        apply.Exponent(
+    as.Translation<PartialSumOrProduct>(notAs.Logarithm<Frequency>(use.Translation(
+        use.Exponent(
             OCTAVE,
-            to.Exponent<Logarithm<Frequency>>(from.Ordinal(apply.Translation(
+            as.Exponent<Logarithm<Frequency>>(notAs.Ordinal(use.Translation(
                 EIGHTH,
                 PREVIOUS,
             ))),
         ),
-        to.Translation<Logarithm<Frequency>>(from.Scalar<Term>(
+        as.Translation<Logarithm<Frequency>>(notAs.Scalar<Term>(
             negative(initialSpecs[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
         )),
     )))
 
-const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> = to.Ordinal<PartialSumOrProduct>(from.Cardinal(
-    windowIterationHarmonicStepCount(OCTAVE, EIGHTH),
-))
-const DUPER_OR_DUB_PARTICULATE: Particulate = to.Translation<Ordinal<PartialSumOrProduct>>(2)
+const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<PartialSumOrProduct> =
+    as.Ordinal<PartialSumOrProduct>(notAs.Cardinal(
+        windowIterationHarmonicStepCount(OCTAVE, EIGHTH),
+    ))
+const DUPER_OR_DUB_PARTICULATE: Particulate = as.Translation<Ordinal<PartialSumOrProduct>>(2)
 
-const INDEX_FOR_THIRDS: Ordinal = to.Ordinal(2)
-const INDEX_FOR_FOURTHS: Ordinal = to.Ordinal(3)
-const INDEX_FOR_FIFTHS: Ordinal = to.Ordinal(4)
+const INDEX_FOR_THIRDS: Ordinal = as.Ordinal(2)
+const INDEX_FOR_FOURTHS: Ordinal = as.Ordinal(3)
+const INDEX_FOR_FIFTHS: Ordinal = as.Ordinal(4)
 
-const FIVE_DENOMINATOR: Denominator = to.Denominator(5)
+const FIVE_DENOMINATOR: Denominator = as.Denominator(5)
 const FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Fraction([
-        to.Numerator(from.Denominator(apply.Translation(
+    as.Translation<PartialSumOrProduct>(notAs.Fraction([
+        as.Numerator(notAs.Denominator(use.Translation(
             FIVE_DENOMINATOR,
-            to.Translation<Denominator>(negative(1)),
+            as.Translation<Denominator>(negative(1)),
         ))),
         FIVE_DENOMINATOR,
     ]))
 
-const SEVEN_DENOMINATOR: Denominator = to.Denominator(7)
+const SEVEN_DENOMINATOR: Denominator = as.Denominator(7)
 const SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Fraction([
-        to.Numerator(from.Denominator(apply.Translation(
+    as.Translation<PartialSumOrProduct>(notAs.Fraction([
+        as.Numerator(notAs.Denominator(use.Translation(
             SEVEN_DENOMINATOR,
-            to.Translation<Denominator>(negative(1)),
+            as.Translation<Denominator>(negative(1)),
         ))),
         SEVEN_DENOMINATOR,
     ]))
 
-const TWELVE_DENOMINATOR: Denominator = to.Denominator(12)
+const TWELVE_DENOMINATOR: Denominator = as.Denominator(12)
 const TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduct> =
-    to.Translation<PartialSumOrProduct>(from.Fraction([
-        to.Numerator(from.Denominator(apply.Translation(
+    as.Translation<PartialSumOrProduct>(notAs.Fraction([
+        as.Numerator(notAs.Denominator(use.Translation(
             TWELVE_DENOMINATOR,
-            to.Translation<Denominator>(negative(1)),
+            as.Translation<Denominator>(negative(1)),
         ))),
         TWELVE_DENOMINATOR,
     ]))

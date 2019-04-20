@@ -1,4 +1,4 @@
-import { apply, Cardinal, Hz, INCLUSIVE, ofFrom, Ordinal, Scalar, to } from '@musical-patterns/utilities'
+import { as, Cardinal, Hz, INCLUSIVE, ofNotAs, Ordinal, Scalar, use } from '@musical-patterns/utilities'
 import { PartialSumOrProduct } from '../nominals'
 import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from '../spec'
 import { Particulate } from '../types'
@@ -22,7 +22,7 @@ const maybeExtendBoundForParticulate: (
         useParticulate: boolean,
         particulate: Particulate,
     ): Ordinal<PartialSumOrProduct> =>
-        useParticulate ? apply.Translation(upperBound, particulate) : upperBound
+        useParticulate ? use.Translation(upperBound, particulate) : upperBound
 
 const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Hz>> =
     (specs: XenharmonicSeriesSpecs): Array<Scalar<Hz>> => {
@@ -30,7 +30,7 @@ const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Hz>> =
         const { partialSeed, operation } = computeSequenceTypeParameters(sequenceType)
         const boundedNumbers: number[] = computeBoundedIntegers(
             lowerBound,
-            apply.Translation(maybeExtendBoundForParticulate(upperBound, useParticulate, particulate), INCLUSIVE),
+            use.Translation(maybeExtendBoundForParticulate(upperBound, useParticulate, particulate), INCLUSIVE),
         )
 
         let sequence: XenharmonicSequence = computeSequence({ boundedNumbers, specs, partialSeed, operation })
@@ -43,7 +43,7 @@ const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Hz>> =
 
         return applyIterations(
             sequence,
-            apply.Translation(iterations, to.Translation(ofFrom(neededExtraIterations))),
+            use.Translation(iterations, as.Translation(ofNotAs(neededExtraIterations))),
         )
     }
 

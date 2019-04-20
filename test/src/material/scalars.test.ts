@@ -2,27 +2,27 @@
 
 import { Preset } from '@musical-patterns/spec'
 import {
-    apply,
+    as,
     CUBE_ROOT_OF_THREE,
     CUBE_ROOT_OF_TWO,
     cubeRoot,
     E,
     finalElement,
-    from,
     Hz,
+    notAs,
     ObjectOf,
     product,
     Scalar,
     SQUARE_ROOT_OF_THREE,
     SQUARE_ROOT_OF_TWO,
     squareRoot,
-    to,
+    use,
 } from '@musical-patterns/utilities'
 import { computeScalars, spec, XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
 
 describe('scalars', () => {
     let presets: ObjectOf<Preset<XenharmonicSeriesSpecs>>
-    const rawE: number = from.Logarithm(E)
+    const rawE: number = notAs.Logarithm(E)
     beforeEach(() => {
         presets = spec.presets!
     })
@@ -34,7 +34,7 @@ describe('scalars', () => {
         expect(scalars)
             .toBeCloseSoFar([
                 1, 2, 3, 4, 5, 6, 7,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('matharmonic series', () => {
@@ -50,7 +50,7 @@ describe('scalars', () => {
                 137 / 60,
                 49 / 20,
                 363 / 140,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('2-edharmonic series', () => {
@@ -63,8 +63,8 @@ describe('scalars', () => {
                 2,
                 product(2, SQUARE_ROOT_OF_TWO),
                 product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO),
-                product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO, apply.Exponent(2, to.Exponent(1 / 4))),
-            ].map(to.Scalar))
+                product(2, SQUARE_ROOT_OF_TWO, CUBE_ROOT_OF_TWO, use.Exponent(2, as.Exponent(1 / 4))),
+            ].map(as.Scalar))
     })
 
     it('3-edharmonic series', () => {
@@ -77,8 +77,8 @@ describe('scalars', () => {
                 3,
                 product(3, SQUARE_ROOT_OF_THREE),
                 product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE),
-                product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE, apply.Exponent(3, to.Exponent(1 / 4))),
-            ].map(to.Scalar))
+                product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE, use.Exponent(3, as.Exponent(1 / 4))),
+            ].map(as.Scalar))
     })
 
     it('e-edharmonic series', () => {
@@ -91,8 +91,8 @@ describe('scalars', () => {
                 rawE,
                 product(rawE, squareRoot(rawE)),
                 product(rawE, squareRoot(rawE), cubeRoot(rawE)),
-                product(rawE, squareRoot(rawE), cubeRoot(rawE), apply.Exponent(rawE, to.Exponent(1 / 4))),
-            ].map(to.Scalar))
+                product(rawE, squareRoot(rawE), cubeRoot(rawE), use.Exponent(rawE, as.Exponent(1 / 4))),
+            ].map(as.Scalar))
     })
 
     it('3rd tritave of odd harmonics scale', () => {
@@ -128,7 +128,7 @@ describe('scalars', () => {
                 9 * 21 / 9,
                 9 * 23 / 9,
                 9 * 25 / 9,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('8th octave of harmonics scale', () => {
@@ -141,7 +141,7 @@ describe('scalars', () => {
                 129 / 128,
                 130 / 128,
                 131 / 128,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('4th octave of harmonics scale', () => {
@@ -174,7 +174,7 @@ describe('scalars', () => {
                 4 * 13 / 8,
                 4 * 14 / 8,
                 4 * 15 / 8,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('subharmonic series', () => {
@@ -190,7 +190,7 @@ describe('scalars', () => {
                 1 / 5,
                 1 / 6,
                 1 / 7,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('superparticular series', () => {
@@ -206,7 +206,7 @@ describe('scalars', () => {
                 6 / 5,
                 7 / 6,
                 8 / 7,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('duperparticular series', () => {
@@ -222,7 +222,7 @@ describe('scalars', () => {
                 7 / 5,
                 8 / 6,
                 9 / 7,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('subparticular series', () => {
@@ -237,7 +237,7 @@ describe('scalars', () => {
                 4 / 5,
                 5 / 6,
                 6 / 7,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('dubparticular series', () => {
@@ -252,7 +252,7 @@ describe('scalars', () => {
                 4 / 6,
                 5 / 7,
                 6 / 8,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('third tritave odd harmonics with stacked thirds adds extra iterations to cover the extra reach of the stacking', () => {
@@ -266,7 +266,7 @@ describe('scalars', () => {
             .toBe(controlScalars.length + 9)
         expect(finalElement(scalarsWithStacking))
             .toBeCloseToTyped(
-                apply.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], to.Scalar<Scalar<Hz>>(3)),
+                use.Scalar(scalarsWithStacking[ scalarsWithStacking.length - 1 - 9 ], as.Scalar<Scalar<Hz>>(3)),
             )
     })
 
@@ -291,7 +291,7 @@ describe('scalars', () => {
                 4 * 7 / 5,
                 4 * 8 / 5,
                 4 * 9 / 5,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('7-denominated harmonic series', () => {
@@ -321,7 +321,7 @@ describe('scalars', () => {
                 4 * 11 / 7,
                 4 * 12 / 7,
                 4 * 13 / 7,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 
     it('12-denominated harmonic series', () => {
@@ -366,6 +366,6 @@ describe('scalars', () => {
                 4 * 21 / 12,
                 4 * 22 / 12,
                 4 * 23 / 12,
-            ].map(to.Scalar))
+            ].map(as.Scalar))
     })
 })
