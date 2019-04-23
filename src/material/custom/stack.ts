@@ -1,27 +1,34 @@
 import {
     as,
     Cardinal,
+    INCREMENT,
+    insteadOf,
     length,
     max,
     negative,
     notAs,
-    ofNotAs,
-    ONE_MORE,
     Ordinal,
     use,
 } from '@musical-patterns/utilities'
+import { Stack } from '../../nominals'
+import { XenharmonicSequence } from './types'
 
-const computeNeededExtraIterationsForStack: (stack: Ordinal[]) => Cardinal =
-    (stack: Ordinal[]): Cardinal => {
-        const maxStack: Ordinal = max(...stack)
-        let neededExtraIterations: Cardinal = as.Cardinal(0)
-        const sequenceLength: Cardinal<Ordinal> = length(stack)
-        let countOfStackedPitchesWhichStillExceedTheScale: Cardinal<Ordinal> = as.Cardinal(ofNotAs(maxStack))
+const computeNeededExtraIterationsForStack:
+    (stack: Array<Ordinal<Stack[]>>) => Cardinal<Cardinal<XenharmonicSequence[]>> =
+    (stack: Array<Ordinal<Stack[]>>): Cardinal<Cardinal<XenharmonicSequence[]>> => {
+        const maxStack: Ordinal<Stack[]> = max(...stack)
+        const stackCount: Cardinal<Array<Ordinal<Stack[]>>> = length(stack)
+
+        let neededExtraIterations: Cardinal<Cardinal<XenharmonicSequence[]>> =
+            as.Cardinal<Cardinal<XenharmonicSequence[]>>(0)
+        let countOfStackedPitchesWhichStillExceedTheScale: Cardinal<XenharmonicSequence[]> =
+            as.Cardinal<XenharmonicSequence[]>(notAs.Ordinal(maxStack))
+
         while (notAs.Cardinal(countOfStackedPitchesWhichStillExceedTheScale) > 0) {
-            neededExtraIterations = use.Translation(neededExtraIterations, ONE_MORE)
-            countOfStackedPitchesWhichStillExceedTheScale = use.Translation(
+            neededExtraIterations = use.Cardinal(neededExtraIterations, INCREMENT)
+            countOfStackedPitchesWhichStillExceedTheScale = use.Cardinal(
                 countOfStackedPitchesWhichStillExceedTheScale,
-                as.Translation(ofNotAs(negative(sequenceLength))),
+                insteadOf<Cardinal, Cardinal<XenharmonicSequence[]>>(negative(stackCount)),
             )
         }
 

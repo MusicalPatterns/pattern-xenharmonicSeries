@@ -13,10 +13,11 @@ import {
     ScientificPitchOctaveNumber,
     Translation,
 } from '@musical-patterns/utilities'
+import { XenharmonicSequence } from './material'
 import { as as xenharmonicSeriesTo, PartialSumOrProduct } from './nominals'
 
-const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Ordinal<PartialSumOrProduct> = as.Ordinal<PartialSumOrProduct>(1)
-const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal<PartialSumOrProduct> = as.Ordinal<PartialSumOrProduct>(32)
+const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Ordinal<XenharmonicSequence> = as.Ordinal<XenharmonicSequence>(1)
+const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal<XenharmonicSequence> = as.Ordinal<XenharmonicSequence>(32)
 
 const XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY: Scalar<Hz> =
     as.Scalar(ofNotAs(SCIENTIFIC_PITCHES[ ScientificPitchNoteName.A ][ ScientificPitchOctaveNumber._3 ]))

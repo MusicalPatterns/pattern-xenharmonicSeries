@@ -2,8 +2,9 @@ import { as, Cardinal, Hz, isUndefined, Logarithm, Maybe, notAs, Scalar, use } f
 import { notAs as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominals'
 import { XenharmonicSequence } from './types'
 
-const applyIterations: (sequence: XenharmonicSequence, iterations: Cardinal) => Array<Scalar<Hz>> =
-    (sequence: XenharmonicSequence, iterations: Cardinal): Array<Scalar<Hz>> => {
+const applyIterations:
+    (sequence: XenharmonicSequence, iterations: Cardinal<XenharmonicSequence[]>) => Array<Scalar<Hz>> =
+    (sequence: XenharmonicSequence, iterations: Cardinal<XenharmonicSequence[]>): Array<Scalar<Hz>> => {
         const terminalPartial: Maybe<PartialSumOrProduct> = sequence.pop()
         if (isUndefined(terminalPartial)) {
             return sequence

@@ -8,6 +8,7 @@ export {
     computeRootNotes,
     materializeScales,
     materializeEntities,
+    XenharmonicSequence,
 } from './material/indexForTest'
 export {
     spec,
@@ -21,6 +22,7 @@ export {
 } from './types'
 export {
     PartialSumOrProduct,
+    Stack,
 } from './nominals'
 
 export { pattern } from './patterns'

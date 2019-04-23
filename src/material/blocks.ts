@@ -9,21 +9,21 @@ import {
     Ordinal,
     use,
 } from '@musical-patterns/utilities'
-import { PartialSumOrProduct } from '../nominals'
+import { Stack } from '../nominals'
 import { XenharmonicSeriesSpecs } from '../spec'
-import { computeBoundedIntegers, computeNoteCount } from './custom'
+import { computeBoundedIntegers, computeNoteCount, XenharmonicSequence } from './custom'
 
-const computeBlock: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal) => Block =
-    (specs: XenharmonicSeriesSpecs, stackIndex: Ordinal = INITIAL): Block => {
+const computeBlock: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal<Stack[]>) => Block =
+    (specs: XenharmonicSeriesSpecs, stackIndex: Ordinal<Stack[]> = INITIAL): Block => {
         const boundedIntegers: Integer[] = computeBoundedIntegers(
             INITIAL,
-            insteadOf<Ordinal, PartialSumOrProduct>(finalIndexFromElementsTotal(computeNoteCount(specs))),
+            insteadOf<Ordinal, XenharmonicSequence>(finalIndexFromElementsTotal(computeNoteCount(specs))),
         )
 
         return as.Block(boundedIntegers
             .map(
                 (integer: Integer) =>
-                    use.Translation(integer, as.Translation(as.Integer(notAs.Ordinal(stackIndex)))),
+                    use.Cardinal(integer, as.Cardinal(as.Integer(notAs.Ordinal(stackIndex)))),
             ),
         )
     }

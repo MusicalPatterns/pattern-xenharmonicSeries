@@ -9,8 +9,7 @@ import {
     computeRootNotes,
     computeScaleNotes,
     materializeScales,
-    PartialSumOrProduct,
-    spec,
+    spec, XenharmonicSequence,
     XenharmonicSeriesSpec,
     XenharmonicSeriesSpecs,
 } from '../../../src/indexForTest'
@@ -20,9 +19,9 @@ describe('notes', () => {
     beforeEach(() => {
         specs = {
             ...spec.initialSpecs,
-            iterations: as.Cardinal(2),
-            lowerBound: as.Ordinal<PartialSumOrProduct>(3),
-            upperBound: as.Ordinal<PartialSumOrProduct>(5),
+            iterations: as.Cardinal<XenharmonicSequence[]>(2),
+            lowerBound: as.Ordinal<XenharmonicSequence>(3),
+            upperBound: as.Ordinal<XenharmonicSequence>(5),
         }
     })
 
@@ -34,27 +33,27 @@ describe('notes', () => {
                 .toEqual([
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })
@@ -70,27 +69,27 @@ describe('notes', () => {
                 .toEqual([
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
                         duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Scalar[]>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })

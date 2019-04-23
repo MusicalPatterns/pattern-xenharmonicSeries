@@ -3,11 +3,13 @@
 import { computeNominalInterface, DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE } from '@musical-patterns/utilities'
 
 type PartialSumOrProduct = Number & { _NominalBrand: 'PartialSumOrProduct' }
+type Stack = Number & { _NominalBrand: 'Stack' }
 type Term = Number & { _NominalBrand: 'Term' }
 
-const { as, notAs } = computeNominalInterface({
+const { as, notAs, of } = computeNominalInterface({
     number: {
         PartialSumOrProduct: DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE as PartialSumOrProduct,
+        Stack: DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE as Stack,
         Term: DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE as Term,
     },
 })
@@ -15,6 +17,8 @@ const { as, notAs } = computeNominalInterface({
 export {
     as,
     notAs,
+    of,
     PartialSumOrProduct,
+    Stack,
     Term,
 }

@@ -1,5 +1,5 @@
-import { Ordinal, Translation } from '@musical-patterns/utilities'
-import { PartialSumOrProduct } from './nominals'
+import { Cardinal, Ordinal } from '@musical-patterns/utilities'
+import { XenharmonicSequence } from './material'
 
 enum SequenceType {
     PARTIAL_SUM = 'partial sum',
@@ -7,7 +7,7 @@ enum SequenceType {
     SEQUENCE = 'sequence',
 }
 
-type Particulate = Translation<Ordinal<PartialSumOrProduct>>
+type Particulate = Cardinal<Ordinal<XenharmonicSequence>>
 
 export {
     SequenceType,

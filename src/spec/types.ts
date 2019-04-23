@@ -6,7 +6,8 @@ import {
     ToggledConfiguration,
 } from '@musical-patterns/spec'
 import { Cardinal, Exponent, Frequency, Logarithm, Ordinal, Scalar, Translation } from '@musical-patterns/utilities'
-import { PartialSumOrProduct, Term } from '../nominals'
+import { XenharmonicSequence } from '../material'
+import { PartialSumOrProduct, Stack, Term } from '../nominals'
 import { Particulate, SequenceType } from '../types'
 
 enum XenharmonicSeriesSpec {
@@ -55,14 +56,14 @@ interface XenharmonicSeriesSpecs extends StandardSpecs {
     [ XenharmonicSeriesSpec.DESCENDING ]: boolean,
     [ XenharmonicSeriesSpec.GROUND ]: boolean,
     [ XenharmonicSeriesSpec.HOLD_ROOT ]: boolean,
-    [ XenharmonicSeriesSpec.ITERATIONS ]: Cardinal,
-    [ XenharmonicSeriesSpec.LOWER_BOUND ]: Ordinal<PartialSumOrProduct>,
+    [ XenharmonicSeriesSpec.ITERATIONS ]: Cardinal<XenharmonicSequence[]>,
+    [ XenharmonicSeriesSpec.LOWER_BOUND ]: Ordinal<XenharmonicSequence>,
     [ XenharmonicSeriesSpec.PARTICULATE ]: Particulate,
     [ XenharmonicSeriesSpec.EXPONENT ]: Exponent,
     [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType,
-    [ XenharmonicSeriesSpec.STACK ]: Ordinal[],
+    [ XenharmonicSeriesSpec.STACK ]: Array<Ordinal<Stack[]>>,
     [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: Scalar<Term>,
-    [ XenharmonicSeriesSpec.UPPER_BOUND ]: Ordinal<PartialSumOrProduct>,
+    [ XenharmonicSeriesSpec.UPPER_BOUND ]: Ordinal<XenharmonicSequence>,
     [ XenharmonicSeriesSpec.USE_LOGARITHM ]: boolean,
     [ XenharmonicSeriesSpec.USE_PARTICULATE ]: boolean,
 }

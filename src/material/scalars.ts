@@ -1,5 +1,4 @@
-import { as, Cardinal, Hz, INCLUSIVE, ofNotAs, Ordinal, Scalar, use } from '@musical-patterns/utilities'
-import { PartialSumOrProduct } from '../nominals'
+import { Cardinal, Hz, INCLUSIVE, Ordinal, Scalar, use } from '@musical-patterns/utilities'
 import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from '../spec'
 import { Particulate } from '../types'
 import {
@@ -13,16 +12,16 @@ import {
 } from './custom'
 
 const maybeExtendBoundForParticulate: (
-    upperBound: Ordinal<PartialSumOrProduct>,
+    upperBound: Ordinal<XenharmonicSequence>,
     useParticulate: boolean,
     particulate: Particulate,
-) => Ordinal<PartialSumOrProduct> =
+) => Ordinal<XenharmonicSequence> =
     (
-        upperBound: Ordinal<PartialSumOrProduct>,
+        upperBound: Ordinal<XenharmonicSequence>,
         useParticulate: boolean,
         particulate: Particulate,
-    ): Ordinal<PartialSumOrProduct> =>
-        useParticulate ? use.Translation(upperBound, particulate) : upperBound
+    ): Ordinal<XenharmonicSequence> =>
+        useParticulate ? use.Cardinal(upperBound, particulate) : upperBound
 
 const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Hz>> =
     (specs: XenharmonicSeriesSpecs): Array<Scalar<Hz>> => {
@@ -30,7 +29,7 @@ const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Hz>> =
         const { partialSeed, operation } = computeSequenceTypeParameters(sequenceType)
         const boundedNumbers: number[] = computeBoundedIntegers(
             lowerBound,
-            use.Translation(maybeExtendBoundForParticulate(upperBound, useParticulate, particulate), INCLUSIVE),
+            use.Cardinal(maybeExtendBoundForParticulate(upperBound, useParticulate, particulate), INCLUSIVE),
         )
 
         let sequence: XenharmonicSequence = computeSequence({ boundedNumbers, specs, partialSeed, operation })
@@ -39,11 +38,12 @@ const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Hz>> =
             sequence = applyParticulate(sequence, particulate)
         }
 
-        const neededExtraIterations: Cardinal = computeNeededExtraIterationsForStack(stack)
+        const neededExtraIterations: Cardinal<Cardinal<XenharmonicSequence[]>> =
+            computeNeededExtraIterationsForStack(stack)
 
         return applyIterations(
             sequence,
-            use.Translation(iterations, as.Translation(ofNotAs(neededExtraIterations))),
+            use.Cardinal(iterations, neededExtraIterations),
         )
     }
 

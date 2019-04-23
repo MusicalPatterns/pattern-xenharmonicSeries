@@ -7,6 +7,7 @@ import {
     XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
     XENHARMONIC_SERIES_INITIAL_UPPER_BOUND,
 } from '../constants'
+import { XenharmonicSequence } from '../material'
 import { Term } from '../nominals'
 import { SequenceType } from '../types'
 import { XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from './types'
@@ -19,7 +20,7 @@ const initialSpecs: XenharmonicSeriesSpecs = {
     [ XenharmonicSeriesSpec.DESCENDING ]: false,
     [ XenharmonicSeriesSpec.GROUND ]: true,
     [ XenharmonicSeriesSpec.HOLD_ROOT ]: true,
-    [ XenharmonicSeriesSpec.ITERATIONS ]: as.Cardinal(1),
+    [ XenharmonicSeriesSpec.ITERATIONS ]: as.Cardinal<XenharmonicSequence[]>(1),
     [ XenharmonicSeriesSpec.LOWER_BOUND ]: XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
     [ XenharmonicSeriesSpec.PARTICULATE ]: NEXT,
     [ XenharmonicSeriesSpec.EXPONENT ]: XENHARMONIC_SERIES_INITIAL_EXPONENT,

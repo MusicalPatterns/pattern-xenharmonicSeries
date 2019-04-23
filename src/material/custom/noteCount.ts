@@ -1,15 +1,16 @@
-import { as, Cardinal, difference, INCLUSIVE, notAs, Ordinal, use } from '@musical-patterns/utilities'
+import { as, Cardinal, difference, INCLUSIVE, insteadOf, notAs, use } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpecs } from '../../spec'
+import { XenharmonicSequence } from './types'
 
-const computeNoteCount: (specs: XenharmonicSeriesSpecs) => Cardinal =
-    ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpecs): Cardinal =>
-        as.Cardinal(notAs.Ordinal(use.Multiple(
-            use.Translation(
+const computeNoteCount: (specs: XenharmonicSeriesSpecs) => Cardinal<XenharmonicSequence> =
+    ({ upperBound, lowerBound, iterations }: XenharmonicSeriesSpecs): Cardinal<XenharmonicSequence> =>
+        use.Multiple(
+            use.Cardinal(
                 difference(upperBound, lowerBound),
-                INCLUSIVE,
+                insteadOf<Cardinal, Cardinal<XenharmonicSequence>>(INCLUSIVE),
             ),
-            as.Multiple<Ordinal>(notAs.Cardinal(iterations)),
-        )))
+            as.Multiple<Cardinal<XenharmonicSequence>>(notAs.Cardinal(iterations)),
+        )
 
 export {
     computeNoteCount,

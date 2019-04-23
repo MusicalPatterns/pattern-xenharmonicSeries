@@ -1,5 +1,6 @@
 import {
     as,
+    Cardinal,
     INCLUSIVE,
     indexOfFinalElement,
     INITIAL,
@@ -11,7 +12,6 @@ import {
     reciprocal,
     Scalar,
     slice,
-    Translation,
     use,
 } from '@musical-patterns/utilities'
 import { PartialSumOrProduct } from '../../nominals'
@@ -24,18 +24,18 @@ const applyParticulate: (sequence: XenharmonicSequence, particulate: Particulate
             slice(
                 sequence,
                 INITIAL,
-                use.Translation(
-                    use.Translation(
+                use.Cardinal(
+                    use.Cardinal(
                         indexOfFinalElement(sequence), negative(particulate),
                     ),
-                    insteadOf<Translation, Ordinal<PartialSumOrProduct>>(INCLUSIVE),
+                    insteadOf<Cardinal, Ordinal<XenharmonicSequence>>(INCLUSIVE),
                 ),
             )
 
         return map(
             trimBackOffTheExtraTermsWeNeededToApplyParticulate,
-            (partial: PartialSumOrProduct, index: Ordinal<PartialSumOrProduct>): PartialSumOrProduct => {
-                const particulateIndex: Ordinal<PartialSumOrProduct> = use.Translation(index, particulate)
+            (partial: PartialSumOrProduct, index: Ordinal<XenharmonicSequence>): PartialSumOrProduct => {
+                const particulateIndex: Ordinal<XenharmonicSequence> = use.Cardinal(index, particulate)
                 const particulatePartial: PartialSumOrProduct = use.Ordinal(
                     sequence,
                     particulateIndex,

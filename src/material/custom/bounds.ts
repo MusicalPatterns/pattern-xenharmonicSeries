@@ -1,13 +1,21 @@
-import { INCLUSIVE, Integer, Ordinal, slice, use, ZERO_AND_POSITIVE_INTEGERS } from '@musical-patterns/utilities'
-import { PartialSumOrProduct } from '../../nominals'
+import {
+    INCLUSIVE,
+    insteadOf,
+    Integer,
+    Ordinal,
+    slice,
+    use,
+    ZERO_AND_POSITIVE_INTEGERS,
+} from '@musical-patterns/utilities'
+import { XenharmonicSequence } from './types'
 
 const computeBoundedIntegers:
-    (lowerBound: Ordinal<PartialSumOrProduct>, upperBound: Ordinal<PartialSumOrProduct>) => Integer[] =
-    (lowerBound: Ordinal<PartialSumOrProduct>, upperBound: Ordinal<PartialSumOrProduct>): Integer[] =>
+    (lowerBound: Ordinal<XenharmonicSequence>, upperBound: Ordinal<XenharmonicSequence>) => Integer[] =
+    (lowerBound: Ordinal<XenharmonicSequence>, upperBound: Ordinal<XenharmonicSequence>): Integer[] =>
         slice(
             ZERO_AND_POSITIVE_INTEGERS,
-            lowerBound,
-            use.Translation(upperBound, INCLUSIVE),
+            insteadOf<Ordinal, Integer[]>(lowerBound),
+            insteadOf<Ordinal, Integer[]>(use.Cardinal(upperBound, INCLUSIVE)),
         )
 
 export {
