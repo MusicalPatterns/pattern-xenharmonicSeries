@@ -4,7 +4,7 @@ import {
     STANDARD_DURATIONS_SCALE_INDEX,
     STANDARD_PITCH_SCALE_INDEX,
 } from '@musical-patterns/material'
-import { as, Ms, Scalar } from '@musical-patterns/utilities'
+import { as, Ms, Scalar, Translation } from '@musical-patterns/utilities'
 import {
     computeRootNotes,
     computeScaleNotes,
@@ -110,8 +110,8 @@ describe('notes', () => {
     })
 
     it('both sets of notes have the same duration', () => {
-        const rootNotesDuration: Ms = computeNotesTotalCompiledDuration(computeRootNotes(specs), materializeScales(specs))
-        const scaleNotesDuration: Ms = computeNotesTotalCompiledDuration(computeScaleNotes(specs), materializeScales(specs))
+        const rootNotesDuration: Translation<Ms> = computeNotesTotalCompiledDuration(computeRootNotes(specs), materializeScales(specs))
+        const scaleNotesDuration: Translation<Ms> = computeNotesTotalCompiledDuration(computeScaleNotes(specs), materializeScales(specs))
 
         expect(rootNotesDuration)
             .toBe(scaleNotesDuration)

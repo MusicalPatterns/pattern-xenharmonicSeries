@@ -40,10 +40,11 @@ const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
         ),
         as.Translation<Logarithm<Frequency>>(negative(notAs.Multiple<Ordinal>(EVERY_OTHER))),
     )))
-const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> = use.Scalar(
-    as.Ordinal<XenharmonicSequence>(notAs.Cardinal(windowIterationHarmonicStepCount(TRITAVE, THIRD))),
-    ONE_HALF,
-)
+const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
+    as.Ordinal<XenharmonicSequence>(use.Scalar(
+        notAs.Cardinal(windowIterationHarmonicStepCount(TRITAVE, THIRD)),
+        ONE_HALF,
+    ))
 const THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT: Scalar<Term> = as.Scalar<Term>(2)
 const XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT: Cardinal<XenharmonicSequence[]> =
     as.Cardinal<XenharmonicSequence[]>(3)
