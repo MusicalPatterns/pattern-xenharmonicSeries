@@ -1,10 +1,10 @@
 import {
     computeNotesTotalCompiledDuration,
     Note,
-    STANDARD_DURATIONS_SCALE_INDEX,
+    STANDARD_DURATION_SCALE_INDEX,
     STANDARD_PITCH_SCALE_INDEX,
 } from '@musical-patterns/material'
-import { as, Ms, Scalar, Translation } from '@musical-patterns/utilities'
+import { as, Duration, Ms, Pitch, Scalar, Translation } from '@musical-patterns/utilities'
 import {
     computeRootNotes,
     computeScaleNotes,
@@ -32,28 +32,28 @@ describe('notes', () => {
             expect(notes)
                 .toEqual([
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })
@@ -68,28 +68,28 @@ describe('notes', () => {
             expect(notes)
                 .toEqual([
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(5), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(4), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(3), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(2), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(1), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                     {
-                        duration: { scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
-                        pitch: { index: as.Ordinal<Scalar[]>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
+                        duration: { scaleIndex: STANDARD_DURATION_SCALE_INDEX },
+                        pitch: { index: as.Ordinal<Array<Scalar<Pitch>>>(0), scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
         })
@@ -102,7 +102,7 @@ describe('notes', () => {
             expect(rootNotes)
                 .toEqual([
                     {
-                        duration: { scalar: as.Scalar<Scalar>(6), scaleIndex: STANDARD_DURATIONS_SCALE_INDEX },
+                        duration: { scalar: as.Scalar<Duration>(6), scaleIndex: STANDARD_DURATION_SCALE_INDEX },
                         pitch: { scaleIndex: STANDARD_PITCH_SCALE_INDEX },
                     },
                 ])
@@ -110,8 +110,8 @@ describe('notes', () => {
     })
 
     it('both sets of notes have the same duration', () => {
-        const rootNotesDuration: Translation<Ms> = computeNotesTotalCompiledDuration(computeRootNotes(specs), materializeScales(specs))
-        const scaleNotesDuration: Translation<Ms> = computeNotesTotalCompiledDuration(computeScaleNotes(specs), materializeScales(specs))
+        const rootNotesDuration: Duration = computeNotesTotalCompiledDuration(computeRootNotes(specs), materializeScales(specs))
+        const scaleNotesDuration: Duration = computeNotesTotalCompiledDuration(computeScaleNotes(specs), materializeScales(specs))
 
         expect(rootNotesDuration)
             .toBe(scaleNotesDuration)

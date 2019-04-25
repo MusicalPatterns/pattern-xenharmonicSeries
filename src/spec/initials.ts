@@ -1,7 +1,7 @@
 import { standardInitialSpecs, StandardSpec } from '@musical-patterns/spec'
 import { as, INITIAL, MULTIPLICATIVE_IDENTITY, NEXT, OCTAVE, Scalar } from '@musical-patterns/utilities'
 import {
-    XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY,
+    XENHARMONIC_SERIES_INITIAL_BASIS_FREQUENCY,
     XENHARMONIC_SERIES_INITIAL_CONSTANT,
     XENHARMONIC_SERIES_INITIAL_EXPONENT,
     XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
@@ -14,7 +14,7 @@ import { XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from './types'
 
 const initialSpecs: XenharmonicSeriesSpecs = {
     ...standardInitialSpecs,
-    [ StandardSpec.BASE_FREQUENCY ]: XENHARMONIC_SERIES_INITIAL_BASE_FREQUENCY,
+    [ StandardSpec.BASIS_FREQUENCY ]: XENHARMONIC_SERIES_INITIAL_BASIS_FREQUENCY,
     [ XenharmonicSeriesSpec.LOGARITHM ]: OCTAVE,
     [ XenharmonicSeriesSpec.CONSTANT ]: XENHARMONIC_SERIES_INITIAL_CONSTANT,
     [ XenharmonicSeriesSpec.DESCENDING ]: false,
