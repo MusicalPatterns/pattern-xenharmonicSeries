@@ -38,7 +38,7 @@ const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
                 DECREMENT,
             ))),
         ),
-        as.Translation<Logarithm<Frequency>>(negative(notAs.Multiple<Ordinal>(EVERY_OTHER))),
+        as.Translation<Logarithm<Frequency>>(negative(notAs.Factor(EVERY_OTHER))),
     )))
 const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
     as.Ordinal<XenharmonicSequence>(use.Scalar(
@@ -84,7 +84,7 @@ const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
     as.Ordinal<XenharmonicSequence>(notAs.Cardinal(
         windowIterationHarmonicStepCount(OCTAVE, EIGHTH),
     ))
-const DUPER_OR_DUB_PARTICULATE: Particulate = as.Cardinal<Ordinal<XenharmonicSequence>>(2)
+const DUPER_OR_DUB_PARTICULATE: Particulate = as.Transition<XenharmonicSequence>(2)
 
 const INDEX_FOR_THIRDS: Ordinal<Stack[]> = as.Ordinal<Stack[]>(2)
 const INDEX_FOR_FOURTHS: Ordinal<Stack[]> = as.Ordinal<Stack[]>(3)

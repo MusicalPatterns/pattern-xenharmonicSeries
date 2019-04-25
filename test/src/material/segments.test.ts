@@ -16,7 +16,7 @@ describe('segments', () => {
 
         forEach(notes, (note: Note, index: Ordinal<Note[]>) => {
             const stackedNote: Note = use.Ordinal(stackedNotes, index)
-            expect(use.Cardinal(note.pitch!.index!, as.Cardinal<Ordinal<Array<Scalar<Pitch>>>>(stack)))
+            expect(use.Transition(note.pitch!.index!, as.Transition<Array<Scalar<Pitch>>>(stack)))
                 .toBe(stackedNote.pitch!.index!)
         })
     })

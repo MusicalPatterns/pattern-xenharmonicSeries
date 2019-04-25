@@ -1,4 +1,4 @@
-import { Cardinal, Ordinal } from '@musical-patterns/utilities'
+import { Transition } from '@musical-patterns/utilities'
 import { XenharmonicSequence } from './material'
 
 enum SequenceType {
@@ -7,7 +7,7 @@ enum SequenceType {
     SEQUENCE = 'sequence',
 }
 
-type Particulate = Cardinal<Ordinal<XenharmonicSequence>>
+type Particulate = Transition<XenharmonicSequence>
 
 export {
     SequenceType,
