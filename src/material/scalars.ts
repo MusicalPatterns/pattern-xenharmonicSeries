@@ -1,4 +1,4 @@
-import { Cardinal, Hz, INCLUSIVE, Ordinal, Pitch, Scalar, use } from '@musical-patterns/utilities'
+import { Cardinal, INCLUSIVE, Ordinal, Pitch, Scalar, use } from '@musical-patterns/utilities'
 import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from '../spec'
 import { Particulate } from '../types'
 import {

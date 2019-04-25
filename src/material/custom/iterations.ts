@@ -1,4 +1,4 @@
-import { as, Cardinal, Hz, isUndefined, Logarithm, Maybe, notAs, Pitch, Scalar, use } from '@musical-patterns/utilities'
+import { as, Cardinal, isUndefined, Logarithm, Maybe, notAs, Pitch, Scalar, use } from '@musical-patterns/utilities'
 import { notAs as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominals'
 import { XenharmonicSequence } from './types'
 
