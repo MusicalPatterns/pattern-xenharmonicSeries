@@ -1,5 +1,5 @@
-import { as, Cardinal, isUndefined, Logarithm, Maybe, notAs, Pitch, Scalar, use } from '@musical-patterns/utilities'
-import { notAs as xenharmonicSeriesFrom, PartialSumOrProduct } from '../../nominals'
+import { as, Cardinal, isUndefined, Logarithm, Maybe,  Pitch, Scalar, use } from '@musical-patterns/utilities'
+import { PartialSumOrProduct } from '../../nominals'
 import { XenharmonicSequence } from './types'
 
 const applyIterations:
@@ -10,14 +10,14 @@ const applyIterations:
             return sequence
                 .map(
                     (partial: PartialSumOrProduct) =>
-                        as.Scalar<Pitch>(xenharmonicSeriesFrom.PartialSumOrProduct(partial)),
+                        as.Scalar<Pitch>(as.number(partial)),
                 )
         }
-        const window: Logarithm = as.Logarithm(xenharmonicSeriesFrom.PartialSumOrProduct(terminalPartial))
+        const window: Logarithm = as.Logarithm(as.number(terminalPartial))
 
         let results: Array<Scalar<Pitch>> = []
-        for (let index: number = 0; index < notAs.Cardinal(iterations); index += 1) {
-            const windowScaling: number = notAs.Logarithm(use.Exponent(
+        for (let index: number = 0; index < as.number(iterations); index += 1) {
+            const windowScaling: number = as.number(use.Exponent(
                 window,
                 as.Exponent<Logarithm>(index),
             ))
@@ -29,7 +29,7 @@ const applyIterations:
             )
                 .map(
                     (partial: PartialSumOrProduct) =>
-                        as.Scalar<Pitch>(xenharmonicSeriesFrom.PartialSumOrProduct(partial)),
+                        as.Scalar<Pitch>(as.number(partial)),
                 )
 
             results = results.concat(iteration)

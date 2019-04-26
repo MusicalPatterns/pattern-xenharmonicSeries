@@ -5,32 +5,32 @@ import {
     INITIAL,
     isUndefined,
     Logarithm,
-    notAs,
+
     ofNotAs,
     Ordinal,
     reciprocal,
     TwoToOneNumericOperation,
     use,
 } from '@musical-patterns/utilities'
-import { as as xenharmonicSeriesTo, notAs as xenharmonicSeriesFrom, PartialSumOrProduct, Term } from '../../nominals'
+import { as as xenharmonicSeriesAs, PartialSumOrProduct, Term } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 import { computeNextPartial } from './nextPartial'
 import { ComputeSequenceParameters, ComputeTermFunction, XenharmonicSequence } from './types'
 
 const indexToExponent: ComputeTermFunction =
     (index: Ordinal, exponent: Exponent): Term =>
-        xenharmonicSeriesTo.Term(
-            use.Exponent(notAs.Ordinal(index), exponent) === Infinity ?
+        xenharmonicSeriesAs.Term(
+            use.Exponent(as.number(index), exponent) === Infinity ?
                 INITIAL :
-                use.Exponent(notAs.Ordinal(index), exponent),
+                use.Exponent(as.number(index), exponent),
         )
 
 const indexToExponentUsingLogarithm: ComputeTermFunction =
     (index: Ordinal, exponent: Exponent, logarithm: Logarithm<Frequency> = as.Logarithm<Frequency>(1)): Term =>
-        xenharmonicSeriesTo.Term(notAs.Logarithm<Frequency>(
+        xenharmonicSeriesAs.Term(as.number(
             use.Exponent(
                 logarithm,
-                as.Exponent<Logarithm<Frequency>>(xenharmonicSeriesFrom.Term(indexToExponent(index, exponent))),
+                as.Exponent<Logarithm<Frequency>>(as.number(indexToExponent(index, exponent))),
             ),
         ))
 

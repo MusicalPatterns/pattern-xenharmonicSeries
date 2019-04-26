@@ -1,5 +1,5 @@
 import { DurationOnly, Note, PitchOnly } from '@musical-patterns/material'
-import { as, Block, Cardinal, ContourElement, INITIAL, notAs, Ordinal } from '@musical-patterns/utilities'
+import { as, Block, Cardinal, ContourElement, INITIAL,  Ordinal } from '@musical-patterns/utilities'
 import { Stack } from '../nominals'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeBlock } from './blocks'
@@ -22,7 +22,7 @@ const computeScaleNotes: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal<St
 const computeRootNotes: (specs: XenharmonicSeriesSpecs) => Note[] =
     (specs: XenharmonicSeriesSpecs): Note[] => {
         const noteCount: Cardinal<XenharmonicSequence> = computeNoteCount(specs)
-        const rootContour: ContourElement<DurationOnly> = as.ContourElement<DurationOnly>([ notAs.Cardinal(noteCount) ])
+        const rootContour: ContourElement<DurationOnly> = as.ContourElement<DurationOnly>([ as.number(noteCount) ])
 
         return [ computeRootNote(rootContour) ]
     }

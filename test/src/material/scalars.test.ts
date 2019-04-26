@@ -8,7 +8,7 @@ import {
     cubeRoot,
     E,
     finalElement,
-    notAs,
+
     ObjectOf,
     Pitch,
     product,
@@ -22,7 +22,7 @@ import { computeScalars, spec, XenharmonicSeriesPreset, XenharmonicSeriesSpecs }
 
 describe('scalars', () => {
     let presets: ObjectOf<Preset<XenharmonicSeriesSpecs>>
-    const rawE: number = notAs.Logarithm(E)
+    const rawE: number = as.number(E)
     beforeEach(() => {
         presets = spec.presets!
     })

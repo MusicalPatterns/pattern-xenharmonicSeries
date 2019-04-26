@@ -6,7 +6,6 @@ import {
     length,
     max,
     negative,
-    notAs,
     Ordinal,
     use,
 } from '@musical-patterns/utilities'
@@ -22,9 +21,9 @@ const computeNeededExtraIterationsForStack:
         let neededExtraIterations: Cardinal<Cardinal<XenharmonicSequence[]>> =
             as.Cardinal<Cardinal<XenharmonicSequence[]>>(0)
         let countOfStackedPitchesWhichStillExceedTheScale: Cardinal<XenharmonicSequence[]> =
-            as.Cardinal<XenharmonicSequence[]>(notAs.Ordinal(maxStack))
+            as.Cardinal<XenharmonicSequence[]>(as.number(maxStack))
 
-        while (notAs.Cardinal(countOfStackedPitchesWhichStillExceedTheScale) > 0) {
+        while (as.number(countOfStackedPitchesWhichStillExceedTheScale) > 0) {
             neededExtraIterations = use.Cardinal(neededExtraIterations, INCREMENT)
             countOfStackedPitchesWhichStillExceedTheScale = use.Cardinal(
                 countOfStackedPitchesWhichStillExceedTheScale,

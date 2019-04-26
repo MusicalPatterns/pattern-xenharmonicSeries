@@ -5,7 +5,6 @@ import {
     INITIAL,
     insteadOf,
     Integer,
-    notAs,
     Ordinal,
     use,
 } from '@musical-patterns/utilities'
@@ -23,7 +22,7 @@ const computeBlock: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal<Stack[]
         return as.Block(boundedIntegers
             .map(
                 (integer: Integer) =>
-                    use.Cardinal(integer, as.Cardinal(as.Integer(notAs.Ordinal(stackIndex)))),
+                    use.Cardinal(integer, as.Cardinal(as.Integer(as.number(stackIndex)))),
             ),
         )
     }

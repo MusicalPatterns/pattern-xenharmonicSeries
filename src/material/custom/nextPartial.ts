@@ -1,5 +1,5 @@
-import { Ordinal, TwoToOneNumericOperation, use } from '@musical-patterns/utilities'
-import { as as xenharmonicSeriesTo, notAs as xenharmonicSeriesFrom, PartialSumOrProduct, Term } from '../../nominals'
+import { as, Ordinal, TwoToOneNumericOperation, use } from '@musical-patterns/utilities'
+import { as as xenharmonicSeriesAs, PartialSumOrProduct, Term } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 import { ComputePartialParameters, ComputeTermFunction } from './types'
 
@@ -16,10 +16,10 @@ const computeNextPartial: (parameters: {
         const term: Term = computeTermFunction(index, exponent, logarithm)
         const termWithCoefficientApplied: Term = use.Scalar(term, termCoefficient)
 
-        return xenharmonicSeriesTo.PartialSumOrProduct(
+        return xenharmonicSeriesAs.PartialSumOrProduct(
             operation(
-                xenharmonicSeriesFrom.PartialSumOrProduct(partial),
-                xenharmonicSeriesFrom.Term(termWithCoefficientApplied),
+                as.number(partial),
+                as.number(termWithCoefficientApplied),
             ),
         )
     }
