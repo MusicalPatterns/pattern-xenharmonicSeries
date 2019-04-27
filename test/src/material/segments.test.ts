@@ -7,7 +7,7 @@ describe('segments', () => {
         const stack: number = 2
         const specs: XenharmonicSeriesSpecs = {
             ...initialSpecs,
-            stack: [ 0, stack ].map((value: number) => as.Ordinal<Stack[]>(value)),
+            stack: [ 0, stack ].map((numeral: number) => as.Ordinal<Stack[]>(numeral)),
         }
         const segment: Segment = computeSegment(specs)
 
