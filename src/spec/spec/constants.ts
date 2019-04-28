@@ -14,6 +14,7 @@ import {
     OCTAVE,
     ONE_HALF,
     Ordinal,
+    periodIterationHarmonicStepCount,
     PREVIOUS,
     resolve,
     Scalar,
@@ -21,7 +22,6 @@ import {
     Translation,
     TRITAVE,
     use,
-    windowIterationHarmonicStepCount,
 } from '@musical-patterns/utilities'
 import { XenharmonicSequence } from '../../material'
 import { PartialSumOrProduct, Stack, Term } from '../../nominals'
@@ -42,7 +42,7 @@ const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
     )))
 const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
     as.Ordinal<XenharmonicSequence>(use.Scalar(
-        as.number(windowIterationHarmonicStepCount(TRITAVE, THIRD)),
+        as.number(periodIterationHarmonicStepCount(TRITAVE, THIRD)),
         ONE_HALF,
     ))
 const THIRD_TRITAVE_ODD_HARMONICS_TERM_COEFFICIENT: Scalar<Term> = as.Scalar<Term>(2)
@@ -64,7 +64,7 @@ const FOURTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
 
 const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
     as.Ordinal<XenharmonicSequence>(as.number(
-        windowIterationHarmonicStepCount(OCTAVE, FOURTH),
+        periodIterationHarmonicStepCount(OCTAVE, FOURTH),
     ))
 const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
     as.Translation<PartialSumOrProduct>(as.number(use.Translation(
@@ -82,7 +82,7 @@ const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
 
 const EIGHTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
     as.Ordinal<XenharmonicSequence>(as.number(
-        windowIterationHarmonicStepCount(OCTAVE, EIGHTH),
+        periodIterationHarmonicStepCount(OCTAVE, EIGHTH),
     ))
 const DUPER_OR_DUB_PARTICULATE: Particulate = as.Transition<XenharmonicSequence>(2)
 
