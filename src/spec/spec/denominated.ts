@@ -1,4 +1,4 @@
-import { as, resolve } from '@musical-patterns/utilities'
+import { as } from '@musical-patterns/utilities'
 import { XenharmonicSequence } from '../../material'
 import { Term } from '../../nominals'
 import { XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from '../types'
@@ -16,7 +16,7 @@ import { standardHarmonicSeriesSpecs } from './standard'
 const fiveDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
     ...standardHarmonicSeriesSpecs,
     [ XenharmonicSeriesSpec.CONSTANT ]: FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: as.Scalar<Term>(resolve([
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: as.Scalar<Term>(as.number([
         as.Numerator(1),
         FIVE_DENOMINATOR,
     ])),
@@ -27,7 +27,7 @@ const fiveDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
 const sevenDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
     ...standardHarmonicSeriesSpecs,
     [ XenharmonicSeriesSpec.CONSTANT ]: SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: as.Scalar<Term>(resolve([
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: as.Scalar<Term>(as.number([
         as.Numerator(1),
         SEVEN_DENOMINATOR,
     ])),
@@ -38,7 +38,7 @@ const sevenDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
 const twelveDenominatedHarmonicSeries: XenharmonicSeriesSpecs = {
     ...standardHarmonicSeriesSpecs,
     [ XenharmonicSeriesSpec.CONSTANT ]: TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT,
-    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: as.Scalar<Term>(resolve([
+    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: as.Scalar<Term>(as.number([
         as.Numerator(1),
         TWELVE_DENOMINATOR,
     ])),

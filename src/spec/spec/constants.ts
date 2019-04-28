@@ -16,7 +16,6 @@ import {
     Ordinal,
     periodIterationHarmonicStepCount,
     PREVIOUS,
-    resolve,
     Scalar,
     THIRD,
     Translation,
@@ -92,7 +91,7 @@ const INDEX_FOR_FIFTHS: Ordinal<Stack[]> = as.Ordinal<Stack[]>(4)
 
 const FIVE_DENOMINATOR: Denominator = as.Denominator(5)
 const FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduct> =
-    as.Translation<PartialSumOrProduct>(resolve([
+    as.Translation<PartialSumOrProduct>(as.number([
         as.Numerator(as.number(use.Cardinal(
             FIVE_DENOMINATOR,
             as.Cardinal<Denominator>(negative(1)),
@@ -102,7 +101,7 @@ const FIVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduct
 
 const SEVEN_DENOMINATOR: Denominator = as.Denominator(7)
 const SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduct> =
-    as.Translation<PartialSumOrProduct>(resolve([
+    as.Translation<PartialSumOrProduct>(as.number([
         as.Numerator(as.number(use.Cardinal(
             SEVEN_DENOMINATOR,
             as.Cardinal<Denominator>(negative(1)),
@@ -112,7 +111,7 @@ const SEVEN_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduc
 
 const TWELVE_DENOMINATOR: Denominator = as.Denominator(12)
 const TWELVE_DENOMINATED_HARMONIC_SERIES_CONSTANT: Translation<PartialSumOrProduct> =
-    as.Translation<PartialSumOrProduct>(resolve([
+    as.Translation<PartialSumOrProduct>(as.number([
         as.Numerator(as.number(use.Cardinal(
             TWELVE_DENOMINATOR,
             as.Cardinal<Denominator>(negative(1)),
