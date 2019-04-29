@@ -9,12 +9,12 @@ import {
     EVERY_OTHER,
     FOURTH,
     Frequency,
-    Logarithm,
     negative,
     OCTAVE,
     ONE_HALF,
     Ordinal,
     periodIterationHarmonicStepCount,
+    pow,
     PREVIOUS,
     Scalar,
     THIRD,
@@ -30,14 +30,14 @@ import { XenharmonicSeriesSpec } from '../types'
 
 const THIRD_TRITAVE_ODD_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
     as.Translation<PartialSumOrProduct>(as.number(use.Translation(
-        use.Exponent(
+        pow(
             TRITAVE,
-            as.Exponent<Logarithm<Frequency>>(as.number(use.Cardinal(
+            as.Exponent<Frequency>(as.number(use.Cardinal(
                 THIRD,
                 DECREMENT,
             ))),
         ),
-        as.Translation<Logarithm<Frequency>>(negative(as.number(EVERY_OTHER))),
+        as.Translation<Frequency>(negative(as.number(EVERY_OTHER))),
     )))
 const THIRD_TRITAVE_ODD_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
     as.Ordinal<XenharmonicSequence>(use.Scalar(
@@ -49,14 +49,14 @@ const XENHARMONIC_SERIES_STANDARD_ITERATIONS_WHEN_PRESENT: Cardinal<XenharmonicS
     as.Cardinal<XenharmonicSequence[]>(3)
 const FOURTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
     as.Translation<PartialSumOrProduct>(as.number(use.Translation(
-        use.Exponent(
+        pow(
             OCTAVE,
-            as.Exponent<Logarithm<Frequency>>(as.number(use.Cardinal(
+            as.Exponent<Frequency>(as.number(use.Cardinal(
                 FOURTH,
                 PREVIOUS,
             ))),
         ),
-        as.Translation<Logarithm<Frequency>>(as.number(
+        as.Translation<Frequency>(as.number(
             negative(initialSpecs[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
         )),
     )))
@@ -67,14 +67,14 @@ const FOURTH_OCTAVE_HARMONICS_UPPER_BOUND: Ordinal<XenharmonicSequence> =
     ))
 const EIGHTH_OCTAVE_HARMONICS_CONSTANT: Translation<PartialSumOrProduct> =
     as.Translation<PartialSumOrProduct>(as.number(use.Translation(
-        use.Exponent(
+        pow(
             OCTAVE,
-            as.Exponent<Logarithm<Frequency>>(as.number(use.Cardinal(
+            as.Exponent<Frequency>(as.number(use.Cardinal(
                 EIGHTH,
                 PREVIOUS,
             ))),
         ),
-        as.Translation<Logarithm<Frequency>>(as.number(
+        as.Translation<Frequency>(as.number(
             negative(initialSpecs[ XenharmonicSeriesSpec.TERM_COEFFICIENT ]),
         )),
     )))

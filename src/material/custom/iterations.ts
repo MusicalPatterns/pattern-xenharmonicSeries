@@ -1,4 +1,4 @@
-import { as, Cardinal, isUndefined, Logarithm, Maybe,  Pitch, Scalar, use } from '@musical-patterns/utilities'
+import { as, Cardinal, isUndefined, Logarithm, Maybe, Pitch, pow, Scalar, use } from '@musical-patterns/utilities'
 import { PartialSumOrProduct } from '../../nominals'
 import { XenharmonicSequence } from './types'
 
@@ -17,10 +17,7 @@ const applyIterations:
 
         let results: Array<Scalar<Pitch>> = []
         for (let index: number = 0; index < as.number(iterations); index += 1) {
-            const periodScaling: number = as.number(use.Exponent(
-                period,
-                as.Exponent<Logarithm>(index),
-            ))
+            const periodScaling: number = as.number(pow(period, as.Exponent(index)))
             const iteration: Array<Scalar<Pitch>> = sequence.map((partial: PartialSumOrProduct) =>
                 use.Scalar(
                     partial,
