@@ -8,7 +8,6 @@ import {
     cubeRoot,
     E,
     finalElement,
-
     ObjectOf,
     Pitch,
     product,

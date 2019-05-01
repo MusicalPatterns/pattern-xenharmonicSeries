@@ -1,14 +1,4 @@
-import {
-    as,
-    Cardinal,
-    INCREMENT,
-    insteadOf,
-    length,
-    max,
-    negative,
-    Ordinal,
-    use,
-} from '@musical-patterns/utilities'
+import { as, Cardinal, INCREMENT, insteadOf, length, max, negative, Ordinal, use } from '@musical-patterns/utilities'
 import { Stack } from '../../nominals'
 import { XenharmonicSequence } from './types'
 

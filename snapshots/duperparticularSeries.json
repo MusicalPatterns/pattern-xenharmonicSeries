@@ -8,8 +8,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 660,
-          "position": [
+          "tone": 660,
+          "location": [
             0,
             0,
             0
@@ -19,8 +19,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 440,
-          "position": [
+          "tone": 440,
+          "location": [
             0,
             0,
             0
@@ -30,8 +30,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 366.66667,
-          "position": [
+          "tone": 366.66667,
+          "location": [
             0,
             0,
             0
@@ -41,8 +41,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 330,
-          "position": [
+          "tone": 330,
+          "location": [
             0,
             0,
             0
@@ -52,8 +52,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 308,
-          "position": [
+          "tone": 308,
+          "location": [
             0,
             0,
             0
@@ -63,8 +63,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 293.33333,
-          "position": [
+          "tone": 293.33333,
+          "location": [
             0,
             0,
             0
@@ -74,8 +74,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 282.85714,
-          "position": [
+          "tone": 282.85714,
+          "location": [
             0,
             0,
             0
@@ -85,8 +85,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 275,
-          "position": [
+          "tone": 275,
+          "location": [
             0,
             0,
             0
@@ -96,8 +96,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 268.88889,
-          "position": [
+          "tone": 268.88889,
+          "location": [
             0,
             0,
             0
@@ -107,8 +107,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 264,
-          "position": [
+          "tone": 264,
+          "location": [
             0,
             0,
             0
@@ -118,8 +118,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 260,
-          "position": [
+          "tone": 260,
+          "location": [
             0,
             0,
             0
@@ -129,8 +129,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 256.66667,
-          "position": [
+          "tone": 256.66667,
+          "location": [
             0,
             0,
             0
@@ -140,8 +140,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 253.84615,
-          "position": [
+          "tone": 253.84615,
+          "location": [
             0,
             0,
             0
@@ -151,8 +151,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 251.42857,
-          "position": [
+          "tone": 251.42857,
+          "location": [
             0,
             0,
             0
@@ -162,8 +162,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 249.33333,
-          "position": [
+          "tone": 249.33333,
+          "location": [
             0,
             0,
             0
@@ -173,8 +173,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 247.5,
-          "position": [
+          "tone": 247.5,
+          "location": [
             0,
             0,
             0
@@ -184,8 +184,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 245.88235,
-          "position": [
+          "tone": 245.88235,
+          "location": [
             0,
             0,
             0
@@ -195,8 +195,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 244.44444,
-          "position": [
+          "tone": 244.44444,
+          "location": [
             0,
             0,
             0
@@ -206,8 +206,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 243.15789,
-          "position": [
+          "tone": 243.15789,
+          "location": [
             0,
             0,
             0
@@ -217,8 +217,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 242,
-          "position": [
+          "tone": 242,
+          "location": [
             0,
             0,
             0
@@ -228,8 +228,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 240.95238,
-          "position": [
+          "tone": 240.95238,
+          "location": [
             0,
             0,
             0
@@ -239,8 +239,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 240,
-          "position": [
+          "tone": 240,
+          "location": [
             0,
             0,
             0
@@ -250,8 +250,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 239.13043,
-          "position": [
+          "tone": 239.13043,
+          "location": [
             0,
             0,
             0
@@ -261,8 +261,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 238.33333,
-          "position": [
+          "tone": 238.33333,
+          "location": [
             0,
             0,
             0
@@ -272,8 +272,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 237.6,
-          "position": [
+          "tone": 237.6,
+          "location": [
             0,
             0,
             0
@@ -283,8 +283,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 236.92308,
-          "position": [
+          "tone": 236.92308,
+          "location": [
             0,
             0,
             0
@@ -294,8 +294,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 236.2963,
-          "position": [
+          "tone": 236.2963,
+          "location": [
             0,
             0,
             0
@@ -305,8 +305,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 235.71429,
-          "position": [
+          "tone": 235.71429,
+          "location": [
             0,
             0,
             0
@@ -316,8 +316,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 235.17241,
-          "position": [
+          "tone": 235.17241,
+          "location": [
             0,
             0,
             0
@@ -327,8 +327,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 234.66667,
-          "position": [
+          "tone": 234.66667,
+          "location": [
             0,
             0,
             0
@@ -338,8 +338,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 234.19355,
-          "position": [
+          "tone": 234.19355,
+          "location": [
             0,
             0,
             0
@@ -349,8 +349,8 @@
         {
           "duration": 700,
           "gain": 1,
-          "frequency": 233.75,
-          "position": [
+          "tone": 233.75,
+          "location": [
             0,
             0,
             0
@@ -370,8 +370,8 @@
         {
           "duration": 22400,
           "gain": 1,
-          "frequency": 660,
-          "position": [
+          "tone": 660,
+          "location": [
             0,
             0,
             0

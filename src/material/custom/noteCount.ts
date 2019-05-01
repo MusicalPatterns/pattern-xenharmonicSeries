@@ -1,4 +1,4 @@
-import { as, Cardinal, difference, INCLUSIVE, insteadOf,  Transition, use } from '@musical-patterns/utilities'
+import { as, Cardinal, difference, INCLUSIVE, insteadOf, Transition, use } from '@musical-patterns/utilities'
 import { XenharmonicSeriesSpecs } from '../../spec'
 import { XenharmonicSequence } from './types'
 
