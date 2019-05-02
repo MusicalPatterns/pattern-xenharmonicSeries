@@ -1,5 +1,5 @@
 import { Note, PitchOnly, ValueOnly } from '@musical-patterns/material'
-import { as, Block, Cardinal, ContourElement, INITIAL, Ordinal } from '@musical-patterns/utilities'
+import { as, Block, Cardinal, ContourElement, INITIAL, Ordinal, reverse } from '@musical-patterns/utilities'
 import { Stack } from '../nominals'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeBlock } from './blocks'
@@ -11,7 +11,7 @@ const computeScaleNotes: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal<St
         let block: Block = computeBlock(specs, stackIndex)
 
         if (specs.descending) {
-            block = as.Block(block.reverse())
+            block = as.Block(reverse(block))
         }
 
         return block
