@@ -6,7 +6,7 @@ type PartialSumOrProduct = Number & { _NominalBrand: 'PartialSumOrProduct' }
 type Stack = Number & { _NominalBrand: 'Stack' }
 type Term = Number & { _NominalBrand: 'Term' }
 
-const { as } = computeNominalInterface({
+const { as: xenharmonicSeriesAs } = computeNominalInterface({
     number: {
         PartialSumOrProduct: DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE as PartialSumOrProduct,
         Stack: DUMMY_VALUE_FOR_COMPUTING_NOMINAL_INTERFACE as Stack,
@@ -15,7 +15,7 @@ const { as } = computeNominalInterface({
 })
 
 export {
-    as,
+    xenharmonicSeriesAs,
     PartialSumOrProduct,
     Stack,
     Term,

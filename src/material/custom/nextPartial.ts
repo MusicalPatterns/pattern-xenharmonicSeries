@@ -1,5 +1,5 @@
 import { as, Ordinal, TwoToOneNumericOperation, use } from '@musical-patterns/utilities'
-import { as as xenharmonicSeriesAs, PartialSumOrProduct, Term } from '../../nominals'
+import { PartialSumOrProduct, Term, xenharmonicSeriesAs } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 import { ComputePartialParameters, ComputeTermFunction } from './types'
 

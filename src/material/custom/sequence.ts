@@ -11,7 +11,7 @@ import {
     TwoToOneNumericOperation,
     use,
 } from '@musical-patterns/utilities'
-import { as as xenharmonicSeriesAs, PartialSumOrProduct, Term } from '../../nominals'
+import { PartialSumOrProduct, Term, xenharmonicSeriesAs } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
 import { computeNextPartial } from './nextPartial'
 import { ComputeSequenceParameters, ComputeTermFunction, XenharmonicSequence } from './types'

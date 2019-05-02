@@ -13,7 +13,7 @@ import {
     Translation,
 } from '@musical-patterns/utilities'
 import { XenharmonicSequence } from './material'
-import { as as xenharmonicSeriesAs, PartialSumOrProduct } from './nominals'
+import { PartialSumOrProduct, xenharmonicSeriesAs } from './nominals'
 
 const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Ordinal<XenharmonicSequence> = as.Ordinal<XenharmonicSequence>(1)
 const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal<XenharmonicSequence> = as.Ordinal<XenharmonicSequence>(32)

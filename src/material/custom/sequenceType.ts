@@ -6,7 +6,7 @@ import {
     sum,
     TwoToOneNumericOperation,
 } from '@musical-patterns/utilities'
-import { as as xenharmonicSeriesAs, PartialSumOrProduct } from '../../nominals'
+import { PartialSumOrProduct, xenharmonicSeriesAs } from '../../nominals'
 import { SequenceType } from '../../types'
 import { replace } from './replace'
 import { SequenceTypeParameters } from './types'
