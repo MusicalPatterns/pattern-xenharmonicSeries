@@ -1,5 +1,7 @@
-import { Cardinal, INCLUSIVE, Ordinal, Pitch, Scalar, use } from '@musical-patterns/utilities'
-import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from '../spec'
+// tslint:disable-next-line max-line-length
+import { ENOUGH_HARMONIC_SERIES_STEPS_TO_LEAVE_HUMAN_HEARING_RANGE_FROM_THREE_OCTAVES_BELOW_PITCH_STANDARD } from '@musical-patterns/material'
+import { as, Cardinal, INCLUSIVE, Ordinal, Pitch, Scalar, use } from '@musical-patterns/utilities'
+import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from '../spec'
 import { Particulate } from '../types'
 import {
     applyIterations,
@@ -47,21 +49,30 @@ const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Pitch>> =
         )
     }
 
+const computeParticularScalars: (preset: XenharmonicSeriesPreset) => Array<Scalar<Pitch>> =
+    (preset: XenharmonicSeriesPreset): Array<Scalar<Pitch>> =>
+        computeScalars({
+            ...presets[ preset ].specs,
+            [ XenharmonicSeriesSpec.UPPER_BOUND ]: as.Ordinal<XenharmonicSequence>(
+                ENOUGH_HARMONIC_SERIES_STEPS_TO_LEAVE_HUMAN_HEARING_RANGE_FROM_THREE_OCTAVES_BELOW_PITCH_STANDARD,
+            ),
+        })
+
 const computeSuperparticularSeriesScalars: () => Array<Scalar<Pitch>> =
     (): Array<Scalar<Pitch>> =>
-        computeScalars(presets[ XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES ].specs)
+        computeParticularScalars(XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES)
 
 const computeDuperparticularSeriesScalars: () => Array<Scalar<Pitch>> =
     (): Array<Scalar<Pitch>> =>
-        computeScalars(presets[ XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES ].specs)
+        computeParticularScalars(XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES)
 
 const computeSubparticularSeriesScalars: () => Array<Scalar<Pitch>> =
     (): Array<Scalar<Pitch>> =>
-        computeScalars(presets[ XenharmonicSeriesPreset.SUBPARTICULAR_SERIES ].specs)
+        computeParticularScalars(XenharmonicSeriesPreset.SUBPARTICULAR_SERIES)
 
 const computeDubparticularSeriesScalars: () => Array<Scalar<Pitch>> =
     (): Array<Scalar<Pitch>> =>
-        computeScalars(presets[ XenharmonicSeriesPreset.DUBPARTICULAR_SERIES ].specs)
+        computeParticularScalars(XenharmonicSeriesPreset.DUBPARTICULAR_SERIES)
 
 export {
     computeScalars,
