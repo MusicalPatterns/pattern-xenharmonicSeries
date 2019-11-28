@@ -2,7 +2,7 @@ import {
     Configurations,
     OptionedConfiguration,
     RangedConfiguration,
-    StandardSpecs,
+    Specs,
     ToggledConfiguration,
 } from '@musical-patterns/spec'
 import { Cardinal, Exponent, Frequency, Logarithm, Ordinal, Scalar, Translation } from '@musical-patterns/utilities'
@@ -50,7 +50,7 @@ enum XenharmonicSeriesPreset {
     TWELVE_DENOMINATED_HARMONIC_SERIES = 'twelveDenominatedHarmonicSeries',
 }
 
-interface XenharmonicSeriesSpecs extends StandardSpecs {
+interface XenharmonicSeriesSpecs extends Specs {
     [ XenharmonicSeriesSpec.LOGARITHM ]: Logarithm<Frequency>,
     [ XenharmonicSeriesSpec.CONSTANT ]: Translation<PartialSumOrProduct>,
     [ XenharmonicSeriesSpec.DESCENDING ]: boolean,
