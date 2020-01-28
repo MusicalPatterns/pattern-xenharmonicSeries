@@ -23,7 +23,6 @@ const presetsOrder: XenharmonicSeriesPreset[] = [
     XenharmonicSeriesPreset.MATHARMONIC_SERIES,
     XenharmonicSeriesPreset.ED_TWO_HARMONIC_SERIES,
     XenharmonicSeriesPreset.ED_THREE_HARMONIC_SERIES,
-    XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES,
     XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS,
     XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS_WITH_STACKED_THIRDS,
     XenharmonicSeriesPreset.THIRD_TRITAVE_ODD_HARMONICS_WITH_STACKED_FOURTHS,

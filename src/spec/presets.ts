@@ -7,7 +7,6 @@ import { presetsOrder } from './orders'
 import {
     dubparticularSeriesSpecs,
     duperparticularSeriesSpecs,
-    edEulerHarmonicSeriesSpecs,
     edThreeHarmonicSeriesSpecs,
     edTwoHarmonicSeriesSpecs,
     eighthOctaveHarmonics,
@@ -27,12 +26,6 @@ import {
 import { XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from './types'
 
 const presets: ObjectOf<Preset<XenharmonicSeriesSpecs>> = {
-    [ XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES ]: {
-        description: 'moves by shrinking equal divisions of the interval e (first by 1/2, then by 1/3, then 1/4...)',
-        formattedName: 'e-edharmonic series',
-        order: presetsOrder.indexOf(XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES),
-        specs: edEulerHarmonicSeriesSpecs,
-    },
     [ XenharmonicSeriesPreset.ED_THREE_HARMONIC_SERIES ]: {
         description: 'moves by shrinking equal divisions of the tritave (first by 1/2, then by 1/3, then 1/4...)',
         formattedName: '3-edharmonic series',

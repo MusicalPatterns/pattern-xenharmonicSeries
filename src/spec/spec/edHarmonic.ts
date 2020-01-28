@@ -17,13 +17,7 @@ const edThreeHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
     [ XenharmonicSeriesSpec.LOGARITHM ]: TRITAVE,
 }
 
-const edEulerHarmonicSeriesSpecs: XenharmonicSeriesSpecs = {
-    ...sharedEdHarmonicSeriesSpecs,
-    [ XenharmonicSeriesSpec.LOGARITHM ]: E,
-}
-
 export {
-    edEulerHarmonicSeriesSpecs,
     edThreeHarmonicSeriesSpecs,
     edTwoHarmonicSeriesSpecs,
 }

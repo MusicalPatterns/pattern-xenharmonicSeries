@@ -4,7 +4,6 @@ export {
     twelveDenominatedHarmonicSeries,
 } from './denominated'
 export {
-    edEulerHarmonicSeriesSpecs,
     edThreeHarmonicSeriesSpecs,
     edTwoHarmonicSeriesSpecs,
 } from './edHarmonic'

@@ -33,7 +33,6 @@ enum XenharmonicSeriesPreset {
     MATHARMONIC_SERIES = 'matharmonicSeries',
     ED_TWO_HARMONIC_SERIES = 'edTwoHarmonicSeries',
     ED_THREE_HARMONIC_SERIES = 'edThreeHarmonicSeries',
-    ED_EULER_HARMONIC_SERIES = 'edEulerHarmonicSeries',
     THIRD_TRITAVE_ODD_HARMONICS = 'thirdTritaveOddHarmonics',
     THIRD_TRITAVE_ODD_HARMONICS_WITH_STACKED_THIRDS = 'thirdTritaveOddHarmonicsWithStackedThirds',
     THIRD_TRITAVE_ODD_HARMONICS_WITH_STACKED_FOURTHS = 'thirdTritaveOddHarmonicsWithStackedFourths',

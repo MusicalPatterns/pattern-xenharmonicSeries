@@ -5,8 +5,6 @@ import {
     as,
     CUBE_ROOT_OF_THREE,
     CUBE_ROOT_OF_TWO,
-    cubeRoot,
-    E,
     finalElement,
     ObjectOf,
     Pitch,
@@ -14,14 +12,13 @@ import {
     Scalar,
     SQUARE_ROOT_OF_THREE,
     SQUARE_ROOT_OF_TWO,
-    squareRoot,
     use,
 } from '@musical-patterns/utilities'
 import { computeScalars, spec, XenharmonicSeriesPreset, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
 
 describe('scalars', () => {
     let presets: ObjectOf<Preset<XenharmonicSeriesSpecs>>
-    const rawE: number = as.number(E)
+
     beforeEach(() => {
         presets = spec.presets!
     })
@@ -77,20 +74,6 @@ describe('scalars', () => {
                 product(3, SQUARE_ROOT_OF_THREE),
                 product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE),
                 product(3, SQUARE_ROOT_OF_THREE, CUBE_ROOT_OF_THREE, use.Exponent(3, as.Exponent(1 / 4))),
-            ].map(as.Scalar))
-    })
-
-    it('e-edharmonic series', () => {
-        const specs: XenharmonicSeriesSpecs = presets[ XenharmonicSeriesPreset.ED_EULER_HARMONIC_SERIES ].specs
-        const scalars: Array<Scalar<Pitch>> = computeScalars(specs)
-
-        expect(scalars)
-            .toBeCloseSoFar([
-                1,
-                rawE,
-                product(rawE, squareRoot(rawE)),
-                product(rawE, squareRoot(rawE), cubeRoot(rawE)),
-                product(rawE, squareRoot(rawE), cubeRoot(rawE), use.Exponent(rawE, as.Exponent(1 / 4))),
             ].map(as.Scalar))
     })
 
