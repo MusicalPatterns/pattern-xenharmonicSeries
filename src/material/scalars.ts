@@ -37,11 +37,11 @@ const thunkDuperparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
     (): Array<Scalar<Pitch>> =>
         computeParticularScalars(XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES)
 
-const thunkSubparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
+const thunkSubsuperparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
     (): Array<Scalar<Pitch>> =>
         computeParticularScalars(XenharmonicSeriesPreset.SUBSUPERPARTICULAR_SERIES)
 
-const thunkDubparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
+const thunkDubduperparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
     (): Array<Scalar<Pitch>> =>
         computeParticularScalars(XenharmonicSeriesPreset.DUBDUPERPARTICULAR_SERIES)
 
@@ -49,6 +49,6 @@ export {
     computeScalars,
     thunkSuperparticularSeriesScalars,
     thunkDuperparticularSeriesScalars,
-    thunkSubparticularSeriesScalars,
-    thunkDubparticularSeriesScalars,
+    thunkSubsuperparticularSeriesScalars,
+    thunkDubduperparticularSeriesScalars,
 }

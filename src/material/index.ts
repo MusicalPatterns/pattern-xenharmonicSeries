@@ -3,6 +3,6 @@ export { material } from './materials'
 export {
     thunkSuperparticularSeriesScalars,
     thunkDuperparticularSeriesScalars,
-    thunkSubparticularSeriesScalars,
-    thunkDubparticularSeriesScalars,
+    thunkSubsuperparticularSeriesScalars,
+    thunkDubduperparticularSeriesScalars,
 } from './scalars'

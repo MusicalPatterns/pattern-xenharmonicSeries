@@ -3,6 +3,6 @@ export { pattern, patterns } from './patterns'
 export {
     thunkSuperparticularSeriesScalars,
     thunkDuperparticularSeriesScalars,
-    thunkSubparticularSeriesScalars,
-    thunkDubparticularSeriesScalars,
+    thunkSubsuperparticularSeriesScalars,
+    thunkDubduperparticularSeriesScalars,
 } from './material'
