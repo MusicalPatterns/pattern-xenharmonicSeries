@@ -1,0 +1,389 @@
+{
+  "segnoTime": 0,
+  "totalDuration": 22400,
+  "voices": [
+    {
+      "delay": 0,
+      "sounds": [
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 146.66667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 132,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 125.71429,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 122.22222,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 120,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 118.46154,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 117.33333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 116.47059,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 115.78947,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 115.2381,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 114.78261,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 114.4,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 114.07407,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 113.7931,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 113.54839,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 113.33333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 113.14286,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.97297,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.82051,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.68293,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.55814,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.44444,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.34043,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.2449,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.15686,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112.07547,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 112,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 111.92982,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 111.86441,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 111.80328,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 111.74603,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 111.69231,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        }
+      ],
+      "sourceRequest": {
+        "sourceType": "OSCILLATOR",
+        "timbreName": "GUITAR_FUZZ"
+      },
+      "segnoIndex": 0
+    },
+    {
+      "delay": 0,
+      "sounds": [
+        {
+          "duration": 22400,
+          "gain": 1,
+          "tone": 146.66667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 22399.9
+        }
+      ],
+      "sourceRequest": {
+        "sourceType": "OSCILLATOR",
+        "timbreName": "CHORUS_STRINGS"
+      },
+      "segnoIndex": 0
+    }
+  ]
+}

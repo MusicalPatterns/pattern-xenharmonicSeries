@@ -2,33 +2,34 @@
 
 import {
     as,
-    Exponent,
-    negative,
-    ofNotAs,
+    asRational,
+    Cardinal,
     Ordinal,
-    SCIENTIFIC_PITCHES,
+    Rational,
     ScientificPitchNoteName,
     ScientificPitchOctaveNumber,
+    SCIENTIFIC_PITCHES,
     Tone,
-    Translation,
+    use,
 } from '@musical-patterns/utilities'
-import { XenharmonicSequence } from './material'
-import { PartialSumOrProduct, xenharmonicSeriesAs } from './nominals'
+import { XenharmonicSequence } from './nominals'
 
-const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Ordinal<XenharmonicSequence> = as.Ordinal<XenharmonicSequence>(1)
-const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal<XenharmonicSequence> = as.Ordinal<XenharmonicSequence>(32)
+const XENHARMONIC_SERIES_INITIAL_LOWER_BOUND: Ordinal = as.Ordinal(1)
+const XENHARMONIC_SERIES_INITIAL_UPPER_BOUND: Ordinal = use.Cardinal(
+    XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
+    as.Cardinal<Ordinal>(32),
+)
 
 const XENHARMONIC_SERIES_INITIAL_HZ_PHYSICALIZATION: Tone =
-    SCIENTIFIC_PITCHES[ ScientificPitchNoteName.A ][ ScientificPitchOctaveNumber._3 ]
-const XENHARMONIC_SERIES_INITIAL_EXPONENT: Exponent = as.Exponent(negative(1))
+    SCIENTIFIC_PITCHES[ ScientificPitchNoteName.A ][ ScientificPitchOctaveNumber._1 ]
+const XENHARMONIC_SERIES_INITIAL_ITERATIONS: Cardinal<XenharmonicSequence[]> = as.Cardinal<XenharmonicSequence[]>(1)
 
-const XENHARMONIC_SERIES_INITIAL_CONSTANT: Translation<PartialSumOrProduct> =
-    as.Translation(ofNotAs(xenharmonicSeriesAs.PartialSumOrProduct(0)))
+const XENHARMONIC_SERIES_INITIAL_COEFFICIENT: Rational = asRational(1, 1)
 
 export {
     XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
     XENHARMONIC_SERIES_INITIAL_UPPER_BOUND,
     XENHARMONIC_SERIES_INITIAL_HZ_PHYSICALIZATION,
-    XENHARMONIC_SERIES_INITIAL_EXPONENT,
-    XENHARMONIC_SERIES_INITIAL_CONSTANT,
+    XENHARMONIC_SERIES_INITIAL_ITERATIONS,
+    XENHARMONIC_SERIES_INITIAL_COEFFICIENT,
 }

@@ -1,8 +1,8 @@
 export { pattern, patterns } from './patterns'
 
 export {
-    computeSuperparticularSeriesScalars,
-    computeDuperparticularSeriesScalars,
-    computeSubparticularSeriesScalars,
-    computeDubparticularSeriesScalars,
+    thunkSuperparticularSeriesScalars,
+    thunkDuperparticularSeriesScalars,
+    thunkSubparticularSeriesScalars,
+    thunkDubparticularSeriesScalars,
 } from './material'

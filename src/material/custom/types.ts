@@ -1,35 +1,15 @@
-import { Exponent, Frequency, Logarithm, Ordinal, TwoToOneNumericOperation } from '@musical-patterns/utilities'
-import { PartialSumOrProduct, Term } from '../../nominals'
-import { XenharmonicSeriesSpecs } from '../../spec'
+import { Exponent, Logarithm, Maybe } from '@musical-patterns/utilities'
+import { XenharmonicSeriesSpec } from '../../spec'
+import { FunctionType } from '../../types'
 
-interface ComputeSequenceParameters {
-    boundedNumbers: number[],
-    operation: TwoToOneNumericOperation,
-    partialSeed: PartialSumOrProduct,
-    specs: XenharmonicSeriesSpecs,
+interface ApplyFunctionTypeParameters {
+    [ XenharmonicSeriesSpec.FUNCTION_TYPE ]: Maybe<FunctionType>,
+    [ XenharmonicSeriesSpec.EXPONENTIAL_BASE ]: Maybe<Logarithm>,
+    [ XenharmonicSeriesSpec.LOGARITHMIC_BASE ]: Maybe<Logarithm>,
+    [ XenharmonicSeriesSpec.POWER ]: Maybe<Exponent>,
+    sequence: number[],
 }
-
-type ComputeTermFunction = (index: Ordinal, exponent: Exponent, logarithm?: Logarithm<Frequency>) => Term
-
-interface ComputePartialParameters {
-    computeTermFunction: ComputeTermFunction,
-    index: Ordinal,
-    operation: TwoToOneNumericOperation,
-    partial: PartialSumOrProduct,
-    specs: XenharmonicSeriesSpecs
-}
-
-interface SequenceTypeParameters {
-    operation: TwoToOneNumericOperation,
-    partialSeed: PartialSumOrProduct,
-}
-
-type XenharmonicSequence = PartialSumOrProduct[]
 
 export {
-    ComputeSequenceParameters,
-    ComputeTermFunction,
-    ComputePartialParameters,
-    SequenceTypeParameters,
-    XenharmonicSequence,
+    ApplyFunctionTypeParameters,
 }

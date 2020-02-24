@@ -1,35 +1,44 @@
 import { standardInitialSpecs, StandardSpec } from '@musical-patterns/spec'
-import { as, INITIAL, MULTIPLICATIVE_IDENTITY, NEXT, OCTAVE, Scalar } from '@musical-patterns/utilities'
+import { INITIAL } from '@musical-patterns/utilities'
 import {
-    XENHARMONIC_SERIES_INITIAL_CONSTANT,
-    XENHARMONIC_SERIES_INITIAL_EXPONENT,
+    XENHARMONIC_SERIES_INITIAL_COEFFICIENT,
     XENHARMONIC_SERIES_INITIAL_HZ_PHYSICALIZATION,
+    XENHARMONIC_SERIES_INITIAL_ITERATIONS,
     XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
     XENHARMONIC_SERIES_INITIAL_UPPER_BOUND,
 } from '../constants'
-import { XenharmonicSequence } from '../material'
-import { Term } from '../nominals'
-import { SequenceType } from '../types'
+import { NumberSequence } from '../types'
 import { XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from './types'
 
 const initialSpecs: XenharmonicSeriesSpecs = {
     ...standardInitialSpecs,
     [ StandardSpec.HZ_PHYSICALIZATION ]: XENHARMONIC_SERIES_INITIAL_HZ_PHYSICALIZATION,
-    [ XenharmonicSeriesSpec.LOGARITHM ]: OCTAVE,
-    [ XenharmonicSeriesSpec.CONSTANT ]: XENHARMONIC_SERIES_INITIAL_CONSTANT,
+
     [ XenharmonicSeriesSpec.DESCENDING ]: false,
-    [ XenharmonicSeriesSpec.GROUND ]: true,
     [ XenharmonicSeriesSpec.HOLD_ROOT ]: true,
-    [ XenharmonicSeriesSpec.ITERATIONS ]: as.Cardinal<XenharmonicSequence[]>(1),
-    [ XenharmonicSeriesSpec.LOWER_BOUND ]: XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
-    [ XenharmonicSeriesSpec.PARTICULATE ]: NEXT,
-    [ XenharmonicSeriesSpec.EXPONENT ]: XENHARMONIC_SERIES_INITIAL_EXPONENT,
-    [ XenharmonicSeriesSpec.SEQUENCE_TYPE ]: SequenceType.PARTIAL_SUM,
+    [ XenharmonicSeriesSpec.ITERATIONS ]: XENHARMONIC_SERIES_INITIAL_ITERATIONS,
     [ XenharmonicSeriesSpec.STACK ]: [ INITIAL ],
-    [ XenharmonicSeriesSpec.TERM_COEFFICIENT ]: MULTIPLICATIVE_IDENTITY as Scalar<Term>,
+    [ XenharmonicSeriesSpec.SORTED_OCTAVE_REDUCED ]: false,
+
+    [ XenharmonicSeriesSpec.NUMBER_SEQUENCE ]: NumberSequence.HARMONIC_NUMBERS,
+    [ XenharmonicSeriesSpec.SUPERPARTICULAR_DIV ]: undefined,
+    [ XenharmonicSeriesSpec.SUPERPARTICULAR_MOD ]: undefined,
+
+    [ XenharmonicSeriesSpec.RECIPROCATE ]: false,
+
+    [ XenharmonicSeriesSpec.LOWER_BOUND ]: XENHARMONIC_SERIES_INITIAL_LOWER_BOUND,
     [ XenharmonicSeriesSpec.UPPER_BOUND ]: XENHARMONIC_SERIES_INITIAL_UPPER_BOUND,
-    [ XenharmonicSeriesSpec.USE_PARTICULATE ]: false,
-    [ XenharmonicSeriesSpec.USE_LOGARITHM ]: false,
+
+    [ XenharmonicSeriesSpec.COEFFICIENT ]: XENHARMONIC_SERIES_INITIAL_COEFFICIENT,
+
+    [ XenharmonicSeriesSpec.SIEVE ]: undefined,
+
+    [ XenharmonicSeriesSpec.FUNCTION_TYPE ]: undefined,
+    [ XenharmonicSeriesSpec.LOGARITHMIC_BASE ]: undefined,
+    [ XenharmonicSeriesSpec.EXPONENTIAL_BASE ]: undefined,
+    [ XenharmonicSeriesSpec.POWER ]: undefined,
+
+    [ XenharmonicSeriesSpec.INITIAL_VALUE_OVERRIDE ]: undefined,
 }
 
 export {

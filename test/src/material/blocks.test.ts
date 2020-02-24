@@ -1,12 +1,12 @@
 import { as } from '@musical-patterns/utilities'
 import { computeBlock, spec, XenharmonicSequence, XenharmonicSeriesSpecs } from '../../../src/indexForTest'
 
-describe('blocks', () => {
-    it('starting with 0, counts up the range between the lower and upper bounds, inclusively', () => {
+describe('blocks', (): void => {
+    it('starting with 0, counts up the range between the lower and upper bounds, inclusively', (): void => {
         const specs: XenharmonicSeriesSpecs = {
             ...spec.initialSpecs,
-            lowerBound: as.Ordinal<XenharmonicSequence>(3),
-            upperBound: as.Ordinal<XenharmonicSequence>(5),
+            lowerBound: as.Ordinal(3),
+            upperBound: as.Ordinal(6),
         }
 
         expect(computeBlock(specs))
@@ -17,12 +17,12 @@ describe('blocks', () => {
             ])
     })
 
-    it('expands when there are multiple iterations', () => {
+    it('expands when there are multiple iterations', (): void => {
         const specs: XenharmonicSeriesSpecs = {
             ...spec.initialSpecs,
             iterations: as.Cardinal<XenharmonicSequence[]>(5),
-            lowerBound: as.Ordinal<XenharmonicSequence>(3),
-            upperBound: as.Ordinal<XenharmonicSequence>(5),
+            lowerBound: as.Ordinal(3),
+            upperBound: as.Ordinal(6),
         }
 
         expect(computeBlock(specs))

@@ -1,15 +1,19 @@
-import { Transition } from '@musical-patterns/utilities'
-import { XenharmonicSequence } from './material'
-
-enum SequenceType {
-    PARTIAL_SUM = 'partial sum',
-    PARTIAL_PRODUCT = 'partial product',
-    SEQUENCE = 'sequence',
+enum FunctionType {
+    LOGARITHMIC = 'logarithmic',
+    EXPONENTIAL = 'exponential',
+    SIMPLE_POWER = 'power - simple',
+    EXPONENTIAL_OF_LOGARITHMIC_POWER = 'power - exponential of logarithmic',
 }
 
-type Particulate = Transition<XenharmonicSequence>
+enum NumberSequence {
+    HARMONIC_NUMBERS = 'harmonicNumbers',
+    NATURAL_NUMBERS = 'naturalNumbers',
+    PRIME_NUMBERS = 'primeNumbers',
+    METALLIC_NUMBERS = 'metallicNumbers',
+    SUPERPARTICULAR_NUMBERS = 'superparticularNumbers',
+}
 
 export {
-    SequenceType,
-    Particulate,
+    FunctionType,
+    NumberSequence,
 }

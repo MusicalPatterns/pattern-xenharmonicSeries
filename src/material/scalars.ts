@@ -1,51 +1,22 @@
 // tslint:disable-next-line max-line-length
 import { ENOUGH_HARMONIC_SERIES_STEPS_TO_LEAVE_HUMAN_HEARING_RANGE_FROM_THREE_OCTAVES_BELOW_PITCH_STANDARD } from '@musical-patterns/material'
-import { as, Cardinal, INCLUSIVE, Ordinal, Pitch, Scalar, use } from '@musical-patterns/utilities'
+import { as, Cardinal, Pitch, Scalar, Thunk, use } from '@musical-patterns/utilities'
+import { XenharmonicSequence } from '../nominals'
 import { presets, XenharmonicSeriesPreset, XenharmonicSeriesSpec, XenharmonicSeriesSpecs } from '../spec'
-import { Particulate } from '../types'
-import {
-    applyIterations,
-    applyParticulate,
-    computeBoundedIntegers,
-    computeNeededExtraIterationsForStack,
-    computeSequence,
-    computeSequenceTypeParameters,
-    XenharmonicSequence,
-} from './custom'
-
-const maybeExtendBoundForParticulate: (
-    upperBound: Ordinal<XenharmonicSequence>,
-    useParticulate: boolean,
-    particulate: Particulate,
-) => Ordinal<XenharmonicSequence> =
-    (
-        upperBound: Ordinal<XenharmonicSequence>,
-        useParticulate: boolean,
-        particulate: Particulate,
-    ): Ordinal<XenharmonicSequence> =>
-        useParticulate ? use.Cardinal(upperBound, particulate) : upperBound
+import { applyIterations, computeNeededExtraIterationsForStack, computeSequence } from './custom'
 
 const computeScalars: (specs: XenharmonicSeriesSpecs) => Array<Scalar<Pitch>> =
     (specs: XenharmonicSeriesSpecs): Array<Scalar<Pitch>> => {
-        const { sequenceType, lowerBound, upperBound, iterations, particulate, useParticulate, stack } = specs
-        const { partialSeed, operation } = computeSequenceTypeParameters(sequenceType)
-        const boundedNumbers: number[] = computeBoundedIntegers(
-            lowerBound,
-            use.Cardinal(maybeExtendBoundForParticulate(upperBound, useParticulate, particulate), INCLUSIVE),
-        )
+        const { iterations, stack } = specs
 
-        let sequence: XenharmonicSequence = computeSequence({ boundedNumbers, specs, partialSeed, operation })
+        const sequence: XenharmonicSequence = computeSequence(specs)
 
-        if (useParticulate) {
-            sequence = applyParticulate(sequence, particulate)
-        }
-
-        const neededExtraIterations: Cardinal<Cardinal<XenharmonicSequence[]>> =
+        const neededExtraIterationsForStack: Cardinal<Cardinal<XenharmonicSequence[]>> =
             computeNeededExtraIterationsForStack(stack)
 
         return applyIterations(
             sequence,
-            use.Cardinal(iterations, neededExtraIterations),
+            use.Cardinal(iterations, neededExtraIterationsForStack),
         )
     }
 
@@ -53,31 +24,31 @@ const computeParticularScalars: (preset: XenharmonicSeriesPreset) => Array<Scala
     (preset: XenharmonicSeriesPreset): Array<Scalar<Pitch>> =>
         computeScalars({
             ...presets[ preset ].specs,
-            [ XenharmonicSeriesSpec.UPPER_BOUND ]: as.Ordinal<XenharmonicSequence>(
+            [ XenharmonicSeriesSpec.UPPER_BOUND ]: as.Ordinal(
                 ENOUGH_HARMONIC_SERIES_STEPS_TO_LEAVE_HUMAN_HEARING_RANGE_FROM_THREE_OCTAVES_BELOW_PITCH_STANDARD,
             ),
         })
 
-const computeSuperparticularSeriesScalars: () => Array<Scalar<Pitch>> =
+const thunkSuperparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
     (): Array<Scalar<Pitch>> =>
         computeParticularScalars(XenharmonicSeriesPreset.SUPERPARTICULAR_SERIES)
 
-const computeDuperparticularSeriesScalars: () => Array<Scalar<Pitch>> =
+const thunkDuperparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
     (): Array<Scalar<Pitch>> =>
         computeParticularScalars(XenharmonicSeriesPreset.DUPERPARTICULAR_SERIES)
 
-const computeSubparticularSeriesScalars: () => Array<Scalar<Pitch>> =
+const thunkSubparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
     (): Array<Scalar<Pitch>> =>
-        computeParticularScalars(XenharmonicSeriesPreset.SUBPARTICULAR_SERIES)
+        computeParticularScalars(XenharmonicSeriesPreset.SUBSUPERPARTICULAR_SERIES)
 
-const computeDubparticularSeriesScalars: () => Array<Scalar<Pitch>> =
+const thunkDubparticularSeriesScalars: Thunk<Array<Scalar<Pitch>>> =
     (): Array<Scalar<Pitch>> =>
-        computeParticularScalars(XenharmonicSeriesPreset.DUBPARTICULAR_SERIES)
+        computeParticularScalars(XenharmonicSeriesPreset.DUBDUPERPARTICULAR_SERIES)
 
 export {
     computeScalars,
-    computeSuperparticularSeriesScalars,
-    computeDuperparticularSeriesScalars,
-    computeSubparticularSeriesScalars,
-    computeDubparticularSeriesScalars,
+    thunkSuperparticularSeriesScalars,
+    thunkDuperparticularSeriesScalars,
+    thunkSubparticularSeriesScalars,
+    thunkDubparticularSeriesScalars,
 }

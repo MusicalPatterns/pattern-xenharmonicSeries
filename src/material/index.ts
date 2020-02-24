@@ -1,11 +1,8 @@
-export {
-    XenharmonicSequence,
-} from './custom'
 export { material } from './materials'
 
 export {
-    computeSuperparticularSeriesScalars,
-    computeDuperparticularSeriesScalars,
-    computeSubparticularSeriesScalars,
-    computeDubparticularSeriesScalars,
+    thunkSuperparticularSeriesScalars,
+    thunkDuperparticularSeriesScalars,
+    thunkSubparticularSeriesScalars,
+    thunkDubparticularSeriesScalars,
 } from './scalars'

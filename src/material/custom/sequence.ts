@@ -1,79 +1,64 @@
 import {
+    arraySet,
     as,
-    Exponent,
-    Frequency,
+    filter,
     INITIAL,
     isUndefined,
-    Logarithm,
-    ofNotAs,
     Ordinal,
     reciprocal,
-    TwoToOneNumericOperation,
+    slice,
     use,
 } from '@musical-patterns/utilities'
-import { PartialSumOrProduct, Term, xenharmonicSeriesAs } from '../../nominals'
+import { XenharmonicSequence, xenharmonicSeriesAs } from '../../nominals'
 import { XenharmonicSeriesSpecs } from '../../spec'
-import { computeNextPartial } from './nextPartial'
-import { ComputeSequenceParameters, ComputeTermFunction, XenharmonicSequence } from './types'
+import { INCLUSIVE_SO_ITERATED_SEQUENCES_KNOW_THEIR_PERIOD } from './constants'
+import { applyFunctionType } from './functionType'
+import { numberSequenceToComputeNumbersMap } from './numbers'
 
-const indexToExponent: ComputeTermFunction =
-    (index: Ordinal, exponent: Exponent): Term =>
-        xenharmonicSeriesAs.Term(
-            use.Exponent(as.number(index), exponent) === Infinity ?
-                INITIAL :
-                use.Exponent(as.number(index), exponent),
+const computeSequence: (specs: XenharmonicSeriesSpecs) => XenharmonicSequence =
+    (specs: XenharmonicSeriesSpecs): XenharmonicSequence => {
+        const {
+            numberSequence,
+            lowerBound,
+            upperBound,
+            functionType,
+            exponentialBase,
+            coefficient,
+            reciprocate,
+            initialValueOverride,
+            logarithmicBase,
+            sieve,
+            power,
+            superparticularDiv,
+            superparticularMod,
+        } = specs
+
+        let sequence: number[] = slice(
+            numberSequenceToComputeNumbersMap[ numberSequence ]({ superparticularDiv, superparticularMod, upperBound }),
+            lowerBound,
+            use.Transition(upperBound, INCLUSIVE_SO_ITERATED_SEQUENCES_KNOW_THEIR_PERIOD),
         )
 
-const indexToExponentUsingLogarithm: ComputeTermFunction =
-    (index: Ordinal, exponent: Exponent, logarithm: Logarithm<Frequency> = as.Logarithm<Frequency>(1)): Term =>
-        xenharmonicSeriesAs.Term(as.number(
-            use.Exponent(
-                logarithm,
-                as.Exponent<Logarithm<Frequency>>(as.number(indexToExponent(index, exponent))),
-            ),
-        ))
+        sequence = applyFunctionType({ functionType, exponentialBase, logarithmicBase, power, sequence })
 
-const computeSequence: (parameters: {
-    boundedNumbers: number[],
-    operation: TwoToOneNumericOperation,
-    partialSeed: PartialSumOrProduct,
-    specs: XenharmonicSeriesSpecs,
-}) => XenharmonicSequence =
-    ({ partialSeed, operation, boundedNumbers, specs }: ComputeSequenceParameters): XenharmonicSequence => {
-        const { constant, useLogarithm, ground } = specs
-        let previousPartial: PartialSumOrProduct = partialSeed
+        sequence = sequence.map((el: number): number => use.Scalar(el, as.Scalar(as.number(coefficient))))
 
-        let firstPartial: PartialSumOrProduct
+        if (reciprocate) {
+            sequence = sequence.map(reciprocal)
+        }
 
-        return boundedNumbers
-            .map(as.Ordinal)
-            .map((index: Ordinal): PartialSumOrProduct => {
-                const computeTermFunction: ComputeTermFunction =
-                    useLogarithm ? indexToExponentUsingLogarithm : indexToExponent
+        if (!isUndefined(initialValueOverride)) {
+            arraySet(sequence, INITIAL, initialValueOverride)
+        }
 
-                previousPartial = computeNextPartial({
-                    computeTermFunction,
-                    index,
-                    operation,
-                    partial: previousPartial,
-                    specs,
-                })
+        if (!isUndefined(sieve)) {
+            sequence = filter(
+                sequence,
+                (el: number, index: Ordinal): boolean => as.number(use.Remaindee(index, sieve)) === 0,
+            )
+        }
 
-                return previousPartial
-            })
-            .map((partial: PartialSumOrProduct) => use.Translation(partial, constant))
-            .map((partial: PartialSumOrProduct) => {
-                if (isUndefined(firstPartial)) {
-                    firstPartial = partial
-                }
-
-                return ground ?
-                    use.Scalar(
-                        partial,
-                        as.Scalar(ofNotAs(reciprocal(firstPartial))),
-                    ) :
-                    partial
-            })
+        return sequence.map(xenharmonicSeriesAs.XenharmonicSequenceElement)
     }
 
 export {

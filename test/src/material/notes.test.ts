@@ -1,7 +1,4 @@
-import {
-    computeNotesDuration,
-    Note,
-} from '@musical-patterns/material'
+import { computeNotesDuration, Note } from '@musical-patterns/material'
 import { as, Duration, Pitch, Scalar, Value } from '@musical-patterns/utilities'
 import {
     computeRootNotes,
@@ -13,19 +10,19 @@ import {
     XenharmonicSeriesSpecs,
 } from '../../../src/indexForTest'
 
-describe('notes', () => {
+describe('notes', (): void => {
     let specs: XenharmonicSeriesSpecs
-    beforeEach(() => {
+    beforeEach((): void => {
         specs = {
             ...spec.initialSpecs,
             iterations: as.Cardinal<XenharmonicSequence[]>(2),
-            lowerBound: as.Ordinal<XenharmonicSequence>(3),
-            upperBound: as.Ordinal<XenharmonicSequence>(5),
+            lowerBound: as.Ordinal(3),
+            upperBound: as.Ordinal(6),
         }
     })
 
-    describe('scale notes', () => {
-        it('plays through the whole scale', () => {
+    describe('scale notes', (): void => {
+        it('plays through the whole scale', (): void => {
             const notes: Note[] = computeScaleNotes(specs)
 
             expect(notes)
@@ -51,7 +48,7 @@ describe('notes', () => {
                 ])
         })
 
-        it('can descend', () => {
+        it('can descend', (): void => {
             const reversedSpecs: XenharmonicSeriesSpecs = {
                 ...specs,
                 [ XenharmonicSeriesSpec.DESCENDING ]: true,
@@ -82,8 +79,8 @@ describe('notes', () => {
         })
     })
 
-    describe('root notes', () => {
-        it('holds the first pitch for the entire value', () => {
+    describe('root notes', (): void => {
+        it('holds the first pitch for the entire value', (): void => {
             const rootNotes: Note[] = computeRootNotes(specs)
 
             expect(rootNotes)
@@ -95,7 +92,7 @@ describe('notes', () => {
         })
     })
 
-    it('both sets of notes have the same value', () => {
+    it('both sets of notes have the same value', (): void => {
         const rootNotesDuration: Duration = computeNotesDuration(computeRootNotes(specs), materializeScales(specs))
         const scaleNotesDuration: Duration = computeNotesDuration(computeScaleNotes(specs), materializeScales(specs))
 

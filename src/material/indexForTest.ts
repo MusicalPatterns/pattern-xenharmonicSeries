@@ -6,7 +6,4 @@ export { computeScaleNotes, computeRootNotes } from './notes'
 export { materializeScales } from './scales'
 export { materializeEntities } from './entities'
 export { computeSegment } from './segments'
-
-export {
-    XenharmonicSequence,
-} from './custom/indexForTest'
+export { ComputeNumbersParameters, numberSequenceToComputeNumbersMap } from './custom/indexForTest'

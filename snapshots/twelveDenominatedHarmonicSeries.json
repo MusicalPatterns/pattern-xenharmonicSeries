@@ -8,6 +8,270 @@
         {
           "duration": 700,
           "gain": 1,
+          "tone": 55,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 59.58333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 64.16667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 68.75,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 73.33333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 77.91667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 82.5,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 87.08333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 91.66667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 96.25,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 100.83333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 105.41667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 110,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 119.16667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 128.33333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 137.5,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 146.66667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 155.83333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 165,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 174.16667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 183.33333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 192.5,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 201.66667,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 210.83333,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
           "tone": 220,
           "location": [
             0,
@@ -136,270 +400,6 @@
             0
           ],
           "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 440,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 476.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 513.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 550,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 586.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 623.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 660,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 696.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 733.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 770,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 806.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 843.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 880,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 953.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1026.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1100,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1173.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1246.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1320,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1393.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1466.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1540,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1613.33333,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1686.66667,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
         }
       ],
       "sourceRequest": {
@@ -414,7 +414,7 @@
         {
           "duration": 25200,
           "gain": 1,
-          "tone": 220,
+          "tone": 55,
           "location": [
             0,
             0,

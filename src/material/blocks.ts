@@ -1,29 +1,19 @@
-import {
-    as,
-    Block,
-    finalIndexFromElementsTotal,
-    INITIAL,
-    insteadOf,
-    Integer,
-    Ordinal,
-    use,
-} from '@musical-patterns/utilities'
-import { Stack } from '../nominals'
+import { as, Block, INITIAL, Integer, Ordinal, range, use } from '@musical-patterns/utilities'
+import { Stack, XenharmonicSequence } from '../nominals'
 import { XenharmonicSeriesSpecs } from '../spec'
-import { computeBoundedIntegers, computeNoteCount, XenharmonicSequence } from './custom'
+import { computeFinalNoteIndex } from './custom'
 
 const computeBlock: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal<Stack[]>) => Block =
     (specs: XenharmonicSeriesSpecs, stackIndex: Ordinal<Stack[]> = INITIAL): Block => {
-        const boundedIntegers: Integer[] = computeBoundedIntegers(
-            INITIAL,
-            insteadOf<Ordinal, XenharmonicSequence>(finalIndexFromElementsTotal(computeNoteCount(specs))),
-        )
+        const end: Ordinal<XenharmonicSequence> = computeFinalNoteIndex(specs)
+        const boundedIntegers: Integer[] = range(INITIAL, end)
 
-        return as.Block(boundedIntegers
-            .map(
-                (integer: Integer) =>
-                    use.Cardinal(integer, as.Cardinal(as.Integer(as.number(stackIndex)))),
-            ),
+        return as.Block(
+            boundedIntegers
+                .map(
+                    (integer: Integer): Integer =>
+                        use.Cardinal(integer, as.Cardinal<Integer>(as.number(stackIndex))),
+                ),
         )
     }
 

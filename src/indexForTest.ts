@@ -8,7 +8,8 @@ export {
     computeRootNotes,
     materializeScales,
     materializeEntities,
-    XenharmonicSequence,
+    numberSequenceToComputeNumbersMap,
+    ComputeNumbersParameters,
 } from './material/indexForTest'
 export {
     spec,
@@ -16,13 +17,16 @@ export {
     XenharmonicSeriesPreset,
     XenharmonicSeriesSpec,
     initialSpecs,
+    computeValidations,
 } from './spec/indexForTest'
 export {
-    SequenceType,
-} from './types'
-export {
-    PartialSumOrProduct,
+    XenharmonicSequence,
+    XenharmonicSequenceElement,
     Stack,
 } from './nominals'
+export {
+    NumberSequence,
+    FunctionType,
+} from './types'
 
 export { pattern } from './patterns'

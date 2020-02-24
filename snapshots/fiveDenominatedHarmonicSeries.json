@@ -8,6 +8,116 @@
         {
           "duration": 700,
           "gain": 1,
+          "tone": 55,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 66,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 77,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 88,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 99,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 110,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 132,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 154,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 176,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
+          "tone": 198,
+          "location": [
+            0,
+            0,
+            0
+          ],
+          "sustain": 699.9
+        },
+        {
+          "duration": 700,
+          "gain": 1,
           "tone": 220,
           "location": [
             0,
@@ -59,116 +169,6 @@
             0
           ],
           "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 440,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 528,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 616,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 704,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 792,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 880,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1056,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1232,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1408,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
-        },
-        {
-          "duration": 700,
-          "gain": 1,
-          "tone": 1584,
-          "location": [
-            0,
-            0,
-            0
-          ],
-          "sustain": 699.9
         }
       ],
       "sourceRequest": {
@@ -183,7 +183,7 @@
         {
           "duration": 10500,
           "gain": 1,
-          "tone": 220,
+          "tone": 55,
           "location": [
             0,
             0,

@@ -1,9 +1,20 @@
 import { Note, PitchOnly, ValueOnly } from '@musical-patterns/material'
-import { as, Block, Cardinal, computeReverse, ContourElement, INITIAL, Ordinal } from '@musical-patterns/utilities'
-import { Stack } from '../nominals'
+import {
+    as,
+    Block,
+    computeReverse,
+    ContourElement,
+    INCLUSIVE,
+    INITIAL,
+    Integer,
+    Ordinal,
+    range,
+    use,
+} from '@musical-patterns/utilities'
+import { Stack, XenharmonicSequence } from '../nominals'
 import { XenharmonicSeriesSpecs } from '../spec'
 import { computeBlock } from './blocks'
-import { computeNoteCount, XenharmonicSequence } from './custom'
+import { computeFinalNoteIndex } from './custom'
 import { computeNote, computeRootNote } from './features'
 
 const computeScaleNotes: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal<Stack[]>) => Note[] =
@@ -15,14 +26,19 @@ const computeScaleNotes: (specs: XenharmonicSeriesSpecs, stackIndex?: Ordinal<St
         }
 
         return block
-            .map((blockElement: number) => as.ContourElement<PitchOnly>([ blockElement ]))
+            .map(
+                (blockElement: number): ContourElement<PitchOnly> =>
+                    as.ContourElement<PitchOnly>([ blockElement ]),
+            )
             .map(computeNote)
     }
 
 const computeRootNotes: (specs: XenharmonicSeriesSpecs) => Note[] =
     (specs: XenharmonicSeriesSpecs): Note[] => {
-        const noteCount: Cardinal<XenharmonicSequence> = computeNoteCount(specs)
-        const rootContour: ContourElement<ValueOnly> = as.ContourElement<ValueOnly>([ as.number(noteCount) ])
+        const end: Ordinal<XenharmonicSequence> = computeFinalNoteIndex(specs)
+        const boundedIntegers: Integer[] = range(end, use.Transition(end, INCLUSIVE))
+
+        const rootContour: ContourElement<ValueOnly> = as.ContourElement<ValueOnly>(boundedIntegers)
 
         return [ computeRootNote(rootContour) ]
     }

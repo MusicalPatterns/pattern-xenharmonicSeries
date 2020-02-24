@@ -2,6 +2,7 @@
 
 export { spec } from './specs'
 export { initialSpecs } from './initials'
+export { computeValidations } from './validations'
 
 export {
     XenharmonicSeriesSpecs,

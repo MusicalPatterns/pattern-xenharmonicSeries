@@ -9,8 +9,7 @@ import {
     Ordinal,
     use,
 } from '@musical-patterns/utilities'
-import { Stack } from '../../nominals'
-import { XenharmonicSequence } from './types'
+import { Stack, XenharmonicSequence } from '../../nominals'
 
 const computeNeededExtraIterationsForStack:
     (stack: Array<Ordinal<Stack[]>>) => Cardinal<Cardinal<XenharmonicSequence[]>> =

@@ -8,7 +8,7 @@ const materializeEntities: MaterializeEntities =
         const entities: Entity[] = []
 
         const segment: Segment = computeSegment(specs)
-        segment.forEach((notes: Note[]) => {
+        segment.forEach((notes: Note[]): void => {
             entities.push({
                 sections: [ { notes } ],
                 timbreName: TimbreNameEnum.GUITAR_FUZZ,
